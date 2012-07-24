@@ -1,0 +1,16 @@
+﻿bin/Debug/introseHHC.exe
+bin/Debug/introseHHC.exe
+bin/Debug/introseHHC.pdb
+bin/Debug/introseHHC.vshost.exe
+bin/Debug/introseHHC.vshost.exe.manifest
+obj/x86/Debug/DesignTimeResolveAssemblyReferences.cache
+obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/x86/Debug/introseHHC.csproj.FileListAbsolute.txt
+obj/x86/Debug/GenerateResource.read.1.tlog
+*.exe
+*.tlog
+*.orig
+*.resources
+*.pdb
+*.cache
+*.suo

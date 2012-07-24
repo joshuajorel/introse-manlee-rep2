@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5978502D-1519-475A-864F-B8F72653D21B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>introseHHC</RootNamespace>
+    <AssemblyName>introseHHC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.4.5\Assemblies\v2.0\MySql.Data.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objects\Client.cs" />
+    <Compile Include="Objects\Contact.cs" />
+    <Compile Include="Objects\FaceSheet.cs" />
+    <Compile Include="Objects\Name.cs" />
+    <Compile Include="Objects\Patient.cs" />
+    <Compile Include="Objects\Person.cs" />
+    <Compile Include="Objects\Physician.cs" />
+    <Compile Include="RegForms\CGAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\CGAForm.Designer.cs">
+      <DependentUpon>CGAForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\FamilyHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\FamilyHistory.Designer.cs">
+      <DependentUpon>FamilyHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegForms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\PatientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\PatientView.Designer.cs">
+      <DependentUpon>PatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\PersonalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\PersonalHistory.Designer.cs">
+      <DependentUpon>PersonalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\ManageRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ManageRecord.Designer.cs">
+      <DependentUpon>ManageRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\RegisterPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\RegisterPatient.designer.cs">
+      <DependentUpon>RegisterPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\RegisterPatientTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\RegisterPatientTab.Designer.cs">
+      <DependentUpon>RegisterPatientTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\ViewCGA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ViewCGA.Designer.cs">
+      <DependentUpon>ViewCGA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\ViewFaceSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ViewFaceSheet.Designer.cs">
+      <DependentUpon>ViewFaceSheet.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegForms\CGAForm.resx">
+      <DependentUpon>CGAForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\FamilyHistory.resx">
+      <DependentUpon>FamilyHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegForms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\PatientView.resx">
+      <DependentUpon>PatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\PersonalHistory.resx">
+      <DependentUpon>PersonalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ManageRecord.resx">
+      <DependentUpon>ManageRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\RegisterPatient.resx">
+      <DependentUpon>RegisterPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\RegisterPatientTab.resx">
+      <DependentUpon>RegisterPatientTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ViewCGA.resx">
+      <DependentUpon>ViewCGA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ViewFaceSheet.resx">
+      <DependentUpon>ViewFaceSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
