@@ -214,11 +214,18 @@ namespace introseHHC.RegForms
             birthdate = pbdayPick.Value;             //Get data from DateTime Picker
 
             //following fields must not be blank
-            gender = pgenCoB.Text;
-            nationality = pnatIn.Text;
-            religion = prelIn.Text;
-            civstat = pcivStatCoB.Text;
-            educattain = pedattCoB.Text;
+            try
+            {
+                gender = pgenCoB.Text;
+                nationality = pnatIn.Text;
+                religion = prelIn.Text;
+                civstat = pcivStatCoB.Text;
+                educattain = pedattCoB.Text;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
 
             //fields for address. must not be blank!
             addline = paddlineIn.Text;
@@ -292,8 +299,44 @@ namespace introseHHC.RegForms
                 cmd.Parameters.AddWithValue("@edatt", patient.getEducAttainment());
                 cmd.Parameters.AddWithValue("@mail", patient.getEmail());
                 cmd.Parameters.AddWithValue("@hnum", patient.getHomeNum());
-                
-                
+                cmd.Parameters.AddWithValue("@mnum", patient.getMobNum());
+                cmd.Parameters.AddWithValue("@wnum", patient.getWorkNum());
+                cmd.Parameters.AddWithValue("@onum", patient.getOtherNum());
+                cmd.Parameters.AddWithValue("@stno", patient.getStNum());
+                cmd.Parameters.AddWithValue("@aline", patient.getAddLine());
+                cmd.Parameters.AddWithValue("@ct", patient.getCity());
+                cmd.Parameters.AddWithValue("@reg", patient.getRegion());
+
+                cmd.ExecuteNonQuery();
+
+                //insert into patient table
+
+                query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                cmd.CommandText = query;
+
+                read = cmd.ExecuteReader();
+
+                read.Read();
+
+                Console.WriteLine(read.GetDecimal(0).ToString());
+
+                int lastID = int.Parse(read.GetDecimal(0).ToString());
+
+
+                read.Close();
+
+                query = "INSERT INTO PATIENT(PatID) VALUES(@pid);";
+
+                cmd.CommandText = query;
+
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@pid", lastID);
+
+                cmd.ExecuteNonQuery();
+
+                CloseConnection();
+               
             }
             else
             {
@@ -318,6 +361,11 @@ namespace introseHHC.RegForms
             {
 
             }
+        }
+
+        private void RegisterPatientTab_Load(object sender, EventArgs e)
+        {
+
         }
 
 

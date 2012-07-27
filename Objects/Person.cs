@@ -39,6 +39,7 @@ namespace introseHHC.Objects
             gender = civstat = "";
             nationality = educattain = email = "";
             age = 0;
+            workNum = homeNum = mobNum = otherNum = 0;
        
                
         }
