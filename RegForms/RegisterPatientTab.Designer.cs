@@ -83,7 +83,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.clientSelectButton = new System.Windows.Forms.Button();
             this.cNextButton = new System.Windows.Forms.Button();
             this.cbdayPick = new System.Windows.Forms.DateTimePicker();
             this.posIn = new System.Windows.Forms.TextBox();
@@ -648,7 +648,7 @@
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label51);
             this.tabPage2.Controls.Add(this.label50);
-            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.clientSelectButton);
             this.tabPage2.Controls.Add(this.cNextButton);
             this.tabPage2.Controls.Add(this.cbdayPick);
             this.tabPage2.Controls.Add(this.posIn);
@@ -800,14 +800,15 @@
             this.label50.TabIndex = 111;
             this.label50.Text = "Select Existing";
             // 
-            // button8
+            // clientSelectButton
             // 
-            this.button8.Location = new System.Drawing.Point(85, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(83, 23);
-            this.button8.TabIndex = 110;
-            this.button8.Text = "Select";
-            this.button8.UseVisualStyleBackColor = true;
+            this.clientSelectButton.Location = new System.Drawing.Point(85, 10);
+            this.clientSelectButton.Name = "clientSelectButton";
+            this.clientSelectButton.Size = new System.Drawing.Size(83, 23);
+            this.clientSelectButton.TabIndex = 110;
+            this.clientSelectButton.Text = "Select";
+            this.clientSelectButton.UseVisualStyleBackColor = true;
+            this.clientSelectButton.Click += new System.EventHandler(this.clientSelectButton_Click);
             // 
             // cNextButton
             // 
@@ -1954,7 +1955,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button clientSelectButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label57;

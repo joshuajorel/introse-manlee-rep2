@@ -29,36 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clientView = new System.Windows.Forms.DataGridView();
             this._hhc_dbDataSet = new introseHHC._hhc_dbDataSet();
             this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getClientsTableAdapter = new introseHHC._hhc_dbDataSetTableAdapters.getClientsTableAdapter();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.okButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.clientView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._hhc_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // clientView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientView.AllowUserToAddRows = false;
+            this.clientView.AllowUserToDeleteRows = false;
+            this.clientView.AutoGenerateColumns = false;
+            this.clientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clientIDDataGridViewTextBoxColumn,
             this.fNameDataGridViewTextBoxColumn,
             this.sNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.getClientsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(360, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.clientView.DataSource = this.getClientsBindingSource;
+            this.clientView.Location = new System.Drawing.Point(22, 12);
+            this.clientView.MultiSelect = false;
+            this.clientView.Name = "clientView";
+            this.clientView.ReadOnly = true;
+            this.clientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientView.Size = new System.Drawing.Size(360, 150);
+            this.clientView.TabIndex = 0;
             // 
             // _hhc_dbDataSet
             // 
@@ -79,49 +81,53 @@
             this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fNameDataGridViewTextBoxColumn
             // 
             this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
             this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
             this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sNameDataGridViewTextBoxColumn
             // 
             this.sNameDataGridViewTextBoxColumn.DataPropertyName = "SName";
             this.sNameDataGridViewTextBoxColumn.HeaderText = "SName";
             this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
+            this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button1
+            // okButton
             // 
-            this.button1.Location = new System.Drawing.Point(22, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.okButton.Location = new System.Drawing.Point(22, 195);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.TabIndex = 1;
+            this.okButton.Text = "OK";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(306, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(306, 194);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 2;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // ClientSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 258);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.clientView);
             this.Name = "ClientSelect";
             this.Text = "ClientSelect";
             this.Load += new System.EventHandler(this.ClientSelect_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._hhc_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -130,14 +136,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView clientView;
         private _hhc_dbDataSet _hhc_dbDataSet;
         private System.Windows.Forms.BindingSource getClientsBindingSource;
         private _hhc_dbDataSetTableAdapters.getClientsTableAdapter getClientsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

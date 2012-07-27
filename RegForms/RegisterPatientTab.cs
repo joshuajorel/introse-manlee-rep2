@@ -31,6 +31,7 @@ namespace introseHHC.RegForms
         private Client  client;
         private FaceSheet fsheet;
 
+        private UInt16 selID;
         private string desig;
         private string fname;
         private string sname;
@@ -57,6 +58,8 @@ namespace introseHHC.RegForms
         public RegisterPatientTab()
         {
             InitializeComponent();
+
+
 
             this.tabPage1.Text = "Register Patient";
             this.tabPage2.Text = "Register Client";
@@ -463,6 +466,80 @@ namespace introseHHC.RegForms
 
         private void RegisterPatientTab_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void clientSelectButton_Click(object sender, EventArgs e)
+        {
+            ClientSelect csel = new ClientSelect();
+
+            csel.ShowDialog();
+            selID = csel.Sel;
+            Console.WriteLine(selID);
+            csel.Close();
+
+            if (selID != 0)
+            {
+                client.setID(selID);
+
+                if (OpenConnection())
+                {
+                    string query = "SELECT * FROM PERSON WHERE ID=@id;";
+
+                    cmd = new MySqlCommand(query,conn);
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@id",selID);
+
+                    read = cmd.ExecuteReader();
+
+                    read.Read();
+
+                    cdesigCoB.Enabled = false;
+                    csnameIn.Enabled = false;
+                    cfnameIn.Enabled = false;
+                    cmnameIn.Enabled = false;
+                    cbdayPick.Enabled = false;
+                    cgenCoB.Enabled = false;
+                    crelIn.Enabled = false;
+                    cnatIn.Enabled = false;
+                    ccivstatCoB.Enabled = false;
+                    cedattCoB.Enabled = false;
+                    cstNoIn.Enabled = false;
+                    caddIn.Enabled = false;
+                    ccityIn.Enabled = false;
+                    cregIn.Enabled = false;
+                    cemailIn.Enabled = false;
+                    cHomeIn.Enabled = false;
+                    cWorkIn.Enabled = false;
+                    cMobileIn.Enabled = false;
+                    cOtherIn.Enabled = false;
+                    
+
+                    cdesigCoB.Text = read.GetString("Designation");
+                    csnameIn.Text = read.GetString("SName");
+                    cfnameIn.Text = read.GetString("FName");
+                    cmnameIn.Text = read.GetString("MName");
+                    cbdayPick.Value = read.GetDateTime("BDate");
+                    cgenCoB.Text = read.GetString("Gender");
+                    crelIn.Text = read.GetString("Religion");
+                    cnatIn.Text = read.GetString("Nationality");
+                    ccivstatCoB.Text = read.GetString("CivStat");
+                    cedattCoB.Text = read.GetString("EducAttain");
+                    cstNoIn.Text = read.GetString("StNum");
+                    caddIn.Text = read.GetString("AddLine");
+                    ccityIn.Text = read.GetString("City");
+                    cregIn.Text = read.GetString("Region");
+                    cemailIn.Text = read.GetString("Email");
+                    cHomeIn.Text = read.GetString("HomeNum");
+                    cWorkIn.Text = read.GetString("WorkNum");
+                    cMobileIn.Text = read.GetString("MobNum");
+                    cOtherIn.Text = read.GetString("OtherNum");
+
+                }
+                else
+                {
+                }
+            }
 
         }
 
