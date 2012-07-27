@@ -127,25 +127,25 @@ namespace introseHHC.RegForms
 
                 cmd.Prepare();
 
-                cmd.Parameters.AddWithValue("@desig", patient.getDesig());
-                cmd.Parameters.AddWithValue("@sur", patient.getSurname());
-                cmd.Parameters.AddWithValue("@first", patient.getFirstName());
-                cmd.Parameters.AddWithValue("@mid", patient.getMidName());
-                cmd.Parameters.AddWithValue("@bday", patient.getBDay());
-                cmd.Parameters.AddWithValue("@gen", patient.getGender());
-                cmd.Parameters.AddWithValue("@cstat", patient.getCivilStatus());
-                cmd.Parameters.AddWithValue("@nat", patient.getNationality());
-                cmd.Parameters.AddWithValue("@rel", patient.getReligion());
-                cmd.Parameters.AddWithValue("@edatt", patient.getEducAttainment());
-                cmd.Parameters.AddWithValue("@mail", patient.getEmail());
-                cmd.Parameters.AddWithValue("@hnum", patient.getHomeNum());
-                cmd.Parameters.AddWithValue("@mnum", patient.getMobNum());
-                cmd.Parameters.AddWithValue("@wnum", patient.getWorkNum());
-                cmd.Parameters.AddWithValue("@onum", patient.getOtherNum());
-                cmd.Parameters.AddWithValue("@stno", patient.getStNum());
-                cmd.Parameters.AddWithValue("@aline", patient.getAddLine());
-                cmd.Parameters.AddWithValue("@ct", patient.getCity());
-                cmd.Parameters.AddWithValue("@reg", patient.getRegion());
+                cmd.Parameters.AddWithValue("@desig", p.getDesig());
+                cmd.Parameters.AddWithValue("@sur", p.getSurname());
+                cmd.Parameters.AddWithValue("@first", p.getFirstName());
+                cmd.Parameters.AddWithValue("@mid", p.getMidName());
+                cmd.Parameters.AddWithValue("@bday", p.getBDay());
+                cmd.Parameters.AddWithValue("@gen", p.getGender());
+                cmd.Parameters.AddWithValue("@cstat", p.getCivilStatus());
+                cmd.Parameters.AddWithValue("@nat", p.getNationality());
+                cmd.Parameters.AddWithValue("@rel", p.getReligion());
+                cmd.Parameters.AddWithValue("@edatt", p.getEducAttainment());
+                cmd.Parameters.AddWithValue("@mail", p.getEmail());
+                cmd.Parameters.AddWithValue("@hnum", p.getHomeNum());
+                cmd.Parameters.AddWithValue("@mnum", p.getMobNum());
+                cmd.Parameters.AddWithValue("@wnum", p.getWorkNum());
+                cmd.Parameters.AddWithValue("@onum", p.getOtherNum());
+                cmd.Parameters.AddWithValue("@stno", p.getStNum());
+                cmd.Parameters.AddWithValue("@aline", p.getAddLine());
+                cmd.Parameters.AddWithValue("@ct", p.getCity());
+                cmd.Parameters.AddWithValue("@reg", p.getRegion());
 
                 cmd.ExecuteNonQuery();
 
@@ -431,7 +431,7 @@ namespace introseHHC.RegForms
 
                 read.Close();
 
-                query = "INSERT INTO PATIENT(ClientID) VALUES(@cid);";
+                query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
 
                 cmd.CommandText = query;
 
@@ -535,12 +535,67 @@ namespace introseHHC.RegForms
                     cMobileIn.Text = read.GetString("MobNum");
                     cOtherIn.Text = read.GetString("OtherNum");
 
+                    read.Close();
+
+                    CloseConnection();
+
                 }
                 else
                 {
                 }
             }
 
+        }
+
+        private void selClearButton_Click(object sender, EventArgs e)
+        {
+            if (selID != 0)
+            {
+
+                cdesigCoB.Enabled = true;
+                csnameIn.Enabled = true;
+                cfnameIn.Enabled = true;
+                cmnameIn.Enabled = true;
+                cbdayPick.Enabled = true;
+                cgenCoB.Enabled = true;
+                crelIn.Enabled = true;
+                cnatIn.Enabled = true;
+                ccivstatCoB.Enabled = true;
+                cedattCoB.Enabled = true;
+                cstNoIn.Enabled = true;
+                caddIn.Enabled = true;
+                ccityIn.Enabled = true;
+                cregIn.Enabled = true;
+                cemailIn.Enabled = true;
+                cHomeIn.Enabled = true;
+                cWorkIn.Enabled = true;
+                cMobileIn.Enabled = true;
+                cOtherIn.Enabled = true;
+                cOtherIn.Enabled = true;
+                    
+
+                    cdesigCoB.Text = "";
+                    csnameIn.Text = "Surname";
+                    cfnameIn.Text = "First Name";
+                    cmnameIn.Text = "Middle Name";
+                    cgenCoB.Text = "";
+                    crelIn.Text = "";
+                    cnatIn.Text = "";
+                    ccivstatCoB.Text = "";
+                    cedattCoB.Text = "";
+                    cstNoIn.Text = "Street #";
+                    caddIn.Text = "Address Line";
+                    ccityIn.Text = "City";
+                    cregIn.Text = "Region";
+                    cemailIn.Text = "";
+                    cHomeIn.Text = "";
+                    cWorkIn.Text = "";
+                    cMobileIn.Text = "";
+                    cOtherIn.Text = "";
+
+                    selID = 0;
+
+            }
         }
 
 

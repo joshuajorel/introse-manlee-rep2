@@ -80,7 +80,6 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.clientSelectButton = new System.Windows.Forms.Button();
@@ -187,6 +186,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.resetButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.selClearButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -635,6 +635,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.selClearButton);
             this.tabPage2.Controls.Add(this.cOtherIn);
             this.tabPage2.Controls.Add(this.cMobileIn);
             this.tabPage2.Controls.Add(this.cWorkIn);
@@ -645,7 +646,6 @@
             this.tabPage2.Controls.Add(this.label63);
             this.tabPage2.Controls.Add(this.label55);
             this.tabPage2.Controls.Add(this.label54);
-            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label51);
             this.tabPage2.Controls.Add(this.label50);
             this.tabPage2.Controls.Add(this.clientSelectButton);
@@ -773,14 +773,6 @@
             this.label54.Size = new System.Drawing.Size(181, 15);
             this.label54.TabIndex = 114;
             this.label54.Text = "Contact Information ---------";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(210, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
-            this.textBox1.TabIndex = 113;
             // 
             // label51
             // 
@@ -1787,6 +1779,16 @@
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // selClearButton
+            // 
+            this.selClearButton.Location = new System.Drawing.Point(188, 10);
+            this.selClearButton.Name = "selClearButton";
+            this.selClearButton.Size = new System.Drawing.Size(75, 23);
+            this.selClearButton.TabIndex = 123;
+            this.selClearButton.Text = "Clear";
+            this.selClearButton.UseVisualStyleBackColor = true;
+            this.selClearButton.Click += new System.EventHandler(this.selClearButton_Click);
+            // 
             // RegisterPatientTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1952,7 +1954,6 @@
         private System.Windows.Forms.Button pNextButton;
         private System.Windows.Forms.Button cNextButton;
         private System.Windows.Forms.Button rNextButton;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button clientSelectButton;
@@ -1977,5 +1978,6 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Button selClearButton;
     }
 }

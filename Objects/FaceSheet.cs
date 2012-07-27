@@ -13,6 +13,7 @@ namespace introseHHC.Objects
         private UInt16[] casMan, homVac;
         private bool carTra, ambWel, senRes;
         private CostTable cost;
+        private string action;
 
         public FaceSheet()
         {
