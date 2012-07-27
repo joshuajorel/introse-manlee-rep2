@@ -27,5 +27,25 @@ namespace introseHHC.Objects
             tub = tbs;
             bleDis = bdr;
         }
+
+        public bool getDbs()
+        {
+            return diabetes;
+        }
+
+        public bool getCan()
+        {
+            return cancer;
+        }
+
+        public bool getTub()
+        {
+            return tub;
+        }
+
+        public bool getBD()
+        {
+            return bleDis;
+        }
     }
 }

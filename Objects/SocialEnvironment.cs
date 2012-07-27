@@ -8,26 +8,48 @@ namespace introseHHC.Objects
 {
     class SocialEnvironment
     {
-        
-        private SEGroup seg;
-
-        static List<SEGroup> segList;
+        private ArrayList segList;
 
         public SocialEnvironment()
-        {
-            SEGroup seg = new SEGroup();
-            segList = new List<SEGroup>();
+        {        
+            segList = new ArrayList();
         }
 
         public void setSEG(string nme, string rlp, string fv)
         {
+            SEGroup seg = new SEGroup();
             seg.name = nme;
             seg.rel = rlp;
             seg.freVis = fv;
 
             segList.Add(seg);
         }
-            
+        
+        //int refers to which arraylist
+
+        public string getNme(int n)
+        {
+            SEGroup seg = new SEGroup();
+            seg = (SEGroup)segList[n];
+
+            return seg.name;
+        }
+
+        public string getRlp(int n)
+        {
+            SEGroup seg = new SEGroup();
+            seg = (SEGroup)segList[n];
+
+            return seg.rel;
+        }
+
+        public string getFv(int n)
+        {
+            SEGroup seg = new SEGroup();
+            seg = (SEGroup)segList[n];
+
+            return seg.freVis;
+        }
     }
 
     class SEGroup
