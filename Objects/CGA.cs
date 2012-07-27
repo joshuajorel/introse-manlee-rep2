@@ -11,6 +11,18 @@ namespace introseHHC.Objects
         private String insurance;
         private Physician physician;
         private String prefPlaCon;
+        private PersonalHistory ph;
+        private FamilyHistory fh;
+        private SocialEnvironment se;
+        private MedicalHistory mh;
+        private MedicationList ml;
+        private Immunization im;
+        private FunctionalStatus fs;
+        private GDScales gd;
+        private MentalExam me;
+        private Nutrition nu;
+        private CGiverAssess ca;
+
         private int cgaId;
 
         public CGA()
