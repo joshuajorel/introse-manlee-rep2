@@ -69,6 +69,12 @@
     <Compile Include="RegForms\CGAForm.Designer.cs">
       <DependentUpon>CGAForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\ClientSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ClientSelect.Designer.cs">
+      <DependentUpon>ClientSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\FamilyHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,8 +137,16 @@
     <Compile Include="RegForms\ViewFaceSheet.Designer.cs">
       <DependentUpon>ViewFaceSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="_hhc_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_hhc_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="RegForms\CGAForm.resx">
       <DependentUpon>CGAForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ClientSelect.resx">
+      <DependentUpon>ClientSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\FamilyHistory.resx">
       <DependentUpon>FamilyHistory.cs</DependentUpon>
@@ -173,6 +187,7 @@
     <EmbeddedResource Include="RegForms\ViewFaceSheet.resx">
       <DependentUpon>ViewFaceSheet.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,6 +197,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_hhc_dbDataSet.xsc">
+      <DependentUpon>_hhc_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_hhc_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_hhc_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_hhc_dbDataSet.xss">
+      <DependentUpon>_hhc_dbDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
