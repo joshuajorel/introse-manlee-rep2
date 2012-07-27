@@ -114,7 +114,40 @@ namespace introseHHC.RegForms
 
         private void RegisterPerson(Person p)
         {
+            if (OpenConnection())
+            {
+                string query = "INSERT INTO PERSON(DESIGNATION,SNAME,FNAME,MNAME,BDATE,GENDER,CIVSTAT,NATIONALITY,RELIGION," +
+                 "EDUCATTAIN,EMAIL,HOMENUM,WORKNUM,MOBNUM,OTHERNUM,STNUM,ADDLINE,CITY,REGION) VALUES "
+                 + "(@desig,@sur,@first,@mid,@bday,@gen,@cstat,@nat,@rel,@edatt,@mail,@hnum,@wnum,@mnum,@onum,@stno,@aline,@ct,@reg)";
 
+                cmd = new MySqlCommand(query, conn);
+
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@desig", patient.getDesig());
+                cmd.Parameters.AddWithValue("@sur", patient.getSurname());
+                cmd.Parameters.AddWithValue("@first", patient.getFirstName());
+                cmd.Parameters.AddWithValue("@mid", patient.getMidName());
+                cmd.Parameters.AddWithValue("@bday", patient.getBDay());
+                cmd.Parameters.AddWithValue("@gen", patient.getGender());
+                cmd.Parameters.AddWithValue("@cstat", patient.getCivilStatus());
+                cmd.Parameters.AddWithValue("@nat", patient.getNationality());
+                cmd.Parameters.AddWithValue("@rel", patient.getReligion());
+                cmd.Parameters.AddWithValue("@edatt", patient.getEducAttainment());
+                cmd.Parameters.AddWithValue("@mail", patient.getEmail());
+                cmd.Parameters.AddWithValue("@hnum", patient.getHomeNum());
+                cmd.Parameters.AddWithValue("@mnum", patient.getMobNum());
+                cmd.Parameters.AddWithValue("@wnum", patient.getWorkNum());
+                cmd.Parameters.AddWithValue("@onum", patient.getOtherNum());
+                cmd.Parameters.AddWithValue("@stno", patient.getStNum());
+                cmd.Parameters.AddWithValue("@aline", patient.getAddLine());
+                cmd.Parameters.AddWithValue("@ct", patient.getCity());
+                cmd.Parameters.AddWithValue("@reg", patient.getRegion());
+
+                cmd.ExecuteNonQuery();
+
+                CloseConnection();
+            }
         }
 
         //save inputs to respective classes
@@ -177,40 +210,7 @@ namespace introseHHC.RegForms
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-           if(OpenConnection())
-           {
-               string query = "INSERT INTO PERSON(DESIGNATION,SNAME,FNAME,MNAME,BDATE,GENDER,CIVSTAT,NATIONALITY,RELIGION,"+
-                "EDUCATTAIN,EMAIL,HOMENUM,WORKNUM,MOBNUM,OTHERNUM,STNUM,ADDLINE,CITY,REGION) VALUES "
-                +"(@desig,@sur,@first,@mid,@bday,@gen,@cstat,@nat,@rel,@edatt,@mail,@hnum,@wnum,@mnum,@onum,@stno,@aline,@ct,@reg)";
-
-                cmd = new MySqlCommand(query,conn);
-
-                cmd.Prepare();
-
-                cmd.Parameters.AddWithValue("@desig", patient.getDesig());
-                cmd.Parameters.AddWithValue("@sur", patient.getSurname());
-                cmd.Parameters.AddWithValue("@first", patient.getFirstName());
-                cmd.Parameters.AddWithValue("@mid", patient.getMidName());
-                cmd.Parameters.AddWithValue("@bday",patient.getBDay());
-                cmd.Parameters.AddWithValue("@gen",patient.getGender());
-                cmd.Parameters.AddWithValue("@cstat", patient.getCivilStatus());
-                cmd.Parameters.AddWithValue("@nat", patient.getNationality());
-                cmd.Parameters.AddWithValue("@rel", patient.getReligion());
-                cmd.Parameters.AddWithValue("@edatt", patient.getEducAttainment());
-                cmd.Parameters.AddWithValue("@mail", patient.getEmail());
-                cmd.Parameters.AddWithValue("@hnum", patient.getHomeNum());
-                cmd.Parameters.AddWithValue("@mnum", patient.getMobNum());
-                cmd.Parameters.AddWithValue("@wnum", patient.getWorkNum());
-                cmd.Parameters.AddWithValue("@onum", patient.getOtherNum());
-                cmd.Parameters.AddWithValue("@stno", patient.getStNum());
-                cmd.Parameters.AddWithValue("@aline", patient.getAddLine());
-                cmd.Parameters.AddWithValue("@ct", patient.getCity());
-                cmd.Parameters.AddWithValue("@reg", patient.getRegion());
-
-                cmd.ExecuteNonQuery();
-
-                CloseConnection();
-           }
+           
         }
 
         private void RegisterPatientTab_FormClosed(object sender, FormClosedEventArgs e)
