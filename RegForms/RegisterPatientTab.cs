@@ -80,6 +80,35 @@ namespace introseHHC.RegForms
                                 "PASSWORD=" + password + ";";
 
             conn = new MySqlConnection(connString);
+
+            if (OpenConnection())
+            {
+                string query = "SELECT DESCRIPTION FROM CASE_MGMT_REF;";
+                cmd = new MySqlCommand(query, conn);
+
+                read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    caseMgmtBox.Items.Add(read.GetString(0));
+                }
+
+                read.Close();
+
+                query = "SELECT DESCRIPTION FROM HVAC_REF;";
+                cmd.CommandText = query;
+
+                read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    hvacCoB.Items.Add(read.GetString(0));
+                }
+
+                read.Close();
+
+                CloseConnection();
+            }
                      
           }
 

@@ -27,18 +27,39 @@ namespace introseHHC.Objects
             ambWel = new bool();
             senRes = new bool();
         }
-       public void registerPatient(UInt16 id)
-       {
-           patientID = id;
-       }
-       public void registerClient(UInt16 id)
-       {
-           clientID = id;
-       }
-       public void registerPhysician(UInt16 id)
-       {
-           physicianID = id;
-       }
+        public void registerPatient(UInt16 id)
+        {
+            patientID = id;
+        }
+        public void registerClient(UInt16 id)
+        {
+            clientID = id;
+        }
+        public void registerPhysician(UInt16 id)
+        {
+            physicianID = id;
+        }
+        public void registerCostTable(CostTable c)
+        {
+            cost = c;
+        }
+
+        public void setCareTraining(bool option)
+        {
+            carTra = option;
+        }
+        public void setAmbWellness(bool option)
+        {
+            ambWel = option;
+        }
+        public void setSeniorResidential(bool option)
+        {
+            senRes = option;
+        }
+        public void setHomeVaccination(int option)
+        {
+
+        }
 
         
 
