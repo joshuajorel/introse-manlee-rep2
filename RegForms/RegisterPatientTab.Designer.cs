@@ -70,10 +70,10 @@
             this.pdesigCoB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cOtherIn = new System.Windows.Forms.TextBox();
+            this.cMobileIn = new System.Windows.Forms.TextBox();
+            this.cWorkIn = new System.Windows.Forms.TextBox();
+            this.cHomeIn = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -635,10 +635,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.cOtherIn);
+            this.tabPage2.Controls.Add(this.cMobileIn);
+            this.tabPage2.Controls.Add(this.cWorkIn);
+            this.tabPage2.Controls.Add(this.cHomeIn);
             this.tabPage2.Controls.Add(this.label60);
             this.tabPage2.Controls.Add(this.label61);
             this.tabPage2.Controls.Add(this.label62);
@@ -690,33 +690,33 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // cOtherIn
             // 
-            this.textBox9.Location = new System.Drawing.Point(364, 376);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 122;
+            this.cOtherIn.Location = new System.Drawing.Point(364, 376);
+            this.cOtherIn.Name = "cOtherIn";
+            this.cOtherIn.Size = new System.Drawing.Size(100, 20);
+            this.cOtherIn.TabIndex = 122;
             // 
-            // textBox8
+            // cMobileIn
             // 
-            this.textBox8.Location = new System.Drawing.Point(364, 350);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 121;
+            this.cMobileIn.Location = new System.Drawing.Point(364, 350);
+            this.cMobileIn.Name = "cMobileIn";
+            this.cMobileIn.Size = new System.Drawing.Size(100, 20);
+            this.cMobileIn.TabIndex = 121;
             // 
-            // textBox7
+            // cWorkIn
             // 
-            this.textBox7.Location = new System.Drawing.Point(364, 323);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 120;
+            this.cWorkIn.Location = new System.Drawing.Point(364, 323);
+            this.cWorkIn.Name = "cWorkIn";
+            this.cWorkIn.Size = new System.Drawing.Size(100, 20);
+            this.cWorkIn.TabIndex = 120;
             // 
-            // textBox6
+            // cHomeIn
             // 
-            this.textBox6.Location = new System.Drawing.Point(364, 295);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 119;
+            this.cHomeIn.Location = new System.Drawing.Point(364, 295);
+            this.cHomeIn.Name = "cHomeIn";
+            this.cHomeIn.Size = new System.Drawing.Size(100, 20);
+            this.cHomeIn.TabIndex = 119;
             // 
             // label60
             // 
@@ -1968,10 +1968,10 @@
         private System.Windows.Forms.TextBox pHomeIn;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox cOtherIn;
+        private System.Windows.Forms.TextBox cMobileIn;
+        private System.Windows.Forms.TextBox cWorkIn;
+        private System.Windows.Forms.TextBox cHomeIn;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;

@@ -112,21 +112,11 @@ namespace introseHHC.RegForms
             return 0;
         }
 
-
-        private void displayStuff(Patient p)
+        private void RegisterPerson(Person p)
         {
 
-            Console.WriteLine("Name: "+patient.getName().getFullName());
-            Console.WriteLine("Birthdate: "+patient.getBDay().ToShortDateString());
-            Console.WriteLine("Gender: "+patient.getGender());
-            Console.WriteLine("Nationality: "+patient.getNationality());
-            Console.WriteLine("Religion: "+patient.getReligion());
-            Console.WriteLine("Civil Status: "+patient.getCivilStatus());
-            Console.WriteLine("Educational Attainment: "+patient.getEducAttainment());
-
-       
-
         }
+
         //save inputs to respective classes
         private void finishButton_Click(object sender, EventArgs e)
         {
@@ -187,7 +177,40 @@ namespace introseHHC.RegForms
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-           
+           if(OpenConnection())
+           {
+               string query = "INSERT INTO PERSON(DESIGNATION,SNAME,FNAME,MNAME,BDATE,GENDER,CIVSTAT,NATIONALITY,RELIGION,"+
+                "EDUCATTAIN,EMAIL,HOMENUM,WORKNUM,MOBNUM,OTHERNUM,STNUM,ADDLINE,CITY,REGION) VALUES "
+                +"(@desig,@sur,@first,@mid,@bday,@gen,@cstat,@nat,@rel,@edatt,@mail,@hnum,@wnum,@mnum,@onum,@stno,@aline,@ct,@reg)";
+
+                cmd = new MySqlCommand(query,conn);
+
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@desig", patient.getDesig());
+                cmd.Parameters.AddWithValue("@sur", patient.getSurname());
+                cmd.Parameters.AddWithValue("@first", patient.getFirstName());
+                cmd.Parameters.AddWithValue("@mid", patient.getMidName());
+                cmd.Parameters.AddWithValue("@bday",patient.getBDay());
+                cmd.Parameters.AddWithValue("@gen",patient.getGender());
+                cmd.Parameters.AddWithValue("@cstat", patient.getCivilStatus());
+                cmd.Parameters.AddWithValue("@nat", patient.getNationality());
+                cmd.Parameters.AddWithValue("@rel", patient.getReligion());
+                cmd.Parameters.AddWithValue("@edatt", patient.getEducAttainment());
+                cmd.Parameters.AddWithValue("@mail", patient.getEmail());
+                cmd.Parameters.AddWithValue("@hnum", patient.getHomeNum());
+                cmd.Parameters.AddWithValue("@mnum", patient.getMobNum());
+                cmd.Parameters.AddWithValue("@wnum", patient.getWorkNum());
+                cmd.Parameters.AddWithValue("@onum", patient.getOtherNum());
+                cmd.Parameters.AddWithValue("@stno", patient.getStNum());
+                cmd.Parameters.AddWithValue("@aline", patient.getAddLine());
+                cmd.Parameters.AddWithValue("@ct", patient.getCity());
+                cmd.Parameters.AddWithValue("@reg", patient.getRegion());
+
+                cmd.ExecuteNonQuery();
+
+                CloseConnection();
+           }
         }
 
         private void RegisterPatientTab_FormClosed(object sender, FormClosedEventArgs e)
@@ -199,7 +222,6 @@ namespace introseHHC.RegForms
 
         private void pNextButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex++;
 
             //Patient Tab
             //get all the values in the fields & perform error checking
@@ -277,41 +299,15 @@ namespace introseHHC.RegForms
             //displayStuff(patient);
 
             //open connection to database
-            if (OpenConnection())
+            if (true)
             {
-                string query = "INSERT INTO PERSON(DESIGNATION,SNAME,FNAME,MNAME,BDATE,GENDER,CIVSTAT,NATIONALITY,RELIGION,"+
-                "EDUCATTAIN,EMAIL,HOMENUM,WORKNUM,MOBNUM,OTHERNUM,STNUM,ADDLINE,CITY,REGION) VALUES "
-                +"(@desig,@sur,@first,@mid,@bday,@gen,@cstat,@nat,@rel,@edatt,@mail,@hnum,@wnum,@mnum,@onum,@stno,@aline,@ct,@reg)";
-
-                cmd = new MySqlCommand(query,conn);
-
-                cmd.Prepare();
-
-                cmd.Parameters.AddWithValue("@desig", patient.getDesig());
-                cmd.Parameters.AddWithValue("@sur", patient.getSurname());
-                cmd.Parameters.AddWithValue("@first", patient.getFirstName());
-                cmd.Parameters.AddWithValue("@mid", patient.getMidName());
-                cmd.Parameters.AddWithValue("@bday",patient.getBDay());
-                cmd.Parameters.AddWithValue("@gen",patient.getGender());
-                cmd.Parameters.AddWithValue("@cstat", patient.getCivilStatus());
-                cmd.Parameters.AddWithValue("@nat", patient.getNationality());
-                cmd.Parameters.AddWithValue("@rel", patient.getReligion());
-                cmd.Parameters.AddWithValue("@edatt", patient.getEducAttainment());
-                cmd.Parameters.AddWithValue("@mail", patient.getEmail());
-                cmd.Parameters.AddWithValue("@hnum", patient.getHomeNum());
-                cmd.Parameters.AddWithValue("@mnum", patient.getMobNum());
-                cmd.Parameters.AddWithValue("@wnum", patient.getWorkNum());
-                cmd.Parameters.AddWithValue("@onum", patient.getOtherNum());
-                cmd.Parameters.AddWithValue("@stno", patient.getStNum());
-                cmd.Parameters.AddWithValue("@aline", patient.getAddLine());
-                cmd.Parameters.AddWithValue("@ct", patient.getCity());
-                cmd.Parameters.AddWithValue("@reg", patient.getRegion());
-
-                cmd.ExecuteNonQuery();
+                    RegisterPerson(patient);
 
                 //insert into patient table
 
-                query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                OpenConnection();
+
+                string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
                 cmd.CommandText = query;
 
                 read = cmd.ExecuteReader();
@@ -320,8 +316,9 @@ namespace introseHHC.RegForms
 
                 Console.WriteLine(read.GetDecimal(0).ToString());
 
-                int lastID = int.Parse(read.GetDecimal(0).ToString());
+                UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
 
+                patient.setID(lastID);
 
                 read.Close();
 
@@ -336,6 +333,8 @@ namespace introseHHC.RegForms
                 cmd.ExecuteNonQuery();
 
                 CloseConnection();
+
+                tabControl1.SelectedIndex++;
                
             }
             else
@@ -348,7 +347,106 @@ namespace introseHHC.RegForms
         }
         private void cNextButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex++;
+            desig = cdesigCoB.Text;
+            fname = cfnameIn.Text;
+            sname = csnameIn.Text;
+            mname = cmnameIn.Text;
+
+            try
+            {
+                gender = cgenCoB.Text;
+                nationality = cnatIn.Text;
+                religion = crelIn.Text;
+                civstat = ccivstatCoB.SelectedText;
+                educattain = cedattCoB.Text;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+            addline = caddIn.Text;
+            city = ccityIn.Text;
+            region = cregIn.Text;
+
+            try
+            {
+                stnumber = UInt16.Parse(pstnoIn.Text);
+            }
+            catch (FormatException err)
+            {
+                Console.WriteLine("Street #: " + err.Message);
+            }
+            catch (OverflowException of)
+            {
+                Console.WriteLine("Street #: " + of.Message);
+            }
+
+            try
+            {
+                workNum = UInt16.Parse(cWorkIn.Text);
+                homeNum = UInt16.Parse(cHomeIn.Text);
+                mobNum = UInt16.Parse(cMobileIn.Text);
+                otherNum = UInt16.Parse(cOtherIn.Text);
+            }
+            catch (Exception err)
+            {
+            }
+
+            //get email
+            //needs regex based error checking
+            email = cemailIn.Text;
+
+            client.setName(desig, fname, mname, sname);
+            client.setBday(birthdate);
+            client.setGender(gender);
+            client.setNationality(nationality);
+            client.setReligion(religion);
+            client.setCivilStatus(civstat);
+            client.setEducAttainment(educattain);
+            client.setEmail(email);
+            client.setAddress(stnumber, addline, city, region);
+            client.setNumbers(homeNum, workNum, mobNum, otherNum);
+
+            if (true)
+            {
+                RegisterPerson(client);
+
+                OpenConnection();
+
+                string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                cmd.CommandText = query;
+
+                read = cmd.ExecuteReader();
+
+                read.Read();
+
+                Console.WriteLine(read.GetDecimal(0).ToString());
+
+                UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
+
+                client.setID(lastID);
+
+                read.Close();
+
+                query = "INSERT INTO PATIENT(ClientID) VALUES(@cid);";
+
+                cmd.CommandText = query;
+
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@cid", lastID);
+
+                cmd.ExecuteNonQuery();
+
+                CloseConnection();
+
+                tabControl1.SelectedIndex++;
+            }
+            else
+            {
+            }
+
+            
         }
         private void rNextButton_Click(object sender, EventArgs e)
         {

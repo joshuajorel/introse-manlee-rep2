@@ -8,6 +8,7 @@ namespace introseHHC.Objects
 {
     public class Person
     {
+        protected UInt16 ID;
         protected Name name = new Name();
         protected string desig;
         protected string fname;
@@ -53,7 +54,10 @@ namespace introseHHC.Objects
             civstat = cstat;
         }
       //Mutator methods
- 
+        public void setID(UInt16 i)
+        {
+            ID = i;
+        }
         public void setName(string d,string f, string m, string s)
         {
             name.setDesignation(d);
@@ -110,6 +114,10 @@ namespace introseHHC.Objects
             this.otherNum = other;
         }
     //Getter methods
+        public UInt16 getID()
+        {
+            return ID;
+        }
         public Name getName()
             {
                 return name;

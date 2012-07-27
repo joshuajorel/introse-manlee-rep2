@@ -7,17 +7,18 @@ namespace introseHHC.Objects
 {
     class FaceSheet
     {
-        private Physician physician;
-        private Client client;
-        private Patient patient;
+        private UInt16 patientID;
+        private UInt16 clientID;
+        private UInt16 physicianID;
         private bool[] casMan, homVac;
         private bool carTra, ambWel, senRes;
+        private CostTable cost;
 
         public FaceSheet()
         {
-            physician = new Physician();
-            client = new Client();
-            patient = new Patient();
+            physicianID = 0;
+            clientID = 0;
+            patientID = 0;
             casMan = new bool[4];
             homVac = new bool[4];
             carTra = new bool();
@@ -25,18 +26,8 @@ namespace introseHHC.Objects
             senRes = new bool();
         }
 
-        public void setFS(Physician phy, Client cli, Patient pat, bool[] cm, bool[] hv, bool ct, bool aw, bool sr)
-        {
-            physician = phy;
-            client = cli;
-            patient = pat;
-            casMan = cm;
-            homVac = hv;
-            carTra = ct;
-            ambWel = aw;
-            senRes = sr;
+        
 
-        }
 
     }
 }
