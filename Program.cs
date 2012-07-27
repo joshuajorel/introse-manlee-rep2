@@ -20,7 +20,9 @@ namespace introseHHC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run( new RegisterPatientTab() );
+            Application.Run(new introseHHC.RegForms.MainMenu());
+
+            //Application.Run( new RegisterPatientTab() );
             
 
         }

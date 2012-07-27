@@ -6,14 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using introseHHC.Objects;
+
 
 namespace introseHHC.RegForms
 {
     public partial class MainMenu : Form
     {
+        
+
         public MainMenu()
         {
             InitializeComponent();
+            
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -21,9 +26,11 @@ namespace introseHHC.RegForms
 
         }
 
+        //register facesheet
         private void button1_Click(object sender, EventArgs e)
         {
-
+            RegisterPatientTab regPatTab = new RegisterPatientTab();
+            regPatTab.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
