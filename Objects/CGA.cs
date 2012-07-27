@@ -19,7 +19,7 @@ namespace introseHHC.Objects
             physician = new Physician();
         }
 
-        public setCGA(Patient pat, String ins, Physician phy, String ppc, int cid)
+        public void setCGA(Patient pat, String ins, Physician phy, String ppc, int cid)
         {
             patient = pat;
             insurance = ins;
@@ -27,6 +27,8 @@ namespace introseHHC.Objects
             prefPlaCon = ppc;
             cgaId = cid;
         }
+
+     
 
     }
 }

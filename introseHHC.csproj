@@ -51,14 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\CGA.cs" />
     <Compile Include="Objects\Client.cs" />
     <Compile Include="Objects\Contact.cs" />
     <Compile Include="Objects\CostTable.cs" />
     <Compile Include="Objects\FaceSheet.cs" />
+    <Compile Include="Objects\FamilyHistory.cs" />
     <Compile Include="Objects\Name.cs" />
     <Compile Include="Objects\Patient.cs" />
     <Compile Include="Objects\Person.cs" />
+    <Compile Include="Objects\PersonalHistory.cs" />
     <Compile Include="Objects\Physician.cs" />
+    <Compile Include="Objects\SocialEnvironment.cs" />
     <Compile Include="RegForms\CGAForm.cs">
       <SubType>Form</SubType>
     </Compile>
