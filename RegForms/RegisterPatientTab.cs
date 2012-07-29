@@ -59,17 +59,6 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
 
-
-
-            this.tabPage1.Text = "Register Patient";
-            this.tabPage2.Text = "Register Client";
-            this.tabPage3.Text = "Requirements";
-            this.tabPage4.Text = "Details";
-
-            patient = new Patient();
-            client = new Client();
-            fsheet = new FaceSheet();
-
             server = "localhost";
             user = "root";
             database = "hhc-db";
@@ -83,6 +72,8 @@ namespace introseHHC.RegForms
 
             if (OpenConnection())
             {
+                int hvnum, cmnum;
+                //INITIALIZE CHECK BOX LISTS WITH ITEMS FROM DATABASE.
                 string query = "SELECT DESCRIPTION FROM CASE_MGMT_REF;";
                 cmd = new MySqlCommand(query, conn);
 
@@ -106,10 +97,32 @@ namespace introseHHC.RegForms
                 }
 
                 read.Close();
+                //INTITIALIZE FACE SHEET
+                query = "SELECT COUNT(*) FROM CASE_MGMT_REF;";
+                cmd.CommandText = query;
+                read = cmd.ExecuteReader();
+
+                read.Read();
+                cmnum = read.GetInt16(0);
+                Console.WriteLine("Number of CM Items: {0}",cmnum);
+                read.Close();
+
+                query = "SELECT COUNT(*) FROM HVAC_REF;";
+                cmd.CommandText = query;
+                read = cmd.ExecuteReader();
+
+                read.Read();
+                hvnum = read.GetInt16(0);
+                Console.WriteLine("Number of HV Items: {0}", hvnum);
+                read.Close();
 
                 CloseConnection();
+
+                patient = new Patient();
+                client = new Client();
+                fsheet = new FaceSheet(cmnum, hvnum);
             }
-                     
+     
           }
 
 
@@ -439,7 +452,7 @@ namespace introseHHC.RegForms
             client.setAddress(stnumber, addline, city, region);
             client.setNumbers(homeNum, workNum, mobNum, otherNum);
 
-            if (true)
+            if (true)//implement error checking flags here
             {
                 RegisterPerson(client);
 
@@ -482,21 +495,28 @@ namespace introseHHC.RegForms
         }
         private void rNextButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex++;
+            fsheet.registerClient(client.getID());
+            fsheet.registerPatient(patient.getID());
+            fsheet.setAmbWellness(ambCB.Checked);
+            fsheet.setCareTraining(ctCB.Checked);
+            fsheet.setSeniorResidential(senresCB.Checked);
+            
+            if (true)
+            {
+
+
+                tabControl1.SelectedIndex++;
+
+            }
+
+            
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == PATIENT_TAB)
-            {
-
-            }
+          
         }
 
-        private void RegisterPatientTab_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void clientSelectButton_Click(object sender, EventArgs e)
         {

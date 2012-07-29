@@ -14,6 +14,7 @@ namespace introseHHC.Objects
         private bool carTra, ambWel, senRes;
         private CostTable cost;
         private string action;
+        private DateTime effectivityDate;
 
         public FaceSheet()
         {
@@ -27,6 +28,22 @@ namespace introseHHC.Objects
             ambWel = new bool();
             senRes = new bool();
         }
+
+         public FaceSheet(int cmnum, int hvnum)
+        {
+            physicianID = 0;
+            clientID = 0;
+            patientID = 0;
+            cost = new CostTable();
+            casMan = new UInt16[cmnum];
+            homVac = new UInt16[hvnum];
+            carTra = new bool();
+            ambWel = new bool();
+            senRes = new bool();
+        }
+
+
+
         public void registerPatient(UInt16 id)
         {
             patientID = id;

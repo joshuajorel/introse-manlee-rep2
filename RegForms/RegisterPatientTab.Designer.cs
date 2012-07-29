@@ -70,6 +70,7 @@
             this.pdesigCoB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.selClearButton = new System.Windows.Forms.Button();
             this.cOtherIn = new System.Windows.Forms.TextBox();
             this.cMobileIn = new System.Windows.Forms.TextBox();
             this.cWorkIn = new System.Windows.Forms.TextBox();
@@ -117,6 +118,7 @@
             this.cdesigCoB = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.hvacCoB = new System.Windows.Forms.CheckedListBox();
             this.rNextButton = new System.Windows.Forms.Button();
             this.caseMgmtBox = new System.Windows.Forms.CheckedListBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -125,28 +127,28 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.npmdIn = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.mdNPIn = new System.Windows.Forms.TextBox();
+            this.hcnpIn = new System.Windows.Forms.TextBox();
             this.mdmealsIn = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.hcmealsIn = new System.Windows.Forms.TextBox();
             this.mdoverIn = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.hcoverIn = new System.Windows.Forms.TextBox();
             this.mdndIn = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.hcndIn = new System.Windows.Forms.TextBox();
             this.mdhpIn = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.hchpIn = new System.Windows.Forms.TextBox();
+            this.mdTranspoIn = new System.Windows.Forms.TextBox();
+            this.hcTranspoIn = new System.Windows.Forms.TextBox();
+            this.mdSomethingIn = new System.Windows.Forms.TextBox();
+            this.hcSomethingIn = new System.Windows.Forms.TextBox();
+            this.mdLWTIn = new System.Windows.Forms.TextBox();
+            this.hcLWTIn = new System.Windows.Forms.TextBox();
+            this.mdSub = new System.Windows.Forms.TextBox();
+            this.hcSub = new System.Windows.Forms.TextBox();
+            this.mdNoPaxIn = new System.Windows.Forms.TextBox();
+            this.hcNoPaxIn = new System.Windows.Forms.TextBox();
+            this.mdTotal = new System.Windows.Forms.TextBox();
+            this.hcTotal = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -158,19 +160,16 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.hvacCoB = new System.Windows.Forms.ComboBox();
             this.hvacCB = new System.Windows.Forms.CheckBox();
             this.senresCB = new System.Windows.Forms.CheckBox();
             this.ambCB = new System.Windows.Forms.CheckBox();
             this.ctCB = new System.Windows.Forms.CheckBox();
             this.caseMgmtCB = new System.Windows.Forms.CheckBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.effectPicker = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.comboBox13 = new System.Windows.Forms.ComboBox();
@@ -186,7 +185,6 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.resetButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.selClearButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -254,7 +252,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(556, 460);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Register Patient";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // pOtherIn
@@ -687,8 +685,18 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(556, 460);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Register Client";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // selClearButton
+            // 
+            this.selClearButton.Location = new System.Drawing.Point(188, 10);
+            this.selClearButton.Name = "selClearButton";
+            this.selClearButton.Size = new System.Drawing.Size(75, 23);
+            this.selClearButton.TabIndex = 123;
+            this.selClearButton.Text = "Clear";
+            this.selClearButton.UseVisualStyleBackColor = true;
+            this.selClearButton.Click += new System.EventHandler(this.selClearButton_Click);
             // 
             // cOtherIn
             // 
@@ -1101,12 +1109,12 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.hvacCoB);
             this.tabPage3.Controls.Add(this.rNextButton);
             this.tabPage3.Controls.Add(this.caseMgmtBox);
             this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.detIn);
             this.tabPage3.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage3.Controls.Add(this.hvacCoB);
             this.tabPage3.Controls.Add(this.hvacCB);
             this.tabPage3.Controls.Add(this.senresCB);
             this.tabPage3.Controls.Add(this.ambCB);
@@ -1117,8 +1125,16 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(556, 460);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Requirements";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // hvacCoB
+            // 
+            this.hvacCoB.FormattingEnabled = true;
+            this.hvacCoB.Location = new System.Drawing.Point(7, 203);
+            this.hvacCoB.Name = "hvacCoB";
+            this.hvacCoB.Size = new System.Drawing.Size(268, 79);
+            this.hvacCoB.TabIndex = 27;
             // 
             // rNextButton
             // 
@@ -1134,11 +1150,6 @@
             // 
             this.caseMgmtBox.Enabled = false;
             this.caseMgmtBox.FormattingEnabled = true;
-            this.caseMgmtBox.Items.AddRange(new object[] {
-            "Home Health Visit by HCP",
-            "Registered Nurse/Caregiver Deployment",
-            "Laboratory/Radiology",
-            "Purchase & Rental of Medical Equipment"});
             this.caseMgmtBox.Location = new System.Drawing.Point(3, 35);
             this.caseMgmtBox.Name = "caseMgmtBox";
             this.caseMgmtBox.Size = new System.Drawing.Size(272, 64);
@@ -1148,7 +1159,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(3, 229);
+            this.label27.Location = new System.Drawing.Point(6, 288);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(46, 13);
             this.label27.TabIndex = 24;
@@ -1156,10 +1167,10 @@
             // 
             // detIn
             // 
-            this.detIn.Location = new System.Drawing.Point(3, 245);
+            this.detIn.Location = new System.Drawing.Point(3, 310);
             this.detIn.Multiline = true;
             this.detIn.Name = "detIn";
-            this.detIn.Size = new System.Drawing.Size(272, 195);
+            this.detIn.Size = new System.Drawing.Size(272, 130);
             this.detIn.TabIndex = 23;
             // 
             // tableLayoutPanel1
@@ -1172,28 +1183,28 @@
             this.tableLayoutPanel1.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label29, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label30, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.npmdIn, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox31, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.mdNPIn, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.hcnpIn, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.mdmealsIn, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox33, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.hcmealsIn, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.mdoverIn, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox35, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.hcoverIn, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.mdndIn, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox37, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.hcndIn, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.mdhpIn, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox39, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox40, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox41, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox42, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox43, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox44, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox45, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox46, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox47, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox48, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.textBox49, 2, 10);
-            this.tableLayoutPanel1.Controls.Add(this.textBox50, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.textBox51, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.hchpIn, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.mdTranspoIn, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.hcTranspoIn, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.mdSomethingIn, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.hcSomethingIn, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.mdLWTIn, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.hcLWTIn, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.mdSub, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.hcSub, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.mdNoPaxIn, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.hcNoPaxIn, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.mdTotal, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.hcTotal, 2, 11);
             this.tableLayoutPanel1.Controls.Add(this.label31, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label32, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label33, 0, 3);
@@ -1254,19 +1265,19 @@
             this.label30.TabIndex = 2;
             this.label30.Text = "HCP";
             // 
-            // npmdIn
+            // mdNPIn
             // 
-            this.npmdIn.Location = new System.Drawing.Point(110, 31);
-            this.npmdIn.Name = "npmdIn";
-            this.npmdIn.Size = new System.Drawing.Size(54, 20);
-            this.npmdIn.TabIndex = 3;
+            this.mdNPIn.Location = new System.Drawing.Point(110, 31);
+            this.mdNPIn.Name = "mdNPIn";
+            this.mdNPIn.Size = new System.Drawing.Size(54, 20);
+            this.mdNPIn.TabIndex = 3;
             // 
-            // textBox31
+            // hcnpIn
             // 
-            this.textBox31.Location = new System.Drawing.Point(190, 31);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(56, 20);
-            this.textBox31.TabIndex = 4;
+            this.hcnpIn.Location = new System.Drawing.Point(190, 31);
+            this.hcnpIn.Name = "hcnpIn";
+            this.hcnpIn.Size = new System.Drawing.Size(56, 20);
+            this.hcnpIn.TabIndex = 4;
             // 
             // mdmealsIn
             // 
@@ -1275,12 +1286,12 @@
             this.mdmealsIn.Size = new System.Drawing.Size(54, 20);
             this.mdmealsIn.TabIndex = 5;
             // 
-            // textBox33
+            // hcmealsIn
             // 
-            this.textBox33.Location = new System.Drawing.Point(190, 62);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(56, 20);
-            this.textBox33.TabIndex = 6;
+            this.hcmealsIn.Location = new System.Drawing.Point(190, 62);
+            this.hcmealsIn.Name = "hcmealsIn";
+            this.hcmealsIn.Size = new System.Drawing.Size(56, 20);
+            this.hcmealsIn.TabIndex = 6;
             // 
             // mdoverIn
             // 
@@ -1289,12 +1300,12 @@
             this.mdoverIn.Size = new System.Drawing.Size(54, 20);
             this.mdoverIn.TabIndex = 7;
             // 
-            // textBox35
+            // hcoverIn
             // 
-            this.textBox35.Location = new System.Drawing.Point(190, 93);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(56, 20);
-            this.textBox35.TabIndex = 8;
+            this.hcoverIn.Location = new System.Drawing.Point(190, 93);
+            this.hcoverIn.Name = "hcoverIn";
+            this.hcoverIn.Size = new System.Drawing.Size(56, 20);
+            this.hcoverIn.TabIndex = 8;
             // 
             // mdndIn
             // 
@@ -1303,12 +1314,12 @@
             this.mdndIn.Size = new System.Drawing.Size(54, 20);
             this.mdndIn.TabIndex = 9;
             // 
-            // textBox37
+            // hcndIn
             // 
-            this.textBox37.Location = new System.Drawing.Point(190, 124);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(56, 20);
-            this.textBox37.TabIndex = 10;
+            this.hcndIn.Location = new System.Drawing.Point(190, 124);
+            this.hcndIn.Name = "hcndIn";
+            this.hcndIn.Size = new System.Drawing.Size(56, 20);
+            this.hcndIn.TabIndex = 10;
             // 
             // mdhpIn
             // 
@@ -1317,100 +1328,100 @@
             this.mdhpIn.Size = new System.Drawing.Size(54, 20);
             this.mdhpIn.TabIndex = 11;
             // 
-            // textBox39
+            // hchpIn
             // 
-            this.textBox39.Location = new System.Drawing.Point(190, 155);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(56, 20);
-            this.textBox39.TabIndex = 12;
+            this.hchpIn.Location = new System.Drawing.Point(190, 155);
+            this.hchpIn.Name = "hchpIn";
+            this.hchpIn.Size = new System.Drawing.Size(56, 20);
+            this.hchpIn.TabIndex = 12;
             // 
-            // textBox40
+            // mdTranspoIn
             // 
-            this.textBox40.Location = new System.Drawing.Point(110, 186);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(54, 20);
-            this.textBox40.TabIndex = 13;
+            this.mdTranspoIn.Location = new System.Drawing.Point(110, 186);
+            this.mdTranspoIn.Name = "mdTranspoIn";
+            this.mdTranspoIn.Size = new System.Drawing.Size(54, 20);
+            this.mdTranspoIn.TabIndex = 13;
             // 
-            // textBox41
+            // hcTranspoIn
             // 
-            this.textBox41.Location = new System.Drawing.Point(190, 186);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(56, 20);
-            this.textBox41.TabIndex = 14;
+            this.hcTranspoIn.Location = new System.Drawing.Point(190, 186);
+            this.hcTranspoIn.Name = "hcTranspoIn";
+            this.hcTranspoIn.Size = new System.Drawing.Size(56, 20);
+            this.hcTranspoIn.TabIndex = 14;
             // 
-            // textBox42
+            // mdSomethingIn
             // 
-            this.textBox42.Location = new System.Drawing.Point(110, 217);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(54, 20);
-            this.textBox42.TabIndex = 15;
+            this.mdSomethingIn.Location = new System.Drawing.Point(110, 217);
+            this.mdSomethingIn.Name = "mdSomethingIn";
+            this.mdSomethingIn.Size = new System.Drawing.Size(54, 20);
+            this.mdSomethingIn.TabIndex = 15;
             // 
-            // textBox43
+            // hcSomethingIn
             // 
-            this.textBox43.Location = new System.Drawing.Point(190, 217);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(56, 20);
-            this.textBox43.TabIndex = 16;
+            this.hcSomethingIn.Location = new System.Drawing.Point(190, 217);
+            this.hcSomethingIn.Name = "hcSomethingIn";
+            this.hcSomethingIn.Size = new System.Drawing.Size(56, 20);
+            this.hcSomethingIn.TabIndex = 16;
             // 
-            // textBox44
+            // mdLWTIn
             // 
-            this.textBox44.Location = new System.Drawing.Point(110, 248);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(54, 20);
-            this.textBox44.TabIndex = 17;
+            this.mdLWTIn.Location = new System.Drawing.Point(110, 248);
+            this.mdLWTIn.Name = "mdLWTIn";
+            this.mdLWTIn.Size = new System.Drawing.Size(54, 20);
+            this.mdLWTIn.TabIndex = 17;
             // 
-            // textBox45
+            // hcLWTIn
             // 
-            this.textBox45.Location = new System.Drawing.Point(190, 248);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(56, 20);
-            this.textBox45.TabIndex = 18;
+            this.hcLWTIn.Location = new System.Drawing.Point(190, 248);
+            this.hcLWTIn.Name = "hcLWTIn";
+            this.hcLWTIn.Size = new System.Drawing.Size(56, 20);
+            this.hcLWTIn.TabIndex = 18;
             // 
-            // textBox46
+            // mdSub
             // 
-            this.textBox46.Enabled = false;
-            this.textBox46.Location = new System.Drawing.Point(110, 279);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(54, 20);
-            this.textBox46.TabIndex = 19;
+            this.mdSub.Enabled = false;
+            this.mdSub.Location = new System.Drawing.Point(110, 279);
+            this.mdSub.Name = "mdSub";
+            this.mdSub.Size = new System.Drawing.Size(54, 20);
+            this.mdSub.TabIndex = 19;
             // 
-            // textBox47
+            // hcSub
             // 
-            this.textBox47.Enabled = false;
-            this.textBox47.Location = new System.Drawing.Point(190, 279);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(56, 20);
-            this.textBox47.TabIndex = 20;
+            this.hcSub.Enabled = false;
+            this.hcSub.Location = new System.Drawing.Point(190, 279);
+            this.hcSub.Name = "hcSub";
+            this.hcSub.Size = new System.Drawing.Size(56, 20);
+            this.hcSub.TabIndex = 20;
             // 
-            // textBox48
+            // mdNoPaxIn
             // 
-            this.textBox48.Location = new System.Drawing.Point(110, 310);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(54, 20);
-            this.textBox48.TabIndex = 21;
+            this.mdNoPaxIn.Location = new System.Drawing.Point(110, 310);
+            this.mdNoPaxIn.Name = "mdNoPaxIn";
+            this.mdNoPaxIn.Size = new System.Drawing.Size(54, 20);
+            this.mdNoPaxIn.TabIndex = 21;
             // 
-            // textBox49
+            // hcNoPaxIn
             // 
-            this.textBox49.Location = new System.Drawing.Point(190, 310);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(56, 20);
-            this.textBox49.TabIndex = 22;
+            this.hcNoPaxIn.Location = new System.Drawing.Point(190, 310);
+            this.hcNoPaxIn.Name = "hcNoPaxIn";
+            this.hcNoPaxIn.Size = new System.Drawing.Size(56, 20);
+            this.hcNoPaxIn.TabIndex = 22;
             // 
-            // textBox50
+            // mdTotal
             // 
-            this.textBox50.Enabled = false;
-            this.textBox50.Location = new System.Drawing.Point(110, 341);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(54, 20);
-            this.textBox50.TabIndex = 23;
+            this.mdTotal.Enabled = false;
+            this.mdTotal.Location = new System.Drawing.Point(110, 341);
+            this.mdTotal.Name = "mdTotal";
+            this.mdTotal.Size = new System.Drawing.Size(54, 20);
+            this.mdTotal.TabIndex = 23;
             // 
-            // textBox51
+            // hcTotal
             // 
-            this.textBox51.Enabled = false;
-            this.textBox51.Location = new System.Drawing.Point(190, 341);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(56, 20);
-            this.textBox51.TabIndex = 24;
+            this.hcTotal.Enabled = false;
+            this.hcTotal.Location = new System.Drawing.Point(190, 341);
+            this.hcTotal.Name = "hcTotal";
+            this.hcTotal.Size = new System.Drawing.Size(56, 20);
+            this.hcTotal.TabIndex = 24;
             // 
             // label31
             // 
@@ -1511,15 +1522,6 @@
             this.label41.TabIndex = 37;
             this.label41.Text = "Total";
             // 
-            // hvacCoB
-            // 
-            this.hvacCoB.Enabled = false;
-            this.hvacCoB.FormattingEnabled = true;
-            this.hvacCoB.Location = new System.Drawing.Point(18, 202);
-            this.hvacCoB.Name = "hvacCoB";
-            this.hvacCoB.Size = new System.Drawing.Size(121, 21);
-            this.hvacCoB.TabIndex = 21;
-            // 
             // hvacCB
             // 
             this.hvacCB.AutoSize = true;
@@ -1574,12 +1576,10 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.effectPicker);
             this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Controls.Add(this.textBox52);
-            this.tabPage4.Controls.Add(this.textBox53);
-            this.tabPage4.Controls.Add(this.textBox54);
             this.tabPage4.Controls.Add(this.label42);
             this.tabPage4.Controls.Add(this.textBox55);
             this.tabPage4.Controls.Add(this.comboBox13);
@@ -1597,8 +1597,15 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(556, 460);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Details";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // effectPicker
+            // 
+            this.effectPicker.Location = new System.Drawing.Point(97, 379);
+            this.effectPicker.Name = "effectPicker";
+            this.effectPicker.Size = new System.Drawing.Size(227, 20);
+            this.effectPicker.TabIndex = 38;
             // 
             // button1
             // 
@@ -1626,27 +1633,6 @@
             this.button6.TabIndex = 35;
             this.button6.Text = "Enter";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox52
-            // 
-            this.textBox52.Location = new System.Drawing.Point(245, 379);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(79, 20);
-            this.textBox52.TabIndex = 34;
-            // 
-            // textBox53
-            // 
-            this.textBox53.Location = new System.Drawing.Point(184, 379);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(55, 20);
-            this.textBox53.TabIndex = 33;
-            // 
-            // textBox54
-            // 
-            this.textBox54.Location = new System.Drawing.Point(96, 379);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(82, 20);
-            this.textBox54.TabIndex = 32;
             // 
             // label42
             // 
@@ -1779,16 +1765,6 @@
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // selClearButton
-            // 
-            this.selClearButton.Location = new System.Drawing.Point(188, 10);
-            this.selClearButton.Name = "selClearButton";
-            this.selClearButton.Size = new System.Drawing.Size(75, 23);
-            this.selClearButton.TabIndex = 123;
-            this.selClearButton.Text = "Clear";
-            this.selClearButton.UseVisualStyleBackColor = true;
-            this.selClearButton.Click += new System.EventHandler(this.selClearButton_Click);
-            // 
             // RegisterPatientTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1802,7 +1778,6 @@
             this.Name = "RegisterPatientTab";
             this.Text = "RegisterPatientTab";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterPatientTab_FormClosed);
-            this.Load += new System.EventHandler(this.RegisterPatientTab_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1887,28 +1862,28 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox npmdIn;
-        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox mdNPIn;
+        private System.Windows.Forms.TextBox hcnpIn;
         private System.Windows.Forms.TextBox mdmealsIn;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox hcmealsIn;
         private System.Windows.Forms.TextBox mdoverIn;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox hcoverIn;
         private System.Windows.Forms.TextBox mdndIn;
-        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox hcndIn;
         private System.Windows.Forms.TextBox mdhpIn;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.TextBox textBox42;
-        private System.Windows.Forms.TextBox textBox43;
-        private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox45;
-        private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.TextBox textBox47;
-        private System.Windows.Forms.TextBox textBox48;
-        private System.Windows.Forms.TextBox textBox49;
-        private System.Windows.Forms.TextBox textBox50;
-        private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox hchpIn;
+        private System.Windows.Forms.TextBox mdTranspoIn;
+        private System.Windows.Forms.TextBox hcTranspoIn;
+        private System.Windows.Forms.TextBox mdSomethingIn;
+        private System.Windows.Forms.TextBox hcSomethingIn;
+        private System.Windows.Forms.TextBox mdLWTIn;
+        private System.Windows.Forms.TextBox hcLWTIn;
+        private System.Windows.Forms.TextBox mdSub;
+        private System.Windows.Forms.TextBox hcSub;
+        private System.Windows.Forms.TextBox mdNoPaxIn;
+        private System.Windows.Forms.TextBox hcNoPaxIn;
+        private System.Windows.Forms.TextBox mdTotal;
+        private System.Windows.Forms.TextBox hcTotal;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
@@ -1920,16 +1895,12 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.ComboBox hvacCoB;
         private System.Windows.Forms.CheckBox hvacCB;
         private System.Windows.Forms.CheckBox senresCB;
         private System.Windows.Forms.CheckBox ambCB;
         private System.Windows.Forms.CheckBox ctCB;
         private System.Windows.Forms.CheckBox caseMgmtCB;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox textBox52;
-        private System.Windows.Forms.TextBox textBox53;
-        private System.Windows.Forms.TextBox textBox54;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox textBox55;
         private System.Windows.Forms.ComboBox comboBox13;
@@ -1979,5 +1950,7 @@
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Button selClearButton;
+        private System.Windows.Forms.CheckedListBox hvacCoB;
+        private System.Windows.Forms.DateTimePicker effectPicker;
     }
 }

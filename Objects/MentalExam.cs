@@ -56,12 +56,12 @@ namespace introseHHC.Objects
 
         public int getAC(int n)
         {
-            return reg[n];
+            return attCal[n];
         }
 
-        public int (int n)
+        public int getRec(int n)
         {
-            return reg[n];
+            return rec[n];
         }
 
         public int getLang(int n)
