@@ -128,7 +128,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.mdNPIn = new System.Windows.Forms.TextBox();
-            this.hcnpIn = new System.Windows.Forms.TextBox();
+            this.hcNPIn = new System.Windows.Forms.TextBox();
             this.mdmealsIn = new System.Windows.Forms.TextBox();
             this.hcmealsIn = new System.Windows.Forms.TextBox();
             this.mdoverIn = new System.Windows.Forms.TextBox();
@@ -1184,7 +1184,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label29, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label30, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.mdNPIn, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.hcnpIn, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.hcNPIn, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.mdmealsIn, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.hcmealsIn, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.mdoverIn, 1, 3);
@@ -1272,12 +1272,12 @@
             this.mdNPIn.Size = new System.Drawing.Size(54, 20);
             this.mdNPIn.TabIndex = 3;
             // 
-            // hcnpIn
+            // hcNPIn
             // 
-            this.hcnpIn.Location = new System.Drawing.Point(190, 31);
-            this.hcnpIn.Name = "hcnpIn";
-            this.hcnpIn.Size = new System.Drawing.Size(56, 20);
-            this.hcnpIn.TabIndex = 4;
+            this.hcNPIn.Location = new System.Drawing.Point(190, 31);
+            this.hcNPIn.Name = "hcNPIn";
+            this.hcNPIn.Size = new System.Drawing.Size(56, 20);
+            this.hcNPIn.TabIndex = 4;
             // 
             // mdmealsIn
             // 
@@ -1863,7 +1863,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox mdNPIn;
-        private System.Windows.Forms.TextBox hcnpIn;
+        private System.Windows.Forms.TextBox hcNPIn;
         private System.Windows.Forms.TextBox mdmealsIn;
         private System.Windows.Forms.TextBox hcmealsIn;
         private System.Windows.Forms.TextBox mdoverIn;

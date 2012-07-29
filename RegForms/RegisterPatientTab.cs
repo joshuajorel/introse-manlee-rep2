@@ -30,8 +30,10 @@ namespace introseHHC.RegForms
         private Patient patient;
         private Client  client;
         private FaceSheet fsheet;
+        private CostTable cost;
 
         private UInt16 selID;
+        
         private string desig;
         private string fname;
         private string sname;
@@ -59,8 +61,13 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
 
-            server = "localhost";
-            user = "root";
+            patient = new Patient();
+            client  = new Client();
+            fsheet  = new FaceSheet();
+            cost    = new CostTable();
+
+            server   = "localhost";
+            user     = "root";
             database = "hhc-db";
             password = "root";
 
@@ -98,18 +105,18 @@ namespace introseHHC.RegForms
 
                 read.Close();
                 //INTITIALIZE FACE SHEET
-                query = "SELECT COUNT(*) FROM CASE_MGMT_REF;";
+                query           = "SELECT COUNT(*) FROM CASE_MGMT_REF;";
                 cmd.CommandText = query;
-                read = cmd.ExecuteReader();
+                read            = cmd.ExecuteReader();
 
                 read.Read();
                 cmnum = read.GetInt16(0);
                 Console.WriteLine("Number of CM Items: {0}",cmnum);
                 read.Close();
 
-                query = "SELECT COUNT(*) FROM HVAC_REF;";
+                query           = "SELECT COUNT(*) FROM HVAC_REF;";
                 cmd.CommandText = query;
-                read = cmd.ExecuteReader();
+                read            = cmd.ExecuteReader();
 
                 read.Read();
                 hvnum = read.GetInt16(0);
@@ -118,8 +125,7 @@ namespace introseHHC.RegForms
 
                 CloseConnection();
 
-                patient = new Patient();
-                client = new Client();
+
                 fsheet = new FaceSheet(cmnum, hvnum);
             }
      
@@ -270,7 +276,10 @@ namespace introseHHC.RegForms
 
             //Patient Tab
             //get all the values in the fields & perform error checking
-            //commands below execute only when the Patient Information Tab is selected.
+            //currently, clicking this button will register the Patient details into
+            //the database. Will change this in the future so that if the user cancels the
+            //registration, all table entries related to the cancelled registration
+            //will be removed from the database.
 
             desig = pdesigCoB.Text;
             fname = pfnameIn.Text;
@@ -283,11 +292,11 @@ namespace introseHHC.RegForms
             //following fields must not be blank
             try
             {
-                gender = pgenCoB.Text;
+                gender      = pgenCoB.Text;
                 nationality = pnatIn.Text;
-                religion = prelIn.Text;
-                civstat = pcivStatCoB.Text;
-                educattain = pedattCoB.Text;
+                religion    = prelIn.Text;
+                civstat     = pcivStatCoB.Text;
+                educattain  = pedattCoB.Text;
             }
             catch (Exception err)
             {
@@ -296,8 +305,8 @@ namespace introseHHC.RegForms
 
             //fields for address. must not be blank!
             addline = paddlineIn.Text;
-            city = pcityIn.Text;
-            region = pregIn.Text;
+            city    = pcityIn.Text;
+            region  = pregIn.Text;
 
             try
             {
@@ -314,9 +323,9 @@ namespace introseHHC.RegForms
 
             try
             {
-                workNum = UInt16.Parse(pWorkIn.Text);
-                homeNum = UInt16.Parse(pHomeIn.Text);
-                mobNum = UInt16.Parse(pMobileIn.Text);
+                workNum  = UInt16.Parse(pWorkIn.Text);
+                homeNum  = UInt16.Parse(pHomeIn.Text);
+                mobNum   = UInt16.Parse(pMobileIn.Text);
                 otherNum = UInt16.Parse(pOtherIn.Text);
             }
             catch (Exception err)
@@ -495,17 +504,87 @@ namespace introseHHC.RegForms
         }
         private void rNextButton_Click(object sender, EventArgs e)
         {
+            float np, m, o, nd, h, t, s, lwt, pax;
+
             fsheet.registerClient(client.getID());
             fsheet.registerPatient(patient.getID());
             fsheet.setAmbWellness(ambCB.Checked);
             fsheet.setCareTraining(ctCB.Checked);
             fsheet.setSeniorResidential(senresCB.Checked);
+
+      //initialize cost table parameters
+            try
+            {  //get MD Parameters first
+                np  = float.Parse(mdNPIn.Text);
+                m   = float.Parse(mdmealsIn.Text);
+                o   = float.Parse(mdoverIn.Text);
+                nd  = float.Parse(mdndIn.Text);
+                h   = float.Parse(mdhpIn.Text);
+                t   = float.Parse(mdTranspoIn.Text);
+                s   = float.Parse(mdSomethingIn.Text);
+                lwt = float.Parse(mdLWTIn.Text);
+                pax = float.Parse(mdNoPaxIn.Text);
+
+                cost.setMDParams(np,m,o,nd,h,t,s,lwt,pax);
+                
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Cost Table Field Error(MD): "+err.Message);
+            }
+            
+            try
+            { //get MD Parameters first
+                np = float.Parse(hcNPIn.Text);
+                m = float.Parse(hcmealsIn.Text);
+                o = float.Parse(hcoverIn.Text);
+                nd = float.Parse(hcndIn.Text);
+                h = float.Parse(hchpIn.Text);
+                t = float.Parse(hcTranspoIn.Text);
+                s = float.Parse(hcSomethingIn.Text);
+                lwt = float.Parse(hcLWTIn.Text);
+                pax = float.Parse(hcNoPaxIn.Text);
+
+                cost.setHCParams(np, m, o, nd, h, t, s, lwt, pax);
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Cost Table Field Error(HCP): " + err.Message);
+            }
+
             
             if (true)
             {
+                if (OpenConnection())
+                {
+                    string query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES) " +
+                    "VALUES (@pid,@cid,@ct,@a,@s)";
+                    cmd.CommandText = query;
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@pid", fsheet.PatientID);
+                    cmd.Parameters.AddWithValue("@cid", fsheet.ClientID);
+                    cmd.Parameters.AddWithValue("@ct", fsheet.CarTra);
+                    cmd.Parameters.AddWithValue("@a", fsheet.AmbWel);
+                    cmd.Parameters.AddWithValue("@s", fsheet.SenRes);
 
+                    cmd.ExecuteNonQuery();
 
-                tabControl1.SelectedIndex++;
+                    query = "SELECT LAST_INSERT_ID() FROM FACESHEET;";
+                    cmd.CommandText = query;
+
+                    read = cmd.ExecuteReader();
+
+                    read.Read();
+
+                    fsheet.FID = UInt16.Parse(read.GetDecimal(0).ToString());
+
+                    read.Close();
+
+                    CloseConnection();
+                    tabControl1.SelectedIndex++;
+                }
+
+                
 
             }
 

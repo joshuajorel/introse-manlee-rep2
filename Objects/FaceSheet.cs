@@ -7,11 +7,49 @@ namespace introseHHC.Objects
 {
     class FaceSheet
     {
+        private UInt16 fID;
+        public UInt16 FID
+        {
+            get { return fID; }
+            set { fID = value; }
+        }
         private UInt16 patientID;
+        public UInt16 PatientID
+        {
+            get { return patientID; }
+            set { patientID = value; }
+        }
         private UInt16 clientID;
+        public UInt16 ClientID
+        {
+            get { return clientID; }
+            set { clientID = value; }
+        }
         private UInt16 physicianID;
+        public UInt16 PhysicianID
+        {
+            get { return physicianID; }
+            set { physicianID = value; }
+        }
         private UInt16[] casMan, homVac;
-        private bool carTra, ambWel, senRes;
+        private bool carTra;
+        public bool CarTra
+        {
+            get { return carTra; }
+            set { carTra = value; }
+        }
+        private bool ambWel;
+        public bool AmbWel
+        {
+            get { return ambWel; }
+            set { ambWel = value; }
+        }
+        private bool senRes;
+        public bool SenRes
+        {
+            get { return senRes; }
+            set { senRes = value; }
+        }
         private CostTable cost;
         private string action;
         private DateTime effectivityDate;
