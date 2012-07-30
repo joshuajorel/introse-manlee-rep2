@@ -112,7 +112,7 @@ namespace introseHHC.Objects
             me = m;
         }
 
-        public void setNu(Nutrition M)
+        public void setNu(Nutrition n)
         {
             nu = n;
         }
