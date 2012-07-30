@@ -8,8 +8,8 @@ namespace introseHHC.Objects
     class CGA
     {
         private Patient patient;
-        private String insurance;
         private Physician physician;
+        private String insurance;
         private String prefPlaCon;
         private PersonalHistory ph;
         private FamilyHistory fh;
@@ -29,6 +29,17 @@ namespace introseHHC.Objects
         {
             patient = new Patient();
             physician = new Physician();
+            ph = new PersonalHistory();
+            fh = new FamilyHistory();
+            se = new SocialEnvironment();
+            mh = new MedicalHistory();
+            ml = new MedicationList();
+            im = new Immunization();
+            fs = new FunctionalStatus();
+            gd = new GDScales();
+            me = new MentalExam();
+            nu = new Nutrition();
+            ca = new CGiverAssess();
         }
 
         public void setPat(Patient pat)
@@ -55,7 +66,61 @@ namespace introseHHC.Objects
         {
             cgaId = cid;
         }
-     
+
+        public void setPH(PersonalHistory p)
+        {
+            ph = p;
+        }
+
+        public void setFH(FamilyHistory f)
+        {
+            fh = f;
+        }
+
+        public void setSE(SocialEnvironment s)
+        {
+            se = s;
+        }
+
+        public void setMH(MedicalHistory m)
+        {
+            mh = m;
+        }
+
+        public void setML(MedicationList m)
+        {
+            ml = m;
+        }
+
+        public void setIm(Immunization i)
+        {
+            im = i;
+        }
+
+        public void setFS(FunctionalStatus f)
+        {
+            fs = f;
+        }
+
+        public void setGD(GDScales g)
+        {
+            gd = g;
+        }
+
+        public void setME(MentalExam m)
+        {
+            me = m;
+        }
+
+        public void setNu(Nutrition M)
+        {
+            nu = n;
+        }
+
+        public void setCAss(CGiverAssess c)
+        {
+            ca = c;
+        }
 
     }
 }

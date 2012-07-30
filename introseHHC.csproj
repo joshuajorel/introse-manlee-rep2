@@ -124,7 +124,7 @@
     <Compile Include="RegForms\RegisterPatientTab.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegForms\RegisterPatientTab.Designer.cs">
+    <Compile Include="RegForms\RegisterPatientTab.designer.cs">
       <DependentUpon>RegisterPatientTab.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\ViewCGA.cs">

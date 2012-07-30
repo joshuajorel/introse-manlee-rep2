@@ -1,4 +1,4 @@
-﻿namespace introseHHC.RegForms
+namespace introseHHC.RegForms
 {
     partial class RegisterPatientTab
     {
