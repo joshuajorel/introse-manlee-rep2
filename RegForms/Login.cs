@@ -38,7 +38,7 @@ namespace introseHHC.RegForms
 
             if (OpenConnection())
             {
-                MainMenu mm = new MainMenu(user, pass, this);
+                MainMenu mm = new MainMenu(this);
                 this.Hide();
                 mm.Show();
                 CloseConnection();
@@ -82,6 +82,11 @@ namespace introseHHC.RegForms
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void clearPass()
+        {
+            textBox2.Text = "";
         }
     }
 }

@@ -17,11 +17,9 @@ namespace introseHHC.RegForms
         private string user, pass;
         private Login li;
 
-        public MainMenu(string u, string p, Login l)
+        public MainMenu(Login l)
         {
             InitializeComponent();
-            user = u;
-            pass = p;
             li = l;
         }
 
@@ -46,6 +44,7 @@ namespace introseHHC.RegForms
         {
             this.Close();
             li.Show();
+            li.clearPass();
         }
 
 
