@@ -378,7 +378,7 @@ namespace introseHHC.RegForms
                 gender = cgenCoB.Text;
                 nationality = cnatIn.Text;
                 religion = crelIn.Text;
-                civstat = ccivstatCoB.SelectedText;
+                civstat = ccivstatCoB.Text;
                 educattain = cedattCoB.Text;
             }
             catch (Exception err)

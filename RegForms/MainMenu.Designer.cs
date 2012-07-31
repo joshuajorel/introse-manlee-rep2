@@ -52,7 +52,7 @@
             this.manageRecButton.TabIndex = 12;
             this.manageRecButton.Text = "Manage Records";
             this.manageRecButton.UseVisualStyleBackColor = true;
-            this.manageRecButton.Click += new System.EventHandler(this.button2_Click);
+            this.manageRecButton.Click += new System.EventHandler(this.manageRecButton_Click);
             // 
             // button1
             // 

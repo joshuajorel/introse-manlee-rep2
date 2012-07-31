@@ -20,17 +20,17 @@ namespace introseHHC {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("getPatientDetailsDB")]
+    [global::System.Xml.Serialization.XmlRootAttribute("getClientDetailsDB")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class getPatientDetailsDB : global::System.Data.DataSet {
+    public partial class getClientDetailsDB : global::System.Data.DataSet {
         
-        private getPatientDetailsDataTable tablegetPatientDetails;
+        private getClientDetailsDataTable tablegetClientDetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public getPatientDetailsDB() {
+        public getClientDetailsDB() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace introseHHC {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected getPatientDetailsDB(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected getClientDetailsDB(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace introseHHC {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["getPatientDetails"] != null)) {
-                    base.Tables.Add(new getPatientDetailsDataTable(ds.Tables["getPatientDetails"]));
+                if ((ds.Tables["getClientDetails"] != null)) {
+                    base.Tables.Add(new getClientDetailsDataTable(ds.Tables["getClientDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace introseHHC {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public getPatientDetailsDataTable getPatientDetails {
+        public getClientDetailsDataTable getClientDetails {
             get {
-                return this.tablegetPatientDetails;
+                return this.tablegetClientDetails;
             }
         }
         
@@ -127,7 +127,7 @@ namespace introseHHC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            getPatientDetailsDB cln = ((getPatientDetailsDB)(base.Clone()));
+            getClientDetailsDB cln = ((getClientDetailsDB)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace introseHHC {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["getPatientDetails"] != null)) {
-                    base.Tables.Add(new getPatientDetailsDataTable(ds.Tables["getPatientDetails"]));
+                if ((ds.Tables["getClientDetails"] != null)) {
+                    base.Tables.Add(new getClientDetailsDataTable(ds.Tables["getClientDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace introseHHC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablegetPatientDetails = ((getPatientDetailsDataTable)(base.Tables["getPatientDetails"]));
+            this.tablegetClientDetails = ((getClientDetailsDataTable)(base.Tables["getClientDetails"]));
             if ((initTable == true)) {
-                if ((this.tablegetPatientDetails != null)) {
-                    this.tablegetPatientDetails.InitVars();
+                if ((this.tablegetClientDetails != null)) {
+                    this.tablegetClientDetails.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace introseHHC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "getPatientDetailsDB";
+            this.DataSetName = "getClientDetailsDB";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/getPatientDetailsDB.xsd";
+            this.Namespace = "http://tempuri.org/getClientDetailsDB.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablegetPatientDetails = new getPatientDetailsDataTable();
-            base.Tables.Add(this.tablegetPatientDetails);
+            this.tablegetClientDetails = new getClientDetailsDataTable();
+            base.Tables.Add(this.tablegetClientDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializegetPatientDetails() {
+        private bool ShouldSerializegetClientDetails() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace introseHHC {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            getPatientDetailsDB ds = new getPatientDetailsDB();
+            getClientDetailsDB ds = new getClientDetailsDB();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace introseHHC {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void getPatientDetailsRowChangeEventHandler(object sender, getPatientDetailsRowChangeEvent e);
+        public delegate void getClientDetailsRowChangeEventHandler(object sender, getClientDetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class getPatientDetailsDataTable : global::System.Data.TypedTableBase<getPatientDetailsRow> {
+        public partial class getClientDetailsDataTable : global::System.Data.TypedTableBase<getClientDetailsRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -289,8 +289,8 @@ namespace introseHHC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsDataTable() {
-                this.TableName = "getPatientDetails";
+            public getClientDetailsDataTable() {
+                this.TableName = "getClientDetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +298,7 @@ namespace introseHHC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal getPatientDetailsDataTable(global::System.Data.DataTable table) {
+            internal getClientDetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,7 +315,7 @@ namespace introseHHC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected getPatientDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected getClientDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -363,55 +363,48 @@ namespace introseHHC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsRow this[int index] {
+            public getClientDetailsRow this[int index] {
                 get {
-                    return ((getPatientDetailsRow)(this.Rows[index]));
+                    return ((getClientDetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event getPatientDetailsRowChangeEventHandler getPatientDetailsRowChanging;
+            public event getClientDetailsRowChangeEventHandler getClientDetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event getPatientDetailsRowChangeEventHandler getPatientDetailsRowChanged;
+            public event getClientDetailsRowChangeEventHandler getClientDetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event getPatientDetailsRowChangeEventHandler getPatientDetailsRowDeleting;
+            public event getClientDetailsRowChangeEventHandler getClientDetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event getPatientDetailsRowChangeEventHandler getPatientDetailsRowDeleted;
+            public event getClientDetailsRowChangeEventHandler getClientDetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddgetPatientDetailsRow(getPatientDetailsRow row) {
+            public void AddgetClientDetailsRow(getClientDetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsRow AddgetPatientDetailsRow(uint ID, string First_Name, string Middle_Name, string Surname) {
-                getPatientDetailsRow rowgetPatientDetailsRow = ((getPatientDetailsRow)(this.NewRow()));
+            public getClientDetailsRow AddgetClientDetailsRow(uint ID, string First_Name, string Middle_Name, string Surname) {
+                getClientDetailsRow rowgetClientDetailsRow = ((getClientDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         First_Name,
                         Middle_Name,
                         Surname};
-                rowgetPatientDetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowgetPatientDetailsRow);
-                return rowgetPatientDetailsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsRow FindByID(uint ID) {
-                return ((getPatientDetailsRow)(this.Rows.Find(new object[] {
-                            ID})));
+                rowgetClientDetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowgetClientDetailsRow);
+                return rowgetClientDetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                getPatientDetailsDataTable cln = ((getPatientDetailsDataTable)(base.Clone()));
+                getClientDetailsDataTable cln = ((getClientDetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,7 +412,7 @@ namespace introseHHC {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new getPatientDetailsDataTable();
+                return new getClientDetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -443,8 +436,7 @@ namespace introseHHC {
                 this.columnSurname = new global::System.Data.DataColumn("Surname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSurname);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
+                                this.columnID}, false));
                 this.columnID.Unique = true;
                 this.columnFirst_Name.MaxLength = 45;
                 this.columnMiddle_Name.MaxLength = 45;
@@ -453,28 +445,28 @@ namespace introseHHC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsRow NewgetPatientDetailsRow() {
-                return ((getPatientDetailsRow)(this.NewRow()));
+            public getClientDetailsRow NewgetClientDetailsRow() {
+                return ((getClientDetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new getPatientDetailsRow(builder);
+                return new getClientDetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(getPatientDetailsRow);
+                return typeof(getClientDetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.getPatientDetailsRowChanged != null)) {
-                    this.getPatientDetailsRowChanged(this, new getPatientDetailsRowChangeEvent(((getPatientDetailsRow)(e.Row)), e.Action));
+                if ((this.getClientDetailsRowChanged != null)) {
+                    this.getClientDetailsRowChanged(this, new getClientDetailsRowChangeEvent(((getClientDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +474,8 @@ namespace introseHHC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.getPatientDetailsRowChanging != null)) {
-                    this.getPatientDetailsRowChanging(this, new getPatientDetailsRowChangeEvent(((getPatientDetailsRow)(e.Row)), e.Action));
+                if ((this.getClientDetailsRowChanging != null)) {
+                    this.getClientDetailsRowChanging(this, new getClientDetailsRowChangeEvent(((getClientDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,8 +483,8 @@ namespace introseHHC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.getPatientDetailsRowDeleted != null)) {
-                    this.getPatientDetailsRowDeleted(this, new getPatientDetailsRowChangeEvent(((getPatientDetailsRow)(e.Row)), e.Action));
+                if ((this.getClientDetailsRowDeleted != null)) {
+                    this.getClientDetailsRowDeleted(this, new getClientDetailsRowChangeEvent(((getClientDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,14 +492,14 @@ namespace introseHHC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.getPatientDetailsRowDeleting != null)) {
-                    this.getPatientDetailsRowDeleting(this, new getPatientDetailsRowChangeEvent(((getPatientDetailsRow)(e.Row)), e.Action));
+                if ((this.getClientDetailsRowDeleting != null)) {
+                    this.getClientDetailsRowDeleting(this, new getClientDetailsRowChangeEvent(((getClientDetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovegetPatientDetailsRow(getPatientDetailsRow row) {
+            public void RemovegetClientDetailsRow(getClientDetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -516,7 +508,7 @@ namespace introseHHC {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                getPatientDetailsDB ds = new getPatientDetailsDB();
+                getClientDetailsDB ds = new getClientDetailsDB();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -534,7 +526,7 @@ namespace introseHHC {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "getPatientDetailsDataTable";
+                attribute2.FixedValue = "getClientDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -578,25 +570,30 @@ namespace introseHHC {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class getPatientDetailsRow : global::System.Data.DataRow {
+        public partial class getClientDetailsRow : global::System.Data.DataRow {
             
-            private getPatientDetailsDataTable tablegetPatientDetails;
+            private getClientDetailsDataTable tablegetClientDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal getPatientDetailsRow(global::System.Data.DataRowBuilder rb) : 
+            internal getClientDetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablegetPatientDetails = ((getPatientDetailsDataTable)(this.Table));
+                this.tablegetClientDetails = ((getClientDetailsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public uint ID {
                 get {
-                    return ((uint)(this[this.tablegetPatientDetails.IDColumn]));
+                    try {
+                        return ((uint)(this[this.tablegetClientDetails.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'getClientDetails\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablegetPatientDetails.IDColumn] = value;
+                    this[this.tablegetClientDetails.IDColumn] = value;
                 }
             }
             
@@ -605,14 +602,14 @@ namespace introseHHC {
             public string First_Name {
                 get {
                     try {
-                        return ((string)(this[this.tablegetPatientDetails.First_NameColumn]));
+                        return ((string)(this[this.tablegetClientDetails.First_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'First Name\' in table \'getPatientDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'First Name\' in table \'getClientDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegetPatientDetails.First_NameColumn] = value;
+                    this[this.tablegetClientDetails.First_NameColumn] = value;
                 }
             }
             
@@ -621,14 +618,14 @@ namespace introseHHC {
             public string Middle_Name {
                 get {
                     try {
-                        return ((string)(this[this.tablegetPatientDetails.Middle_NameColumn]));
+                        return ((string)(this[this.tablegetClientDetails.Middle_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Middle Name\' in table \'getPatientDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Middle Name\' in table \'getClientDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegetPatientDetails.Middle_NameColumn] = value;
+                    this[this.tablegetClientDetails.Middle_NameColumn] = value;
                 }
             }
             
@@ -637,51 +634,63 @@ namespace introseHHC {
             public string Surname {
                 get {
                     try {
-                        return ((string)(this[this.tablegetPatientDetails.SurnameColumn]));
+                        return ((string)(this[this.tablegetClientDetails.SurnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Surname\' in table \'getPatientDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Surname\' in table \'getClientDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegetPatientDetails.SurnameColumn] = value;
+                    this[this.tablegetClientDetails.SurnameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tablegetClientDetails.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIDNull() {
+                this[this.tablegetClientDetails.IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFirst_NameNull() {
-                return this.IsNull(this.tablegetPatientDetails.First_NameColumn);
+                return this.IsNull(this.tablegetClientDetails.First_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFirst_NameNull() {
-                this[this.tablegetPatientDetails.First_NameColumn] = global::System.Convert.DBNull;
+                this[this.tablegetClientDetails.First_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMiddle_NameNull() {
-                return this.IsNull(this.tablegetPatientDetails.Middle_NameColumn);
+                return this.IsNull(this.tablegetClientDetails.Middle_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMiddle_NameNull() {
-                this[this.tablegetPatientDetails.Middle_NameColumn] = global::System.Convert.DBNull;
+                this[this.tablegetClientDetails.Middle_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSurnameNull() {
-                return this.IsNull(this.tablegetPatientDetails.SurnameColumn);
+                return this.IsNull(this.tablegetClientDetails.SurnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSurnameNull() {
-                this[this.tablegetPatientDetails.SurnameColumn] = global::System.Convert.DBNull;
+                this[this.tablegetClientDetails.SurnameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -689,22 +698,22 @@ namespace introseHHC {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class getPatientDetailsRowChangeEvent : global::System.EventArgs {
+        public class getClientDetailsRowChangeEvent : global::System.EventArgs {
             
-            private getPatientDetailsRow eventRow;
+            private getClientDetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsRowChangeEvent(getPatientDetailsRow row, global::System.Data.DataRowAction action) {
+            public getClientDetailsRowChangeEvent(getClientDetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public getPatientDetailsRow Row {
+            public getClientDetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -720,7 +729,7 @@ namespace introseHHC {
         }
     }
 }
-namespace introseHHC.getPatientDetailsDBTableAdapters {
+namespace introseHHC.getClientDetailsDBTableAdapters {
     
     
     /// <summary>
@@ -732,7 +741,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class getPatientDetailsTableAdapter : global::System.ComponentModel.Component {
+    public partial class getClientDetailsTableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
@@ -746,7 +755,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public getPatientDetailsTableAdapter() {
+        public getClientDetailsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -843,7 +852,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "getPatientDetails";
+            tableMapping.DataSetTable = "getClientDetails";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("First Name", "First Name");
             tableMapping.ColumnMappings.Add("Middle Name", "Middle Name");
@@ -864,7 +873,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "`hhc-db`.`getPatientDetails`";
+            this._commandCollection[0].CommandText = "`hhc-db`.`getClientDetails`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
         }
         
@@ -872,7 +881,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(getPatientDetailsDB.getPatientDetailsDataTable dataTable) {
+        public virtual int Fill(getClientDetailsDB.getClientDetailsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -885,9 +894,9 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual getPatientDetailsDB.getPatientDetailsDataTable GetData() {
+        public virtual getClientDetailsDB.getClientDetailsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            getPatientDetailsDB.getPatientDetailsDataTable dataTable = new getPatientDetailsDB.getPatientDetailsDataTable();
+            getClientDetailsDB.getClientDetailsDataTable dataTable = new getClientDetailsDB.getClientDetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -961,7 +970,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(getPatientDetailsDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(getClientDetailsDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -971,7 +980,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(getPatientDetailsDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(getClientDetailsDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -981,7 +990,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(getPatientDetailsDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(getClientDetailsDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1015,7 +1024,7 @@ namespace introseHHC.getPatientDetailsDBTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(getPatientDetailsDB dataSet) {
+        public virtual int UpdateAll(getClientDetailsDB dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

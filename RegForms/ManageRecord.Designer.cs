@@ -49,27 +49,16 @@
             this.getPatientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.civStatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.educAttainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.homeNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otherNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.regionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getClientDetailsDB = new introseHHC.getClientDetailsDB();
+            this.getClientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -132,37 +123,20 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
-            this.designationDataGridViewTextBoxColumn,
-            this.sNameDataGridViewTextBoxColumn,
-            this.fNameDataGridViewTextBoxColumn,
-            this.mNameDataGridViewTextBoxColumn,
-            this.bDateDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.civStatDataGridViewTextBoxColumn,
-            this.nationalityDataGridViewTextBoxColumn,
-            this.religionDataGridViewTextBoxColumn,
-            this.educAttainDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.homeNumDataGridViewTextBoxColumn,
-            this.workNumDataGridViewTextBoxColumn,
-            this.mobNumDataGridViewTextBoxColumn,
-            this.otherNumDataGridViewTextBoxColumn,
-            this.stNumDataGridViewTextBoxColumn,
-            this.addLineDataGridViewTextBoxColumn,
-            this.cityDataGridViewTextBoxColumn,
-            this.regionDataGridViewTextBoxColumn,
-            this.patIDDataGridViewTextBoxColumn});
+            this.firstNameDataGridViewTextBoxColumn,
+            this.middleNameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.getPatientDetailsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 61);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(544, 391);
             this.dataGridView1.TabIndex = 0;
-           
             // 
             // tabPage2
             // 
@@ -195,9 +169,19 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn1,
+            this.firstNameDataGridViewTextBoxColumn1,
+            this.middleNameDataGridViewTextBoxColumn1,
+            this.surnameDataGridViewTextBoxColumn1});
+            this.dataGridView2.DataSource = this.getClientDetailsBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(3, 62);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(544, 392);
             this.dataGridView2.TabIndex = 1;
             // 
@@ -232,9 +216,12 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(3, 55);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(544, 402);
             this.dataGridView3.TabIndex = 1;
             // 
@@ -275,132 +262,70 @@
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // designationDataGridViewTextBoxColumn
+            // firstNameDataGridViewTextBoxColumn
             // 
-            this.designationDataGridViewTextBoxColumn.DataPropertyName = "Designation";
-            this.designationDataGridViewTextBoxColumn.HeaderText = "Designation";
-            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // sNameDataGridViewTextBoxColumn
+            // middleNameDataGridViewTextBoxColumn
             // 
-            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "SName";
-            this.sNameDataGridViewTextBoxColumn.HeaderText = "SName";
-            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // fNameDataGridViewTextBoxColumn
+            // surnameDataGridViewTextBoxColumn
             // 
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // mNameDataGridViewTextBoxColumn
+            // getClientDetailsDB
             // 
-            this.mNameDataGridViewTextBoxColumn.DataPropertyName = "MName";
-            this.mNameDataGridViewTextBoxColumn.HeaderText = "MName";
-            this.mNameDataGridViewTextBoxColumn.Name = "mNameDataGridViewTextBoxColumn";
+            this.getClientDetailsDB.DataSetName = "getClientDetailsDB";
+            this.getClientDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bDateDataGridViewTextBoxColumn
+            // getClientDetailsBindingSource
             // 
-            this.bDateDataGridViewTextBoxColumn.DataPropertyName = "BDate";
-            this.bDateDataGridViewTextBoxColumn.HeaderText = "BDate";
-            this.bDateDataGridViewTextBoxColumn.Name = "bDateDataGridViewTextBoxColumn";
+            this.getClientDetailsBindingSource.DataMember = "getClientDetails";
+            this.getClientDetailsBindingSource.DataSource = this.getClientDetailsDB;
             // 
-            // ageDataGridViewTextBoxColumn
+            // getClientDetailsTableAdapter
             // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.getClientDetailsTableAdapter.ClearBeforeFill = true;
             // 
-            // genderDataGridViewTextBoxColumn
+            // iDDataGridViewTextBoxColumn1
             // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // civStatDataGridViewTextBoxColumn
+            // firstNameDataGridViewTextBoxColumn1
             // 
-            this.civStatDataGridViewTextBoxColumn.DataPropertyName = "CivStat";
-            this.civStatDataGridViewTextBoxColumn.HeaderText = "CivStat";
-            this.civStatDataGridViewTextBoxColumn.Name = "civStatDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+            this.firstNameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // nationalityDataGridViewTextBoxColumn
+            // middleNameDataGridViewTextBoxColumn1
             // 
-            this.nationalityDataGridViewTextBoxColumn.DataPropertyName = "Nationality";
-            this.nationalityDataGridViewTextBoxColumn.HeaderText = "Nationality";
-            this.nationalityDataGridViewTextBoxColumn.Name = "nationalityDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn1.DataPropertyName = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn1.HeaderText = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn1.Name = "middleNameDataGridViewTextBoxColumn1";
+            this.middleNameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // religionDataGridViewTextBoxColumn
+            // surnameDataGridViewTextBoxColumn1
             // 
-            this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
-            this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
-            this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
-            // 
-            // educAttainDataGridViewTextBoxColumn
-            // 
-            this.educAttainDataGridViewTextBoxColumn.DataPropertyName = "EducAttain";
-            this.educAttainDataGridViewTextBoxColumn.HeaderText = "EducAttain";
-            this.educAttainDataGridViewTextBoxColumn.Name = "educAttainDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // homeNumDataGridViewTextBoxColumn
-            // 
-            this.homeNumDataGridViewTextBoxColumn.DataPropertyName = "HomeNum";
-            this.homeNumDataGridViewTextBoxColumn.HeaderText = "HomeNum";
-            this.homeNumDataGridViewTextBoxColumn.Name = "homeNumDataGridViewTextBoxColumn";
-            // 
-            // workNumDataGridViewTextBoxColumn
-            // 
-            this.workNumDataGridViewTextBoxColumn.DataPropertyName = "WorkNum";
-            this.workNumDataGridViewTextBoxColumn.HeaderText = "WorkNum";
-            this.workNumDataGridViewTextBoxColumn.Name = "workNumDataGridViewTextBoxColumn";
-            // 
-            // mobNumDataGridViewTextBoxColumn
-            // 
-            this.mobNumDataGridViewTextBoxColumn.DataPropertyName = "MobNum";
-            this.mobNumDataGridViewTextBoxColumn.HeaderText = "MobNum";
-            this.mobNumDataGridViewTextBoxColumn.Name = "mobNumDataGridViewTextBoxColumn";
-            // 
-            // otherNumDataGridViewTextBoxColumn
-            // 
-            this.otherNumDataGridViewTextBoxColumn.DataPropertyName = "OtherNum";
-            this.otherNumDataGridViewTextBoxColumn.HeaderText = "OtherNum";
-            this.otherNumDataGridViewTextBoxColumn.Name = "otherNumDataGridViewTextBoxColumn";
-            // 
-            // stNumDataGridViewTextBoxColumn
-            // 
-            this.stNumDataGridViewTextBoxColumn.DataPropertyName = "StNum";
-            this.stNumDataGridViewTextBoxColumn.HeaderText = "StNum";
-            this.stNumDataGridViewTextBoxColumn.Name = "stNumDataGridViewTextBoxColumn";
-            // 
-            // addLineDataGridViewTextBoxColumn
-            // 
-            this.addLineDataGridViewTextBoxColumn.DataPropertyName = "AddLine";
-            this.addLineDataGridViewTextBoxColumn.HeaderText = "AddLine";
-            this.addLineDataGridViewTextBoxColumn.Name = "addLineDataGridViewTextBoxColumn";
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            // 
-            // regionDataGridViewTextBoxColumn
-            // 
-            this.regionDataGridViewTextBoxColumn.DataPropertyName = "Region";
-            this.regionDataGridViewTextBoxColumn.HeaderText = "Region";
-            this.regionDataGridViewTextBoxColumn.Name = "regionDataGridViewTextBoxColumn";
-            // 
-            // patIDDataGridViewTextBoxColumn
-            // 
-            this.patIDDataGridViewTextBoxColumn.DataPropertyName = "PatID";
-            this.patIDDataGridViewTextBoxColumn.HeaderText = "PatID";
-            this.patIDDataGridViewTextBoxColumn.Name = "patIDDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
+            this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // ManageRecord
             // 
@@ -426,6 +351,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,27 +379,16 @@
         private System.Windows.Forms.BindingSource getPatientDetailsBindingSource;
         private getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter getPatientDetailsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn designationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn civStatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nationalityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn religionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn educAttainDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn homeNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn otherNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addLineDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn regionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private getClientDetailsDB getClientDetailsDB;
+        private System.Windows.Forms.BindingSource getClientDetailsBindingSource;
+        private getClientDetailsDBTableAdapters.getClientDetailsTableAdapter getClientDetailsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
 
     }
 }

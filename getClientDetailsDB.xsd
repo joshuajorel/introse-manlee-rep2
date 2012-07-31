@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="getPatientDetailsDB" targetNamespace="http://tempuri.org/getPatientDetailsDB.xsd" xmlns:mstns="http://tempuri.org/getPatientDetailsDB.xsd" xmlns="http://tempuri.org/getPatientDetailsDB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="getClientDetailsDB" targetNamespace="http://tempuri.org/getClientDetailsDB.xsd" xmlns:mstns="http://tempuri.org/getClientDetailsDB.xsd" xmlns="http://tempuri.org/getClientDetailsDB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -7,12 +7,12 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hhc_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hhc_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.introseHHC.Properties.Settings.GlobalReference.Default.hhc_dbConnectionString" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getPatientDetailsTableAdapter" GeneratorDataComponentClassName="getPatientDetailsTableAdapter" Name="getPatientDetails" UserDataComponentName="getPatientDetailsTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getClientDetailsTableAdapter" GeneratorDataComponentClassName="getClientDetailsTableAdapter" Name="getClientDetails" UserDataComponentName="getClientDetailsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hhc_dbConnectionString (Settings)" DbObjectName="``.`hhc-db`.`getPatientDetails`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hhc_dbConnectionString (Settings)" DbObjectName="``.`hhc-db`.`getClientDetails`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>`hhc-db`.`getPatientDetails`</CommandText>
+                    <CommandText>`hhc-db`.`getClientDetails`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -31,13 +31,13 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="getPatientDetailsDB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="getPatientDetailsDB" msprop:Generator_UserDSName="getPatientDetailsDB">
+  <xs:element name="getClientDetailsDB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="getClientDetailsDB" msprop:Generator_UserDSName="getClientDetailsDB">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="getPatientDetails" msprop:Generator_TableClassName="getPatientDetailsDataTable" msprop:Generator_TableVarName="tablegetPatientDetails" msprop:Generator_TablePropName="getPatientDetails" msprop:Generator_RowDeletingName="getPatientDetailsRowDeleting" msprop:Generator_UserTableName="getPatientDetails" msprop:Generator_RowChangingName="getPatientDetailsRowChanging" msprop:Generator_RowEvHandlerName="getPatientDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="getPatientDetailsRowDeleted" msprop:Generator_RowEvArgName="getPatientDetailsRowChangeEvent" msprop:Generator_RowChangedName="getPatientDetailsRowChanged" msprop:Generator_RowClassName="getPatientDetailsRow">
+        <xs:element name="getClientDetails" msprop:Generator_TableClassName="getClientDetailsDataTable" msprop:Generator_TableVarName="tablegetClientDetails" msprop:Generator_TablePropName="getClientDetails" msprop:Generator_RowDeletingName="getClientDetailsRowDeleting" msprop:Generator_UserTableName="getClientDetails" msprop:Generator_RowChangingName="getClientDetailsRowChanging" msprop:Generator_RowEvHandlerName="getClientDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="getClientDetailsRowDeleted" msprop:Generator_RowEvArgName="getClientDetailsRowChangeEvent" msprop:Generator_RowChangedName="getClientDetailsRowChanged" msprop:Generator_RowClassName="getClientDetailsRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:unsignedInt" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="First_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnFirst_Name" msprop:Generator_ColumnPropNameInRow="First_Name" msprop:Generator_ColumnPropNameInTable="First_NameColumn" msprop:Generator_UserColumnName="First Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -64,8 +64,8 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:getPatientDetails" />
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:getClientDetails" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
