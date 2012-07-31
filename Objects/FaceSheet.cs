@@ -31,6 +31,20 @@ namespace introseHHC.Objects
             get { return physicianID; }
             set { physicianID = value; }
         }
+        private UInt16 gatherID;
+
+        public UInt16 GatherID
+        {
+            get { return gatherID; }
+            set { gatherID = value; }
+        }
+        private UInt16 endorseID;
+
+        public UInt16 EndorseID
+        {
+            get { return endorseID; }
+            set { endorseID = value; }
+        }
         private UInt16[] casMan, homVac;
         private bool carTra;
         public bool CarTra
@@ -57,6 +71,13 @@ namespace introseHHC.Objects
         {
             get { return action; }
             set { action = value; }
+        }
+        private string reqDetails;
+
+        public string ReqDetails
+        {
+            get { return reqDetails; }
+            set { reqDetails = value; }
         }
         private DateTime effectivityDate;
 

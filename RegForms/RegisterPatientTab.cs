@@ -67,6 +67,8 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
 
+            gatherID = endorseID = 0;
+
             patient = new Patient();
             client  = new Client();
             fsheet  = new FaceSheet();
@@ -140,6 +142,7 @@ namespace introseHHC.RegForms
             try
             {
                 conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
                 return true;
             }
             catch (Exception e)
@@ -150,7 +153,6 @@ namespace introseHHC.RegForms
         private int checkName(string s, string f, string m)
         {
             
-
             return 0;
         }
 
@@ -225,11 +227,6 @@ namespace introseHHC.RegForms
             {
                 primaryIn.Enabled = true;
             }
-        }
-
-        private void acceptButton_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void RegisterPatientTab_FormClosed(object sender, FormClosedEventArgs e)
@@ -479,11 +476,10 @@ namespace introseHHC.RegForms
             fsheet.setAmbWellness(ambCB.Checked);
             fsheet.setCareTraining(ctCB.Checked);
             fsheet.setSeniorResidential(senresCB.Checked);
+            fsheet.ReqDetails = detIn.Text;
 
             if (caseMgmtCB.Checked)
             {   int cnt = caseMgmtBox.CheckedItems.Count;
-
-          
 
                 for (int i = 0; i < cnt; i++)
                 {
@@ -543,8 +539,8 @@ namespace introseHHC.RegForms
             {
                 if (OpenConnection())
                 {
-                    string query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES) " +
-                    "VALUES (@ptid,@ctid,@cty,@amb,@sen)";
+                    string query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES,REQDETAILS) " +
+                    "VALUES (@ptid,@ctid,@cty,@amb,@sen,@rqdet)";
                     cmd.CommandText = query;
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@ptid", fsheet.PatientID);
@@ -552,6 +548,7 @@ namespace introseHHC.RegForms
                     cmd.Parameters.AddWithValue("@cty", fsheet.CarTra);
                     cmd.Parameters.AddWithValue("@amb", fsheet.AmbWel);
                     cmd.Parameters.AddWithValue("@sen", fsheet.SenRes);
+                    cmd.Parameters.AddWithValue("@rqdet",fsheet.ReqDetails);
 
                     cmd.ExecuteNonQuery();
 
@@ -569,11 +566,8 @@ namespace introseHHC.RegForms
                     CloseConnection();
                     tabControl1.SelectedIndex++;
                 }
-
-
             }
-
-            
+  
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -627,7 +621,6 @@ namespace introseHHC.RegForms
                     cMobileIn.Enabled = false;
                     cOtherIn.Enabled = false;
                     
-
                     cdesigCoB.Text = read.GetString("Designation");
                     csnameIn.Text = read.GetString("SName");
                     cfnameIn.Text = read.GetString("FName");
@@ -715,6 +708,32 @@ namespace introseHHC.RegForms
         {
             fsheet.EffectivityDate = effectPicker.Value;
             fsheet.Action = actionsTextBox.Text;
+
+            if (true) //error checking
+            {
+                if (OpenConnection())
+                {
+                    string query = "UPDATE FACESHEET SET GID =@gid,EID =@eid,ACTION =@act,EFFECTDATE=@edate WHERE FACEID=@fid;";
+                    cmd = new MySqlCommand(query,conn);
+                    cmd.Prepare();
+
+                    cmd.Parameters.AddWithValue("@gid",fsheet.GatherID);
+                    cmd.Parameters.AddWithValue("@eid",fsheet.EndorseID);
+                    cmd.Parameters.AddWithValue("@act",fsheet.Action);
+                    cmd.Parameters.AddWithValue("@edate",fsheet.EffectivityDate);
+                    cmd.Parameters.AddWithValue("@fid",fsheet.FID);
+
+                    cmd.ExecuteNonQuery();
+
+                    CloseConnection();
+
+                    this.Close();
+                }
+            }
+            else
+            {
+            }
+
         }
 
         private void gatherButton_Click(object sender, EventArgs e)
@@ -722,21 +741,23 @@ namespace introseHHC.RegForms
             SelectEmployee sel = new SelectEmployee();
             sel.ShowDialog();
             gatherID = sel.Sel;
-
-
+            Console.WriteLine("Gathered by: {0}",gatherID);
+            sel.Close();
+            fsheet.GatherID = gatherID;
         }
 
-        private void RegisterPatientTab_Load(object sender, EventArgs e)
+        private void endorseButton_Click(object sender, EventArgs e)
         {
-
+            SelectEmployee sel = new SelectEmployee();
+            sel.ShowDialog();
+            endorseID = sel.Sel;
+            Console.WriteLine("Endorsed by: {0}", endorseID);
+            sel.Close();
+            if (endorseID != gatherID)
+                fsheet.EndorseID = endorseID;
+            else
+                Console.WriteLine("Gather and Endorse cannot be the same.");
         }
-
-
-
-
-
- 
-
 
     }
 }

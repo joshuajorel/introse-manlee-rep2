@@ -51,11 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="getClientsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getClientsDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="getEmployeesDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getEmployeesDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Objects\CGA.cs" />
     <Compile Include="Objects\CGiverAssess.cs" />
     <Compile Include="Objects\Client.cs" />
     <Compile Include="Objects\Contact.cs" />
     <Compile Include="Objects\CostTable.cs" />
+    <Compile Include="Objects\Employee.cs" />
     <Compile Include="Objects\FaceSheet.cs" />
     <Compile Include="Objects\FamilyHistory.cs" />
     <Compile Include="Objects\FunctionalStatus.cs" />
@@ -76,6 +87,12 @@
     </Compile>
     <Compile Include="RegForms\CGAForm.Designer.cs">
       <DependentUpon>CGAForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\ClientSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ClientSelect.Designer.cs">
+      <DependentUpon>ClientSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\FamilyHistory.cs">
       <SubType>Form</SubType>
@@ -115,6 +132,12 @@
     <Compile Include="RegForms\ManageRecord.Designer.cs">
       <DependentUpon>ManageRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\RegisterEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\RegisterEmployee.Designer.cs">
+      <DependentUpon>RegisterEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\RegisterPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +149,12 @@
     </Compile>
     <Compile Include="RegForms\RegisterPatientTab.designer.cs">
       <DependentUpon>RegisterPatientTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\SelectEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\SelectEmployee.Designer.cs">
+      <DependentUpon>SelectEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\ViewCGA.cs">
       <SubType>Form</SubType>
@@ -139,8 +168,16 @@
     <Compile Include="RegForms\ViewFaceSheet.Designer.cs">
       <DependentUpon>ViewFaceSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="getCaseMgmtDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="RegForms\CGAForm.resx">
       <DependentUpon>CGAForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ClientSelect.resx">
+      <DependentUpon>ClientSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\FamilyHistory.resx">
       <DependentUpon>FamilyHistory.cs</DependentUpon>
@@ -169,11 +206,17 @@
     <EmbeddedResource Include="RegForms\ManageRecord.resx">
       <DependentUpon>ManageRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\RegisterEmployee.resx">
+      <DependentUpon>RegisterEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\RegisterPatient.resx">
       <DependentUpon>RegisterPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\RegisterPatientTab.resx">
       <DependentUpon>RegisterPatientTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\SelectEmployee.resx">
+      <DependentUpon>SelectEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewCGA.resx">
       <DependentUpon>ViewCGA.cs</DependentUpon>
@@ -181,6 +224,28 @@
     <EmbeddedResource Include="RegForms\ViewFaceSheet.resx">
       <DependentUpon>ViewFaceSheet.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="getClientsDB.xsc">
+      <DependentUpon>getClientsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getClientsDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getClientsDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getClientsDB.xss">
+      <DependentUpon>getClientsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getEmployeesDB.xsc">
+      <DependentUpon>getEmployeesDB.xsd</DependentUpon>
+    </None>
+    <None Include="getEmployeesDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getEmployeesDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getEmployeesDB.xss">
+      <DependentUpon>getEmployeesDB.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +255,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="getCaseMgmtDB.xsc">
+      <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
+    </None>
+    <None Include="getCaseMgmtDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getCaseMgmtDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getCaseMgmtDB.xss">
+      <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

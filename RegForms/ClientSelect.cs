@@ -36,9 +36,16 @@ namespace introseHHC.RegForms
         private void ClientSelect_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'getClientsDB.getClients' table. You can move, or remove it, as needed.
-            this.getClientsTableAdapter2.Fill(this.getClientsDB.getClients);
+            this.getClientsTableAdapter.Fill(this.getClientsDB.getClients);
 
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            sel = 0;
+        }
+
 
 
     }

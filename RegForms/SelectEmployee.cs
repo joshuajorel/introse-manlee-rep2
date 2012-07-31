@@ -36,7 +36,7 @@ namespace introseHHC.RegForms
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            sel;
+            sel = UInt16.Parse(employeeView.SelectedCells[0].Value.ToString());
         }
     }
 }

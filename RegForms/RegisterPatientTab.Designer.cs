@@ -1171,6 +1171,7 @@ namespace introseHHC.RegForms
             // detIn
             // 
             this.detIn.Location = new System.Drawing.Point(3, 310);
+            this.detIn.MaxLength = 65535;
             this.detIn.Multiline = true;
             this.detIn.Name = "detIn";
             this.detIn.Size = new System.Drawing.Size(272, 130);
@@ -1628,6 +1629,7 @@ namespace introseHHC.RegForms
             this.endorseButton.TabIndex = 36;
             this.endorseButton.Text = "Enter";
             this.endorseButton.UseVisualStyleBackColor = true;
+            this.endorseButton.Click += new System.EventHandler(this.endorseButton_Click);
             // 
             // gatherButton
             // 
@@ -1677,6 +1679,7 @@ namespace introseHHC.RegForms
             // actionsTextBox
             // 
             this.actionsTextBox.Location = new System.Drawing.Point(6, 162);
+            this.actionsTextBox.MaxLength = 200000;
             this.actionsTextBox.Multiline = true;
             this.actionsTextBox.Name = "actionsTextBox";
             this.actionsTextBox.Size = new System.Drawing.Size(534, 146);
@@ -1784,7 +1787,6 @@ namespace introseHHC.RegForms
             this.Name = "RegisterPatientTab";
             this.Text = "RegisterPatientTab";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterPatientTab_FormClosed);
-            this.Load += new System.EventHandler(this.RegisterPatientTab_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_hhc_dbDataSet" targetNamespace="http://tempuri.org/_hhc_dbDataSet1.xsd" xmlns:mstns="http://tempuri.org/_hhc_dbDataSet1.xsd" xmlns="http://tempuri.org/_hhc_dbDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hhc_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hhc_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.introseHHC.Properties.Settings.GlobalReference.Default.hhc_dbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getCaseMgmt_DescriptionsTableAdapter" GeneratorDataComponentClassName="getCaseMgmt_DescriptionsTableAdapter" Name="getCaseMgmt_Descriptions" UserDataComponentName="getCaseMgmt_DescriptionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hhc_dbConnectionString (Settings)" DbObjectName="``.`hhc-db`.`getCaseMgmt_Descriptions`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`hhc-db`.`getCaseMgmt_Descriptions`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DESCRIPTION" DataSetColumn="DESCRIPTION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_hhc_dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_hhc_dbDataSet" msprop:Generator_UserDSName="_hhc_dbDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="getCaseMgmt_Descriptions" msprop:Generator_TableClassName="getCaseMgmt_DescriptionsDataTable" msprop:Generator_TableVarName="tablegetCaseMgmt_Descriptions" msprop:Generator_TablePropName="getCaseMgmt_Descriptions" msprop:Generator_RowDeletingName="getCaseMgmt_DescriptionsRowDeleting" msprop:Generator_UserTableName="getCaseMgmt_Descriptions" msprop:Generator_RowChangingName="getCaseMgmt_DescriptionsRowChanging" msprop:Generator_RowEvHandlerName="getCaseMgmt_DescriptionsRowChangeEventHandler" msprop:Generator_RowDeletedName="getCaseMgmt_DescriptionsRowDeleted" msprop:Generator_RowEvArgName="getCaseMgmt_DescriptionsRowChangeEvent" msprop:Generator_RowChangedName="getCaseMgmt_DescriptionsRowChanged" msprop:Generator_RowClassName="getCaseMgmt_DescriptionsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" msprop:Generator_UserColumnName="DESCRIPTION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

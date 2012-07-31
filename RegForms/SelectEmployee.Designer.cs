@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employeeView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,26 +38,29 @@
             this.okButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.getEmployeesTableAdapter = new introseHHC.getEmployeesDBTableAdapters.getEmployeesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // employeeView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employeeView.AllowUserToAddRows = false;
+            this.employeeView.AllowUserToDeleteRows = false;
+            this.employeeView.AutoGenerateColumns = false;
+            this.employeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.getEmployeesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(360, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.employeeView.DataSource = this.getEmployeesBindingSource;
+            this.employeeView.Location = new System.Drawing.Point(17, 12);
+            this.employeeView.MultiSelect = false;
+            this.employeeView.Name = "employeeView";
+            this.employeeView.ReadOnly = true;
+            this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeView.Size = new System.Drawing.Size(360, 150);
+            this.employeeView.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -120,11 +123,11 @@
             this.ClientSize = new System.Drawing.Size(394, 258);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.employeeView);
             this.Name = "SelectEmployee";
             this.Text = "SelectEmployee";
             this.Load += new System.EventHandler(this.SelectEmployee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB)).EndInit();
             this.ResumeLayout(false);
@@ -133,7 +136,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView employeeView;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button button2;
         private getEmployeesDB getEmployeesDB;
