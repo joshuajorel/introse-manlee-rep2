@@ -29,69 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.employeeView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getEmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getEmployeesDB = new introseHHC.getEmployeesDB();
             this.okButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.getEmployeesTableAdapter = new introseHHC.getEmployeesDBTableAdapters.getEmployeesTableAdapter();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.employeeView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getEmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getEmployeesDB1 = new introseHHC.getEmployeesDB();
+            this.getEmployeesTableAdapter2 = new introseHHC.getEmployeesDBTableAdapters.getEmployeesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // employeeView
-            // 
-            this.employeeView.AllowUserToAddRows = false;
-            this.employeeView.AllowUserToDeleteRows = false;
-            this.employeeView.AutoGenerateColumns = false;
-            this.employeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn});
-            this.employeeView.DataSource = this.getEmployeesBindingSource;
-            this.employeeView.Location = new System.Drawing.Point(17, 12);
-            this.employeeView.MultiSelect = false;
-            this.employeeView.Name = "employeeView";
-            this.employeeView.ReadOnly = true;
-            this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeView.Size = new System.Drawing.Size(360, 150);
-            this.employeeView.TabIndex = 0;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // getEmployeesBindingSource
-            // 
-            this.getEmployeesBindingSource.DataMember = "getEmployees";
-            this.getEmployeesBindingSource.DataSource = this.getEmployeesDB;
-            // 
-            // getEmployeesDB
-            // 
-            this.getEmployeesDB.DataSetName = "getEmployeesDB";
-            this.getEmployeesDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // okButton
             // 
@@ -103,47 +53,104 @@
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(307, 213);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(307, 213);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 2;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // getEmployeesTableAdapter
+            // employeeView
             // 
-            this.getEmployeesTableAdapter.ClearBeforeFill = true;
+            this.employeeView.AllowUserToAddRows = false;
+            this.employeeView.AllowUserToDeleteRows = false;
+            this.employeeView.AutoGenerateColumns = false;
+            this.employeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.employeeView.DataSource = this.getEmployeesBindingSource;
+            this.employeeView.Location = new System.Drawing.Point(22, 23);
+            this.employeeView.MultiSelect = false;
+            this.employeeView.Name = "employeeView";
+            this.employeeView.ReadOnly = true;
+            this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeView.Size = new System.Drawing.Size(360, 150);
+            this.employeeView.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "First Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "First Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // getEmployeesBindingSource
+            // 
+            this.getEmployeesBindingSource.DataMember = "getEmployees";
+            this.getEmployeesBindingSource.DataSource = this.getEmployeesDB1;
+            // 
+            // getEmployeesDB1
+            // 
+            this.getEmployeesDB1.DataSetName = "getEmployeesDB";
+            this.getEmployeesDB1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getEmployeesTableAdapter2
+            // 
+            this.getEmployeesTableAdapter2.ClearBeforeFill = true;
             // 
             // SelectEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 258);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.okButton);
             this.Controls.Add(this.employeeView);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.okButton);
             this.Name = "SelectEmployee";
             this.Text = "SelectEmployee";
             this.Load += new System.EventHandler(this.SelectEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView employeeView;
         private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancelButton;
         private getEmployeesDB getEmployeesDB;
-        private System.Windows.Forms.BindingSource getEmployeesBindingSource;
         private getEmployeesDBTableAdapters.getEmployeesTableAdapter getEmployeesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        
+        private System.Windows.Forms.DataGridView employeeView;
+        private getEmployeesDB getEmployeesDB1;
+        private System.Windows.Forms.BindingSource getEmployeesBindingSource;
+        private getEmployeesDBTableAdapters.getEmployeesTableAdapter getEmployeesTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

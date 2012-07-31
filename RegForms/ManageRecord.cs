@@ -18,10 +18,13 @@ namespace introseHHC.RegForms
 
         private void ManageRecord_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'getEmployeeDetailsDB.getEmployeeDetails' table. You can move, or remove it, as needed.
+            
+            // TODO: This line of code loads data into the 'getClientDetailsDB.getClientDetails' table. You can move, or remove it, as needed.
+            this.getClientDetailsTableAdapter.Fill(this.getClientDetailsDB.getClientDetails);
             // TODO: This line of code loads data into the 'getPatientDetailsDB.getPatientDetails' table. You can move, or remove it, as needed.
             this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
-            // TODO: This line of code loads data into the 'getPatientDetailsDB.getPatientDetails' table. You can move, or remove it, as needed.
-            this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
+           
 
         }
 

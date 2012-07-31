@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="getClientDetailsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getClientDetailsDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="getClientsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +184,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_hhc_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_hhc_dbDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="RegForms\CGAForm.resx">
       <DependentUpon>CGAForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +241,17 @@
     <EmbeddedResource Include="RegForms\ViewFaceSheet.resx">
       <DependentUpon>ViewFaceSheet.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="getClientDetailsDB.xsc">
+      <DependentUpon>getClientDetailsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getClientDetailsDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getClientDetailsDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getClientDetailsDB.xss">
+      <DependentUpon>getClientDetailsDB.xsd</DependentUpon>
+    </None>
     <None Include="getClientsDB.xsc">
       <DependentUpon>getClientsDB.xsd</DependentUpon>
     </None>
@@ -283,6 +304,17 @@
     </None>
     <None Include="getCaseMgmtDB.xss">
       <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
+    </None>
+    <None Include="_hhc_dbDataSet1.xsc">
+      <DependentUpon>_hhc_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_hhc_dbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_hhc_dbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_hhc_dbDataSet1.xss">
+      <DependentUpon>_hhc_dbDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

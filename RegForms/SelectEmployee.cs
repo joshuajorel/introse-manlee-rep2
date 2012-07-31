@@ -43,8 +43,11 @@ namespace introseHHC.RegForms
 
         private void SelectEmployee_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'getEmployeesDB1.getEmployees' table. You can move, or remove it, as needed.
+            this.getEmployeesTableAdapter2.Fill(this.getEmployeesDB1.getEmployees);
+            // TODO: This line of code loads data into the 'getEmployeeDB.getEmployees' table. You can move, or remove it, as needed.
+           
             // TODO: This line of code loads data into the 'getEmployeesDB.getEmployees' table. You can move, or remove it, as needed.
-            this.getEmployeesTableAdapter.Fill(this.getEmployeesDB.getEmployees);
 
         }
 
@@ -54,6 +57,15 @@ namespace introseHHC.RegForms
             sel = UInt16.Parse(employeeView.SelectedCells[0].Value.ToString());
             fname = employeeView.SelectedCells[1].Value.ToString();
             sname = employeeView.SelectedCells[2].Value.ToString();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            sel = 0;
+            fname = "";
+            sname = "";
+
         }
     }
 }
