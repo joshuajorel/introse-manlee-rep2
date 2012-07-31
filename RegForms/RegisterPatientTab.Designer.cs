@@ -260,6 +260,7 @@ namespace introseHHC.RegForms
             this.pOtherIn.Name = "pOtherIn";
             this.pOtherIn.Size = new System.Drawing.Size(100, 20);
             this.pOtherIn.TabIndex = 78;
+            this.pOtherIn.Text = "0";
             // 
             // pMobileIn
             // 
@@ -267,6 +268,7 @@ namespace introseHHC.RegForms
             this.pMobileIn.Name = "pMobileIn";
             this.pMobileIn.Size = new System.Drawing.Size(100, 20);
             this.pMobileIn.TabIndex = 77;
+            this.pMobileIn.Text = "0";
             // 
             // pWorkIn
             // 
@@ -274,6 +276,7 @@ namespace introseHHC.RegForms
             this.pWorkIn.Name = "pWorkIn";
             this.pWorkIn.Size = new System.Drawing.Size(100, 20);
             this.pWorkIn.TabIndex = 76;
+            this.pWorkIn.Text = "0";
             // 
             // pHomeIn
             // 
@@ -281,6 +284,7 @@ namespace introseHHC.RegForms
             this.pHomeIn.Name = "pHomeIn";
             this.pHomeIn.Size = new System.Drawing.Size(100, 20);
             this.pHomeIn.TabIndex = 75;
+            this.pHomeIn.Text = "0";
             // 
             // label59
             // 
@@ -395,7 +399,7 @@ namespace introseHHC.RegForms
             // 
             // pedattCoB
             // 
-            this.pedattCoB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.pedattCoB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.pedattCoB.FormattingEnabled = true;
             this.pedattCoB.Items.AddRange(new object[] {
             "Primary",
@@ -476,6 +480,8 @@ namespace introseHHC.RegForms
             // 
             // pcivStatCoB
             // 
+            this.pcivStatCoB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.pcivStatCoB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.pcivStatCoB.FormattingEnabled = true;
             this.pcivStatCoB.Items.AddRange(new object[] {
             "Single",
@@ -503,7 +509,7 @@ namespace introseHHC.RegForms
             "M",
             "F",
             "O"});
-            this.pgenCoB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.pgenCoB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.pgenCoB.FormattingEnabled = true;
             this.pgenCoB.Items.AddRange(new object[] {
             "M",

@@ -12,6 +12,20 @@ namespace introseHHC.RegForms
     public partial class SelectEmployee : Form
     {
         private UInt16 sel;
+        private string fname;
+
+        public string Fname
+        {
+            get { return fname; }
+            set { fname = value; }
+        }
+        private string sname;
+
+        public string Sname
+        {
+            get { return sname; }
+            set { sname = value; }
+        }
 
         public UInt16 Sel
         {
@@ -23,6 +37,7 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
             sel = 0;
+            fname = sname = "";
 
         }
 
@@ -37,6 +52,8 @@ namespace introseHHC.RegForms
         {
             this.Hide();
             sel = UInt16.Parse(employeeView.SelectedCells[0].Value.ToString());
+            fname = employeeView.SelectedCells[1].Value.ToString();
+            sname = employeeView.SelectedCells[2].Value.ToString();
         }
     }
 }

@@ -62,13 +62,14 @@ namespace introseHHC.RegForms
         //holders for facesheet
         private string posrel;
         private bool isPrimary;
+        
 
         public RegisterPatientTab()
         {
             InitializeComponent();
 
             gatherID = endorseID = 0;
-
+            
             patient = new Patient();
             client = new Client();
             fsheet = new FaceSheet();
@@ -151,12 +152,6 @@ namespace introseHHC.RegForms
                 return false;
             }
         }
-        private int checkName(string s, string f, string m)
-        {
-
-            return 0;
-        }
-
         private void RegisterPerson(Person p)
         {
             if (OpenConnection())
@@ -194,7 +189,6 @@ namespace introseHHC.RegForms
                 CloseConnection();
             }
         }
-
         private void caseMgmtCB_CheckedChanged(object sender, EventArgs e)
         {
             if (caseMgmtCB.Checked == false)
@@ -226,14 +220,12 @@ namespace introseHHC.RegForms
                 hvacCoB.Enabled = true;
             }
         }
-
         private void RegisterPatientTab_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (CloseConnection())
                 Console.WriteLine("SQL Connection Closed");
 
         }
-
         private void pNextButton_Click(object sender, EventArgs e)
         {
 
@@ -245,26 +237,36 @@ namespace introseHHC.RegForms
             //will be removed from the database.
 
             desig = pdesigCoB.Text;
+          
             fname = pfnameIn.Text;
             sname = psnameIn.Text;
             mname = pmnameIn.Text;
 
-            checkName(fname, sname, mname); //replace error checking with regular expressions.
             birthdate = pbdayPick.Value;             //Get data from DateTime Picker
 
+            if (Checker.check(fname))
+                Console.WriteLine("FNAME IS GOOD");
+            else
+                Console.WriteLine("FNAME IS SHIT");
+
+            if (Checker.check(sname))
+                Console.WriteLine("SNAME IS GOOD");
+            else
+                Console.WriteLine("SNAME IS SHIT");
+
+            if (Checker.check(mname))
+                Console.WriteLine("MNAME IS GOOD");
+            else
+                Console.WriteLine("MNAME IS SHIT");
+
             //following fields must not be blank
-            try
-            {
+          
                 gender = pgenCoB.Text;
                 nationality = pnatIn.Text;
                 religion = prelIn.Text;
                 civstat = pcivStatCoB.Text;
                 educattain = pedattCoB.Text;
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-            }
+      
 
             //fields for address. must not be blank!
             addline = paddlineIn.Text;
@@ -366,6 +368,8 @@ namespace introseHHC.RegForms
             fname = cfnameIn.Text;
             sname = csnameIn.Text;
             mname = cmnameIn.Text;
+
+            
 
             birthdate = cbdayPick.Value;
 
@@ -655,13 +659,10 @@ namespace introseHHC.RegForms
             }
 
         }
-
         private void resetButton_Click(object sender, EventArgs e)
         {
 
         }
-
-
         private void clientSelectButton_Click(object sender, EventArgs e)
         {
             ClientSelect csel = new ClientSelect();
@@ -827,9 +828,14 @@ namespace introseHHC.RegForms
             SelectEmployee sel = new SelectEmployee();
             sel.ShowDialog();
             gatherID = sel.Sel;
+            gatherTextBox.Text = sel.Fname + " " + sel.Sname;
             Console.WriteLine("Gathered by: {0}", gatherID);
             sel.Close();
-            fsheet.GatherID = gatherID;
+            if (endorseID != gatherID)
+                fsheet.GatherID = gatherID;
+            else
+                Console.WriteLine("Gather and Endorse cannot be the same.");
+            
         }
 
         private void endorseButton_Click(object sender, EventArgs e)
@@ -837,6 +843,7 @@ namespace introseHHC.RegForms
             SelectEmployee sel = new SelectEmployee();
             sel.ShowDialog();
             endorseID = sel.Sel;
+            endorseTextBox.Text = sel.Fname + " " + sel.Sname;
             Console.WriteLine("Endorsed by: {0}", endorseID);
             sel.Close();
             if (endorseID != gatherID)

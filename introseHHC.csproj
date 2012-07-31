@@ -61,8 +61,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getEmployeesDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="getPatientDetailsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getPatientDetailsDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Objects\CGA.cs" />
     <Compile Include="Objects\CGiverAssess.cs" />
+    <Compile Include="Objects\Checker.cs" />
     <Compile Include="Objects\Client.cs" />
     <Compile Include="Objects\Contact.cs" />
     <Compile Include="Objects\CostTable.cs" />
@@ -247,6 +253,17 @@
     <None Include="getEmployeesDB.xss">
       <DependentUpon>getEmployeesDB.xsd</DependentUpon>
     </None>
+    <None Include="getPatientDetailsDB.xsc">
+      <DependentUpon>getPatientDetailsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getPatientDetailsDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getPatientDetailsDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getPatientDetailsDB.xss">
+      <DependentUpon>getPatientDetailsDB.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -270,6 +287,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ErrorDiags\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
