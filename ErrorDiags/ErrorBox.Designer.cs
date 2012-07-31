@@ -35,6 +35,7 @@
             // errorTextBox
             // 
             this.errorTextBox.Enabled = false;
+            this.errorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorTextBox.Location = new System.Drawing.Point(13, 13);
             this.errorTextBox.Multiline = true;
             this.errorTextBox.Name = "errorTextBox";
@@ -59,6 +60,7 @@
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.errorTextBox);
             this.Name = "ErrorBox";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "ErrorBox";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -60,7 +60,7 @@ namespace introseHHC.RegForms
         //for error checking
         private System.Text.StringBuilder patSb;
         private bool patFlag;
-        private byte nameByte;
+        private bool clientFlag;
         
 
         public RegisterPatientTab()
@@ -231,20 +231,11 @@ namespace introseHHC.RegForms
         }
         private void pNextButton_Click(object sender, EventArgs e)
         { 
-
-            //Patient Tab
-            //get all the values in the fields & perform error checking
-            //currently, clicking this button will register the Patient details into
-            //the database. Will change this in the future so that if the user cancels the
-            //registration, all table entries related to the cancelled registration
-            //will be removed from the database.
-
             bool nameFlag = true;
             bool otherFlag = true;
             bool boxFlag = true;
             bool addFieldFlag = true;
-            bool numFlag = true;
-
+        
             desig = pdesigCoB.Text;
           
             fname = pfnameIn.Text;
@@ -366,12 +357,30 @@ namespace introseHHC.RegForms
                 addFieldFlag = false;
             }
 
-            bool d;
+            bool d,contFlag;
 
             a = Checker.check2(pWorkIn.Text);
             b = Checker.check2(pHomeIn.Text);
             c = Checker.check2(pMobileIn.Text);
             d = Checker.check2(pOtherIn.Text);
+
+            if (a && b && c && d)
+            {
+                contFlag = true;
+                Console.WriteLine("Contact numbers are OK!");
+            }
+            else
+            {
+                contFlag = false;
+                if (!a)
+                    patSb.AppendLine("Enter valid Work Number");
+                if (!b)
+                    patSb.AppendLine("Enter a valid Home Number.");
+                if (!c)
+                    patSb.AppendLine("Enter a valid Mobile Number.");
+                if(!d)
+                    patSb.AppendLine("Enter a valid Optional Number.");
+            }
 
             try
             {
@@ -408,17 +417,11 @@ namespace introseHHC.RegForms
                 Console.WriteLine("Email is OK.");
             }
 
-
-            //add fields to Patient Object
-
-
-            //displayStuff(patient);
-
             //open connection to database
-            if (patFlag && otherFlag && boxFlag && addFieldFlag&&emailFlag)
+            if (nameFlag && otherFlag && boxFlag && addFieldFlag&&emailFlag&&contFlag)
             {
                 Console.WriteLine("Fields are correct!");
-
+                patFlag = true;
                 patient.setName(desig, fname, mname, sname);
                 patient.setBday(birthdate);
                 patient.setGender(gender);
@@ -430,39 +433,40 @@ namespace introseHHC.RegForms
                 patient.setAddress(stnumber, addline, city, region);
                 patient.setNumbers(homeNum, workNum, mobNum, otherNum);
 
+                patSb.Clear();
 
-                //RegisterPerson(patient);
+                RegisterPerson(patient);
 
-                ////insert into patient table
+                //insert into patient table
 
-                //OpenConnection();
+                OpenConnection();
 
-                //string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
-                //cmd.CommandText = query;
+                string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                cmd.CommandText = query;
 
-                //read = cmd.ExecuteReader();
+                read = cmd.ExecuteReader();
 
-                //read.Read();
+                read.Read();
 
-                //Console.WriteLine(read.GetDecimal(0).ToString());
+                Console.WriteLine(read.GetDecimal(0).ToString());
 
-                //UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
+                UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
 
-                //patient.setID(lastID);
+                patient.setID(lastID);
 
-                //read.Close();
+                read.Close();
 
-                //query = "INSERT INTO PATIENT(PatID) VALUES(@pid);";
+                query = "INSERT INTO PATIENT(PatID) VALUES(@pid);";
 
-                //cmd.CommandText = query;
+                cmd.CommandText = query;
 
-                //cmd.Prepare();
+                cmd.Prepare();
 
-                //cmd.Parameters.AddWithValue("@pid", lastID);
+                cmd.Parameters.AddWithValue("@pid", lastID);
 
-                //cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-                //CloseConnection();
+                CloseConnection();
 
                 tabControl1.SelectedIndex++;
 
@@ -480,44 +484,147 @@ namespace introseHHC.RegForms
         }
         private void cNextButton_Click(object sender, EventArgs e)
         {
+            bool nameFlag = true;
+            bool otherFlag = true;
+            bool boxFlag = true;
+            bool addFieldFlag = true;
+
             desig = cdesigCoB.Text;
             fname = cfnameIn.Text;
             sname = csnameIn.Text;
             mname = cmnameIn.Text;
 
-            
-
-            birthdate = cbdayPick.Value;
-
-            try
+            bool a, b, c;
+            a = Checker.check(fname);
+            b = Checker.check(sname);
+            c = Checker.check(mname);
+            if (a && b && c)
             {
+                Console.WriteLine("NAMES ARE GOOD");
+                nameFlag = true;
+            }
+            else
+            {
+                nameFlag = false;
+                if (!a)
+                    patSb.AppendLine("Invalid First Name.");
+                if (!b)
+                    patSb.AppendLine("Invalid Surname.");
+                if (!c)
+                    patSb.AppendLine("Invalid Middle Name.");
+
+            }
+
+                birthdate = cbdayPick.Value;
                 gender = cgenCoB.Text;
                 nationality = cnatIn.Text;
                 religion = crelIn.Text;
-                civstat = ccivstatCoB.Text;
-                educattain = cedattCoB.Text;
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err.Message);
-            }
+
+                a = Checker.check(religion);
+                b = Checker.check(nationality);
+                c = Checker.gend(gender);
+
+                if (a && b && c)
+                {
+                    Console.WriteLine("Fields ARE GOOD");
+                    otherFlag = true;
+                }
+                else
+                {
+                    otherFlag = false;
+                    if (!a)
+                        patSb.AppendLine("Invalid input in Religion.");
+                    if (!b)
+                        patSb.AppendLine("Invalid input in Nationality.");
+                    if (!c)
+                        patSb.AppendLine("Invalid input in Gender.");
+
+                 a = cdesigCoB.SelectedIndex >= 0;
+                b = cedattCoB.SelectedIndex >= 0;
+                c = ccivstatCoB.SelectedIndex >= 0;
+
+                if (a && b && c)
+                {
+                    Console.WriteLine("ComboBoxes ARE GOOD");
+                    boxFlag = true;
+                }
+                else
+                {
+                    boxFlag = false;
+                    if (!a)
+                        patSb.AppendLine("Select a valid Designation .");
+                    if (!b)
+                        patSb.AppendLine("Select a valid Ed. Attainment.");
+                    if (!c)
+                        patSb.AppendLine("Select a valid Civil Status.");
+
+                }
+
             addline = caddIn.Text;
             city = ccityIn.Text;
             region = cregIn.Text;
 
+                    
+            a = addline != string.Empty;
+            b = Checker.check(city);
+            c = Checker.check3(region);
+
+            if (a && b && c)
+            {
+                addFieldFlag = true;
+                Console.WriteLine("Address Text Fields are OK.");
+            }
+            else
+            {
+                addFieldFlag = false;
+                if(!a)
+                    patSb.AppendLine("Enter an Address Line");
+                if(!b)
+                    patSb.AppendLine("Enter a valid City.");
+                if(!c)
+                    patSb.AppendLine("Enter a valid Region.");
+            }
+
             try
             {
-                stnumber = UInt16.Parse(pstnoIn.Text);
+                stnumber = UInt16.Parse(cstNoIn.Text);
             }
             catch (FormatException err)
             {
-                Console.WriteLine("Street #: " + err.Message);
+                patSb.AppendLine("Enter a valid Street #.");
+                addFieldFlag = false;
             }
             catch (OverflowException of)
             {
                 Console.WriteLine("Street #: " + of.Message);
+                addFieldFlag = false;
             }
+    
+            bool d,contFlag;
 
+            a = Checker.check2(cWorkIn.Text);
+            b = Checker.check2(cHomeIn.Text);
+            c = Checker.check2(cMobileIn.Text);
+            d = Checker.check2(cOtherIn.Text);
+
+            if (a && b && c && d)
+            {
+                contFlag = true;
+                Console.WriteLine("Contact numbers are OK!");
+            }
+            else
+            {
+                contFlag = false;
+                if (!a)
+                    patSb.AppendLine("Enter valid Work Number");
+                if (!b)
+                    patSb.AppendLine("Enter a valid Home Number.");
+                if (!c)
+                    patSb.AppendLine("Enter a valid Mobile Number.");
+                if(!d)
+                    patSb.AppendLine("Enter a valid Optional Number.");
+            }
+  
             try
             {
                 workNum = UInt16.Parse(cWorkIn.Text);
@@ -530,19 +637,50 @@ namespace introseHHC.RegForms
                 Console.WriteLine(err.Message);
             }
 
-            //get email
-            //needs regex based error checking
+            bool emailFlag = true;
+
             email = cemailIn.Text;
+
+            if (email != string.Empty)
+                if (Checker.email(email))
+                {
+                    emailFlag = true;
+                    Console.WriteLine("Email is OK.");
+                }
+                else
+                {
+                    emailFlag = false;
+                    patSb.AppendLine("Enter valid e-mail address.");
+                }
+            else
+            {
+                emailFlag = true;
+                Console.WriteLine("Email is OK.");
+            };
             //get position/relationship of client to patient
+            bool posFlag;
+
             posrel = posIn.Text;
+
+            if (Checker.check(posrel))
+            {
+                posFlag = true;
+                Console.WriteLine("Position is valid.");
+            }
+            else
+            {
+                posFlag = false;
+                patSb.AppendLine("Enter valid Position.");
+            }
+
             isPrimary = primaryCB.Checked;
 
 
 
 
-            if (true)//implement error checking flags here
+            if (posFlag&& nameFlag && otherFlag && boxFlag && addFieldFlag && emailFlag && contFlag)//implement error checking flags here
             {
-
+                clientFlag = true;
                 client.setName(desig, fname, mname, sname);
                 client.setBday(birthdate);
                 client.setGender(gender);
@@ -554,57 +692,65 @@ namespace introseHHC.RegForms
                 client.setAddress(stnumber, addline, city, region);
                 client.setNumbers(homeNum, workNum, mobNum, otherNum);
 
-                //string query;
-            //    UInt16 lastID;
+                patSb.Clear();
 
-            //    if(selID == 0)
-            //     RegisterPerson(client);
+                string query;
+                UInt16 lastID;
 
-            //    OpenConnection();
+                if (selID == 0)
+                    RegisterPerson(client);
 
-            //    if (selID == 0)
-            //    {
-            //        query = "SELECT LAST_INSERT_ID() FROM PERSON;";
-            //        cmd = new MySqlCommand(query, conn);
-            //        read = cmd.ExecuteReader();
-            //        read.Read();
-            //        Console.WriteLine(read.GetDecimal(0).ToString());
-            //       lastID = UInt16.Parse(read.GetDecimal(0).ToString());
-            //        client.setID(lastID);
-            //        read.Close();
+                OpenConnection();
 
-            //        query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
-            //        cmd.CommandText = query;
-            //        cmd.Prepare();
-            //        cmd.Parameters.AddWithValue("@cid", lastID);
-            //        cmd.ExecuteNonQuery();
-            //    }
-            //    else
-            //    {
-            //        client.setID(selID);
-            //    }
+                if (selID == 0)
+                {
+                    query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                    cmd = new MySqlCommand(query, conn);
+                    read = cmd.ExecuteReader();
+                    read.Read();
+                    Console.WriteLine(read.GetDecimal(0).ToString());
+                    lastID = UInt16.Parse(read.GetDecimal(0).ToString());
+                    client.setID(lastID);
+                    read.Close();
 
-            //    query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
-            //    cmd.CommandText = query;
-            //    cmd.Prepare();
-            //    cmd.Parameters.AddWithValue("@pd", patient.getID());
-            //    cmd.Parameters.AddWithValue("@cd", client.getID());
-            //    cmd.Parameters.AddWithValue("@ip", isPrimary);
-            //    cmd.Parameters.AddWithValue("@rel", posrel);
-            //    cmd.ExecuteNonQuery();
+                    query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
+                    cmd.CommandText = query;
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@cid", lastID);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    client.setID(selID);
+                }
 
-            //    CloseConnection();
+                query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@pd", patient.getID());
+                cmd.Parameters.AddWithValue("@cd", client.getID());
+                cmd.Parameters.AddWithValue("@ip", isPrimary);
+                cmd.Parameters.AddWithValue("@rel", posrel);
+                cmd.ExecuteNonQuery();
+
+                CloseConnection();
                 tabControl1.SelectedIndex++;
             }
             else
             {
+                Console.WriteLine(patSb);
+                new ErrorBox(patSb).ShowDialog();
+                patSb.Clear();
             }
 
 
         }
+        }
         private void rNextButton_Click(object sender, EventArgs e)
         {
             float np, m, o, nd, h, t, s, lwt, pax;
+            bool mdFlag = true;
+            bool hcFlag = true;
             System.Text.StringBuilder cmgmt = new StringBuilder();
             System.Text.StringBuilder hv = new StringBuilder();
 
@@ -656,14 +802,17 @@ namespace introseHHC.RegForms
                 lwt = float.Parse(mdLWTIn.Text);
                 pax = float.Parse(mdNoPaxIn.Text);
                 cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
+                mdFlag = true;
             }
             catch (Exception err)
             {
                 Console.WriteLine("Cost Table Field Error(MD): " + err.Message);
+                patSb.AppendLine("Cost Table Field Error(MD): Fill in all fields.");
+                mdFlag = false;
             }
 
             try
-            { //get MD Parameters first
+            { 
                 np = float.Parse(hcNPIn.Text);
                 m = float.Parse(hcmealsIn.Text);
                 o = float.Parse(hcoverIn.Text);
@@ -673,16 +822,18 @@ namespace introseHHC.RegForms
                 s = float.Parse(hcSomethingIn.Text);
                 lwt = float.Parse(hcLWTIn.Text);
                 pax = float.Parse(hcNoPaxIn.Text);
-
                 cost.setHCParams(np, m, o, nd, h, t, s, lwt, pax);
+                hcFlag = true;
             }
             catch (Exception err)
             {
                 Console.WriteLine("Cost Table Field Error(HCP): " + err.Message);
+                patSb.AppendLine("Cost Table Field Error(HC): Fill in all fields.");
+                hcFlag = true;
             }
 
 
-            if (true)
+            if (hcFlag && mdFlag)
             {
                 if (OpenConnection())
                 {
@@ -744,7 +895,7 @@ namespace introseHHC.RegForms
                     if (hvacCoB.CheckedItems.Count > 0)
                     {
                         string HVacquery = "SELECT HVACID FROM HVAC_REF WHERE DESCRIPTION IN (" + hv + ");";
-                        cmd = new MySqlCommand(HVacquery,conn);
+                        cmd = new MySqlCommand(HVacquery, conn);
                         UInt16[] htmp = new UInt16[hvacCoB.CheckedItems.Count];
 
                         read = cmd.ExecuteReader();
@@ -766,22 +917,22 @@ namespace introseHHC.RegForms
                         {
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
-                            cmd.Parameters.AddWithValue("@hvacID",htmp[hcnt]);
+                            cmd.Parameters.AddWithValue("@hvacID", htmp[hcnt]);
                             cmd.Prepare();
                             cmd.ExecuteNonQuery();
-                            
+
                         }
-                        
+
                     }
 
                     CloseConnection();
                     tabControl1.SelectedIndex++;
                 }
             }
+            else
+            {
 
-        }
-        private void resetButton_Click(object sender, EventArgs e)
-        {
+            }
 
         }
         private void clientSelectButton_Click(object sender, EventArgs e)
@@ -860,7 +1011,6 @@ namespace introseHHC.RegForms
             }
 
         }
-
         private void selClearButton_Click(object sender, EventArgs e)
         {
             if (selID != 0)
