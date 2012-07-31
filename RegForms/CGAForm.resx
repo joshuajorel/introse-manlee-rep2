@@ -117,6 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Body Mass Index Weight in kg/height in m2 
+
+
+
+Mid Arm Circumference (MAC)
+
+
+
+Calf Circumference (CC in cm)
+
+
+
+Weight Loss during last 3 months
+
+
+
+Lives independently (Not in nursing home)
+
+
+
+Takes more than 3 prescriptions per day
+
+
+
+Has suffered Psychological Stress or acute disease in the past 3 months
+
+
+
+Mobility
+
+
+
+Neuropsychological Stress or acute disease in the past 3 months
+
+
+
+Neuropsychological Problems
+
+
+
+Pressure sores or skin ulcers
+
+
+
+How many full meals does the patient eat daily?
+
+
+
+Selected consumption markers for protein intake
+At least 1 serving of dairy products per day:
+
+
+
+Two or more servings of dairy products per day:
+
+
+
+Meat, fish or poultry everyday:
+
+
+
+Consumes 2 or more servings of fruit or vegetables:
+
+
+
+Has food intake declined over the past 3 months due to loss of appetite digestive problems, chewing 
+or swallowing difficulties
+
+
+
+How much fluid (water juice, coffee or tea) is consumed per day?
+
+
+
+Mode of Feeding
+
+
+
+
+ </value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Name 3 objects, taking one object to say each 
+then ask the patient all three after you have said 
+them. Give one point for each correct answer.
+Repeat the answers until the patient learns all 
+three. </value>
+  </data>
   <metadata name="actCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -124,18 +213,6 @@
     <value>True</value>
   </metadata>
   <metadata name="indCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="descCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ansCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mndescCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mnansCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

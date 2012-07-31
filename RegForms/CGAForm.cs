@@ -14,12 +14,6 @@ namespace introseHHC.RegForms
         public CGAForm()
         {
             InitializeComponent();
-            this.tabPage1.Text = "Patient Information";
-            this.tabPage2.Text = "Geriatric Depression Scale";
-     
-            this.tabPage3.Text = "Mini-Mental Status Examination";
-            this.tabPage4.Text = "Mini-Nutritional Assessment";
-            this.tabPage5.Text = "Caregiver Assessment";
         }
 
         private void CGAForm_Load(object sender, EventArgs e)
@@ -33,6 +27,56 @@ namespace introseHHC.RegForms
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label58_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox22_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton50_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton67_CheckedChanged(object sender, EventArgs e)
         {
 
         }
