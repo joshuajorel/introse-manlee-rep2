@@ -52,7 +52,19 @@ namespace introseHHC.Objects
         }
         private CostTable cost;
         private string action;
+
+        public string Action
+        {
+            get { return action; }
+            set { action = value; }
+        }
         private DateTime effectivityDate;
+
+        public DateTime EffectivityDate
+        {
+            get { return effectivityDate; }
+            set { effectivityDate = value; }
+        }
 
         public FaceSheet()
         {
@@ -65,6 +77,7 @@ namespace introseHHC.Objects
             carTra = new bool();
             ambWel = new bool();
             senRes = new bool();
+            action = "";
         }
 
          public FaceSheet(int cmnum, int hvnum)
@@ -78,6 +91,7 @@ namespace introseHHC.Objects
             carTra = new bool();
             ambWel = new bool();
             senRes = new bool();
+            action = "";
         }
 
 

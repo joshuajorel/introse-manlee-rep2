@@ -32,6 +32,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.regEmpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button4
@@ -46,7 +47,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(13, 164);
+            this.button3.Location = new System.Drawing.Point(13, 232);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(238, 43);
             this.button3.TabIndex = 13;
@@ -74,11 +75,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // regEmpButton
+            // 
+            this.regEmpButton.Location = new System.Drawing.Point(12, 173);
+            this.regEmpButton.Name = "regEmpButton";
+            this.regEmpButton.Size = new System.Drawing.Size(238, 43);
+            this.regEmpButton.TabIndex = 15;
+            this.regEmpButton.Text = "Register Employee";
+            this.regEmpButton.UseVisualStyleBackColor = true;
+            this.regEmpButton.Click += new System.EventHandler(this.regEmpButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 220);
+            this.ClientSize = new System.Drawing.Size(263, 313);
+            this.Controls.Add(this.regEmpButton);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button regEmpButton;
 
     }
 }

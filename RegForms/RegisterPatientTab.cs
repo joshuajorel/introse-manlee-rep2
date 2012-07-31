@@ -34,6 +34,8 @@ namespace introseHHC.RegForms
         private CostTable cost;
 
         private UInt16 selID;
+        private UInt16 gatherID;
+        private UInt16 endorseID;
         
         private string desig;
         private string fname;
@@ -57,6 +59,9 @@ namespace introseHHC.RegForms
         private UInt16 workNum;
         private UInt16 mobNum;
         private UInt16 otherNum;
+        //holders for facesheet
+        private string[] casemgmt;
+        private string[] hvac;
         
         public RegisterPatientTab()
         {
@@ -80,7 +85,7 @@ namespace introseHHC.RegForms
 
             if (OpenConnection())
             {
-                int hvnum, cmnum;
+                int hvnum = 0, cmnum = 0;
                 //INITIALIZE CHECK BOX LISTS WITH ITEMS FROM DATABASE.
                 string query = "SELECT DESCRIPTION FROM CASE_MGMT_REF;";
                 cmd = new MySqlCommand(query, conn);
@@ -89,6 +94,7 @@ namespace introseHHC.RegForms
 
                 while (read.Read())
                 {
+                    cmnum++;
                     caseMgmtBox.Items.Add(read.GetString(0));
                 }
 
@@ -101,43 +107,27 @@ namespace introseHHC.RegForms
 
                 while (read.Read())
                 {
+                    hvnum++;
                     hvacCoB.Items.Add(read.GetString(0));
                 }
 
                 read.Close();
                 //INTITIALIZE FACE SHEET
-                query           = "SELECT COUNT(*) FROM CASE_MGMT_REF;";
-                cmd.CommandText = query;
-                read            = cmd.ExecuteReader();
-
-                read.Read();
-                cmnum = read.GetInt16(0);
-                Console.WriteLine("Number of CM Items: {0}",cmnum);
-                read.Close();
-
-                query           = "SELECT COUNT(*) FROM HVAC_REF;";
-                cmd.CommandText = query;
-                read            = cmd.ExecuteReader();
-
-                read.Read();
-                hvnum = read.GetInt16(0);
+                Console.WriteLine("Number of CM Items: {0}", cmnum);
                 Console.WriteLine("Number of HV Items: {0}", hvnum);
-                read.Close();
-
                 CloseConnection();
-
-
                 fsheet = new FaceSheet(cmnum, hvnum);
             }
+        
      
           }
-
 
         private bool OpenConnection()
         {
             try
             {
                 conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
                 return true;
             }
             catch (Exception e)
@@ -201,29 +191,6 @@ namespace introseHHC.RegForms
                 CloseConnection();
             }
         }
-
-        //save inputs to respective classes
-        private void finishButton_Click(object sender, EventArgs e)
-        {
-            if (tabControl1.SelectedIndex == PATIENT_TAB)
-            {   
-                
-        
-            }
-            else if (tabControl1.SelectedIndex == CLIENT_TAB)
-            {
-
-            }
-            else if (tabControl1.SelectedIndex == REQUIREMENTS_TAB)
-            {
-                //Requirements tab
-            }
-            else if (tabControl1.SelectedIndex == DETAILS_TAB)
-            {
-                //Details tab
-            }
-        }
-        //runs when the Add button for Contact information is clicked.
 
         private void caseMgmtCB_CheckedChanged(object sender, EventArgs e)
         {
@@ -333,8 +300,6 @@ namespace introseHHC.RegForms
             {
             }
                
-
-
             //get email
             //needs regex based error checking
             email = pemailIn.Text;
@@ -407,6 +372,8 @@ namespace introseHHC.RegForms
             sname = csnameIn.Text;
             mname = cmnameIn.Text;
 
+            birthdate = cbdayPick.Value;
+
             try
             {
                 gender = cgenCoB.Text;
@@ -469,7 +436,7 @@ namespace introseHHC.RegForms
                 OpenConnection();
 
                 string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
-                cmd.CommandText = query;
+                cmd = new MySqlCommand(query,conn);
 
                 read = cmd.ExecuteReader();
 
@@ -513,26 +480,44 @@ namespace introseHHC.RegForms
             fsheet.setCareTraining(ctCB.Checked);
             fsheet.setSeniorResidential(senresCB.Checked);
 
-      //initialize cost table parameters
-            try
-            {  //get MD Parameters first
-                np  = float.Parse(mdNPIn.Text);
-                m   = float.Parse(mdmealsIn.Text);
-                o   = float.Parse(mdoverIn.Text);
-                nd  = float.Parse(mdndIn.Text);
-                h   = float.Parse(mdhpIn.Text);
-                t   = float.Parse(mdTranspoIn.Text);
-                s   = float.Parse(mdSomethingIn.Text);
-                lwt = float.Parse(mdLWTIn.Text);
-                pax = float.Parse(mdNoPaxIn.Text);
+            if (caseMgmtCB.Checked)
+            {   int cnt = caseMgmtBox.CheckedItems.Count;
 
-                cost.setMDParams(np,m,o,nd,h,t,s,lwt,pax);
-                
+          
+
+                for (int i = 0; i < cnt; i++)
+                {
+                    Console.WriteLine(caseMgmtBox.CheckedItems[i].ToString());
+                }
             }
-            catch (Exception err)
+            if (hvacCB.Checked)
             {
-                Console.WriteLine("Cost Table Field Error(MD): "+err.Message);
+                int num = hvacCoB.CheckedItems.Count;
+
+                for (int i = 0; i < num; i++)
+                {
+                    Console.WriteLine(hvacCoB.CheckedItems[i].ToString());
+                }
             }
+
+ //initialize cost table parameters
+             try
+               {  //get MD Parameters first
+                   np = float.Parse(mdNPIn.Text);
+                   m = float.Parse(mdmealsIn.Text);
+                   o = float.Parse(mdoverIn.Text);
+                   nd = float.Parse(mdndIn.Text);
+                   h = float.Parse(mdhpIn.Text);
+                   t = float.Parse(mdTranspoIn.Text);
+                   s = float.Parse(mdSomethingIn.Text);
+                   lwt = float.Parse(mdLWTIn.Text);
+                   pax = float.Parse(mdNoPaxIn.Text);
+                   cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
+                }
+              catch (Exception err)
+              {
+                  Console.WriteLine("Cost Table Field Error(MD): " + err.Message);
+              }
             
             try
             { //get MD Parameters first
@@ -553,20 +538,20 @@ namespace introseHHC.RegForms
                 Console.WriteLine("Cost Table Field Error(HCP): " + err.Message);
             }
 
-            
+
             if (true)
             {
                 if (OpenConnection())
                 {
                     string query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES) " +
-                    "VALUES (@pid,@cid,@ct,@a,@s)";
+                    "VALUES (@ptid,@ctid,@cty,@amb,@sen)";
                     cmd.CommandText = query;
                     cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@pid", fsheet.PatientID);
-                    cmd.Parameters.AddWithValue("@cid", fsheet.ClientID);
-                    cmd.Parameters.AddWithValue("@ct", fsheet.CarTra);
-                    cmd.Parameters.AddWithValue("@a", fsheet.AmbWel);
-                    cmd.Parameters.AddWithValue("@s", fsheet.SenRes);
+                    cmd.Parameters.AddWithValue("@ptid", fsheet.PatientID);
+                    cmd.Parameters.AddWithValue("@ctid", fsheet.ClientID);
+                    cmd.Parameters.AddWithValue("@cty", fsheet.CarTra);
+                    cmd.Parameters.AddWithValue("@amb", fsheet.AmbWel);
+                    cmd.Parameters.AddWithValue("@sen", fsheet.SenRes);
 
                     cmd.ExecuteNonQuery();
 
@@ -585,7 +570,6 @@ namespace introseHHC.RegForms
                     tabControl1.SelectedIndex++;
                 }
 
-                
 
             }
 
@@ -726,6 +710,29 @@ namespace introseHHC.RegForms
 
             }
         }
+
+        private void fsheetFinishButton_Click(object sender, EventArgs e)
+        {
+            fsheet.EffectivityDate = effectPicker.Value;
+            fsheet.Action = actionsTextBox.Text;
+        }
+
+        private void gatherButton_Click(object sender, EventArgs e)
+        {
+            SelectEmployee sel = new SelectEmployee();
+            sel.ShowDialog();
+            gatherID = sel.Sel;
+
+
+        }
+
+        private void RegisterPatientTab_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
 
 
  

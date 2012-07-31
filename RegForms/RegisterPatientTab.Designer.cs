@@ -167,11 +167,11 @@ namespace introseHHC.RegForms
             this.caseMgmtCB = new System.Windows.Forms.CheckBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.effectPicker = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.fsheetFinishButton = new System.Windows.Forms.Button();
+            this.endorseButton = new System.Windows.Forms.Button();
+            this.gatherButton = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.surveyOtherIn = new System.Windows.Forms.TextBox();
             this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.actionsTextBox = new System.Windows.Forms.TextBox();
@@ -257,28 +257,28 @@ namespace introseHHC.RegForms
             // 
             // pOtherIn
             // 
-            this.pOtherIn.Location = new System.Drawing.Point(364, 376);
+            this.pOtherIn.Location = new System.Drawing.Point(369, 376);
             this.pOtherIn.Name = "pOtherIn";
             this.pOtherIn.Size = new System.Drawing.Size(100, 20);
             this.pOtherIn.TabIndex = 78;
             // 
             // pMobileIn
             // 
-            this.pMobileIn.Location = new System.Drawing.Point(364, 350);
+            this.pMobileIn.Location = new System.Drawing.Point(369, 350);
             this.pMobileIn.Name = "pMobileIn";
             this.pMobileIn.Size = new System.Drawing.Size(100, 20);
             this.pMobileIn.TabIndex = 77;
             // 
             // pWorkIn
             // 
-            this.pWorkIn.Location = new System.Drawing.Point(364, 323);
+            this.pWorkIn.Location = new System.Drawing.Point(369, 323);
             this.pWorkIn.Name = "pWorkIn";
             this.pWorkIn.Size = new System.Drawing.Size(100, 20);
             this.pWorkIn.TabIndex = 76;
             // 
             // pHomeIn
             // 
-            this.pHomeIn.Location = new System.Drawing.Point(364, 295);
+            this.pHomeIn.Location = new System.Drawing.Point(369, 295);
             this.pHomeIn.Name = "pHomeIn";
             this.pHomeIn.Size = new System.Drawing.Size(100, 20);
             this.pHomeIn.TabIndex = 75;
@@ -286,7 +286,7 @@ namespace introseHHC.RegForms
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(323, 379);
+            this.label59.Location = new System.Drawing.Point(328, 379);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(33, 13);
             this.label59.TabIndex = 74;
@@ -295,7 +295,7 @@ namespace introseHHC.RegForms
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(323, 353);
+            this.label58.Location = new System.Drawing.Point(328, 353);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(38, 13);
             this.label58.TabIndex = 74;
@@ -304,7 +304,7 @@ namespace introseHHC.RegForms
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(323, 326);
+            this.label57.Location = new System.Drawing.Point(328, 326);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(33, 13);
             this.label57.TabIndex = 74;
@@ -313,7 +313,7 @@ namespace introseHHC.RegForms
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(323, 301);
+            this.label56.Location = new System.Drawing.Point(328, 301);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(35, 13);
             this.label56.TabIndex = 74;
@@ -351,14 +351,14 @@ namespace introseHHC.RegForms
             // 
             // pbdayPick
             // 
-            this.pbdayPick.Location = new System.Drawing.Point(82, 105);
+            this.pbdayPick.Location = new System.Drawing.Point(87, 105);
             this.pbdayPick.Name = "pbdayPick";
             this.pbdayPick.Size = new System.Drawing.Size(246, 20);
             this.pbdayPick.TabIndex = 43;
             // 
             // pemailIn
             // 
-            this.pemailIn.Location = new System.Drawing.Point(82, 402);
+            this.pemailIn.Location = new System.Drawing.Point(87, 402);
             this.pemailIn.MaxLength = 64;
             this.pemailIn.Name = "pemailIn";
             this.pemailIn.Size = new System.Drawing.Size(164, 20);
@@ -378,7 +378,7 @@ namespace introseHHC.RegForms
             // 
             this.label12.AutoSize = true;
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(252, 314);
+            this.label12.Location = new System.Drawing.Point(257, 314);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 65;
@@ -388,7 +388,7 @@ namespace introseHHC.RegForms
             // 
             this.label11.AutoSize = true;
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(252, 298);
+            this.label11.Location = new System.Drawing.Point(257, 298);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 64;
@@ -404,7 +404,7 @@ namespace introseHHC.RegForms
             "Tertiary",
             "Intermediate",
             "None"});
-            this.pedattCoB.Location = new System.Drawing.Point(83, 235);
+            this.pedattCoB.Location = new System.Drawing.Point(88, 235);
             this.pedattCoB.Name = "pedattCoB";
             this.pedattCoB.Size = new System.Drawing.Size(121, 21);
             this.pedattCoB.TabIndex = 48;
@@ -431,7 +431,7 @@ namespace introseHHC.RegForms
             // 
             // pregIn
             // 
-            this.pregIn.Location = new System.Drawing.Point(83, 376);
+            this.pregIn.Location = new System.Drawing.Point(88, 376);
             this.pregIn.MaxLength = 64;
             this.pregIn.Name = "pregIn";
             this.pregIn.Size = new System.Drawing.Size(163, 20);
@@ -440,7 +440,7 @@ namespace introseHHC.RegForms
             // 
             // pcityIn
             // 
-            this.pcityIn.Location = new System.Drawing.Point(83, 350);
+            this.pcityIn.Location = new System.Drawing.Point(88, 350);
             this.pcityIn.MaxLength = 64;
             this.pcityIn.Name = "pcityIn";
             this.pcityIn.Size = new System.Drawing.Size(163, 20);
@@ -449,7 +449,7 @@ namespace introseHHC.RegForms
             // 
             // paddlineIn
             // 
-            this.paddlineIn.Location = new System.Drawing.Point(83, 324);
+            this.paddlineIn.Location = new System.Drawing.Point(88, 324);
             this.paddlineIn.MaxLength = 128;
             this.paddlineIn.Name = "paddlineIn";
             this.paddlineIn.Size = new System.Drawing.Size(163, 20);
@@ -458,7 +458,7 @@ namespace introseHHC.RegForms
             // 
             // pstnoIn
             // 
-            this.pstnoIn.Location = new System.Drawing.Point(83, 298);
+            this.pstnoIn.Location = new System.Drawing.Point(88, 298);
             this.pstnoIn.MaxLength = 10;
             this.pstnoIn.Name = "pstnoIn";
             this.pstnoIn.Size = new System.Drawing.Size(163, 20);
@@ -483,7 +483,7 @@ namespace introseHHC.RegForms
             "Married",
             "Divorced",
             "Widowed"});
-            this.pcivStatCoB.Location = new System.Drawing.Point(83, 206);
+            this.pcivStatCoB.Location = new System.Drawing.Point(88, 206);
             this.pcivStatCoB.Name = "pcivStatCoB";
             this.pcivStatCoB.Size = new System.Drawing.Size(121, 21);
             this.pcivStatCoB.TabIndex = 47;
@@ -510,7 +510,7 @@ namespace introseHHC.RegForms
             "M",
             "F",
             "O"});
-            this.pgenCoB.Location = new System.Drawing.Point(83, 131);
+            this.pgenCoB.Location = new System.Drawing.Point(88, 131);
             this.pgenCoB.Name = "pgenCoB";
             this.pgenCoB.Size = new System.Drawing.Size(121, 21);
             this.pgenCoB.TabIndex = 44;
@@ -527,7 +527,7 @@ namespace introseHHC.RegForms
             // 
             // prelIn
             // 
-            this.prelIn.Location = new System.Drawing.Point(83, 181);
+            this.prelIn.Location = new System.Drawing.Point(88, 181);
             this.prelIn.MaxLength = 64;
             this.prelIn.Name = "prelIn";
             this.prelIn.Size = new System.Drawing.Size(121, 20);
@@ -545,7 +545,7 @@ namespace introseHHC.RegForms
             // 
             // pnatIn
             // 
-            this.pnatIn.Location = new System.Drawing.Point(83, 157);
+            this.pnatIn.Location = new System.Drawing.Point(88, 157);
             this.pnatIn.MaxLength = 64;
             this.pnatIn.Name = "pnatIn";
             this.pnatIn.Size = new System.Drawing.Size(121, 20);
@@ -573,7 +573,7 @@ namespace introseHHC.RegForms
             // 
             // pmnameIn
             // 
-            this.pmnameIn.Location = new System.Drawing.Point(335, 80);
+            this.pmnameIn.Location = new System.Drawing.Point(340, 80);
             this.pmnameIn.MaxLength = 32;
             this.pmnameIn.Name = "pmnameIn";
             this.pmnameIn.Size = new System.Drawing.Size(83, 20);
@@ -582,7 +582,7 @@ namespace introseHHC.RegForms
             // 
             // pfnameIn
             // 
-            this.pfnameIn.Location = new System.Drawing.Point(210, 80);
+            this.pfnameIn.Location = new System.Drawing.Point(215, 80);
             this.pfnameIn.MaxLength = 32;
             this.pfnameIn.Name = "pfnameIn";
             this.pfnameIn.Size = new System.Drawing.Size(118, 20);
@@ -591,7 +591,7 @@ namespace introseHHC.RegForms
             // 
             // psnameIn
             // 
-            this.psnameIn.Location = new System.Drawing.Point(83, 81);
+            this.psnameIn.Location = new System.Drawing.Point(88, 81);
             this.psnameIn.MaxLength = 32;
             this.psnameIn.Name = "psnameIn";
             this.psnameIn.Size = new System.Drawing.Size(121, 20);
@@ -616,7 +616,7 @@ namespace introseHHC.RegForms
             "Mr.",
             "Ms.",
             "Mrs."});
-            this.pdesigCoB.Location = new System.Drawing.Point(83, 55);
+            this.pdesigCoB.Location = new System.Drawing.Point(88, 55);
             this.pdesigCoB.Name = "pdesigCoB";
             this.pdesigCoB.Size = new System.Drawing.Size(121, 21);
             this.pdesigCoB.TabIndex = 39;
@@ -700,28 +700,28 @@ namespace introseHHC.RegForms
             // 
             // cOtherIn
             // 
-            this.cOtherIn.Location = new System.Drawing.Point(364, 376);
+            this.cOtherIn.Location = new System.Drawing.Point(369, 376);
             this.cOtherIn.Name = "cOtherIn";
             this.cOtherIn.Size = new System.Drawing.Size(100, 20);
             this.cOtherIn.TabIndex = 122;
             // 
             // cMobileIn
             // 
-            this.cMobileIn.Location = new System.Drawing.Point(364, 350);
+            this.cMobileIn.Location = new System.Drawing.Point(369, 350);
             this.cMobileIn.Name = "cMobileIn";
             this.cMobileIn.Size = new System.Drawing.Size(100, 20);
             this.cMobileIn.TabIndex = 121;
             // 
             // cWorkIn
             // 
-            this.cWorkIn.Location = new System.Drawing.Point(364, 323);
+            this.cWorkIn.Location = new System.Drawing.Point(369, 323);
             this.cWorkIn.Name = "cWorkIn";
             this.cWorkIn.Size = new System.Drawing.Size(100, 20);
             this.cWorkIn.TabIndex = 120;
             // 
             // cHomeIn
             // 
-            this.cHomeIn.Location = new System.Drawing.Point(364, 295);
+            this.cHomeIn.Location = new System.Drawing.Point(369, 295);
             this.cHomeIn.Name = "cHomeIn";
             this.cHomeIn.Size = new System.Drawing.Size(100, 20);
             this.cHomeIn.TabIndex = 119;
@@ -729,7 +729,7 @@ namespace introseHHC.RegForms
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(323, 379);
+            this.label60.Location = new System.Drawing.Point(328, 379);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(33, 13);
             this.label60.TabIndex = 117;
@@ -738,7 +738,7 @@ namespace introseHHC.RegForms
             // label61
             // 
             this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(323, 353);
+            this.label61.Location = new System.Drawing.Point(328, 353);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(38, 13);
             this.label61.TabIndex = 118;
@@ -747,7 +747,7 @@ namespace introseHHC.RegForms
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(323, 326);
+            this.label62.Location = new System.Drawing.Point(328, 326);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(33, 13);
             this.label62.TabIndex = 115;
@@ -756,7 +756,7 @@ namespace introseHHC.RegForms
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(323, 301);
+            this.label63.Location = new System.Drawing.Point(328, 301);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(35, 13);
             this.label63.TabIndex = 116;
@@ -822,14 +822,14 @@ namespace introseHHC.RegForms
             // 
             // cbdayPick
             // 
-            this.cbdayPick.Location = new System.Drawing.Point(82, 105);
+            this.cbdayPick.Location = new System.Drawing.Point(87, 105);
             this.cbdayPick.Name = "cbdayPick";
             this.cbdayPick.Size = new System.Drawing.Size(246, 20);
             this.cbdayPick.TabIndex = 77;
             // 
             // posIn
             // 
-            this.posIn.Location = new System.Drawing.Point(269, 208);
+            this.posIn.Location = new System.Drawing.Point(274, 208);
             this.posIn.Name = "posIn";
             this.posIn.Size = new System.Drawing.Size(179, 20);
             this.posIn.TabIndex = 107;
@@ -837,7 +837,7 @@ namespace introseHHC.RegForms
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(266, 188);
+            this.label49.Location = new System.Drawing.Point(271, 188);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(107, 13);
             this.label49.TabIndex = 106;
@@ -845,7 +845,7 @@ namespace introseHHC.RegForms
             // 
             // primaryIn
             // 
-            this.primaryIn.Location = new System.Drawing.Point(266, 158);
+            this.primaryIn.Location = new System.Drawing.Point(271, 158);
             this.primaryIn.Name = "primaryIn";
             this.primaryIn.Size = new System.Drawing.Size(182, 20);
             this.primaryIn.TabIndex = 105;
@@ -853,7 +853,7 @@ namespace introseHHC.RegForms
             // primaryCB
             // 
             this.primaryCB.AutoSize = true;
-            this.primaryCB.Location = new System.Drawing.Point(246, 136);
+            this.primaryCB.Location = new System.Drawing.Point(251, 136);
             this.primaryCB.Name = "primaryCB";
             this.primaryCB.Size = new System.Drawing.Size(114, 17);
             this.primaryCB.TabIndex = 104;
@@ -863,9 +863,9 @@ namespace introseHHC.RegForms
             // 
             // cemailIn
             // 
-            this.cemailIn.Location = new System.Drawing.Point(82, 402);
+            this.cemailIn.Location = new System.Drawing.Point(87, 402);
             this.cemailIn.Name = "cemailIn";
-            this.cemailIn.Size = new System.Drawing.Size(208, 20);
+            this.cemailIn.Size = new System.Drawing.Size(164, 20);
             this.cemailIn.TabIndex = 100;
             // 
             // label14
@@ -880,7 +880,7 @@ namespace introseHHC.RegForms
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(252, 314);
+            this.label15.Location = new System.Drawing.Point(257, 314);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 13);
             this.label15.TabIndex = 98;
@@ -889,7 +889,7 @@ namespace introseHHC.RegForms
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(252, 298);
+            this.label16.Location = new System.Drawing.Point(257, 298);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(44, 13);
             this.label16.TabIndex = 97;
@@ -904,7 +904,7 @@ namespace introseHHC.RegForms
             "Tertiary",
             "Intermediate",
             "None"});
-            this.cedattCoB.Location = new System.Drawing.Point(83, 235);
+            this.cedattCoB.Location = new System.Drawing.Point(88, 235);
             this.cedattCoB.Name = "cedattCoB";
             this.cedattCoB.Size = new System.Drawing.Size(121, 21);
             this.cedattCoB.TabIndex = 89;
@@ -929,7 +929,7 @@ namespace introseHHC.RegForms
             // 
             // cregIn
             // 
-            this.cregIn.Location = new System.Drawing.Point(83, 376);
+            this.cregIn.Location = new System.Drawing.Point(88, 376);
             this.cregIn.Name = "cregIn";
             this.cregIn.Size = new System.Drawing.Size(163, 20);
             this.cregIn.TabIndex = 93;
@@ -937,7 +937,7 @@ namespace introseHHC.RegForms
             // 
             // ccityIn
             // 
-            this.ccityIn.Location = new System.Drawing.Point(83, 350);
+            this.ccityIn.Location = new System.Drawing.Point(88, 350);
             this.ccityIn.Name = "ccityIn";
             this.ccityIn.Size = new System.Drawing.Size(163, 20);
             this.ccityIn.TabIndex = 92;
@@ -945,7 +945,7 @@ namespace introseHHC.RegForms
             // 
             // caddIn
             // 
-            this.caddIn.Location = new System.Drawing.Point(83, 324);
+            this.caddIn.Location = new System.Drawing.Point(88, 324);
             this.caddIn.Name = "caddIn";
             this.caddIn.Size = new System.Drawing.Size(163, 20);
             this.caddIn.TabIndex = 91;
@@ -953,7 +953,7 @@ namespace introseHHC.RegForms
             // 
             // cstNoIn
             // 
-            this.cstNoIn.Location = new System.Drawing.Point(83, 298);
+            this.cstNoIn.Location = new System.Drawing.Point(88, 298);
             this.cstNoIn.Name = "cstNoIn";
             this.cstNoIn.Size = new System.Drawing.Size(163, 20);
             this.cstNoIn.TabIndex = 90;
@@ -976,7 +976,7 @@ namespace introseHHC.RegForms
             "Married",
             "Divorced",
             "Widowed"});
-            this.ccivstatCoB.Location = new System.Drawing.Point(83, 206);
+            this.ccivstatCoB.Location = new System.Drawing.Point(88, 206);
             this.ccivstatCoB.Name = "ccivstatCoB";
             this.ccivstatCoB.Size = new System.Drawing.Size(121, 21);
             this.ccivstatCoB.TabIndex = 88;
@@ -997,7 +997,7 @@ namespace introseHHC.RegForms
             "M",
             "F",
             "O"});
-            this.cgenCoB.Location = new System.Drawing.Point(83, 131);
+            this.cgenCoB.Location = new System.Drawing.Point(88, 131);
             this.cgenCoB.Name = "cgenCoB";
             this.cgenCoB.Size = new System.Drawing.Size(121, 21);
             this.cgenCoB.TabIndex = 78;
@@ -1013,7 +1013,7 @@ namespace introseHHC.RegForms
             // 
             // crelIn
             // 
-            this.crelIn.Location = new System.Drawing.Point(83, 181);
+            this.crelIn.Location = new System.Drawing.Point(88, 181);
             this.crelIn.Name = "crelIn";
             this.crelIn.Size = new System.Drawing.Size(121, 20);
             this.crelIn.TabIndex = 84;
@@ -1029,7 +1029,7 @@ namespace introseHHC.RegForms
             // 
             // cnatIn
             // 
-            this.cnatIn.Location = new System.Drawing.Point(83, 157);
+            this.cnatIn.Location = new System.Drawing.Point(88, 157);
             this.cnatIn.Name = "cnatIn";
             this.cnatIn.Size = new System.Drawing.Size(121, 20);
             this.cnatIn.TabIndex = 79;
@@ -1054,7 +1054,7 @@ namespace introseHHC.RegForms
             // 
             // cmnameIn
             // 
-            this.cmnameIn.Location = new System.Drawing.Point(335, 80);
+            this.cmnameIn.Location = new System.Drawing.Point(340, 80);
             this.cmnameIn.Name = "cmnameIn";
             this.cmnameIn.Size = new System.Drawing.Size(83, 20);
             this.cmnameIn.TabIndex = 76;
@@ -1062,7 +1062,7 @@ namespace introseHHC.RegForms
             // 
             // cfnameIn
             // 
-            this.cfnameIn.Location = new System.Drawing.Point(210, 80);
+            this.cfnameIn.Location = new System.Drawing.Point(215, 80);
             this.cfnameIn.Name = "cfnameIn";
             this.cfnameIn.Size = new System.Drawing.Size(118, 20);
             this.cfnameIn.TabIndex = 75;
@@ -1070,7 +1070,7 @@ namespace introseHHC.RegForms
             // 
             // csnameIn
             // 
-            this.csnameIn.Location = new System.Drawing.Point(83, 81);
+            this.csnameIn.Location = new System.Drawing.Point(88, 81);
             this.csnameIn.Name = "csnameIn";
             this.csnameIn.Size = new System.Drawing.Size(121, 20);
             this.csnameIn.TabIndex = 74;
@@ -1093,7 +1093,7 @@ namespace introseHHC.RegForms
             "Mr.",
             "Ms.",
             "Mrs."});
-            this.cdesigCoB.Location = new System.Drawing.Point(83, 55);
+            this.cdesigCoB.Location = new System.Drawing.Point(88, 55);
             this.cdesigCoB.Name = "cdesigCoB";
             this.cdesigCoB.Size = new System.Drawing.Size(121, 21);
             this.cdesigCoB.TabIndex = 72;
@@ -1130,6 +1130,8 @@ namespace introseHHC.RegForms
             // 
             // hvacCoB
             // 
+            this.hvacCoB.CheckOnClick = true;
+            this.hvacCoB.Enabled = false;
             this.hvacCoB.FormattingEnabled = true;
             this.hvacCoB.Location = new System.Drawing.Point(7, 203);
             this.hvacCoB.Name = "hvacCoB";
@@ -1148,6 +1150,7 @@ namespace introseHHC.RegForms
             // 
             // caseMgmtBox
             // 
+            this.caseMgmtBox.CheckOnClick = true;
             this.caseMgmtBox.Enabled = false;
             this.caseMgmtBox.FormattingEnabled = true;
             this.caseMgmtBox.Location = new System.Drawing.Point(3, 35);
@@ -1577,11 +1580,11 @@ namespace introseHHC.RegForms
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.effectPicker);
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.fsheetFinishButton);
+            this.tabPage4.Controls.Add(this.endorseButton);
+            this.tabPage4.Controls.Add(this.gatherButton);
             this.tabPage4.Controls.Add(this.label42);
-            this.tabPage4.Controls.Add(this.textBox55);
+            this.tabPage4.Controls.Add(this.surveyOtherIn);
             this.tabPage4.Controls.Add(this.comboBox13);
             this.tabPage4.Controls.Add(this.label43);
             this.tabPage4.Controls.Add(this.actionsTextBox);
@@ -1607,32 +1610,34 @@ namespace introseHHC.RegForms
             this.effectPicker.Size = new System.Drawing.Size(227, 20);
             this.effectPicker.TabIndex = 38;
             // 
-            // button1
+            // fsheetFinishButton
             // 
-            this.button1.Location = new System.Drawing.Point(455, 419);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Finish";
-            this.button1.UseVisualStyleBackColor = true;
+            this.fsheetFinishButton.Location = new System.Drawing.Point(455, 419);
+            this.fsheetFinishButton.Name = "fsheetFinishButton";
+            this.fsheetFinishButton.Size = new System.Drawing.Size(75, 23);
+            this.fsheetFinishButton.TabIndex = 37;
+            this.fsheetFinishButton.Text = "Finish";
+            this.fsheetFinishButton.UseVisualStyleBackColor = true;
+            this.fsheetFinishButton.Click += new System.EventHandler(this.fsheetFinishButton_Click);
             // 
-            // button7
+            // endorseButton
             // 
-            this.button7.Location = new System.Drawing.Point(204, 98);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 36;
-            this.button7.Text = "Enter";
-            this.button7.UseVisualStyleBackColor = true;
+            this.endorseButton.Location = new System.Drawing.Point(204, 98);
+            this.endorseButton.Name = "endorseButton";
+            this.endorseButton.Size = new System.Drawing.Size(75, 23);
+            this.endorseButton.TabIndex = 36;
+            this.endorseButton.Text = "Enter";
+            this.endorseButton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // gatherButton
             // 
-            this.button6.Location = new System.Drawing.Point(203, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 35;
-            this.button6.Text = "Enter";
-            this.button6.UseVisualStyleBackColor = true;
+            this.gatherButton.Location = new System.Drawing.Point(203, 30);
+            this.gatherButton.Name = "gatherButton";
+            this.gatherButton.Size = new System.Drawing.Size(75, 23);
+            this.gatherButton.TabIndex = 35;
+            this.gatherButton.Text = "Enter";
+            this.gatherButton.UseVisualStyleBackColor = true;
+            this.gatherButton.Click += new System.EventHandler(this.gatherButton_Click);
             // 
             // label42
             // 
@@ -1643,12 +1648,13 @@ namespace introseHHC.RegForms
             this.label42.TabIndex = 31;
             this.label42.Text = "Effectivity Date:";
             // 
-            // textBox55
+            // surveyOtherIn
             // 
-            this.textBox55.Location = new System.Drawing.Point(184, 346);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(140, 20);
-            this.textBox55.TabIndex = 30;
+            this.surveyOtherIn.Enabled = false;
+            this.surveyOtherIn.Location = new System.Drawing.Point(184, 346);
+            this.surveyOtherIn.Name = "surveyOtherIn";
+            this.surveyOtherIn.Size = new System.Drawing.Size(140, 20);
+            this.surveyOtherIn.TabIndex = 30;
             // 
             // comboBox13
             // 
@@ -1778,6 +1784,7 @@ namespace introseHHC.RegForms
             this.Name = "RegisterPatientTab";
             this.Text = "RegisterPatientTab";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterPatientTab_FormClosed);
+            this.Load += new System.EventHandler(this.RegisterPatientTab_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1902,7 +1909,7 @@ namespace introseHHC.RegForms
         private System.Windows.Forms.CheckBox caseMgmtCB;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.TextBox surveyOtherIn;
         private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox actionsTextBox;
@@ -1913,8 +1920,8 @@ namespace introseHHC.RegForms
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox textBox58;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button endorseButton;
+        private System.Windows.Forms.Button gatherButton;
         private System.Windows.Forms.CheckedListBox caseMgmtBox;
         private System.Windows.Forms.TextBox primaryIn;
         private System.Windows.Forms.CheckBox primaryCB;
@@ -1928,7 +1935,7 @@ namespace introseHHC.RegForms
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button clientSelectButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button fsheetFinishButton;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;

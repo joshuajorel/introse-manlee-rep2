@@ -52,5 +52,12 @@ namespace introseHHC.RegForms
         {
 
         }
+
+        private void regEmpButton_Click(object sender, EventArgs e)
+        {
+            RegisterEmployee emp = new RegisterEmployee();
+
+            emp.ShowDialog();
+        }
     }
 }

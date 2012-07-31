@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.clientView = new System.Windows.Forms.DataGridView();
-            this._hhc_dbDataSet = new introseHHC._hhc_dbDataSet();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getClientsTableAdapter = new introseHHC._hhc_dbDataSetTableAdapters.getClientsTableAdapter();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getClientsDB = new introseHHC.getClientsDB();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.getClientsTableAdapter2 = new introseHHC.getClientsDBTableAdapters.getClientsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.clientView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._hhc_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsDB)).BeginInit();
             this.SuspendLayout();
             // 
             // clientView
@@ -50,11 +50,11 @@
             this.clientView.AutoGenerateColumns = false;
             this.clientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientIDDataGridViewTextBoxColumn,
-            this.fNameDataGridViewTextBoxColumn,
-            this.sNameDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
             this.clientView.DataSource = this.getClientsBindingSource;
-            this.clientView.Location = new System.Drawing.Point(22, 12);
+            this.clientView.Location = new System.Drawing.Point(17, 12);
             this.clientView.MultiSelect = false;
             this.clientView.Name = "clientView";
             this.clientView.ReadOnly = true;
@@ -62,40 +62,36 @@
             this.clientView.Size = new System.Drawing.Size(360, 150);
             this.clientView.TabIndex = 0;
             // 
-            // _hhc_dbDataSet
+            // dataGridViewTextBoxColumn4
             // 
-            this._hhc_dbDataSet.DataSetName = "_hhc_dbDataSet";
-            this._hhc_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ClientID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ClientID";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "FName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "FName";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "SName";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // getClientsBindingSource
             // 
             this.getClientsBindingSource.DataMember = "getClients";
-            this.getClientsBindingSource.DataSource = this._hhc_dbDataSet;
+            this.getClientsBindingSource.DataSource = this.getClientsDB;
             // 
-            // getClientsTableAdapter
+            // getClientsDB
             // 
-            this.getClientsTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sNameDataGridViewTextBoxColumn
-            // 
-            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "SName";
-            this.sNameDataGridViewTextBoxColumn.HeaderText = "SName";
-            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
-            this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.getClientsDB.DataSetName = "getClientsDB";
+            this.getClientsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // okButton
             // 
@@ -116,6 +112,10 @@
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // getClientsTableAdapter2
+            // 
+            this.getClientsTableAdapter2.ClearBeforeFill = true;
+            // 
             // ClientSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,8 +128,8 @@
             this.Text = "ClientSelect";
             this.Load += new System.EventHandler(this.ClientSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._hhc_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsDB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,13 +137,22 @@
         #endregion
 
         private System.Windows.Forms.DataGridView clientView;
-        private _hhc_dbDataSet _hhc_dbDataSet;
-        private System.Windows.Forms.BindingSource getClientsBindingSource;
-        private _hhc_dbDataSetTableAdapters.getClientsTableAdapter getClientsTableAdapter;
+     
+      
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
+      
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private getClientsDB getClientsDB;
+        private System.Windows.Forms.BindingSource getClientsBindingSource;
+        private getClientsDBTableAdapters.getClientsTableAdapter getClientsTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

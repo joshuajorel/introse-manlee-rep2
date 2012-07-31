@@ -25,17 +25,21 @@ namespace introseHHC.RegForms
             sel = 0;
         }
 
-        private void ClientSelect_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the '_hhc_dbDataSet.getClients' table. You can move, or remove it, as needed.
-            this.getClientsTableAdapter.Fill(this._hhc_dbDataSet.getClients);
-
-        }
+  
 
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             sel = UInt16.Parse(clientView.SelectedCells[0].Value.ToString());
         }
+
+        private void ClientSelect_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'getClientsDB.getClients' table. You can move, or remove it, as needed.
+            this.getClientsTableAdapter2.Fill(this.getClientsDB.getClients);
+
+        }
+
+
     }
 }
