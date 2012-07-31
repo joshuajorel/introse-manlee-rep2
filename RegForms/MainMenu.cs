@@ -13,12 +13,16 @@ namespace introseHHC.RegForms
 {
     public partial class MainMenu : Form
     {
-        
 
-        public MainMenu()
+        private string user, pass;
+        private Login li;
+
+        public MainMenu(string u, string p, Login l)
         {
             InitializeComponent();
-            
+            user = u;
+            pass = p;
+            li = l;
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -40,7 +44,8 @@ namespace introseHHC.RegForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            li.Show();
         }
 
 
@@ -62,5 +67,7 @@ namespace introseHHC.RegForms
 
             mn.ShowDialog();
         }
+
+      
     }
 }

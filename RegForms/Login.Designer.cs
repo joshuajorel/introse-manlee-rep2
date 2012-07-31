@@ -48,6 +48,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(126, 130);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
             // 
@@ -87,6 +88,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
