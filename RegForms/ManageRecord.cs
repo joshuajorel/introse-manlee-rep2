@@ -20,6 +20,8 @@ namespace introseHHC.RegForms
         {
             // TODO: This line of code loads data into the 'getPatientDetailsDB.getPatientDetails' table. You can move, or remove it, as needed.
             this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
+            // TODO: This line of code loads data into the 'getPatientDetailsDB.getPatientDetails' table. You can move, or remove it, as needed.
+            this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
 
         }
 

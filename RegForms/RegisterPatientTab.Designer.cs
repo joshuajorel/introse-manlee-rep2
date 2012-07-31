@@ -170,9 +170,6 @@ namespace introseHHC.RegForms
             this.endorseButton = new System.Windows.Forms.Button();
             this.gatherButton = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
-            this.surveyOtherIn = new System.Windows.Forms.TextBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.label43 = new System.Windows.Forms.Label();
             this.actionsTextBox = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
@@ -708,6 +705,7 @@ namespace introseHHC.RegForms
             this.cOtherIn.Name = "cOtherIn";
             this.cOtherIn.Size = new System.Drawing.Size(100, 20);
             this.cOtherIn.TabIndex = 122;
+            this.cOtherIn.Text = "0";
             // 
             // cMobileIn
             // 
@@ -715,6 +713,7 @@ namespace introseHHC.RegForms
             this.cMobileIn.Name = "cMobileIn";
             this.cMobileIn.Size = new System.Drawing.Size(100, 20);
             this.cMobileIn.TabIndex = 121;
+            this.cMobileIn.Text = "0";
             // 
             // cWorkIn
             // 
@@ -722,6 +721,7 @@ namespace introseHHC.RegForms
             this.cWorkIn.Name = "cWorkIn";
             this.cWorkIn.Size = new System.Drawing.Size(100, 20);
             this.cWorkIn.TabIndex = 120;
+            this.cWorkIn.Text = "0";
             // 
             // cHomeIn
             // 
@@ -729,6 +729,7 @@ namespace introseHHC.RegForms
             this.cHomeIn.Name = "cHomeIn";
             this.cHomeIn.Size = new System.Drawing.Size(100, 20);
             this.cHomeIn.TabIndex = 119;
+            this.cHomeIn.Text = "0";
             // 
             // label60
             // 
@@ -991,8 +992,7 @@ namespace introseHHC.RegForms
             this.cgenCoB.FormattingEnabled = true;
             this.cgenCoB.Items.AddRange(new object[] {
             "M",
-            "F",
-            "O"});
+            "F"});
             this.cgenCoB.Location = new System.Drawing.Point(88, 131);
             this.cgenCoB.Name = "cgenCoB";
             this.cgenCoB.Size = new System.Drawing.Size(121, 21);
@@ -1085,7 +1085,6 @@ namespace introseHHC.RegForms
             // 
             this.cdesigCoB.FormattingEnabled = true;
             this.cdesigCoB.Items.AddRange(new object[] {
-            "",
             "Mr.",
             "Ms.",
             "Mrs."});
@@ -1581,9 +1580,6 @@ namespace introseHHC.RegForms
             this.tabPage4.Controls.Add(this.endorseButton);
             this.tabPage4.Controls.Add(this.gatherButton);
             this.tabPage4.Controls.Add(this.label42);
-            this.tabPage4.Controls.Add(this.surveyOtherIn);
-            this.tabPage4.Controls.Add(this.comboBox13);
-            this.tabPage4.Controls.Add(this.label43);
             this.tabPage4.Controls.Add(this.actionsTextBox);
             this.tabPage4.Controls.Add(this.label44);
             this.tabPage4.Controls.Add(this.label45);
@@ -1602,7 +1598,7 @@ namespace introseHHC.RegForms
             // 
             // effectPicker
             // 
-            this.effectPicker.Location = new System.Drawing.Point(97, 379);
+            this.effectPicker.Location = new System.Drawing.Point(99, 349);
             this.effectPicker.Name = "effectPicker";
             this.effectPicker.Size = new System.Drawing.Size(227, 20);
             this.effectPicker.TabIndex = 38;
@@ -1640,37 +1636,11 @@ namespace introseHHC.RegForms
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(7, 383);
+            this.label42.Location = new System.Drawing.Point(9, 353);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(82, 13);
             this.label42.TabIndex = 31;
             this.label42.Text = "Effectivity Date:";
-            // 
-            // surveyOtherIn
-            // 
-            this.surveyOtherIn.Enabled = false;
-            this.surveyOtherIn.Location = new System.Drawing.Point(184, 346);
-            this.surveyOtherIn.Name = "surveyOtherIn";
-            this.surveyOtherIn.Size = new System.Drawing.Size(140, 20);
-            this.surveyOtherIn.TabIndex = 30;
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(7, 346);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(171, 21);
-            this.comboBox13.TabIndex = 29;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(4, 321);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(320, 13);
-            this.label43.TabIndex = 28;
-            this.label43.Text = "SURVEY: How did you get to know Home Health Care?";
             // 
             // actionsTextBox
             // 
@@ -1909,9 +1879,6 @@ namespace introseHHC.RegForms
         private System.Windows.Forms.CheckBox caseMgmtCB;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox surveyOtherIn;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox actionsTextBox;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;

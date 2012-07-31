@@ -43,10 +43,6 @@ namespace introseHHC.RegForms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -58,6 +54,13 @@ namespace introseHHC.RegForms
             RegisterEmployee emp = new RegisterEmployee();
 
             emp.ShowDialog();
+        }
+
+        private void manageRecButton_Click(object sender, EventArgs e)
+        {
+            ManageRecord mn = new ManageRecord();
+
+            mn.ShowDialog();
         }
     }
 }
