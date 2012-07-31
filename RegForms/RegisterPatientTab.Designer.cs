@@ -88,7 +88,6 @@ namespace introseHHC.RegForms
             this.cbdayPick = new System.Windows.Forms.DateTimePicker();
             this.posIn = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.primaryIn = new System.Windows.Forms.TextBox();
             this.primaryCB = new System.Windows.Forms.CheckBox();
             this.cemailIn = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -651,7 +650,6 @@ namespace introseHHC.RegForms
             this.tabPage2.Controls.Add(this.cbdayPick);
             this.tabPage2.Controls.Add(this.posIn);
             this.tabPage2.Controls.Add(this.label49);
-            this.tabPage2.Controls.Add(this.primaryIn);
             this.tabPage2.Controls.Add(this.primaryCB);
             this.tabPage2.Controls.Add(this.cemailIn);
             this.tabPage2.Controls.Add(this.label14);
@@ -843,13 +841,6 @@ namespace introseHHC.RegForms
             this.label49.TabIndex = 106;
             this.label49.Text = "Position/Relationship";
             // 
-            // primaryIn
-            // 
-            this.primaryIn.Location = new System.Drawing.Point(271, 158);
-            this.primaryIn.Name = "primaryIn";
-            this.primaryIn.Size = new System.Drawing.Size(182, 20);
-            this.primaryIn.TabIndex = 105;
-            // 
             // primaryCB
             // 
             this.primaryCB.AutoSize = true;
@@ -859,7 +850,6 @@ namespace introseHHC.RegForms
             this.primaryCB.TabIndex = 104;
             this.primaryCB.Text = "Primary Caregiver?";
             this.primaryCB.UseVisualStyleBackColor = true;
-            this.primaryCB.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // cemailIn
             // 
@@ -1925,7 +1915,6 @@ namespace introseHHC.RegForms
         private System.Windows.Forms.Button endorseButton;
         private System.Windows.Forms.Button gatherButton;
         private System.Windows.Forms.CheckedListBox caseMgmtBox;
-        private System.Windows.Forms.TextBox primaryIn;
         private System.Windows.Forms.CheckBox primaryCB;
         private System.Windows.Forms.TextBox posIn;
         private System.Windows.Forms.Label label49;

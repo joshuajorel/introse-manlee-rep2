@@ -60,6 +60,8 @@ namespace introseHHC.RegForms
         private UInt16 mobNum;
         private UInt16 otherNum;
         //holders for facesheet
+        private string posrel;
+        private bool isPrimary;
         private string[] casemgmt;
         private string[] hvac;
         
@@ -215,17 +217,6 @@ namespace introseHHC.RegForms
             else
             {
                 hvacCoB.Enabled = true;
-            }
-        }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (primaryCB.Checked == true)
-            {
-                primaryIn.Enabled = false;
-            }
-            else
-            {
-                primaryIn.Enabled = true;
             }
         }
 
@@ -401,8 +392,7 @@ namespace introseHHC.RegForms
             }
 
             try
-            {
-                workNum = UInt16.Parse(cWorkIn.Text);
+            {   workNum = UInt16.Parse(cWorkIn.Text);
                 homeNum = UInt16.Parse(cHomeIn.Text);
                 mobNum = UInt16.Parse(cMobileIn.Text);
                 otherNum = UInt16.Parse(cOtherIn.Text);
@@ -414,6 +404,10 @@ namespace introseHHC.RegForms
             //get email
             //needs regex based error checking
             email = cemailIn.Text;
+            //get position/relationship of client to patient
+            posrel = posIn.Text;
+            isPrimary = primaryCB.Checked;
+
 
             client.setName(desig, fname, mname, sname);
             client.setBday(birthdate);
@@ -434,31 +428,29 @@ namespace introseHHC.RegForms
 
                 string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
                 cmd = new MySqlCommand(query,conn);
-
                 read = cmd.ExecuteReader();
-
                 read.Read();
-
                 Console.WriteLine(read.GetDecimal(0).ToString());
-
                 UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
-
                 client.setID(lastID);
-
                 read.Close();
 
                 query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
-
                 cmd.CommandText = query;
-
                 cmd.Prepare();
-
                 cmd.Parameters.AddWithValue("@cid", lastID);
+                cmd.ExecuteNonQuery();
 
+                query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@pd",patient.getID());
+                cmd.Parameters.AddWithValue("@cd",client.getID());
+                cmd.Parameters.AddWithValue("@ip",isPrimary);
+                cmd.Parameters.AddWithValue("@rel",posrel);
                 cmd.ExecuteNonQuery();
 
                 CloseConnection();
-
                 tabControl1.SelectedIndex++;
             }
             else
