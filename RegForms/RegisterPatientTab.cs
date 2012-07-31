@@ -24,19 +24,19 @@ namespace introseHHC.RegForms
         private string password;
 
         private const byte PATIENT_TAB = 0;
-        private const byte CLIENT_TAB =  1;
+        private const byte CLIENT_TAB = 1;
         private const byte REQUIREMENTS_TAB = 2;
         private const byte DETAILS_TAB = 3;
 
         private Patient patient;
-        private Client  client;
+        private Client client;
         private FaceSheet fsheet;
         private CostTable cost;
 
         private UInt16 selID;
         private UInt16 gatherID;
         private UInt16 endorseID;
-        
+
         private string desig;
         private string fname;
         private string sname;
@@ -62,9 +62,7 @@ namespace introseHHC.RegForms
         //holders for facesheet
         private string posrel;
         private bool isPrimary;
-        private string[] casemgmt;
-        private string[] hvac;
-        
+
         public RegisterPatientTab()
         {
             InitializeComponent();
@@ -72,17 +70,17 @@ namespace introseHHC.RegForms
             gatherID = endorseID = 0;
 
             patient = new Patient();
-            client  = new Client();
-            fsheet  = new FaceSheet();
-            cost    = new CostTable();
+            client = new Client();
+            fsheet = new FaceSheet();
+            cost = new CostTable();
 
-            server   = "localhost";
-            user     = "root";
+            server = "localhost";
+            user = "root";
             database = "hhc-db";
             password = "root";
 
             string connString = "SERVER=" + server + ";" + "DATABASE=" +
-                                database + ";" + "UID=" + user + ";" + 
+                                database + ";" + "UID=" + user + ";" +
                                 "PASSWORD=" + password + ";";
 
             conn = new MySqlConnection(connString);
@@ -121,10 +119,11 @@ namespace introseHHC.RegForms
                 Console.WriteLine("Number of HV Items: {0}", hvnum);
                 CloseConnection();
                 fsheet = new FaceSheet(cmnum, hvnum);
+              
             }
-        
-     
-          }
+
+
+        }
 
         private bool OpenConnection()
         {
@@ -154,7 +153,7 @@ namespace introseHHC.RegForms
         }
         private int checkName(string s, string f, string m)
         {
-            
+
             return 0;
         }
 
@@ -201,6 +200,10 @@ namespace introseHHC.RegForms
             if (caseMgmtCB.Checked == false)
             {
                 caseMgmtBox.Enabled = false;
+                for (int i = 0; i < caseMgmtBox.Items.Count; i++)
+                {
+                    caseMgmtBox.SetItemChecked(i,false);
+                }
             }
             else
             {
@@ -213,6 +216,10 @@ namespace introseHHC.RegForms
             if (hvacCB.Checked == false)
             {
                 hvacCoB.Enabled = false;
+                for (int i = 0; i < hvacCoB.Items.Count; i++)
+                {
+                    hvacCoB.SetItemChecked(i,false);
+                }
             }
             else
             {
@@ -248,11 +255,11 @@ namespace introseHHC.RegForms
             //following fields must not be blank
             try
             {
-                gender      = pgenCoB.Text;
+                gender = pgenCoB.Text;
                 nationality = pnatIn.Text;
-                religion    = prelIn.Text;
-                civstat     = pcivStatCoB.Text;
-                educattain  = pedattCoB.Text;
+                religion = prelIn.Text;
+                civstat = pcivStatCoB.Text;
+                educattain = pedattCoB.Text;
             }
             catch (Exception err)
             {
@@ -261,8 +268,8 @@ namespace introseHHC.RegForms
 
             //fields for address. must not be blank!
             addline = paddlineIn.Text;
-            city    = pcityIn.Text;
-            region  = pregIn.Text;
+            city = pcityIn.Text;
+            region = pregIn.Text;
 
             try
             {
@@ -279,15 +286,15 @@ namespace introseHHC.RegForms
 
             try
             {
-                workNum  = UInt16.Parse(pWorkIn.Text);
-                homeNum  = UInt16.Parse(pHomeIn.Text);
-                mobNum   = UInt16.Parse(pMobileIn.Text);
+                workNum = UInt16.Parse(pWorkIn.Text);
+                homeNum = UInt16.Parse(pHomeIn.Text);
+                mobNum = UInt16.Parse(pMobileIn.Text);
                 otherNum = UInt16.Parse(pOtherIn.Text);
             }
             catch (Exception err)
             {
             }
-               
+
             //get email
             //needs regex based error checking
             email = pemailIn.Text;
@@ -302,14 +309,14 @@ namespace introseHHC.RegForms
             patient.setEducAttainment(educattain);
             patient.setEmail(email);
             patient.setAddress(stnumber, addline, city, region);
-            patient.setNumbers(homeNum,workNum,mobNum,otherNum);
-            
+            patient.setNumbers(homeNum, workNum, mobNum, otherNum);
+
             //displayStuff(patient);
 
             //open connection to database
             if (true)
             {
-                    RegisterPerson(patient);
+                RegisterPerson(patient);
 
                 //insert into patient table
 
@@ -343,7 +350,7 @@ namespace introseHHC.RegForms
                 CloseConnection();
 
                 tabControl1.SelectedIndex++;
-               
+
             }
             else
             {
@@ -351,7 +358,7 @@ namespace introseHHC.RegForms
             }
 
             //move to next tab
-            
+
         }
         private void cNextButton_Click(object sender, EventArgs e)
         {
@@ -392,7 +399,8 @@ namespace introseHHC.RegForms
             }
 
             try
-            {   workNum = UInt16.Parse(cWorkIn.Text);
+            {
+                workNum = UInt16.Parse(cWorkIn.Text);
                 homeNum = UInt16.Parse(cHomeIn.Text);
                 mobNum = UInt16.Parse(cMobileIn.Text);
                 otherNum = UInt16.Parse(cOtherIn.Text);
@@ -421,33 +429,43 @@ namespace introseHHC.RegForms
             client.setNumbers(homeNum, workNum, mobNum, otherNum);
 
             if (true)//implement error checking flags here
-            {
-                RegisterPerson(client);
+            {   string query;
+                UInt16 lastID;
+
+                if(selID == 0)
+                 RegisterPerson(client);
 
                 OpenConnection();
 
-                string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
-                cmd = new MySqlCommand(query,conn);
-                read = cmd.ExecuteReader();
-                read.Read();
-                Console.WriteLine(read.GetDecimal(0).ToString());
-                UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
-                client.setID(lastID);
-                read.Close();
+                if (selID == 0)
+                {
+                    query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                    cmd = new MySqlCommand(query, conn);
+                    read = cmd.ExecuteReader();
+                    read.Read();
+                    Console.WriteLine(read.GetDecimal(0).ToString());
+                   lastID = UInt16.Parse(read.GetDecimal(0).ToString());
+                    client.setID(lastID);
+                    read.Close();
 
-                query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
-                cmd.CommandText = query;
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@cid", lastID);
-                cmd.ExecuteNonQuery();
+                    query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
+                    cmd.CommandText = query;
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@cid", lastID);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    client.setID(selID);
+                }
 
                 query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
                 cmd.CommandText = query;
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@pd",patient.getID());
-                cmd.Parameters.AddWithValue("@cd",client.getID());
-                cmd.Parameters.AddWithValue("@ip",isPrimary);
-                cmd.Parameters.AddWithValue("@rel",posrel);
+                cmd.Parameters.AddWithValue("@pd", patient.getID());
+                cmd.Parameters.AddWithValue("@cd", client.getID());
+                cmd.Parameters.AddWithValue("@ip", isPrimary);
+                cmd.Parameters.AddWithValue("@rel", posrel);
                 cmd.ExecuteNonQuery();
 
                 CloseConnection();
@@ -457,11 +475,13 @@ namespace introseHHC.RegForms
             {
             }
 
-            
+
         }
         private void rNextButton_Click(object sender, EventArgs e)
         {
             float np, m, o, nd, h, t, s, lwt, pax;
+            System.Text.StringBuilder cmgmt = new StringBuilder();
+            System.Text.StringBuilder hv = new StringBuilder();
 
             fsheet.registerClient(client.getID());
             fsheet.registerPatient(patient.getID());
@@ -471,42 +491,52 @@ namespace introseHHC.RegForms
             fsheet.ReqDetails = detIn.Text;
 
             if (caseMgmtCB.Checked)
-            {   int cnt = caseMgmtBox.CheckedItems.Count;
+            {
+                int cnt = caseMgmtBox.CheckedItems.Count;
 
                 for (int i = 0; i < cnt; i++)
                 {
-                    Console.WriteLine(caseMgmtBox.CheckedItems[i].ToString());
+                    cmgmt.Append("'" + caseMgmtBox.CheckedItems[i].ToString() + "'");
+                    if (i < cnt - 1)
+                        cmgmt.Append(",");
                 }
+
+                Console.WriteLine(cmgmt);
             }
             if (hvacCB.Checked)
             {
                 int num = hvacCoB.CheckedItems.Count;
+                Console.WriteLine("Number of items checked for HVAC: {0}",num);
 
                 for (int i = 0; i < num; i++)
                 {
-                    Console.WriteLine(hvacCoB.CheckedItems[i].ToString());
+                    hv.Append("'"+hvacCoB.CheckedItems[i].ToString()+"'");
+                    if (i < num - 1)
+                        hv.Append(",");
+
                 }
+                Console.WriteLine(hv);
             }
 
- //initialize cost table parameters
-             try
-               {  //get MD Parameters first
-                   np = float.Parse(mdNPIn.Text);
-                   m = float.Parse(mdmealsIn.Text);
-                   o = float.Parse(mdoverIn.Text);
-                   nd = float.Parse(mdndIn.Text);
-                   h = float.Parse(mdhpIn.Text);
-                   t = float.Parse(mdTranspoIn.Text);
-                   s = float.Parse(mdSomethingIn.Text);
-                   lwt = float.Parse(mdLWTIn.Text);
-                   pax = float.Parse(mdNoPaxIn.Text);
-                   cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
-                }
-              catch (Exception err)
-              {
-                  Console.WriteLine("Cost Table Field Error(MD): " + err.Message);
-              }
-            
+            //initialize cost table parameters
+            try
+            {  //get MD Parameters first
+                np = float.Parse(mdNPIn.Text);
+                m = float.Parse(mdmealsIn.Text);
+                o = float.Parse(mdoverIn.Text);
+                nd = float.Parse(mdndIn.Text);
+                h = float.Parse(mdhpIn.Text);
+                t = float.Parse(mdTranspoIn.Text);
+                s = float.Parse(mdSomethingIn.Text);
+                lwt = float.Parse(mdLWTIn.Text);
+                pax = float.Parse(mdNoPaxIn.Text);
+                cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Cost Table Field Error(MD): " + err.Message);
+            }
+
             try
             { //get MD Parameters first
                 np = float.Parse(hcNPIn.Text);
@@ -533,38 +563,102 @@ namespace introseHHC.RegForms
                 {
                     string query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES,REQDETAILS) " +
                     "VALUES (@ptid,@ctid,@cty,@amb,@sen,@rqdet)";
-                    cmd.CommandText = query;
+                    cmd = new MySqlCommand(query, conn);
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@ptid", fsheet.PatientID);
                     cmd.Parameters.AddWithValue("@ctid", fsheet.ClientID);
                     cmd.Parameters.AddWithValue("@cty", fsheet.CarTra);
                     cmd.Parameters.AddWithValue("@amb", fsheet.AmbWel);
                     cmd.Parameters.AddWithValue("@sen", fsheet.SenRes);
-                    cmd.Parameters.AddWithValue("@rqdet",fsheet.ReqDetails);
+                    cmd.Parameters.AddWithValue("@rqdet", fsheet.ReqDetails);
 
                     cmd.ExecuteNonQuery();
 
                     query = "SELECT LAST_INSERT_ID() FROM FACESHEET;";
                     cmd.CommandText = query;
-
                     read = cmd.ExecuteReader();
-
                     read.Read();
-
                     fsheet.FID = UInt16.Parse(read.GetDecimal(0).ToString());
 
                     read.Close();
+
+                    //insert values to case mgmt map
+
+                    if (caseMgmtBox.CheckedItems.Count > 0)
+                    {
+
+                        string caseQuery = "SELECT CASEID FROM CASE_MGMT_REF WHERE DESCRIPTION IN (" + cmgmt + ");";
+                        cmd = new MySqlCommand(caseQuery, conn);
+                        UInt16[] ctmp = new UInt16[caseMgmtBox.CheckedItems.Count];
+
+                        read = cmd.ExecuteReader();
+                        int x = 0;
+                        while (read.Read())
+                        {
+
+                            Console.WriteLine(read.GetDecimal(0).ToString());
+                            ctmp[x] = UInt16.Parse(read.GetDecimal(0).ToString());
+                            x++;
+                        }
+                        fsheet.addCaseMgmtIndex(ctmp);
+                        read.Close();
+
+                        query = "INSERT INTO CASE_MGMT_MAP VALUES (@fcID,@cmgmtID);";
+                        cmd.CommandText = query;
+
+                        for (int ccnt = 0; ccnt < ctmp.Length; ccnt++)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
+                            cmd.Parameters.AddWithValue("@cmgmtID", ctmp[ccnt]);
+                            cmd.Prepare();
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    if (hvacCoB.CheckedItems.Count > 0)
+                    {
+                        string HVacquery = "SELECT HVACID FROM HVAC_REF WHERE DESCRIPTION IN (" + hv + ");";
+                        cmd = new MySqlCommand(HVacquery,conn);
+                        UInt16[] htmp = new UInt16[hvacCoB.CheckedItems.Count];
+
+                        read = cmd.ExecuteReader();
+                        int x = 0;
+                        while (read.Read())
+                        {
+
+                            Console.WriteLine(read.GetDecimal(0).ToString());
+                            htmp[x] = UInt16.Parse(read.GetDecimal(0).ToString());
+                            x++;
+                        }
+                        fsheet.addHomeVacIndex(htmp);
+                        read.Close();
+
+                        query = "INSERT INTO HVAC_MAP VALUES (@fcID,@hvacID);";
+                        cmd.CommandText = query;
+
+                        for (int hcnt = 0; hcnt < htmp.Length; hcnt++)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
+                            cmd.Parameters.AddWithValue("@hvacID",htmp[hcnt]);
+                            cmd.Prepare();
+                            cmd.ExecuteNonQuery();
+                            
+                        }
+                        
+                    }
 
                     CloseConnection();
                     tabControl1.SelectedIndex++;
                 }
             }
-  
+
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-          
+
         }
 
 
@@ -585,9 +679,9 @@ namespace introseHHC.RegForms
                 {
                     string query = "SELECT * FROM PERSON WHERE ID=@id;";
 
-                    cmd = new MySqlCommand(query,conn);
+                    cmd = new MySqlCommand(query, conn);
                     cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@id",selID);
+                    cmd.Parameters.AddWithValue("@id", selID);
 
                     read = cmd.ExecuteReader();
 
@@ -612,12 +706,12 @@ namespace introseHHC.RegForms
                     cWorkIn.Enabled = false;
                     cMobileIn.Enabled = false;
                     cOtherIn.Enabled = false;
-                    
+
                     cdesigCoB.Text = read.GetString("Designation");
                     csnameIn.Text = read.GetString("SName");
                     cfnameIn.Text = read.GetString("FName");
                     cmnameIn.Text = read.GetString("MName");
-                    cbdayPick.Value = read.GetDateTime("BDate");
+                    cbdayPick.Value = DateTime.Parse(read.GetString("BDate"));
                     cgenCoB.Text = read.GetString("Gender");
                     crelIn.Text = read.GetString("Religion");
                     cnatIn.Text = read.GetString("Nationality");
@@ -670,28 +764,28 @@ namespace introseHHC.RegForms
                 cMobileIn.Enabled = true;
                 cOtherIn.Enabled = true;
                 cOtherIn.Enabled = true;
-                    
 
-                    cdesigCoB.Text = "";
-                    csnameIn.Text = "Surname";
-                    cfnameIn.Text = "First Name";
-                    cmnameIn.Text = "Middle Name";
-                    cgenCoB.Text = "";
-                    crelIn.Text = "";
-                    cnatIn.Text = "";
-                    ccivstatCoB.Text = "";
-                    cedattCoB.Text = "";
-                    cstNoIn.Text = "Street #";
-                    caddIn.Text = "Address Line";
-                    ccityIn.Text = "City";
-                    cregIn.Text = "Region";
-                    cemailIn.Text = "";
-                    cHomeIn.Text = "";
-                    cWorkIn.Text = "";
-                    cMobileIn.Text = "";
-                    cOtherIn.Text = "";
 
-                    selID = 0;
+                cdesigCoB.Text = "";
+                csnameIn.Text = "Surname";
+                cfnameIn.Text = "First Name";
+                cmnameIn.Text = "Middle Name";
+                cgenCoB.Text = "";
+                crelIn.Text = "";
+                cnatIn.Text = "";
+                ccivstatCoB.Text = "";
+                cedattCoB.Text = "";
+                cstNoIn.Text = "Street #";
+                caddIn.Text = "Address Line";
+                ccityIn.Text = "City";
+                cregIn.Text = "Region";
+                cemailIn.Text = "";
+                cHomeIn.Text = "";
+                cWorkIn.Text = "";
+                cMobileIn.Text = "";
+                cOtherIn.Text = "";
+
+                selID = 0;
 
             }
         }
@@ -706,14 +800,14 @@ namespace introseHHC.RegForms
                 if (OpenConnection())
                 {
                     string query = "UPDATE FACESHEET SET GID =@gid,EID =@eid,ACTION =@act,EFFECTDATE=@edate WHERE FACEID=@fid;";
-                    cmd = new MySqlCommand(query,conn);
+                    cmd = new MySqlCommand(query, conn);
                     cmd.Prepare();
 
-                    cmd.Parameters.AddWithValue("@gid",fsheet.GatherID);
-                    cmd.Parameters.AddWithValue("@eid",fsheet.EndorseID);
-                    cmd.Parameters.AddWithValue("@act",fsheet.Action);
-                    cmd.Parameters.AddWithValue("@edate",fsheet.EffectivityDate);
-                    cmd.Parameters.AddWithValue("@fid",fsheet.FID);
+                    cmd.Parameters.AddWithValue("@gid", fsheet.GatherID);
+                    cmd.Parameters.AddWithValue("@eid", fsheet.EndorseID);
+                    cmd.Parameters.AddWithValue("@act", fsheet.Action);
+                    cmd.Parameters.AddWithValue("@edate", fsheet.EffectivityDate);
+                    cmd.Parameters.AddWithValue("@fid", fsheet.FID);
 
                     cmd.ExecuteNonQuery();
 
@@ -733,7 +827,7 @@ namespace introseHHC.RegForms
             SelectEmployee sel = new SelectEmployee();
             sel.ShowDialog();
             gatherID = sel.Sel;
-            Console.WriteLine("Gathered by: {0}",gatherID);
+            Console.WriteLine("Gathered by: {0}", gatherID);
             sel.Close();
             fsheet.GatherID = gatherID;
         }

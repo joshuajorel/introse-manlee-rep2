@@ -45,7 +45,8 @@ namespace introseHHC.Objects
             get { return endorseID; }
             set { endorseID = value; }
         }
-        private UInt16[] casMan, homVac;
+        private UInt16[] casMan;
+        private UInt16[] homVac;
         private bool carTra;
         public bool CarTra
         {
@@ -146,9 +147,13 @@ namespace introseHHC.Objects
         {
             senRes = option;
         }
-        public void setHomeVaccination(int option)
+        public void addCaseMgmtIndex(UInt16[] i)
         {
-
+            casMan = i;
+        }
+        public void addHomeVacIndex(UInt16[] i)
+        {
+            homVac = i;
         }
 
         

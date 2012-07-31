@@ -176,10 +176,10 @@ namespace introseHHC.RegForms
             this.actionsTextBox = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.textBox57 = new System.Windows.Forms.TextBox();
+            this.endorseTextBox = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox58 = new System.Windows.Forms.TextBox();
+            this.gatherTextBox = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.resetButton = new System.Windows.Forms.Button();
@@ -1581,10 +1581,10 @@ namespace introseHHC.RegForms
             this.tabPage4.Controls.Add(this.actionsTextBox);
             this.tabPage4.Controls.Add(this.label44);
             this.tabPage4.Controls.Add(this.label45);
-            this.tabPage4.Controls.Add(this.textBox57);
+            this.tabPage4.Controls.Add(this.endorseTextBox);
             this.tabPage4.Controls.Add(this.label46);
             this.tabPage4.Controls.Add(this.label47);
-            this.tabPage4.Controls.Add(this.textBox58);
+            this.tabPage4.Controls.Add(this.gatherTextBox);
             this.tabPage4.Controls.Add(this.label48);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -1613,7 +1613,7 @@ namespace introseHHC.RegForms
             // 
             // endorseButton
             // 
-            this.endorseButton.Location = new System.Drawing.Point(204, 98);
+            this.endorseButton.Location = new System.Drawing.Point(97, 98);
             this.endorseButton.Name = "endorseButton";
             this.endorseButton.Size = new System.Drawing.Size(75, 23);
             this.endorseButton.TabIndex = 36;
@@ -1623,7 +1623,7 @@ namespace introseHHC.RegForms
             // 
             // gatherButton
             // 
-            this.gatherButton.Location = new System.Drawing.Point(203, 30);
+            this.gatherButton.Location = new System.Drawing.Point(97, 30);
             this.gatherButton.Name = "gatherButton";
             this.gatherButton.Size = new System.Drawing.Size(75, 23);
             this.gatherButton.TabIndex = 35;
@@ -1694,12 +1694,13 @@ namespace introseHHC.RegForms
             this.label45.TabIndex = 25;
             this.label45.Text = "Employee ID:";
             // 
-            // textBox57
+            // endorseTextBox
             // 
-            this.textBox57.Location = new System.Drawing.Point(97, 100);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(100, 20);
-            this.textBox57.TabIndex = 24;
+            this.endorseTextBox.Enabled = false;
+            this.endorseTextBox.Location = new System.Drawing.Point(184, 98);
+            this.endorseTextBox.Name = "endorseTextBox";
+            this.endorseTextBox.Size = new System.Drawing.Size(140, 20);
+            this.endorseTextBox.TabIndex = 24;
             // 
             // label46
             // 
@@ -1720,12 +1721,13 @@ namespace introseHHC.RegForms
             this.label47.TabIndex = 22;
             this.label47.Text = "Employee ID:";
             // 
-            // textBox58
+            // gatherTextBox
             // 
-            this.textBox58.Location = new System.Drawing.Point(97, 32);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(100, 20);
-            this.textBox58.TabIndex = 21;
+            this.gatherTextBox.Enabled = false;
+            this.gatherTextBox.Location = new System.Drawing.Point(184, 30);
+            this.gatherTextBox.Name = "gatherTextBox";
+            this.gatherTextBox.Size = new System.Drawing.Size(140, 20);
+            this.gatherTextBox.TabIndex = 21;
             // 
             // label48
             // 
@@ -1907,10 +1909,10 @@ namespace introseHHC.RegForms
         private System.Windows.Forms.TextBox actionsTextBox;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox57;
+        private System.Windows.Forms.TextBox endorseTextBox;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox58;
+        private System.Windows.Forms.TextBox gatherTextBox;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button endorseButton;
         private System.Windows.Forms.Button gatherButton;
