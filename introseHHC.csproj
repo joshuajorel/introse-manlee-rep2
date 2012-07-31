@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorDiags\ErrorBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorDiags\ErrorBox.Designer.cs">
+      <DependentUpon>ErrorBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="getClientDetailsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,12 +155,6 @@
     <Compile Include="RegForms\RegisterEmployee.Designer.cs">
       <DependentUpon>RegisterEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegForms\RegisterPatient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegForms\RegisterPatient.designer.cs">
-      <DependentUpon>RegisterPatient.cs</DependentUpon>
-    </Compile>
     <Compile Include="RegForms\RegisterPatientTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,11 +184,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
     </Compile>
-    <Compile Include="_hhc_dbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_hhc_dbDataSet1.xsd</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="ErrorDiags\ErrorBox.resx">
+      <DependentUpon>ErrorBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\CGAForm.resx">
       <DependentUpon>CGAForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,9 +223,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\RegisterEmployee.resx">
       <DependentUpon>RegisterEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegForms\RegisterPatient.resx">
-      <DependentUpon>RegisterPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\RegisterPatientTab.resx">
       <DependentUpon>RegisterPatientTab.cs</DependentUpon>
@@ -305,24 +300,11 @@
     <None Include="getCaseMgmtDB.xss">
       <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
     </None>
-    <None Include="_hhc_dbDataSet1.xsc">
-      <DependentUpon>_hhc_dbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="_hhc_dbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_hhc_dbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_hhc_dbDataSet1.xss">
-      <DependentUpon>_hhc_dbDataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shape.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ErrorDiags\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
