@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace introseHHC.RegForms
 {
-    public partial class FamilyHistory : Form
+    public partial class PMedHist : Form
     {
-        public FamilyHistory()
+        public PMedHist()
         {
             InitializeComponent();
+        }
+
+        private void PMedHist_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
