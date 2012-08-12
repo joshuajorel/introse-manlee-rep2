@@ -88,12 +88,42 @@ namespace introseHHC.RegForms
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            ImmRec IR = new ImmRec();
+            IR.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Social soc = new Social();
+            soc.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PMedHist PMH = new PMedHist();
+            PMH.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MedList ML = new MedList();
+            ML.ShowDialog();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            FuncStat FS = new FuncStat();
+            FS.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

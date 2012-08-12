@@ -35,6 +35,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -42,10 +43,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 91);
+            this.label1.Size = new System.Drawing.Size(60, 117);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Vaccine\r\n\r\nTetanus\r\n\r\nPneumonia\r\n\r\nInfluenza";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Vaccine\r\n\r\nTetanus\r\n\r\nPneumonia\r\n\r\nInfluenza\r\n\r\nOthers";
             // 
             // label2
             // 
@@ -80,7 +80,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(15, 134);
+            this.okButton.Location = new System.Drawing.Point(15, 159);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 5;
@@ -89,18 +89,26 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(137, 134);
+            this.cancelButton.Location = new System.Drawing.Point(137, 159);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(112, 111);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 7;
+            // 
             // ImmRec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 169);
+            this.ClientSize = new System.Drawing.Size(232, 197);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.textBox3);
@@ -124,6 +132,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox textBox4;
 
     }
 }
