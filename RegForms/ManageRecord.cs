@@ -11,9 +11,13 @@ namespace introseHHC.RegForms
 {
     public partial class ManageRecord : Form
     {
-        public ManageRecord()
+        private string connString;
+
+        public ManageRecord(string c)
         {
             InitializeComponent();
+
+            connString = c;
         }
 
         private void ManageRecord_Load(object sender, EventArgs e)
@@ -29,6 +33,15 @@ namespace introseHHC.RegForms
            
 
         }
+
+        private void patientView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ViewPatient v = new ViewPatient(UInt16.Parse(patientView.SelectedCells[0].Value.ToString()),connString);
+
+            v.ShowDialog();
+            
+        }
+
 
 
     }

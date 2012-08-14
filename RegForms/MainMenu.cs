@@ -17,9 +17,26 @@ namespace introseHHC.RegForms
         private string user, pass;
         private Login li;
 
+        private string db_server;
+        private string db;
+        private string db_user;
+        private string db_password;
+        private string connString;
+
+
         public MainMenu(Login l)
         {
             InitializeComponent();
+
+            db_server = "localhost";
+            db_user = "root";
+            db = "hhc-db";
+            db_password = "root";
+
+            connString = "SERVER=" + db_server + ";" + "DATABASE=" +
+                                db + ";" + "UID=" + db_user + ";" +
+                                "PASSWORD=" + db_password + ";";
+
             li = l;
         }
 
@@ -62,7 +79,7 @@ namespace introseHHC.RegForms
 
         private void manageRecButton_Click(object sender, EventArgs e)
         {
-            ManageRecord mn = new ManageRecord();
+            ManageRecord mn = new ManageRecord(connString);
 
             mn.ShowDialog();
         }

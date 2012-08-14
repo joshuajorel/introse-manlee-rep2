@@ -33,7 +33,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.patSearchIn = new System.Windows.Forms.TextBox();
             this.patientView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,7 @@
             this.getPatientDetailsDB = new introseHHC.getPatientDetailsDB();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.clientSearchIn = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,19 +53,19 @@
             this.getClientDetailsDB = new introseHHC.getClientDetailsDB();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.empSearchIn = new System.Windows.Forms.TextBox();
             this.employeeView = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
-            this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
-            this.getEmployeeDetailsDB = new introseHHC.getEmployeeDetailsDB();
-            this.getEmployeeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getEmployeeDetailsTableAdapter = new introseHHC.getEmployeeDetailsDBTableAdapters.getEmployeeDetailsTableAdapter();
             this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getEmployeeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getEmployeeDetailsDB = new introseHHC.getEmployeeDetailsDB();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
+            this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
+            this.getEmployeeDetailsTableAdapter = new introseHHC.getEmployeeDetailsDBTableAdapters.getEmployeeDetailsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientView)).BeginInit();
@@ -77,15 +77,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(100, 497);
+            this.splitter1.Size = new System.Drawing.Size(100, 496);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -103,7 +103,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.patSearchIn);
             this.tabPage1.Controls.Add(this.patientView);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -122,12 +122,12 @@
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // patSearchIn
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(375, 20);
-            this.textBox1.TabIndex = 1;
+            this.patSearchIn.Location = new System.Drawing.Point(6, 13);
+            this.patSearchIn.Name = "patSearchIn";
+            this.patSearchIn.Size = new System.Drawing.Size(375, 20);
+            this.patSearchIn.TabIndex = 1;
             // 
             // patientView
             // 
@@ -149,6 +149,7 @@
             this.patientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.patientView.Size = new System.Drawing.Size(550, 391);
             this.patientView.TabIndex = 0;
+            this.patientView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientView_CellDoubleClick);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -191,7 +192,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.clientSearchIn);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -210,12 +211,12 @@
             this.button3.Text = "Search";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // clientSearchIn
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 17);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(375, 20);
-            this.textBox2.TabIndex = 2;
+            this.clientSearchIn.Location = new System.Drawing.Point(6, 17);
+            this.clientSearchIn.Name = "clientSearchIn";
+            this.clientSearchIn.Size = new System.Drawing.Size(375, 20);
+            this.clientSearchIn.TabIndex = 2;
             // 
             // dataGridView2
             // 
@@ -276,7 +277,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.empSearchIn);
             this.tabPage3.Controls.Add(this.employeeView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -295,12 +296,12 @@
             this.button5.Text = "Search";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // empSearchIn
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(375, 20);
-            this.textBox3.TabIndex = 2;
+            this.empSearchIn.Location = new System.Drawing.Point(6, 18);
+            this.empSearchIn.Name = "empSearchIn";
+            this.empSearchIn.Size = new System.Drawing.Size(375, 20);
+            this.empSearchIn.TabIndex = 2;
             // 
             // employeeView
             // 
@@ -321,46 +322,6 @@
             this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeView.Size = new System.Drawing.Size(544, 402);
             this.employeeView.TabIndex = 1;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(13, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Open";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // getPatientDetailsTableAdapter
-            // 
-            this.getPatientDetailsTableAdapter.ClearBeforeFill = true;
-            // 
-            // getClientDetailsTableAdapter
-            // 
-            this.getClientDetailsTableAdapter.ClearBeforeFill = true;
-            // 
-            // getEmployeeDetailsDB
-            // 
-            this.getEmployeeDetailsDB.DataSetName = "getEmployeeDetailsDB";
-            this.getEmployeeDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getEmployeeDetailsBindingSource
-            // 
-            this.getEmployeeDetailsBindingSource.DataMember = "getEmployeeDetails";
-            this.getEmployeeDetailsBindingSource.DataSource = this.getEmployeeDetailsDB;
-            // 
-            // getEmployeeDetailsTableAdapter
-            // 
-            this.getEmployeeDetailsTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn2
             // 
@@ -390,11 +351,51 @@
             this.surnameDataGridViewTextBoxColumn2.Name = "surnameDataGridViewTextBoxColumn2";
             this.surnameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // getEmployeeDetailsBindingSource
+            // 
+            this.getEmployeeDetailsBindingSource.DataMember = "getEmployeeDetails";
+            this.getEmployeeDetailsBindingSource.DataSource = this.getEmployeeDetailsDB;
+            // 
+            // getEmployeeDetailsDB
+            // 
+            this.getEmployeeDetailsDB.DataSetName = "getEmployeeDetailsDB";
+            this.getEmployeeDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 88);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Exit";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(13, 49);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Open";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // getPatientDetailsTableAdapter
+            // 
+            this.getPatientDetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // getClientDetailsTableAdapter
+            // 
+            this.getClientDetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // getEmployeeDetailsTableAdapter
+            // 
+            this.getEmployeeDetailsTableAdapter.ClearBeforeFill = true;
+            // 
             // ManageRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 497);
+            this.ClientSize = new System.Drawing.Size(662, 496);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.tabControl1);
@@ -416,8 +417,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,14 +430,14 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox patSearchIn;
         private System.Windows.Forms.DataGridView patientView;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox clientSearchIn;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox empSearchIn;
         private System.Windows.Forms.DataGridView employeeView;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button2;
