@@ -67,6 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getClientsDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="getEmployeeDetailsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getEmployeeDetailsDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="getEmployeesDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,12 +207,6 @@
     <Compile Include="RegForms\ViewCGA.Designer.cs">
       <DependentUpon>ViewCGA.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegForms\ViewFaceSheet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegForms\ViewFaceSheet.Designer.cs">
-      <DependentUpon>ViewFaceSheet.cs</DependentUpon>
-    </Compile>
     <Compile Include="getCaseMgmtDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -277,9 +276,6 @@
     <EmbeddedResource Include="RegForms\ViewCGA.resx">
       <DependentUpon>ViewCGA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegForms\ViewFaceSheet.resx">
-      <DependentUpon>ViewFaceSheet.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="getClientDetailsDB.xsc">
       <DependentUpon>getClientDetailsDB.xsd</DependentUpon>
     </None>
@@ -301,6 +297,17 @@
     </None>
     <None Include="getClientsDB.xss">
       <DependentUpon>getClientsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getEmployeeDetailsDB.xsc">
+      <DependentUpon>getEmployeeDetailsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getEmployeeDetailsDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getEmployeeDetailsDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getEmployeeDetailsDB.xss">
+      <DependentUpon>getEmployeeDetailsDB.xsd</DependentUpon>
     </None>
     <None Include="getEmployeesDB.xsc">
       <DependentUpon>getEmployeesDB.xsd</DependentUpon>

@@ -34,42 +34,51 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.getPatientDetailsDB = new introseHHC.getPatientDetailsDB();
-            this.getPatientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
+            this.patientView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getClientDetailsDB = new introseHHC.getClientDetailsDB();
-            this.getClientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
+            this.getPatientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getPatientDetailsDB = new introseHHC.getPatientDetailsDB();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getClientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getClientDetailsDB = new introseHHC.getClientDetailsDB();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.employeeView = new System.Windows.Forms.DataGridView();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
+            this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
+            this.getEmployeeDetailsDB = new introseHHC.getEmployeeDetailsDB();
+            this.getEmployeeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getEmployeeDetailsTableAdapter = new introseHHC.getEmployeeDetailsDBTableAdapters.getEmployeeDetailsTableAdapter();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -95,7 +104,7 @@
             // 
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.patientView);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -120,23 +129,64 @@
             this.textBox1.Size = new System.Drawing.Size(375, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // dataGridView1
+            // patientView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.patientView.AllowUserToAddRows = false;
+            this.patientView.AllowUserToDeleteRows = false;
+            this.patientView.AutoGenerateColumns = false;
+            this.patientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patientView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.middleNameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.getPatientDetailsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 391);
-            this.dataGridView1.TabIndex = 0;
+            this.patientView.DataSource = this.getPatientDetailsBindingSource;
+            this.patientView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.patientView.Location = new System.Drawing.Point(3, 66);
+            this.patientView.MultiSelect = false;
+            this.patientView.Name = "patientView";
+            this.patientView.ReadOnly = true;
+            this.patientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.patientView.Size = new System.Drawing.Size(550, 391);
+            this.patientView.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // getPatientDetailsBindingSource
+            // 
+            this.getPatientDetailsBindingSource.DataMember = "getPatientDetails";
+            this.getPatientDetailsBindingSource.DataSource = this.getPatientDetailsDB;
+            // 
+            // getPatientDetailsDB
+            // 
+            this.getPatientDetailsDB.DataSetName = "getPatientDetailsDB";
+            this.getPatientDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -185,120 +235,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(544, 392);
             this.dataGridView2.TabIndex = 1;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(556, 460);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Employee";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(387, 16);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(375, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 55);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(544, 402);
-            this.dataGridView3.TabIndex = 1;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(13, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Open";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // getPatientDetailsDB
-            // 
-            this.getPatientDetailsDB.DataSetName = "getPatientDetailsDB";
-            this.getPatientDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getPatientDetailsBindingSource
-            // 
-            this.getPatientDetailsBindingSource.DataMember = "getPatientDetails";
-            this.getPatientDetailsBindingSource.DataSource = this.getPatientDetailsDB;
-            // 
-            // getPatientDetailsTableAdapter
-            // 
-            this.getPatientDetailsTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "Middle Name";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle Name";
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // getClientDetailsDB
-            // 
-            this.getClientDetailsDB.DataSetName = "getClientDetailsDB";
-            this.getClientDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getClientDetailsBindingSource
-            // 
-            this.getClientDetailsBindingSource.DataMember = "getClientDetails";
-            this.getClientDetailsBindingSource.DataSource = this.getClientDetailsDB;
-            // 
-            // getClientDetailsTableAdapter
-            // 
-            this.getClientDetailsTableAdapter.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn1
             // 
             this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
@@ -327,6 +263,133 @@
             this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
             this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // getClientDetailsBindingSource
+            // 
+            this.getClientDetailsBindingSource.DataMember = "getClientDetails";
+            this.getClientDetailsBindingSource.DataSource = this.getClientDetailsDB;
+            // 
+            // getClientDetailsDB
+            // 
+            this.getClientDetailsDB.DataSetName = "getClientDetailsDB";
+            this.getClientDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.employeeView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(556, 460);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Employee";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(387, 16);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Search";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(6, 18);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(375, 20);
+            this.textBox3.TabIndex = 2;
+            // 
+            // employeeView
+            // 
+            this.employeeView.AllowUserToAddRows = false;
+            this.employeeView.AllowUserToDeleteRows = false;
+            this.employeeView.AutoGenerateColumns = false;
+            this.employeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn2,
+            this.firstNameDataGridViewTextBoxColumn2,
+            this.middleNameDataGridViewTextBoxColumn2,
+            this.surnameDataGridViewTextBoxColumn2});
+            this.employeeView.DataSource = this.getEmployeeDetailsBindingSource;
+            this.employeeView.Location = new System.Drawing.Point(3, 55);
+            this.employeeView.MultiSelect = false;
+            this.employeeView.Name = "employeeView";
+            this.employeeView.ReadOnly = true;
+            this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeView.Size = new System.Drawing.Size(544, 402);
+            this.employeeView.TabIndex = 1;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 88);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Exit";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(13, 49);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Open";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // getPatientDetailsTableAdapter
+            // 
+            this.getPatientDetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // getClientDetailsTableAdapter
+            // 
+            this.getClientDetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // getEmployeeDetailsDB
+            // 
+            this.getEmployeeDetailsDB.DataSetName = "getEmployeeDetailsDB";
+            this.getEmployeeDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getEmployeeDetailsBindingSource
+            // 
+            this.getEmployeeDetailsBindingSource.DataMember = "getEmployeeDetails";
+            this.getEmployeeDetailsBindingSource.DataSource = this.getEmployeeDetailsDB;
+            // 
+            // getEmployeeDetailsTableAdapter
+            // 
+            this.getEmployeeDetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn2
+            // 
+            this.firstNameDataGridViewTextBoxColumn2.DataPropertyName = "First Name";
+            this.firstNameDataGridViewTextBoxColumn2.HeaderText = "First Name";
+            this.firstNameDataGridViewTextBoxColumn2.Name = "firstNameDataGridViewTextBoxColumn2";
+            this.firstNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // middleNameDataGridViewTextBoxColumn2
+            // 
+            this.middleNameDataGridViewTextBoxColumn2.DataPropertyName = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn2.HeaderText = "Middle Name";
+            this.middleNameDataGridViewTextBoxColumn2.Name = "middleNameDataGridViewTextBoxColumn2";
+            this.middleNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // surnameDataGridViewTextBoxColumn2
+            // 
+            this.surnameDataGridViewTextBoxColumn2.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn2.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn2.Name = "surnameDataGridViewTextBoxColumn2";
+            this.surnameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // ManageRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,17 +405,19 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,14 +430,14 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView patientView;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView employeeView;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button2;
         private getPatientDetailsDB getPatientDetailsDB;
@@ -389,6 +454,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
+        private getEmployeeDetailsDB getEmployeeDetailsDB;
+        private System.Windows.Forms.BindingSource getEmployeeDetailsBindingSource;
+        private getEmployeeDetailsDBTableAdapters.getEmployeeDetailsTableAdapter getEmployeeDetailsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn2;
 
     }
 }
