@@ -123,10 +123,7 @@ namespace introseHHC.RegForms
                 fsheet = new FaceSheet(cmnum, hvnum);
               
             }
-
-
         }
-
         private bool OpenConnection()
         {
             try
@@ -484,6 +481,8 @@ namespace introseHHC.RegForms
         }
         private void cNextButton_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Client Next Button Clicked");
+
             bool nameFlag = true;
             bool otherFlag = true;
             bool boxFlag = true;
@@ -498,10 +497,16 @@ namespace introseHHC.RegForms
             a = Checker.check(fname);
             b = Checker.check(sname);
             c = Checker.check(mname);
+
+            Console.WriteLine("First Name:" + fname);
+            Console.WriteLine("Middle Name:" + mname);
+            Console.WriteLine("Last Name:" + sname);
+
             if (a && b && c)
             {
-                Console.WriteLine("NAMES ARE GOOD");
+                Console.WriteLine("Name Fields are good.");
                 nameFlag = true;
+                Console.WriteLine("nameFlag set to true.");
             }
             else
             {
@@ -520,6 +525,12 @@ namespace introseHHC.RegForms
                 nationality = cnatIn.Text;
                 religion = crelIn.Text;
 
+                Console.WriteLine("Birthdate:"+birthdate.ToShortDateString());
+                Console.WriteLine("Gender:" + gender);
+                Console.WriteLine("Nationality:"+nationality);
+                Console.WriteLine("Religion:"+religion);
+
+
                 a = Checker.check(religion);
                 b = Checker.check(nationality);
                 c = Checker.gend(gender);
@@ -528,6 +539,7 @@ namespace introseHHC.RegForms
                 {
                     Console.WriteLine("Fields ARE GOOD");
                     otherFlag = true;
+                    Console.WriteLine("otherFlag set to true.");
                 }
                 else
                 {
@@ -538,8 +550,8 @@ namespace introseHHC.RegForms
                         patSb.AppendLine("Invalid input in Nationality.");
                     if (!c)
                         patSb.AppendLine("Invalid input in Gender.");
-
-                 a = cdesigCoB.SelectedIndex >= 0;
+                }
+                a = cdesigCoB.SelectedIndex >= 0;
                 b = cedattCoB.SelectedIndex >= 0;
                 c = ccivstatCoB.SelectedIndex >= 0;
 
@@ -547,6 +559,7 @@ namespace introseHHC.RegForms
                 {
                     Console.WriteLine("ComboBoxes ARE GOOD");
                     boxFlag = true;
+                    Console.WriteLine("boxFlag set to true.");
                 }
                 else
                 {
@@ -573,6 +586,7 @@ namespace introseHHC.RegForms
             {
                 addFieldFlag = true;
                 Console.WriteLine("Address Text Fields are OK.");
+                Console.WriteLine("addFieldFlag set to true.");
             }
             else
             {
@@ -611,6 +625,7 @@ namespace introseHHC.RegForms
             {
                 contFlag = true;
                 Console.WriteLine("Contact numbers are OK!");
+                Console.WriteLine("contFlag set to true.");
             }
             else
             {
@@ -675,11 +690,13 @@ namespace introseHHC.RegForms
 
             isPrimary = primaryCB.Checked;
 
+            Console.WriteLine("Posflag:"+posFlag.ToString());
 
 
-
-            if (posFlag&& nameFlag && otherFlag && boxFlag && addFieldFlag && emailFlag && contFlag)//implement error checking flags here
+            if (posFlag&& nameFlag && otherFlag && boxFlag && addFieldFlag && emailFlag && contFlag)
             {
+                Console.WriteLine("All Flags are good!");
+
                 clientFlag = true;
                 client.setName(desig, fname, mname, sname);
                 client.setBday(birthdate);
@@ -718,10 +735,12 @@ namespace introseHHC.RegForms
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@cid", lastID);
                     cmd.ExecuteNonQuery();
+                    tabControl1.SelectedIndex++;
                 }
                 else
                 {
                     client.setID(selID);
+                    tabControl1.SelectedIndex++;
                 }
 
                 query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
@@ -734,18 +753,19 @@ namespace introseHHC.RegForms
                 cmd.ExecuteNonQuery();
 
                 CloseConnection();
-                tabControl1.SelectedIndex++;
+               
             }
             else
             {
+                Console.WriteLine("Errors");
                 Console.WriteLine(patSb);
                 new ErrorBox(patSb).ShowDialog();
                 patSb.Clear();
             }
 
 
-        }
-        }
+        
+}
         private void rNextButton_Click(object sender, EventArgs e)
         {
             float np, m, o, nd, h, t, s, lwt, pax;
@@ -1061,7 +1081,6 @@ namespace introseHHC.RegForms
 
             }
         }
-
         private void fsheetFinishButton_Click(object sender, EventArgs e)
         {
             fsheet.EffectivityDate = effectPicker.Value;
@@ -1093,7 +1112,6 @@ namespace introseHHC.RegForms
             }
 
         }
-
         private void gatherButton_Click(object sender, EventArgs e)
         {
             SelectEmployee sel = new SelectEmployee();
@@ -1108,7 +1126,6 @@ namespace introseHHC.RegForms
                 Console.WriteLine("Gather and Endorse cannot be the same.");
             
         }
-
         private void endorseButton_Click(object sender, EventArgs e)
         {
             SelectEmployee sel = new SelectEmployee();

@@ -1741,7 +1741,7 @@ namespace introseHHC.RegForms
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RegisterPatientTab";
-            this.Text = "RegisterPatientTab";
+            this.Text = "Register Face Sheet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterPatientTab_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
