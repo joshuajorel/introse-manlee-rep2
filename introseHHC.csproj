@@ -81,7 +81,6 @@
     <Compile Include="Objects\CGiverAssess.cs" />
     <Compile Include="Objects\Checker.cs" />
     <Compile Include="Objects\Client.cs" />
-    <Compile Include="Objects\Contact.cs" />
     <Compile Include="Objects\CostTable.cs" />
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Objects\FaceSheet.cs" />

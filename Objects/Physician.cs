@@ -5,7 +5,7 @@ using System.Text;
 
 namespace introseHHC.Objects
 {
-    class Physician : Person
+    class Physician : Employee
     {
         private string discipline;
         private int id;

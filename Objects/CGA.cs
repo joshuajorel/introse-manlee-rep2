@@ -9,8 +9,8 @@ namespace introseHHC.Objects
     {
         private Patient patient;
         private Physician physician;
-        private String insurance;
-        private String prefPlaCon;
+        private string insurance;
+        private string prefPlaCon;
         private PersonalHistory ph;
         private FamilyHistory fh;
         private SocialEnvironment se;
@@ -46,77 +46,62 @@ namespace introseHHC.Objects
         {
             patient = pat;
         }
-
         public void setIns(String ins)
         {
             insurance = ins;
         }
-
         public void setPhy(Physician phy)
         {
             physician = phy;
         }
-
         public void setPpc(String ppc)
         {
             prefPlaCon = ppc;
         }
-
         public void setCid(int cid)
         {
             cgaId = cid;
         }
-
         public void setPH(PersonalHistory p)
         {
             ph = p;
         }
-
         public void setFH(FamilyHistory f)
         {
             fh = f;
         }
-
         public void setSE(SocialEnvironment s)
         {
             se = s;
         }
-
         public void setMH(MedicalHistory m)
         {
             mh = m;
         }
-
         public void setML(MedicationList m)
         {
             ml = m;
         }
-
         public void setIm(Immunization i)
         {
             im = i;
         }
-
         public void setFS(FunctionalStatus f)
         {
             fs = f;
         }
-
         public void setGD(GDScales g)
         {
             gd = g;
         }
-
         public void setME(MentalExam m)
         {
             me = m;
         }
-
         public void setNu(Nutrition n)
         {
             nu = n;
         }
-
         public void setCAss(CGiverAssess c)
         {
             ca = c;
