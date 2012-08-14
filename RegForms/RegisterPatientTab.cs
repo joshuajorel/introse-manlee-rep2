@@ -911,7 +911,7 @@ namespace introseHHC.RegForms
                             cmd.ExecuteNonQuery();
                         }
                     }
-
+                    //insert home vaccination selections into database
                     if (hvacCoB.CheckedItems.Count > 0)
                     {
                         string HVacquery = "SELECT HVACID FROM HVAC_REF WHERE DESCRIPTION IN (" + hv + ");";
@@ -944,6 +944,7 @@ namespace introseHHC.RegForms
                         }
 
                     }
+                    //end of hvac
 
                     CloseConnection();
                     tabControl1.SelectedIndex++;

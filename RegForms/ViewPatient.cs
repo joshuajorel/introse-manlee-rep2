@@ -29,7 +29,7 @@ namespace introseHHC.RegForms
             patID = id;
 
             if (OpenConnection())
-            {
+            {   //get patient personal details
                 string query = "SELECT * FROM (SELECT * FROM PERSON RIGHT JOIN PATIENT ON PERSON.ID = PATID) AS TAB WHERE ID = @id;";
                 cmd = new MySqlCommand(query,conn);
                 cmd.Prepare();
@@ -65,6 +65,7 @@ namespace introseHHC.RegForms
                 if(String.IsNullOrEmpty(emailField.Text))
                     emailField.Text = "n/a";
                 read.Close();
+                //get face sheet information
                 CloseConnection();
             }
             else
