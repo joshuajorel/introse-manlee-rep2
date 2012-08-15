@@ -67,6 +67,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getClientsDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="getEmployeeDetailsDB.cs">
+      <DependentUpon>getEmployeeDetailsDB.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="getEmployeeDetailsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

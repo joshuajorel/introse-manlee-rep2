@@ -58,6 +58,10 @@ namespace introseHHC.RegForms
         private System.Text.StringBuilder patSb;
         private bool patFlag;
         private bool clientFlag;
+
+        //constants for cost table
+        private const bool MD = true;
+        private const bool HC = false;
         
 
         public RegisterPatientTab(string c)
@@ -937,6 +941,26 @@ namespace introseHHC.RegForms
                     //end of hvac
 
                     //insert cost table values into database
+                       //clear parameters
+                    cmd.Parameters.Clear();
+                    query = "INSERT INTO COST_TABLE(FACEID,MDNP,MDM,MDO,MDND,MDHP,MDT,MDS,"
+                        + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX)"
+                        + " VALUES (@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
+                        +"@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax) WHERE FACEID = @fcID ;";
+                    cmd.CommandText = query;
+                    cmd.Prepare();
+
+                   //to whom it may concern: may pattern, gets nyo n sguro
+                    //pag may 'md' ung parameter name (i.e. mdnp) set nyo yung param sa cost.getXXX(param) to MD
+                    //kung may 'hc' naman, set nyo param to HC
+                    //kumpletuhin nyo lahat ng parameters na wala pa na nasa query
+
+                   cmd.Parameters.AddWithValue("@mdnp",cost.getNightPay(MD));
+                   cmd.Parameters.AddWithValue("@mdm",cost.getMeals(MD));
+                   cmd.Parameters.AddWithValue("@mdo",cost.getMeals(MD));
+                   cmd.Parameters.AddWithValue("@mdnd",cost.getNightDifferential(MD));
+
+                   cmd.Parameters.AddWithValue("@fcID",fsheet.FID);
 
                     CloseConnection();
                     tabControl1.SelectedIndex++;
