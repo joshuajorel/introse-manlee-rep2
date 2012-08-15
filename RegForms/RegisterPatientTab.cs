@@ -18,10 +18,7 @@ namespace introseHHC.RegForms
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
+        private string connString;
 
         private Patient patient;
         private Client client;
@@ -63,7 +60,7 @@ namespace introseHHC.RegForms
         private bool clientFlag;
         
 
-        public RegisterPatientTab()
+        public RegisterPatientTab(string c)
         {
             InitializeComponent();
 
@@ -76,16 +73,9 @@ namespace introseHHC.RegForms
             fsheet = new FaceSheet();
             cost = new CostTable();
 
-            server = "localhost";
-            user = "root";
-            database = "hhc-db";
-            password = "root";
+            connString = c;
 
-            string connString = "SERVER=" + server + ";" + "DATABASE=" +
-                                database + ";" + "UID=" + user + ";" +
-                                "PASSWORD=" + password + ";";
-
-            conn = new MySqlConnection(connString);
+            conn = new MySqlConnection(c);
 
             if (OpenConnection())
             {
@@ -945,6 +935,8 @@ namespace introseHHC.RegForms
 
                     }
                     //end of hvac
+
+                    //insert cost table values into database
 
                     CloseConnection();
                     tabControl1.SelectedIndex++;

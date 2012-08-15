@@ -48,7 +48,7 @@ namespace introseHHC.RegForms
         //register facesheet
         private void button1_Click(object sender, EventArgs e)
         {
-            RegisterPatientTab regPatTab = new RegisterPatientTab();
+            RegisterPatientTab regPatTab = new RegisterPatientTab(connString);
             regPatTab.ShowDialog();
         }
 
