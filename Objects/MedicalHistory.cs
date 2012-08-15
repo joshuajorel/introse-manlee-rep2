@@ -12,7 +12,6 @@ namespace introseHHC.Objects
 
         public MedicalHistory()
         {
-
             medH = new ArrayList();
         }
 

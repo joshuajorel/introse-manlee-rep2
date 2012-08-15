@@ -16,29 +16,25 @@ namespace introseHHC.Objects
             inf = new DateTime();
         }
 
-        /*
+        public Immunization(DateTime t, DateTime p, DateTime i)
+        {
+            tet = t;
+            pne = p;
+            inf = i;
+        }
+
         public void setTet(DateTime t)
         {
             tet = t;
         }
 
-        
-
         public void setPne(DateTime p)
         {
             pne = p;
         }
-        
-         public void setInf(DateTime i)
-        {
-            inf = i;
-        }
-         */
 
-        public void setImm(DateTime t, DateTime p, DateTime i)
+        public void setInf(DateTime i)
         {
-            tet = t;
-            pne = p;
             inf = i;
         }
 

@@ -20,7 +20,7 @@ namespace introseHHC.Objects
             bleDis = new bool();
         }
 
-        public void setFH(bool dbs, bool cnr, bool tbs, bool bdr)
+        public FamilyHistory(bool dbs, bool cnr, bool tbs, bool bdr)
         {
             diabetes = dbs;
             cancer = cnr;
@@ -28,12 +28,32 @@ namespace introseHHC.Objects
             bleDis = bdr;
         }
 
+        public void setDbs(bool dbs)
+        {
+            diabetes = dbs;
+        }
+
+        public void setCnr(bool cnr)
+        {
+            cancer = cnr;
+        }
+
+        public void setTub(bool tub)
+        {
+            this.tub = tub;
+        }
+
+        public void setBD(bool bd)
+        {
+            bleDis = bd;
+        }
+
         public bool getDbs()
         {
             return diabetes;
         }
 
-        public bool getCan()
+        public bool getCnr()
         {
             return cancer;
         }

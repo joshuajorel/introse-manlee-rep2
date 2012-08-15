@@ -15,37 +15,39 @@ namespace introseHHC.Objects
 
         public PersonalHistory()
         {
-        }
-        
-        //add string to array list
-        /*
-        public void setAlg(String alg)
-        {
-            allergy.Add(alg);
-
+            allergy = "";
+            smoke = "";
+            drink = "";
+            hobby = "";
         }
 
-        public void setSmk(String smk)
-        {
-            smoke = smk;
-        }
-
-        public void setDnk(String dnk)
-        {
-            drink = dnk;
-        }
-
-        public void setHby(ArrayList hby)
-        {
-            hobby = hby;
-        }
-        */
-
-        public void setPH(String alg, String smk, String dnk, String hby)
+        public PersonalHistory(String alg, String smk, String dnk, String hby)
         {
             allergy = alg;
             smoke = smk;
             drink = dnk;
+            hobby = hby;
+        }
+        
+        //add string to array list
+
+        public void setAllergy(String alg)
+        {
+            allergy = alg;
+        }
+
+        public void setSmoke(String smk)
+        {
+            smoke = smk;
+        }
+
+        public void setDrink(String dnk)
+        {
+            drink = dnk;
+        }
+
+        public void setHobby(String hby)
+        {
             hobby = hby;
         }
 

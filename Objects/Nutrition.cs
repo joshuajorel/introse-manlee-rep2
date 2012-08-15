@@ -16,30 +16,7 @@ namespace introseHHC.Objects
             nut = new float[17];
         }
 
-        /*
-        public void setNut(float bmi, float mac, float cc, float wgt, float ind, float pre, float psy, float mob, float neu, float neuP, float preS, float mel, float pro, float veg, float app, float flu, float fed)
-        {
-            this.bmi = bmi;
-            this.mac = mac;
-            this.cc = cc;
-            this.wgt = wgt;
-            this.ind = ind;
-            this.pre = pre;
-            this.psy = psy;
-            this.mob = mob;
-            this.neu = neu;
-            this.neuP = neuP;
-            this.preS = preS;
-            this.mel = mel;
-            this.pro = pro;
-            this.veg = veg;
-            this.app = app;
-            this.flu = flu;
-            this.fed = fed;
-        }
-        */
-
-        //n = index x = score for the corresponding index
+        //n = index for the corresponding part of the assessment
         public void setNut(int n, float x)
         {
             nut[n] = x;
@@ -50,8 +27,10 @@ namespace introseHHC.Objects
             return nut[n];
         }
 
-        
+        public float getScore()
+        {
+            return nut.Sum();
+        }
 
-     
     }
 }
