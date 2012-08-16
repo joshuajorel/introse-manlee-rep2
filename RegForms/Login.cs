@@ -88,5 +88,13 @@ namespace introseHHC.RegForms
         {
             textBox2.Text = "";
         }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }
