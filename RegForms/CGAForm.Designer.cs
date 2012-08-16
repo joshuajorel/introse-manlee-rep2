@@ -272,7 +272,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.selPatient = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage6.SuspendLayout();
@@ -2557,7 +2557,7 @@
             // 
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.selPatient);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -2935,17 +2935,20 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(59, 9);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // selPatient
             // 
-            this.button1.Location = new System.Drawing.Point(274, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Select Patient";
-            this.button1.UseVisualStyleBackColor = true;
+            this.selPatient.Location = new System.Drawing.Point(274, 7);
+            this.selPatient.Name = "selPatient";
+            this.selPatient.Size = new System.Drawing.Size(88, 23);
+            this.selPatient.TabIndex = 1;
+            this.selPatient.Text = "Select Patient";
+            this.selPatient.UseVisualStyleBackColor = true;
+            this.selPatient.Click += new System.EventHandler(this.selPatient_Click);
             // 
             // label1
             // 
@@ -3138,7 +3141,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button selPatient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button button12;

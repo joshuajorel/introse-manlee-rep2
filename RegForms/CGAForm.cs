@@ -11,9 +11,13 @@ namespace introseHHC.RegForms
 {
     public partial class CGAForm : Form
     {
-        public CGAForm()
+        private string connString;
+        private UInt16 selID;
+
+        public CGAForm(String c)
         {
             InitializeComponent();
+            connString = c;
         }
 
         private void CGAForm_Load(object sender, EventArgs e)
@@ -125,5 +129,24 @@ namespace introseHHC.RegForms
         {
             Close();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selPatient_Click(object sender, EventArgs e)
+        {
+            PatientSelect psel = new PatientSelect();
+
+            psel.ShowDialog();
+
+            selID = psel.Sel;
+            psel.Close();
+
+
+        }
+
+     
     }
 }

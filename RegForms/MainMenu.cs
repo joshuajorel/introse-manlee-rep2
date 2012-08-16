@@ -59,9 +59,7 @@ namespace introseHHC.RegForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            li.Show();
-            li.clearPass();
+            
         }
 
 
@@ -82,6 +80,23 @@ namespace introseHHC.RegForms
             ManageRecord mn = new ManageRecord(connString);
 
             mn.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CGAForm cga = new CGAForm(connString);
+
+            cga.ShowDialog();
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you wish to exit?", "Important Query", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                li.Show();
+                li.clearPass();
+            }
         }
 
       

@@ -32,11 +32,12 @@
             this.manageRecButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.regEmpButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 160);
+            this.button3.Location = new System.Drawing.Point(12, 209);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(238, 43);
             this.button3.TabIndex = 13;
@@ -46,7 +47,7 @@
             // 
             // manageRecButton
             // 
-            this.manageRecButton.Location = new System.Drawing.Point(12, 111);
+            this.manageRecButton.Location = new System.Drawing.Point(12, 160);
             this.manageRecButton.Name = "manageRecButton";
             this.manageRecButton.Size = new System.Drawing.Size(238, 43);
             this.manageRecButton.TabIndex = 12;
@@ -74,17 +75,29 @@
             this.regEmpButton.UseVisualStyleBackColor = true;
             this.regEmpButton.Click += new System.EventHandler(this.regEmpButton_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 111);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(238, 43);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Register CGA";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 259);
+            this.ClientSize = new System.Drawing.Size(263, 263);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.regEmpButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.manageRecButton);
             this.Controls.Add(this.button1);
             this.Name = "MainMenu";
             this.Text = "Home Health Care";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.ResumeLayout(false);
 
         }
@@ -95,6 +108,7 @@
         private System.Windows.Forms.Button manageRecButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button regEmpButton;
+        private System.Windows.Forms.Button button2;
 
     }
 }

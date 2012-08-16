@@ -125,6 +125,11 @@
     <Compile Include="RegForms\FuncStat.Designer.cs">
       <DependentUpon>FuncStat.cs</DependentUpon>
     </Compile>
+    <Compile Include="getPatientsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getPatientsDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\ImmRec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +155,12 @@
     </Compile>
     <Compile Include="RegForms\MedList.Designer.cs">
       <DependentUpon>MedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\PatientSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\PatientSelect.Designer.cs">
+      <DependentUpon>PatientSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\PatientView.cs">
       <SubType>Form</SubType>
@@ -255,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\MedList.resx">
       <DependentUpon>MedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\PatientSelect.resx">
+      <DependentUpon>PatientSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\PatientView.resx">
       <DependentUpon>PatientView.cs</DependentUpon>
@@ -366,6 +380,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="getPatientsDB.xsc">
+      <DependentUpon>getPatientsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getPatientsDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getPatientsDB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="getPatientsDB.xss">
+      <DependentUpon>getPatientsDB.xsd</DependentUpon>
+    </None>
     <None Include="Resources\shape.png" />
   </ItemGroup>
   <ItemGroup />
