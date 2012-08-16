@@ -57,10 +57,7 @@ namespace introseHHC.RegForms
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
 
         private void button5_Click(object sender, EventArgs e)
@@ -93,10 +90,18 @@ namespace introseHHC.RegForms
         {
             if (MessageBox.Show("Are you sure you wish to exit?", "Important Query", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
                 li.Show();
                 li.clearPass();
             }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
       

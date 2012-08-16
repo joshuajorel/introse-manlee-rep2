@@ -7,7 +7,15 @@ namespace introseHHC.Objects
 {
     class CGA
     {
-        private Patient patient;
+        private UInt16 pID;
+        
+        private UInt16 cID;
+        public UInt16 CID
+        {
+            get { return cID; }
+            set { cID = value; }
+        }
+        
         private Physician physician;
         private string insurance;
         private string prefPlaCon;
@@ -27,7 +35,7 @@ namespace introseHHC.Objects
 
         public CGA()
         {
-            patient = new Patient();
+            pID = 0;
             physician = new Physician();
             ph = new PersonalHistory();
             fh = new FamilyHistory();
@@ -42,10 +50,16 @@ namespace introseHHC.Objects
             ca = new CGiverAssess();
         }
 
-        public void setPat(Patient pat)
+        public void setPat(UInt16 pid)
         {
-            patient = pat;
+            pID = pid;
         }
+
+        public UInt16 getPat()
+        {
+            return pID;
+        }
+
         public void setIns(String ins)
         {
             insurance = ins;

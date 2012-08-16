@@ -32,15 +32,15 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.patientView = new System.Windows.Forms.DataGridView();
-            this.getPatientsDB = new introseHHC.getPatientsDB();
-            this.getPatientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getPatientsTableAdapter = new introseHHC.getPatientsDBTableAdapters.getPatientsTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getPatientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getPatientsDB = new introseHHC.getPatientsDB();
+            this.getPatientsTableAdapter = new introseHHC.getPatientsDBTableAdapters.getPatientsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.patientView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPatientsDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPatientsDB)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelButton
@@ -51,6 +51,7 @@
             this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // okButton
             // 
@@ -81,20 +82,6 @@
             this.patientView.Size = new System.Drawing.Size(370, 150);
             this.patientView.TabIndex = 6;
             // 
-            // getPatientsDB
-            // 
-            this.getPatientsDB.DataSetName = "getPatientsDB";
-            this.getPatientsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getPatientsBindingSource
-            // 
-            this.getPatientsBindingSource.DataMember = "getPatients";
-            this.getPatientsBindingSource.DataSource = this.getPatientsDB;
-            // 
-            // getPatientsTableAdapter
-            // 
-            this.getPatientsTableAdapter.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -116,6 +103,20 @@
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // getPatientsBindingSource
+            // 
+            this.getPatientsBindingSource.DataMember = "getPatients";
+            this.getPatientsBindingSource.DataSource = this.getPatientsDB;
+            // 
+            // getPatientsDB
+            // 
+            this.getPatientsDB.DataSetName = "getPatientsDB";
+            this.getPatientsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getPatientsTableAdapter
+            // 
+            this.getPatientsTableAdapter.ClearBeforeFill = true;
+            // 
             // PatientSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,10 +127,10 @@
             this.Controls.Add(this.okButton);
             this.Name = "PatientSelect";
             this.Text = "PatientSelect";
-
+            this.Load += new System.EventHandler(this.PatientSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.patientView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPatientsDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPatientsDB)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -6,18 +6,58 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using introseHHC.Objects;
+using MySql.Data.MySqlClient;
 
 namespace introseHHC.RegForms
 {
     public partial class CGAForm : Form
     {
+        private MySqlConnection conn;
+        private MySqlCommand cmd;
+        private MySqlDataReader read;
         private string connString;
+        
+        private CGA cga;
         private UInt16 selID;
 
         public CGAForm(String c)
         {
             InitializeComponent();
+            cga = new CGA();
+            conn = new MySqlConnection();
             connString = c;
+
+        }
+
+        private bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+        
+        private bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
         }
 
         private void CGAForm_Load(object sender, EventArgs e)
@@ -144,7 +184,14 @@ namespace introseHHC.RegForms
             selID = psel.Sel;
             psel.Close();
 
-
+            if (selID != 0)
+            {
+                cga.setPat(selID);
+            }
+            else
+            {
+               
+            }
         }
 
      
