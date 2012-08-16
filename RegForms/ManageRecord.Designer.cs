@@ -44,7 +44,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.clientSearchIn = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.clientView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -193,7 +193,7 @@
             // 
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.clientSearchIn);
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.clientView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -218,24 +218,25 @@
             this.clientSearchIn.Size = new System.Drawing.Size(375, 20);
             this.clientSearchIn.TabIndex = 2;
             // 
-            // dataGridView2
+            // clientView
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientView.AllowUserToAddRows = false;
+            this.clientView.AllowUserToDeleteRows = false;
+            this.clientView.AutoGenerateColumns = false;
+            this.clientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
             this.firstNameDataGridViewTextBoxColumn1,
             this.middleNameDataGridViewTextBoxColumn1,
             this.surnameDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.getClientDetailsBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 62);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(544, 392);
-            this.dataGridView2.TabIndex = 1;
+            this.clientView.DataSource = this.getClientDetailsBindingSource;
+            this.clientView.Location = new System.Drawing.Point(3, 62);
+            this.clientView.Name = "clientView";
+            this.clientView.ReadOnly = true;
+            this.clientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientView.Size = new System.Drawing.Size(544, 392);
+            this.clientView.TabIndex = 1;
+            this.clientView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientView_CellDoubleClick);
             // 
             // iDDataGridViewTextBoxColumn1
             // 
@@ -412,7 +413,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.getPatientDetailsDB)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientDetailsDB)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -435,7 +436,7 @@
         private System.Windows.Forms.DataGridView patientView;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox clientSearchIn;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView clientView;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox empSearchIn;

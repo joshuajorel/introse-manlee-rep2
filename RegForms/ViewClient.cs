@@ -6,14 +6,126 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace introseHHC.RegForms
 {
     public partial class ViewClient : Form
     {
-        public ViewClient()
+        private UInt16 clientID;
+        private MySqlConnection conn;
+        private MySqlCommand cmd;
+        private MySqlDataReader read;
+
+        public ViewClient(UInt16 id, string c)
         {
             InitializeComponent();
+            conn = new MySqlConnection(c);
+            clientID = id;
+
+            if (OpenConnection())
+            {
+                string query;
+
+                //get person details
+                query = "SELECT * FROM (SELECT * FROM PERSON RIGHT JOIN CLIENT ON PERSON.ID = CLIENTID) AS TAB WHERE ID = @id;";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                nameField.Text = read.GetString("SName") + ", " + read.GetString("FName") + " " + read.GetString("MName");
+                birthField.Text = DateTime.Parse(read.GetString("BDate")).ToShortDateString();
+                genderField.Text = read.GetString("Gender");
+                civField.Text = read.GetString("CivStat");
+                natField.Text = read.GetString("Nationality");
+                relField.Text = read.GetString("Religion");
+                educField.Text = read.GetString("EducAttain");
+                addField1.Text = read.GetString("StNum") + " " + read.GetString("AddLine");
+                addField2.Text = read.GetString("City") + ", " + read.GetString("Region");
+                homeField.Text = read.GetString("HomeNum");
+                workField.Text = read.GetString("WorkNum");
+                mobField.Text = read.GetString("MobNum");
+                otherField.Text = read.GetString("OtherNum");
+                emailField.Text = read.GetString("Email");
+
+                if (homeField.Text.Equals("0"))
+                    homeField.Text = "n/a";
+                if (workField.Text.Equals("0"))
+                    workField.Text = "n/a";
+                if (mobField.Text.Equals("0"))
+                    mobField.Text = "n/a";
+                if (otherField.Text.Equals("0"))
+                    otherField.Text = "n/a";
+                if (String.IsNullOrEmpty(emailField.Text))
+                    emailField.Text = "n/a";
+                read.Close();
+                cmd.Parameters.Clear();
+                query = "SELECT PERSON.FNAME,PERSON.SNAME,REL.ISPRIMARY,REL.RELATIONSHIP "
+                    + "FROM (SELECT PID,ISPRIMARY,RELATIONSHIP FROM RELATIONSHIP WHERE CID = @cID) AS REL  "
+                    + "LEFT JOIN PERSON ON PERSON.ID = REL.PID;";
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@cID",clientID);
+                read = cmd.ExecuteReader();
+
+                int x;
+                while (read.Read())
+                {   x = patientView.Rows.Add();
+                    patientView.Rows[x].Cells[0].Value = read.GetString("FNAME") + " " + read.GetString("SNAME");
+                    if (byte.Parse(read.GetString("ISPRIMARY")).Equals(1))
+                    {
+                        patientView.Rows[x].Cells[1].Value = "Yes";
+                    }
+                    else
+                    {
+                        patientView.Rows[x].Cells[1].Value = "No";
+                    }
+                    patientView.Rows[x].Cells[2].Value = read.GetString("RELATIONSHIP");
+
+                }
+                read.Close();
+
+
+                CloseConnection();
+            }
+
+        }
+        private bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+        private bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

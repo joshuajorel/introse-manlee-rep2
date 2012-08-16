@@ -306,6 +306,9 @@
     <EmbeddedResource Include="RegForms\ViewCGA.resx">
       <DependentUpon>ViewCGA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ViewClient.resx">
+      <DependentUpon>ViewClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewPatient.resx">
       <DependentUpon>ViewPatient.cs</DependentUpon>
     </EmbeddedResource>

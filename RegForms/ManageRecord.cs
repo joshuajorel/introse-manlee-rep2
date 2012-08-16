@@ -42,6 +42,13 @@ namespace introseHHC.RegForms
             
         }
 
+        private void clientView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ViewClient vc = new ViewClient(UInt16.Parse(clientView.SelectedCells[0].Value.ToString()),connString);
+
+            vc.ShowDialog();
+        }
+
 
     }
 }
