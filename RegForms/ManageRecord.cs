@@ -12,10 +12,14 @@ namespace introseHHC.RegForms
     public partial class ManageRecord : Form
     {
         private string connString;
+        
 
         public ManageRecord(string c)
         {
             InitializeComponent();
+            this.getEmployeeDetailsTableAdapter.Fill(this.getEmployeeDetailsDB.getEmployeeDetails);
+            this.getClientDetailsTableAdapter.Fill(this.getClientDetailsDB.getClientDetails);
+            this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
 
             connString = c;
         }
@@ -23,13 +27,13 @@ namespace introseHHC.RegForms
         private void ManageRecord_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'getEmployeeDetailsDB.getEmployeeDetails' table. You can move, or remove it, as needed.
-            this.getEmployeeDetailsTableAdapter.Fill(this.getEmployeeDetailsDB.getEmployeeDetails);
+            
             // TODO: This line of code loads data into the 'getEmployeeDetailsDB.getEmployeeDetails' table. You can move, or remove it, as needed.
             
             // TODO: This line of code loads data into the 'getClientDetailsDB.getClientDetails' table. You can move, or remove it, as needed.
-            this.getClientDetailsTableAdapter.Fill(this.getClientDetailsDB.getClientDetails);
+           
             // TODO: This line of code loads data into the 'getPatientDetailsDB.getPatientDetails' table. You can move, or remove it, as needed.
-            this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
+            
            
 
         }
@@ -59,6 +63,43 @@ namespace introseHHC.RegForms
         {
             this.Close();
         }
+
+        private void patSearch_Click(object sender, EventArgs e)
+        {
+            getPatientDetailsBindingSource.Filter = string.Format("Surname LIKE '{0}'", patSearchIn.Text);
+               
+        }
+
+        private void pClearButton_Click(object sender, EventArgs e)
+        {
+            getPatientDetailsBindingSource.Filter = "";
+            patSearchIn.Text = "";
+        }
+
+        private void clientSearch_Click(object sender, EventArgs e)
+        {
+            getClientDetailsBindingSource.Filter = string.Format("Surname LIKE '{0}'",clientSearchIn.Text);
+        }
+
+        private void clientClearButton_Click(object sender, EventArgs e)
+        {
+            clientSearchIn.Text = "";
+            getClientDetailsBindingSource.Filter = "";
+        }
+
+        private void empSearch_Click(object sender, EventArgs e)
+        {
+            getEmployeeDetailsBindingSource.Filter = string.Format("Surname LIKE '{0}'", empSearchIn.Text);
+        }
+
+        private void empClearButton_Click(object sender, EventArgs e)
+        {
+            empSearchIn.Text = "";
+            getEmployeeDetailsBindingSource.Filter = "";
+        }
+
+
+
 
 
     }
