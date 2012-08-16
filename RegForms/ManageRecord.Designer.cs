@@ -140,9 +140,9 @@
             // 
             // patSearchIn
             // 
-            this.patSearchIn.Location = new System.Drawing.Point(6, 13);
+            this.patSearchIn.Location = new System.Drawing.Point(16, 13);
             this.patSearchIn.Name = "patSearchIn";
-            this.patSearchIn.Size = new System.Drawing.Size(375, 20);
+            this.patSearchIn.Size = new System.Drawing.Size(365, 20);
             this.patSearchIn.TabIndex = 1;
             // 
             // patientView
@@ -159,13 +159,12 @@
             this.middleNameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn});
             this.patientView.DataSource = this.getPatientDetailsBindingSource;
-            this.patientView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.patientView.Location = new System.Drawing.Point(3, 66);
+            this.patientView.Location = new System.Drawing.Point(15, 66);
             this.patientView.MultiSelect = false;
             this.patientView.Name = "patientView";
             this.patientView.ReadOnly = true;
             this.patientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.patientView.Size = new System.Drawing.Size(550, 391);
+            this.patientView.Size = new System.Drawing.Size(524, 391);
             this.patientView.TabIndex = 0;
             this.patientView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientView_CellDoubleClick);
             // 
@@ -223,7 +222,7 @@
             // 
             // clientSearch
             // 
-            this.clientSearch.Location = new System.Drawing.Point(387, 14);
+            this.clientSearch.Location = new System.Drawing.Point(387, 11);
             this.clientSearch.Name = "clientSearch";
             this.clientSearch.Size = new System.Drawing.Size(75, 23);
             this.clientSearch.TabIndex = 3;
@@ -233,9 +232,9 @@
             // 
             // clientSearchIn
             // 
-            this.clientSearchIn.Location = new System.Drawing.Point(6, 17);
+            this.clientSearchIn.Location = new System.Drawing.Point(16, 13);
             this.clientSearchIn.Name = "clientSearchIn";
-            this.clientSearchIn.Size = new System.Drawing.Size(375, 20);
+            this.clientSearchIn.Size = new System.Drawing.Size(365, 20);
             this.clientSearchIn.TabIndex = 2;
             // 
             // clientView
@@ -250,11 +249,11 @@
             this.middleNameDataGridViewTextBoxColumn1,
             this.surnameDataGridViewTextBoxColumn1});
             this.clientView.DataSource = this.getClientDetailsBindingSource;
-            this.clientView.Location = new System.Drawing.Point(3, 65);
+            this.clientView.Location = new System.Drawing.Point(15, 66);
             this.clientView.Name = "clientView";
             this.clientView.ReadOnly = true;
             this.clientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientView.Size = new System.Drawing.Size(544, 392);
+            this.clientView.Size = new System.Drawing.Size(524, 391);
             this.clientView.TabIndex = 1;
             this.clientView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientView_CellDoubleClick);
             // 
@@ -312,7 +311,7 @@
             // 
             // empSearch
             // 
-            this.empSearch.Location = new System.Drawing.Point(387, 16);
+            this.empSearch.Location = new System.Drawing.Point(387, 11);
             this.empSearch.Name = "empSearch";
             this.empSearch.Size = new System.Drawing.Size(75, 23);
             this.empSearch.TabIndex = 3;
@@ -322,9 +321,9 @@
             // 
             // empSearchIn
             // 
-            this.empSearchIn.Location = new System.Drawing.Point(6, 18);
+            this.empSearchIn.Location = new System.Drawing.Point(16, 13);
             this.empSearchIn.Name = "empSearchIn";
-            this.empSearchIn.Size = new System.Drawing.Size(375, 20);
+            this.empSearchIn.Size = new System.Drawing.Size(365, 20);
             this.empSearchIn.TabIndex = 2;
             // 
             // employeeView
@@ -339,12 +338,12 @@
             this.middleNameDataGridViewTextBoxColumn2,
             this.surnameDataGridViewTextBoxColumn2});
             this.employeeView.DataSource = this.getEmployeeDetailsBindingSource;
-            this.employeeView.Location = new System.Drawing.Point(3, 55);
+            this.employeeView.Location = new System.Drawing.Point(15, 66);
             this.employeeView.MultiSelect = false;
             this.employeeView.Name = "employeeView";
             this.employeeView.ReadOnly = true;
             this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeView.Size = new System.Drawing.Size(547, 402);
+            this.employeeView.Size = new System.Drawing.Size(524, 391);
             this.employeeView.TabIndex = 1;
             this.employeeView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeView_CellDoubleClick);
             // 
@@ -419,7 +418,7 @@
             // 
             // clientClearButton
             // 
-            this.clientClearButton.Location = new System.Drawing.Point(468, 14);
+            this.clientClearButton.Location = new System.Drawing.Point(468, 11);
             this.clientClearButton.Name = "clientClearButton";
             this.clientClearButton.Size = new System.Drawing.Size(75, 23);
             this.clientClearButton.TabIndex = 4;
@@ -429,7 +428,7 @@
             // 
             // empClearButton
             // 
-            this.empClearButton.Location = new System.Drawing.Point(468, 16);
+            this.empClearButton.Location = new System.Drawing.Point(468, 11);
             this.empClearButton.Name = "empClearButton";
             this.empClearButton.Size = new System.Drawing.Size(75, 23);
             this.empClearButton.TabIndex = 4;
