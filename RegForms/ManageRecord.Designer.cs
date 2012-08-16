@@ -183,6 +183,7 @@
             // 
             this.getPatientDetailsBindingSource.DataMember = "getPatientDetails";
             this.getPatientDetailsBindingSource.DataSource = this.getPatientDetailsDB;
+            this.getPatientDetailsBindingSource.CurrentChanged += new System.EventHandler(this.getPatientDetailsBindingSource_CurrentChanged);
             // 
             // getPatientDetailsDB
             // 

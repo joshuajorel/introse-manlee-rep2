@@ -62,6 +62,7 @@ namespace introseHHC.RegForms
         //constants for cost table
         private const bool MD = true;
         private const bool HC = false;
+        float np, m, o, nd, h, t, s, lwt, pax, total, subtotal;
         
 
         public RegisterPatientTab(string c)
@@ -76,6 +77,30 @@ namespace introseHHC.RegForms
             client = new Client();
             fsheet = new FaceSheet();
             cost = new CostTable();
+
+            //intialize cost table values
+            np = float.Parse(hcNPIn.Text);
+            m = float.Parse(hcmealsIn.Text);
+            o = float.Parse(hcoverIn.Text);
+            nd = float.Parse(hcndIn.Text);
+            h = float.Parse(hchpIn.Text);
+            t = float.Parse(hcTranspoIn.Text);
+            s = float.Parse(hcSomethingIn.Text);
+            lwt = float.Parse(hcLWTIn.Text);
+            pax = float.Parse(hcNoPaxIn.Text);
+            cost.setHCParams(np, m, o, nd, h, t, s, lwt, pax);
+
+            np = float.Parse(mdNPIn.Text);
+            m = float.Parse(mdmealsIn.Text);
+            o = float.Parse(mdoverIn.Text);
+            nd = float.Parse(mdndIn.Text);
+            h = float.Parse(mdhpIn.Text);
+            t = float.Parse(mdTranspoIn.Text);
+            s = float.Parse(mdSomethingIn.Text);
+            lwt = float.Parse(mdLWTIn.Text);
+            pax = float.Parse(mdNoPaxIn.Text);
+            cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
+
 
             connString = c;
 
@@ -757,12 +782,9 @@ namespace introseHHC.RegForms
                 patSb.Clear();
             }
 
-
-        
 }
         private void rNextButton_Click(object sender, EventArgs e)
         {
-            float np, m, o, nd, h, t, s, lwt, pax;
             bool mdFlag = true;
             bool hcFlag = true;
             System.Text.StringBuilder cmgmt = new StringBuilder();
@@ -815,13 +837,26 @@ namespace introseHHC.RegForms
                 s = float.Parse(mdSomethingIn.Text);
                 lwt = float.Parse(mdLWTIn.Text);
                 pax = float.Parse(mdNoPaxIn.Text);
-                cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
+
                 mdFlag = true;
             }
-            catch (Exception err)
+            catch (System.ArgumentNullException argErr)
             {
-                Console.WriteLine("Cost Table Field Error(MD): " + err.Message);
+                Console.WriteLine("Cost Table Field Error(MD): " + argErr.Message);
                 patSb.AppendLine("Cost Table Field Error(MD): Fill in all fields.");
+                mdFlag = false;
+            }
+            catch (System.FormatException formErr)
+            {
+                Console.WriteLine("Cost Table Field Error(MD): " + formErr.Message);
+                patSb.AppendLine("Cost Table Field Error(MD): Enter valid values.");
+                mdFlag = false;
+
+            }
+            catch (System.OverflowException overErr)
+            {
+                Console.WriteLine("Cost Table Field Error(MD): " + overErr.Message);
+                patSb.AppendLine("Cost Table Field Error(MD): Values entered are too large.");
                 mdFlag = false;
             }
 
@@ -836,22 +871,40 @@ namespace introseHHC.RegForms
                 s = float.Parse(hcSomethingIn.Text);
                 lwt = float.Parse(hcLWTIn.Text);
                 pax = float.Parse(hcNoPaxIn.Text);
-                cost.setHCParams(np, m, o, nd, h, t, s, lwt, pax);
+                
                 hcFlag = true;
             }
-            catch (Exception err)
+            catch (System.ArgumentNullException argErr)
             {
-                Console.WriteLine("Cost Table Field Error(HCP): " + err.Message);
+                Console.WriteLine("Cost Table Field Error(HC): " + argErr.Message);
                 patSb.AppendLine("Cost Table Field Error(HC): Fill in all fields.");
-                hcFlag = true;
+                hcFlag = false;
+            }
+            catch (System.FormatException formErr)
+            {
+                Console.WriteLine("Cost Table Field Error(HC): " + formErr.Message);
+                patSb.AppendLine("Cost Table Field Error(HC): Enter valid values.");
+                hcFlag = false;
+
+            }
+            catch (System.OverflowException overErr)
+            {
+                Console.WriteLine("Cost Table Field Error(HC): " + overErr.Message);
+                patSb.AppendLine("Cost Table Field Error(HC): Values entered are too large.");
+                hcFlag = false;
             }
 
 
             if (hcFlag && mdFlag)
             {
+                Console.WriteLine("hcFlag and mdFlags are good.");
+                string query;
+                cost.setHCParams(np, m, o, nd, h, t, s, lwt, pax);
+                cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
+
                 if (OpenConnection())
                 {
-                    string query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES,REQDETAILS) " +
+                    query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES,REQDETAILS) " +
                     "VALUES (@ptid,@ctid,@cty,@amb,@sen,@rqdet)";
                     cmd = new MySqlCommand(query, conn);
                     cmd.Prepare();
@@ -938,29 +991,40 @@ namespace introseHHC.RegForms
                         }
 
                     }
-                    //end of hvac
+                    ////end of hvac
 
                     //insert cost table values into database
                        //clear parameters
+                    Console.WriteLine("Inserting values into cost table.");
                     cmd.Parameters.Clear();
                     query = "INSERT INTO COST_TABLE(FACEID,MDNP,MDM,MDO,MDND,MDHP,MDT,MDS,"
                         + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX)"
-                        + " VALUES (@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
-                        +"@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax) WHERE FACEID = @fcID ;";
+                        + " VALUES (@fcID,@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
+                        +"@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax) ;";
+                   
                     cmd.CommandText = query;
                     cmd.Prepare();
-
-                   //to whom it may concern: may pattern, gets nyo n sguro
-                    //pag may 'md' ung parameter name (i.e. mdnp) set nyo yung param sa cost.getXXX(param) to MD
-                    //kung may 'hc' naman, set nyo param to HC
-                    //kumpletuhin nyo lahat ng parameters na wala pa na nasa query
-
                    cmd.Parameters.AddWithValue("@mdnp",cost.getNightPay(MD));
                    cmd.Parameters.AddWithValue("@mdm",cost.getMeals(MD));
                    cmd.Parameters.AddWithValue("@mdo",cost.getMeals(MD));
                    cmd.Parameters.AddWithValue("@mdnd",cost.getNightDifferential(MD));
+                   cmd.Parameters.AddWithValue("@mdhp",cost.getHolidayPay(MD));
+                   cmd.Parameters.AddWithValue("@mdt",cost.getTransportation(MD));
+                   cmd.Parameters.AddWithValue("@mds",cost.getSomething(MD));
+                   cmd.Parameters.AddWithValue("@mdlwt",cost.getSomething(MD));
+                   cmd.Parameters.AddWithValue("@mdpax",cost.getNoPax(MD));
 
+                   cmd.Parameters.AddWithValue("@hcnp", cost.getNightPay(HC));
+                   cmd.Parameters.AddWithValue("@hcm", cost.getMeals(HC));
+                   cmd.Parameters.AddWithValue("@hco", cost.getMeals(HC));
+                   cmd.Parameters.AddWithValue("@hcnd", cost.getNightDifferential(HC));
+                   cmd.Parameters.AddWithValue("@hchp", cost.getHolidayPay(HC));
+                   cmd.Parameters.AddWithValue("@hct", cost.getTransportation(HC));
+                   cmd.Parameters.AddWithValue("@hcs", cost.getSomething(HC));
+                   cmd.Parameters.AddWithValue("@hclwt", cost.getSomething(HC));
+                   cmd.Parameters.AddWithValue("@hcpax", cost.getNoPax(HC));
                    cmd.Parameters.AddWithValue("@fcID",fsheet.FID);
+                   cmd.ExecuteNonQuery();
 
                     CloseConnection();
                     tabControl1.SelectedIndex++;
@@ -968,7 +1032,10 @@ namespace introseHHC.RegForms
             }
             else
             {
-
+                Console.WriteLine("Errors");
+                Console.WriteLine(patSb);
+                new ErrorBox(patSb).ShowDialog();
+                patSb.Clear();
             }
 
         }

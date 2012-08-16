@@ -29,8 +29,10 @@ namespace introseHHC.RegForms
             patID = id;
 
             if (OpenConnection())
-            {   //get patient personal details
-                string query = "SELECT * FROM (SELECT * FROM PERSON RIGHT JOIN PATIENT ON PERSON.ID = PATID) AS TAB WHERE ID = @id;";
+            {
+                string query;
+                //get patient personal details
+                query = "SELECT * FROM (SELECT * FROM PERSON RIGHT JOIN PATIENT ON PERSON.ID = PATID) AS TAB WHERE ID = @id;";
                 cmd = new MySqlCommand(query,conn);
                 cmd.Prepare();
 
@@ -65,6 +67,14 @@ namespace introseHHC.RegForms
                 if(String.IsNullOrEmpty(emailField.Text))
                     emailField.Text = "n/a";
                 read.Close();
+                //get client information
+                cmd.Parameters.Clear();
+                query = "SELECT REL.CID,REL.ISPRIMARY,REL.RELATIONSHIP,PERSON.SNAME,PERSON.FNAME,PERSON.MNAME "
+                    + "FROM(SELECT CID,ISPRIMARY,RELATIONSHIP FROM RELATIONSHIP WHERE PID = @pid) AS REL "
+                    + "LEFT JOIN PERSON ON PERSON.ID = REL.CID";
+                cmd.CommandText = query;
+                cmd.Prepare();
+
                 //get face sheet information
                 CloseConnection();
             }
@@ -106,5 +116,16 @@ namespace introseHHC.RegForms
         {
             this.Close();
         }
+
+        private void ViewPatient_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

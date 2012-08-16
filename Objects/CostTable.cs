@@ -61,6 +61,9 @@ namespace introseHHC.Objects
             mdSomething = s;
             mdLessWtTax = lwt;
             mdNoPax = pax;
+
+            mdSubTotal = np + m + o + nd + h + t + s + lwt;
+            mdTotal = np + m + o + nd + h + t + s + lwt + pax;
         }
         public void setHCParams(float np, float m, float o, float nd, float h, float t, float s, float lwt, float pax)
         {
@@ -73,6 +76,9 @@ namespace introseHHC.Objects
             hcSomething = s;
             hcLessWtTax = lwt;
             hcNoPax = pax;
+
+            hcSubTotal = np + m + o + nd + h + t + s + lwt;
+            hcTotal = np + m + o + nd + h + t + s + lwt + pax;
         }
 
         public float getNightPay(bool option)
@@ -183,8 +189,28 @@ namespace introseHHC.Objects
             }
 
         }
-
-
+        public float getTotal(bool option)
+        {
+            if (option)
+            {
+                return mdTotal;
+            }
+            else
+            {
+                return hcTotal;
+            }
+        }
+        public float getSubTotal(bool option)
+        {
+            if (option)
+            {
+                return mdSubTotal;
+            }
+            else
+            {
+                return hcSubTotal;
+            }
+        }
 
     }
 }

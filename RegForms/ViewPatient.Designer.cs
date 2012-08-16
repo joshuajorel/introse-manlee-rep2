@@ -64,6 +64,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.exitButton = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.clienNameIn = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.clientIDIn = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.primaryLabel = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.posRelIn = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +99,17 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.posRelIn);
+            this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.primaryLabel);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.clientIDIn);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.clienNameIn);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.emailField);
             this.tabPage1.Controls.Add(this.otherField);
             this.tabPage1.Controls.Add(this.mobField);
@@ -124,15 +146,16 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(549, 460);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Personal Information";
+            this.tabPage1.Text = "General Information";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // emailField
             // 
             this.emailField.Enabled = false;
             this.emailField.Location = new System.Drawing.Point(95, 429);
             this.emailField.Name = "emailField";
-            this.emailField.Size = new System.Drawing.Size(182, 20);
+            this.emailField.Size = new System.Drawing.Size(161, 20);
             this.emailField.TabIndex = 81;
             // 
             // otherField
@@ -140,7 +163,7 @@
             this.otherField.Enabled = false;
             this.otherField.Location = new System.Drawing.Point(95, 404);
             this.otherField.Name = "otherField";
-            this.otherField.Size = new System.Drawing.Size(182, 20);
+            this.otherField.Size = new System.Drawing.Size(161, 20);
             this.otherField.TabIndex = 80;
             // 
             // mobField
@@ -148,7 +171,7 @@
             this.mobField.Enabled = false;
             this.mobField.Location = new System.Drawing.Point(95, 379);
             this.mobField.Name = "mobField";
-            this.mobField.Size = new System.Drawing.Size(182, 20);
+            this.mobField.Size = new System.Drawing.Size(161, 20);
             this.mobField.TabIndex = 79;
             // 
             // workField
@@ -156,7 +179,7 @@
             this.workField.Enabled = false;
             this.workField.Location = new System.Drawing.Point(95, 354);
             this.workField.Name = "workField";
-            this.workField.Size = new System.Drawing.Size(182, 20);
+            this.workField.Size = new System.Drawing.Size(161, 20);
             this.workField.TabIndex = 78;
             // 
             // homeField
@@ -164,7 +187,7 @@
             this.homeField.Enabled = false;
             this.homeField.Location = new System.Drawing.Point(95, 329);
             this.homeField.Name = "homeField";
-            this.homeField.Size = new System.Drawing.Size(182, 20);
+            this.homeField.Size = new System.Drawing.Size(161, 20);
             this.homeField.TabIndex = 77;
             // 
             // label16
@@ -203,7 +226,7 @@
             this.addField2.Enabled = false;
             this.addField2.Location = new System.Drawing.Point(95, 279);
             this.addField2.Name = "addField2";
-            this.addField2.Size = new System.Drawing.Size(182, 20);
+            this.addField2.Size = new System.Drawing.Size(161, 20);
             this.addField2.TabIndex = 22;
             // 
             // addField1
@@ -211,7 +234,7 @@
             this.addField1.Enabled = false;
             this.addField1.Location = new System.Drawing.Point(95, 254);
             this.addField1.Name = "addField1";
-            this.addField1.Size = new System.Drawing.Size(182, 20);
+            this.addField1.Size = new System.Drawing.Size(161, 20);
             this.addField1.TabIndex = 21;
             // 
             // label14
@@ -279,7 +302,7 @@
             this.educField.Enabled = false;
             this.educField.Location = new System.Drawing.Point(95, 184);
             this.educField.Name = "educField";
-            this.educField.Size = new System.Drawing.Size(182, 20);
+            this.educField.Size = new System.Drawing.Size(161, 20);
             this.educField.TabIndex = 14;
             // 
             // civField
@@ -287,7 +310,7 @@
             this.civField.Enabled = false;
             this.civField.Location = new System.Drawing.Point(95, 159);
             this.civField.Name = "civField";
-            this.civField.Size = new System.Drawing.Size(182, 20);
+            this.civField.Size = new System.Drawing.Size(161, 20);
             this.civField.TabIndex = 13;
             // 
             // relField
@@ -295,7 +318,7 @@
             this.relField.Enabled = false;
             this.relField.Location = new System.Drawing.Point(95, 134);
             this.relField.Name = "relField";
-            this.relField.Size = new System.Drawing.Size(182, 20);
+            this.relField.Size = new System.Drawing.Size(161, 20);
             this.relField.TabIndex = 12;
             // 
             // natField
@@ -303,7 +326,7 @@
             this.natField.Enabled = false;
             this.natField.Location = new System.Drawing.Point(95, 109);
             this.natField.Name = "natField";
-            this.natField.Size = new System.Drawing.Size(182, 20);
+            this.natField.Size = new System.Drawing.Size(161, 20);
             this.natField.TabIndex = 11;
             // 
             // genderField
@@ -311,7 +334,7 @@
             this.genderField.Enabled = false;
             this.genderField.Location = new System.Drawing.Point(95, 84);
             this.genderField.Name = "genderField";
-            this.genderField.Size = new System.Drawing.Size(182, 20);
+            this.genderField.Size = new System.Drawing.Size(161, 20);
             this.genderField.TabIndex = 10;
             // 
             // birthField
@@ -319,7 +342,7 @@
             this.birthField.Enabled = false;
             this.birthField.Location = new System.Drawing.Point(95, 59);
             this.birthField.Name = "birthField";
-            this.birthField.Size = new System.Drawing.Size(182, 20);
+            this.birthField.Size = new System.Drawing.Size(161, 20);
             this.birthField.TabIndex = 9;
             // 
             // nameField
@@ -327,7 +350,7 @@
             this.nameField.Enabled = false;
             this.nameField.Location = new System.Drawing.Point(95, 35);
             this.nameField.Name = "nameField";
-            this.nameField.Size = new System.Drawing.Size(182, 20);
+            this.nameField.Size = new System.Drawing.Size(161, 20);
             this.nameField.TabIndex = 8;
             // 
             // label8
@@ -430,6 +453,110 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(295, 11);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(170, 15);
+            this.label15.TabIndex = 82;
+            this.label15.Text = "Client Information ---------";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(274, 35);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(49, 15);
+            this.label17.TabIndex = 83;
+            this.label17.Text = "Name:";
+            // 
+            // clienNameIn
+            // 
+            this.clienNameIn.Enabled = false;
+            this.clienNameIn.Location = new System.Drawing.Point(360, 34);
+            this.clienNameIn.Name = "clienNameIn";
+            this.clienNameIn.Size = new System.Drawing.Size(161, 20);
+            this.clienNameIn.TabIndex = 84;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(274, 60);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 15);
+            this.label18.TabIndex = 85;
+            this.label18.Text = "Client ID:";
+            // 
+            // clientIDIn
+            // 
+            this.clientIDIn.Enabled = false;
+            this.clientIDIn.Location = new System.Drawing.Point(360, 59);
+            this.clientIDIn.Name = "clientIDIn";
+            this.clientIDIn.Size = new System.Drawing.Size(161, 20);
+            this.clientIDIn.TabIndex = 86;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(274, 100);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 15);
+            this.label19.TabIndex = 88;
+            this.label19.Text = "Caregiver:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(274, 85);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(56, 15);
+            this.label20.TabIndex = 87;
+            this.label20.Text = "Primary";
+            // 
+            // primaryLabel
+            // 
+            this.primaryLabel.AutoSize = true;
+            this.primaryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.primaryLabel.Location = new System.Drawing.Point(407, 93);
+            this.primaryLabel.Name = "primaryLabel";
+            this.primaryLabel.Size = new System.Drawing.Size(30, 15);
+            this.primaryLabel.TabIndex = 89;
+            this.primaryLabel.Text = "Yes";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(274, 140);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(92, 15);
+            this.label21.TabIndex = 91;
+            this.label21.Text = "Relationship:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(274, 125);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(59, 15);
+            this.label22.TabIndex = 90;
+            this.label22.Text = "Postion/";
+            // 
+            // posRelIn
+            // 
+            this.posRelIn.Enabled = false;
+            this.posRelIn.Location = new System.Drawing.Point(360, 124);
+            this.posRelIn.Name = "posRelIn";
+            this.posRelIn.Size = new System.Drawing.Size(161, 20);
+            this.posRelIn.TabIndex = 92;
+            // 
             // ViewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +567,7 @@
             this.Controls.Add(this.splitter1);
             this.Name = "ViewPatient";
             this.Text = "ViewPatient";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewPatient_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -485,5 +613,16 @@
         private System.Windows.Forms.TextBox workField;
         private System.Windows.Forms.TextBox homeField;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox clienNameIn;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox posRelIn;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label primaryLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox clientIDIn;
     }
 }

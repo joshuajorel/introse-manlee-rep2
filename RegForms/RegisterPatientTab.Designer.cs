@@ -1269,6 +1269,7 @@ namespace introseHHC.RegForms
             this.mdNPIn.Name = "mdNPIn";
             this.mdNPIn.Size = new System.Drawing.Size(54, 20);
             this.mdNPIn.TabIndex = 3;
+            this.mdNPIn.Text = "0.0";
             // 
             // hcNPIn
             // 
@@ -1276,6 +1277,7 @@ namespace introseHHC.RegForms
             this.hcNPIn.Name = "hcNPIn";
             this.hcNPIn.Size = new System.Drawing.Size(56, 20);
             this.hcNPIn.TabIndex = 4;
+            this.hcNPIn.Text = "0.0";
             // 
             // mdmealsIn
             // 
@@ -1283,6 +1285,7 @@ namespace introseHHC.RegForms
             this.mdmealsIn.Name = "mdmealsIn";
             this.mdmealsIn.Size = new System.Drawing.Size(54, 20);
             this.mdmealsIn.TabIndex = 5;
+            this.mdmealsIn.Text = "0.0";
             // 
             // hcmealsIn
             // 
@@ -1290,6 +1293,7 @@ namespace introseHHC.RegForms
             this.hcmealsIn.Name = "hcmealsIn";
             this.hcmealsIn.Size = new System.Drawing.Size(56, 20);
             this.hcmealsIn.TabIndex = 6;
+            this.hcmealsIn.Text = "0.0";
             // 
             // mdoverIn
             // 
@@ -1297,6 +1301,7 @@ namespace introseHHC.RegForms
             this.mdoverIn.Name = "mdoverIn";
             this.mdoverIn.Size = new System.Drawing.Size(54, 20);
             this.mdoverIn.TabIndex = 7;
+            this.mdoverIn.Text = "0.0";
             // 
             // hcoverIn
             // 
@@ -1304,6 +1309,7 @@ namespace introseHHC.RegForms
             this.hcoverIn.Name = "hcoverIn";
             this.hcoverIn.Size = new System.Drawing.Size(56, 20);
             this.hcoverIn.TabIndex = 8;
+            this.hcoverIn.Text = "0.0";
             // 
             // mdndIn
             // 
@@ -1311,6 +1317,7 @@ namespace introseHHC.RegForms
             this.mdndIn.Name = "mdndIn";
             this.mdndIn.Size = new System.Drawing.Size(54, 20);
             this.mdndIn.TabIndex = 9;
+            this.mdndIn.Text = "0.0";
             // 
             // hcndIn
             // 
@@ -1318,6 +1325,7 @@ namespace introseHHC.RegForms
             this.hcndIn.Name = "hcndIn";
             this.hcndIn.Size = new System.Drawing.Size(56, 20);
             this.hcndIn.TabIndex = 10;
+            this.hcndIn.Text = "0.0";
             // 
             // mdhpIn
             // 
@@ -1325,6 +1333,7 @@ namespace introseHHC.RegForms
             this.mdhpIn.Name = "mdhpIn";
             this.mdhpIn.Size = new System.Drawing.Size(54, 20);
             this.mdhpIn.TabIndex = 11;
+            this.mdhpIn.Text = "0.0";
             // 
             // hchpIn
             // 
@@ -1332,6 +1341,7 @@ namespace introseHHC.RegForms
             this.hchpIn.Name = "hchpIn";
             this.hchpIn.Size = new System.Drawing.Size(56, 20);
             this.hchpIn.TabIndex = 12;
+            this.hchpIn.Text = "0.0";
             // 
             // mdTranspoIn
             // 
@@ -1339,6 +1349,7 @@ namespace introseHHC.RegForms
             this.mdTranspoIn.Name = "mdTranspoIn";
             this.mdTranspoIn.Size = new System.Drawing.Size(54, 20);
             this.mdTranspoIn.TabIndex = 13;
+            this.mdTranspoIn.Text = "0.0";
             // 
             // hcTranspoIn
             // 
@@ -1346,6 +1357,7 @@ namespace introseHHC.RegForms
             this.hcTranspoIn.Name = "hcTranspoIn";
             this.hcTranspoIn.Size = new System.Drawing.Size(56, 20);
             this.hcTranspoIn.TabIndex = 14;
+            this.hcTranspoIn.Text = "0.0";
             // 
             // mdSomethingIn
             // 
@@ -1353,6 +1365,7 @@ namespace introseHHC.RegForms
             this.mdSomethingIn.Name = "mdSomethingIn";
             this.mdSomethingIn.Size = new System.Drawing.Size(54, 20);
             this.mdSomethingIn.TabIndex = 15;
+            this.mdSomethingIn.Text = "0.0";
             // 
             // hcSomethingIn
             // 
@@ -1360,6 +1373,7 @@ namespace introseHHC.RegForms
             this.hcSomethingIn.Name = "hcSomethingIn";
             this.hcSomethingIn.Size = new System.Drawing.Size(56, 20);
             this.hcSomethingIn.TabIndex = 16;
+            this.hcSomethingIn.Text = "0.0";
             // 
             // mdLWTIn
             // 
@@ -1367,6 +1381,7 @@ namespace introseHHC.RegForms
             this.mdLWTIn.Name = "mdLWTIn";
             this.mdLWTIn.Size = new System.Drawing.Size(54, 20);
             this.mdLWTIn.TabIndex = 17;
+            this.mdLWTIn.Text = "0.0";
             // 
             // hcLWTIn
             // 
@@ -1374,6 +1389,7 @@ namespace introseHHC.RegForms
             this.hcLWTIn.Name = "hcLWTIn";
             this.hcLWTIn.Size = new System.Drawing.Size(56, 20);
             this.hcLWTIn.TabIndex = 18;
+            this.hcLWTIn.Text = "0.0";
             // 
             // mdSub
             // 
@@ -1382,6 +1398,7 @@ namespace introseHHC.RegForms
             this.mdSub.Name = "mdSub";
             this.mdSub.Size = new System.Drawing.Size(54, 20);
             this.mdSub.TabIndex = 19;
+            this.mdSub.Text = "0.0";
             // 
             // hcSub
             // 
@@ -1390,6 +1407,7 @@ namespace introseHHC.RegForms
             this.hcSub.Name = "hcSub";
             this.hcSub.Size = new System.Drawing.Size(56, 20);
             this.hcSub.TabIndex = 20;
+            this.hcSub.Text = "0.0";
             // 
             // mdNoPaxIn
             // 
@@ -1397,6 +1415,7 @@ namespace introseHHC.RegForms
             this.mdNoPaxIn.Name = "mdNoPaxIn";
             this.mdNoPaxIn.Size = new System.Drawing.Size(54, 20);
             this.mdNoPaxIn.TabIndex = 21;
+            this.mdNoPaxIn.Text = "0.0";
             // 
             // hcNoPaxIn
             // 
@@ -1404,6 +1423,7 @@ namespace introseHHC.RegForms
             this.hcNoPaxIn.Name = "hcNoPaxIn";
             this.hcNoPaxIn.Size = new System.Drawing.Size(56, 20);
             this.hcNoPaxIn.TabIndex = 22;
+            this.hcNoPaxIn.Text = "0.0";
             // 
             // mdTotal
             // 
@@ -1412,6 +1432,7 @@ namespace introseHHC.RegForms
             this.mdTotal.Name = "mdTotal";
             this.mdTotal.Size = new System.Drawing.Size(54, 20);
             this.mdTotal.TabIndex = 23;
+            this.mdTotal.Text = "0.0";
             // 
             // hcTotal
             // 
@@ -1420,6 +1441,7 @@ namespace introseHHC.RegForms
             this.hcTotal.Name = "hcTotal";
             this.hcTotal.Size = new System.Drawing.Size(56, 20);
             this.hcTotal.TabIndex = 24;
+            this.hcTotal.Text = "0.0";
             // 
             // label31
             // 
