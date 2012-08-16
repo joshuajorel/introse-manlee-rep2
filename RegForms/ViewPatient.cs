@@ -22,12 +22,9 @@ namespace introseHHC.RegForms
         private MySqlDataReader read;
 
         public ViewPatient(UInt16 id, string c)
-        {
-            InitializeComponent();
+        {   InitializeComponent();
 
             //initialize database connection
-                 
-
             conn = new MySqlConnection(c);
 
             patID = id;
@@ -39,7 +36,6 @@ namespace introseHHC.RegForms
                 query = "SELECT * FROM (SELECT * FROM PERSON RIGHT JOIN PATIENT ON PERSON.ID = PATID) AS TAB WHERE ID = @id;";
                 cmd = new MySqlCommand(query,conn);
                 cmd.Prepare();
-
                 cmd.Parameters.AddWithValue("@id",id);
 
                 read = cmd.ExecuteReader();
@@ -91,13 +87,10 @@ namespace introseHHC.RegForms
 
                 posRelIn.Text = read.GetString("Relationship");
                 if (byte.Parse(read.GetString("IsPrimary")).Equals(1))
-                {
                     primaryLabel.Text = "Yes";
-                }
                 else
-                {
                     primaryLabel.Text = "No";
-                }
+              
 
                 read.Close();
 
@@ -120,21 +113,15 @@ namespace introseHHC.RegForms
                 actBoxIn.Text = read.GetString("Action");
 
                 if (byte.Parse(read.GetString("AmbWellness")).Equals(1))
-                {
                     ambCB.Checked = true;
-                }
                 else
-                {
-                    ambCB.Checked = false;
-                }
-                if (byte.Parse(read.GetString("SeniorRes")).Equals(1))
-                {
+                  ambCB.Checked = false;
+           
+                if (byte.Parse(read.GetString("SeniorRes")).Equals(1)) 
                     senresCB.Checked = true;
-                }
                 else
-                {
                     senresCB.Checked = false;
-                }
+              
 
                 read.Close();
 
@@ -234,7 +221,6 @@ namespace introseHHC.RegForms
                 hcTotal.Text = read.GetString("hctotal");
 
                 read.Close();
-
                 CloseConnection();
             }
             else

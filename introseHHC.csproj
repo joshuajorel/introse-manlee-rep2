@@ -233,6 +233,12 @@
     <Compile Include="RegForms\ViewClient.Designer.cs">
       <DependentUpon>ViewClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\ViewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ViewEmployee.Designer.cs">
+      <DependentUpon>ViewEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\ViewPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewClient.resx">
       <DependentUpon>ViewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ViewEmployee.resx">
+      <DependentUpon>ViewEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewPatient.resx">
       <DependentUpon>ViewPatient.cs</DependentUpon>

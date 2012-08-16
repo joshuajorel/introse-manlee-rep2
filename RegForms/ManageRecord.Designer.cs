@@ -61,7 +61,7 @@
             this.surnameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getEmployeeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getEmployeeDetailsDB = new introseHHC.getEmployeeDetailsDB();
-            this.button6 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
             this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
@@ -324,6 +324,7 @@
             this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeView.Size = new System.Drawing.Size(544, 402);
             this.employeeView.TabIndex = 1;
+            this.employeeView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeView_CellDoubleClick);
             // 
             // iDDataGridViewTextBoxColumn2
             // 
@@ -363,14 +364,15 @@
             this.getEmployeeDetailsDB.DataSetName = "getEmployeeDetailsDB";
             this.getEmployeeDetailsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button6
+            // exitButton
             // 
-            this.button6.Location = new System.Drawing.Point(12, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(12, 88);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // button2
             // 
@@ -399,7 +401,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 496);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
             this.Name = "ManageRecord";
@@ -441,7 +443,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox empSearchIn;
         private System.Windows.Forms.DataGridView employeeView;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button button2;
         private getPatientDetailsDB getPatientDetailsDB;
         private System.Windows.Forms.BindingSource getPatientDetailsBindingSource;

@@ -49,6 +49,17 @@ namespace introseHHC.RegForms
             vc.ShowDialog();
         }
 
+        private void employeeView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ViewEmployee ve = new ViewEmployee(UInt16.Parse(employeeView.SelectedCells[0].Value.ToString()),connString);
+            ve.ShowDialog();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
 
     }
 }
