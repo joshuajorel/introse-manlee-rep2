@@ -1000,7 +1000,7 @@ namespace introseHHC.RegForms
                     query = "INSERT INTO COST_TABLE(FACEID,MDNP,MDM,MDO,MDND,MDHP,MDT,MDS,"
                         + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX)"
                         + " VALUES (@fcID,@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
-                        +"@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax) ;";
+                        +"@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax,@mdsub,@mdtotal,@hcsub,@hctotal) ;";
                    
                     cmd.CommandText = query;
                     cmd.Prepare();
@@ -1013,6 +1013,9 @@ namespace introseHHC.RegForms
                    cmd.Parameters.AddWithValue("@mds",cost.getSomething(MD));
                    cmd.Parameters.AddWithValue("@mdlwt",cost.getSomething(MD));
                    cmd.Parameters.AddWithValue("@mdpax",cost.getNoPax(MD));
+                   cmd.Parameters.AddWithValue("@mdsub", cost.getSubTotal(MD));
+                   cmd.Parameters.AddWithValue("@mdtotal", cost.getTotal(MD));
+
 
                    cmd.Parameters.AddWithValue("@hcnp", cost.getNightPay(HC));
                    cmd.Parameters.AddWithValue("@hcm", cost.getMeals(HC));
@@ -1023,6 +1026,8 @@ namespace introseHHC.RegForms
                    cmd.Parameters.AddWithValue("@hcs", cost.getSomething(HC));
                    cmd.Parameters.AddWithValue("@hclwt", cost.getSomething(HC));
                    cmd.Parameters.AddWithValue("@hcpax", cost.getNoPax(HC));
+                   cmd.Parameters.AddWithValue("@hcsub", cost.getSubTotal(HC));
+                   cmd.Parameters.AddWithValue("@hctotal", cost.getTotal(HC));
                    cmd.Parameters.AddWithValue("@fcID",fsheet.FID);
                    cmd.ExecuteNonQuery();
 

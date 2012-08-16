@@ -73,7 +73,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Requirements = new System.Windows.Forms.TabPage();
             this.exitButton = new System.Windows.Forms.Button();
             this.caseMgmtCB = new System.Windows.Forms.CheckBox();
             this.ctCB = new System.Windows.Forms.CheckBox();
@@ -121,10 +121,20 @@
             this.label27 = new System.Windows.Forms.Label();
             this.cmIn = new System.Windows.Forms.TextBox();
             this.hvacIn = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.actBoxIn = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.gatherLabel = new System.Windows.Forms.Label();
+            this.endorseLabel = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.effDateLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.Requirements.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitter1
@@ -138,6 +148,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.Requirements);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(106, 12);
             this.tabControl1.Name = "tabControl1";
@@ -585,25 +596,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
-            // tabPage2
+            // Requirements
             // 
-            this.tabPage2.Controls.Add(this.hvacIn);
-            this.tabPage2.Controls.Add(this.cmIn);
-            this.tabPage2.Controls.Add(this.label27);
-            this.tabPage2.Controls.Add(this.detIn);
-            this.tabPage2.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage2.Controls.Add(this.hvacCB);
-            this.tabPage2.Controls.Add(this.senresCB);
-            this.tabPage2.Controls.Add(this.ambCB);
-            this.tabPage2.Controls.Add(this.ctCB);
-            this.tabPage2.Controls.Add(this.caseMgmtCB);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(549, 460);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Requirements.Controls.Add(this.hvacIn);
+            this.Requirements.Controls.Add(this.cmIn);
+            this.Requirements.Controls.Add(this.label27);
+            this.Requirements.Controls.Add(this.detIn);
+            this.Requirements.Controls.Add(this.tableLayoutPanel1);
+            this.Requirements.Controls.Add(this.hvacCB);
+            this.Requirements.Controls.Add(this.senresCB);
+            this.Requirements.Controls.Add(this.ambCB);
+            this.Requirements.Controls.Add(this.ctCB);
+            this.Requirements.Controls.Add(this.caseMgmtCB);
+            this.Requirements.Location = new System.Drawing.Point(4, 22);
+            this.Requirements.Name = "Requirements";
+            this.Requirements.Padding = new System.Windows.Forms.Padding(3);
+            this.Requirements.Size = new System.Drawing.Size(549, 460);
+            this.Requirements.TabIndex = 1;
+            this.Requirements.Text = "Requirements";
+            this.Requirements.UseVisualStyleBackColor = true;
             // 
             // exitButton
             // 
@@ -1071,6 +1082,99 @@
             this.hvacIn.Size = new System.Drawing.Size(266, 66);
             this.hvacIn.TabIndex = 37;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.effDateLabel);
+            this.tabPage2.Controls.Add(this.label25);
+            this.tabPage2.Controls.Add(this.endorseLabel);
+            this.tabPage2.Controls.Add(this.gatherLabel);
+            this.tabPage2.Controls.Add(this.label44);
+            this.tabPage2.Controls.Add(this.actBoxIn);
+            this.tabPage2.Controls.Add(this.label46);
+            this.tabPage2.Controls.Add(this.label48);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(549, 460);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Details";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(6, 40);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(127, 15);
+            this.label46.TabIndex = 25;
+            this.label46.Text = "Endorse Action To:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(6, 10);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(123, 15);
+            this.label48.TabIndex = 24;
+            this.label48.Text = "Data Gathered By:";
+            // 
+            // actBoxIn
+            // 
+            this.actBoxIn.Location = new System.Drawing.Point(9, 98);
+            this.actBoxIn.Multiline = true;
+            this.actBoxIn.Name = "actBoxIn";
+            this.actBoxIn.Size = new System.Drawing.Size(531, 164);
+            this.actBoxIn.TabIndex = 26;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(6, 82);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(93, 13);
+            this.label44.TabIndex = 27;
+            this.label44.Text = "Actions Taken:";
+            // 
+            // gatherLabel
+            // 
+            this.gatherLabel.AutoSize = true;
+            this.gatherLabel.Location = new System.Drawing.Point(139, 12);
+            this.gatherLabel.Name = "gatherLabel";
+            this.gatherLabel.Size = new System.Drawing.Size(41, 13);
+            this.gatherLabel.TabIndex = 28;
+            this.gatherLabel.Text = "label23";
+            // 
+            // endorseLabel
+            // 
+            this.endorseLabel.AutoSize = true;
+            this.endorseLabel.Location = new System.Drawing.Point(139, 42);
+            this.endorseLabel.Name = "endorseLabel";
+            this.endorseLabel.Size = new System.Drawing.Size(41, 13);
+            this.endorseLabel.TabIndex = 29;
+            this.endorseLabel.Text = "label24";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(6, 274);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(105, 15);
+            this.label25.TabIndex = 30;
+            this.label25.Text = "Effectivity Date:";
+            // 
+            // effDateLabel
+            // 
+            this.effDateLabel.AutoSize = true;
+            this.effDateLabel.Location = new System.Drawing.Point(139, 276);
+            this.effDateLabel.Name = "effDateLabel";
+            this.effDateLabel.Size = new System.Drawing.Size(41, 13);
+            this.effDateLabel.TabIndex = 31;
+            this.effDateLabel.Text = "label26";
+            // 
             // ViewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1082,13 +1186,16 @@
             this.Name = "ViewPatient";
             this.Text = "ViewPatient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewPatient_FormClosed);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ViewPatient_KeyPress);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.Requirements.ResumeLayout(false);
+            this.Requirements.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1098,7 +1205,7 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage Requirements;
         private System.Windows.Forms.TextBox addField2;
         private System.Windows.Forms.TextBox addField1;
         private System.Windows.Forms.Label label14;
@@ -1188,5 +1295,14 @@
         private System.Windows.Forms.CheckBox ambCB;
         private System.Windows.Forms.CheckBox ctCB;
         private System.Windows.Forms.CheckBox caseMgmtCB;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox actBoxIn;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label effDateLabel;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label endorseLabel;
+        private System.Windows.Forms.Label gatherLabel;
     }
 }

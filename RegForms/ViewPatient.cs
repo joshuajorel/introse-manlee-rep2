@@ -15,6 +15,8 @@ namespace introseHHC.RegForms
         private UInt16 patID;
         private UInt16 clientID;
         private UInt16 faceID;
+        private UInt16 gatherID;
+        private UInt16 endorseID;
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
@@ -111,7 +113,11 @@ namespace introseHHC.RegForms
                 read.Read();
 
                 faceID = UInt16.Parse(read.GetString("FaceID"));
+                gatherID = UInt16.Parse(read.GetString("GID"));
+                endorseID = UInt16.Parse(read.GetString("EID"));
+                effDateLabel.Text = DateTime.Parse(read.GetString("EffectDate")).ToShortDateString();
                 detIn.Text = read.GetString("ReqDetails");
+                actBoxIn.Text = read.GetString("Action");
 
                 if (byte.Parse(read.GetString("AmbWellness")).Equals(1))
                 {
@@ -148,7 +154,32 @@ namespace introseHHC.RegForms
                 {
                     cmIn.AppendText(read.GetString("Description")+"\n");
                 }
+
                 read.Close();
+                //get gather
+                query = "SELECT ID,SNAME,FNAME,MNAME FROM PERSON WHERE ID=@gID;";
+                cmd.CommandText = query;
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@gid",gatherID);
+
+                read = cmd.ExecuteReader();
+                read.Read();
+                gatherLabel.Text = read.GetString("SName") + ", " + read.GetString("FName") + " " + read.GetString("MName");
+                read.Close();
+                //get endorse
+                cmd.Parameters.Clear();
+                query = "SELECT ID,SNAME,FNAME,MNAME FROM PERSON WHERE ID=@eID;";
+                cmd.CommandText = query;
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@eID", endorseID);
+
+                read = cmd.ExecuteReader();
+                read.Read();
+                endorseLabel.Text = read.GetString("SName") + ", " + read.GetString("FName") + " " + read.GetString("MName");
+                read.Close();
+
                 //get home vaccination options
                 cmd.Parameters.Clear();
                 query = "SELECT * FROM " +
@@ -166,6 +197,41 @@ namespace introseHHC.RegForms
                     hvacIn.AppendText(read.GetString("Description")+"\n");
                    
                 }
+
+                read.Close();
+
+                //get cost table 
+                cmd.Parameters.Clear();
+                query = "SELECT * FROM COST_TABLE WHERE FACEID = @fId;";
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@fId",faceID);
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                mdNPIn.Text = read.GetString("mdnp");
+                mdmealsIn.Text = read.GetString("mdm");
+                mdoverIn.Text = read.GetString("mdo");
+                mdndIn.Text = read.GetString("mdnd");
+                mdhpIn.Text = read.GetString("mdhp");
+                mdTranspoIn.Text = read.GetString("mdt");
+                mdSomethingIn.Text = read.GetString("mds");
+                mdLWTIn.Text = read.GetString("mdlwt");
+                mdNoPaxIn.Text = read.GetString("mdpax");
+                mdSub.Text = read.GetString("mdsubt");
+                mdTotal.Text = read.GetString("mdtotal");
+
+                hcNPIn.Text = read.GetString("hcnp");
+                hcmealsIn.Text = read.GetString("hcm");
+                hcoverIn.Text = read.GetString("hco");
+                hcndIn.Text = read.GetString("hcnd");
+                hchpIn.Text = read.GetString("hchp");
+                hcTranspoIn.Text = read.GetString("hct");
+                hcSomethingIn.Text = read.GetString("hcs");
+                hcLWTIn.Text = read.GetString("hclwt");
+                hcNoPaxIn.Text = read.GetString("hcpax");
+                hcSub.Text = read.GetString("hcsubt");
+                hcTotal.Text = read.GetString("hctotal");
 
                 read.Close();
 
@@ -218,6 +284,11 @@ namespace introseHHC.RegForms
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ViewPatient_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Console.WriteLine(e.KeyChar);
         }
 
     }
