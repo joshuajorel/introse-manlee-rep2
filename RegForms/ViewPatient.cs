@@ -13,6 +13,8 @@ namespace introseHHC.RegForms
     public partial class ViewPatient : Form
     {
         private UInt16 patID;
+        private UInt16 clientID;
+        private UInt16 faceID;
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
@@ -75,7 +77,98 @@ namespace introseHHC.RegForms
                 cmd.CommandText = query;
                 cmd.Prepare();
 
+                cmd.Parameters.AddWithValue("@pid", patID);
+
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                clienNameIn.Text = read.GetString("SName") + ", " + read.GetString("FName") + " " + read.GetString("MName");
+
+                clientIDIn.Text = read.GetString("CID");
+                clientID = UInt16.Parse(clientIDIn.Text);
+
+                posRelIn.Text = read.GetString("Relationship");
+                if (byte.Parse(read.GetString("IsPrimary")).Equals(1))
+                {
+                    primaryLabel.Text = "Yes";
+                }
+                else
+                {
+                    primaryLabel.Text = "No";
+                }
+
+                read.Close();
+
                 //get face sheet information
+                cmd.Parameters.Clear();
+                query = "SELECT * FROM FACESHEET WHERE PATID = @pid;";
+                cmd.CommandText = query;
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@pid", patID);
+
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                faceID = UInt16.Parse(read.GetString("FaceID"));
+                detIn.Text = read.GetString("ReqDetails");
+
+                if (byte.Parse(read.GetString("AmbWellness")).Equals(1))
+                {
+                    ambCB.Checked = true;
+                }
+                else
+                {
+                    ambCB.Checked = false;
+                }
+                if (byte.Parse(read.GetString("SeniorRes")).Equals(1))
+                {
+                    senresCB.Checked = true;
+                }
+                else
+                {
+                    senresCB.Checked = false;
+                }
+
+                read.Close();
+
+                //get case managment options
+                cmd.Parameters.Clear();
+                query = "SELECT * FROM " +
+                    "(SELECT CM.FACEID, DESCRIPTION FROM CASE_MGMT_MAP AS CM LEFT JOIN CASE_MGMT_REF AS CR ON CM.CASEID = CR.CASEID) AS CMGMT "
+                    + "WHERE FACEID = @fId;";
+                cmd.CommandText = query;
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@fId", faceID);
+
+                read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    cmIn.AppendText(read.GetString("Description")+"\n");
+                }
+                read.Close();
+                //get home vaccination options
+                cmd.Parameters.Clear();
+                query = "SELECT * FROM " +
+                    "(SELECT HM.FID, DESCRIPTION FROM HVAC_MAP AS HM LEFT JOIN HVAC_REF AS HR ON HM.HID = HR.HVACID) AS HVAC" +
+                    " WHERE FID = @fId";
+                cmd.CommandText = query;
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@fId", faceID);
+
+                read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    hvacIn.AppendText(read.GetString("Description")+"\n");
+                   
+                }
+
+                read.Close();
+
                 CloseConnection();
             }
             else
