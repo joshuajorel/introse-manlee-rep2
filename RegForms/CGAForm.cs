@@ -170,11 +170,6 @@ namespace introseHHC.RegForms
             Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void selPatient_Click(object sender, EventArgs e)
         {
             PatientSelect psel = new PatientSelect();
@@ -187,6 +182,8 @@ namespace introseHHC.RegForms
             if (selID != 0)
             {
                 cga.setPat(selID);
+                textBox1.Text = psel.Fname + " " + psel.Sname;
+                panel1.Enabled = true;
             }
             else
             {

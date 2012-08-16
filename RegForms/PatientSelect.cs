@@ -12,6 +12,21 @@ namespace introseHHC.RegForms
     public partial class PatientSelect : Form
     {
         private UInt16 sel;
+        private string fname;
+
+        public string Fname
+        {
+            get { return fname; }
+            set { fname = value; }
+        }
+        private string mname;
+        private string sname;
+
+        public string Sname
+        {
+            get { return sname; }
+            set { sname = value; }
+        }
 
         public UInt16 Sel
         {
@@ -33,6 +48,8 @@ namespace introseHHC.RegForms
             //selID = UInt16.Parse(patientView.SelectedCells[0].Value.ToString());
 
             sel = UInt16.Parse(patientView.SelectedCells[0].Value.ToString());
+            fname = patientView.SelectedCells[1].Value.ToString();
+            sname = patientView.SelectedCells[2].Value.ToString();
         }
 
         
