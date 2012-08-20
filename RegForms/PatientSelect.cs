@@ -45,7 +45,6 @@ namespace introseHHC.RegForms
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //selID = UInt16.Parse(patientView.SelectedCells[0].Value.ToString());
 
             sel = UInt16.Parse(patientView.SelectedCells[0].Value.ToString());
             fname = patientView.SelectedCells[1].Value.ToString();

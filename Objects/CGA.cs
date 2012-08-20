@@ -64,14 +64,27 @@ namespace introseHHC.Objects
         {
             insurance = ins;
         }
+
+        public String getIns()
+        {
+            return insurance;
+        }
+
         public void setPhy(Physician phy)
         {
             physician = phy;
         }
+        
         public void setPpc(String ppc)
         {
             prefPlaCon = ppc;
         }
+
+        public String getPpc()
+        {
+            return prefPlaCon;
+        }
+
         public void setCid(int cid)
         {
             cgaId = cid;
@@ -80,6 +93,12 @@ namespace introseHHC.Objects
         {
             ph = p;
         }
+
+        public PersonalHistory getPH()
+        {
+            return ph;
+        }
+
         public void setFH(FamilyHistory f)
         {
             fh = f;

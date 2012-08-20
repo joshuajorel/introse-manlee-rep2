@@ -69,7 +69,6 @@
     </Compile>
     <Compile Include="getEmployeeDetailsDB.cs">
       <DependentUpon>getEmployeeDetailsDB.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="getEmployeeDetailsDB.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -168,12 +167,6 @@
     <Compile Include="RegForms\PatientView.Designer.cs">
       <DependentUpon>PatientView.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegForms\PersonalHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegForms\PersonalHistory.Designer.cs">
-      <DependentUpon>PersonalHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="RegForms\ManageRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,12 +202,6 @@
     </Compile>
     <Compile Include="RegForms\SocEnv.Designer.cs">
       <DependentUpon>SocEnv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegForms\Social.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegForms\Social.Designer.cs">
-      <DependentUpon>Social.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\ViewCGA.cs">
       <SubType>Form</SubType>
@@ -285,9 +272,6 @@
     <EmbeddedResource Include="RegForms\PatientView.resx">
       <DependentUpon>PatientView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegForms\PersonalHistory.resx">
-      <DependentUpon>PersonalHistory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ManageRecord.resx">
       <DependentUpon>ManageRecord.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,9 +289,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\SocEnv.resx">
       <DependentUpon>SocEnv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegForms\Social.resx">
-      <DependentUpon>Social.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewCGA.resx">
       <DependentUpon>ViewCGA.cs</DependentUpon>

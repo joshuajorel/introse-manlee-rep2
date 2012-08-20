@@ -17,7 +17,9 @@ namespace introseHHC.RegForms
         private MySqlCommand cmd;
         private MySqlDataReader read;
         private string connString;
-        
+        private PersonalHistory phis;
+        private FamilyHistory fhis;
+
         private CGA cga;
         private UInt16 selID;
 
@@ -25,6 +27,8 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
             cga = new CGA();
+            phis = new PersonalHistory();
+            fhis = new FamilyHistory();
             conn = new MySqlConnection();
             connString = c;
 
@@ -143,7 +147,7 @@ namespace introseHHC.RegForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Social soc = new Social();
+            SocEnv soc = new SocEnv();
             soc.ShowDialog();
         }
 
@@ -189,6 +193,26 @@ namespace introseHHC.RegForms
             {
                
             }
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            cga.setIns(hiTB.Text);
+            Console.WriteLine(cga.getIns());
+            cga.setPpc(ppcTB.Text);
+            Console.WriteLine(cga.getPpc());
+
+            phis.setAllergy(allergyTB.Text);
+            phis.setSmoke(smokingTB.Text);
+            phis.setDrink(drinkingTB.Text);
+            phis.setHobby(hobbyTB.Text);
+
+            cga.setPH(phis);
+
+            PersonalHistory test = new PersonalHistory();
+            test = cga.getPH();
+            Console.WriteLine(test.getAlg() + " " + test.getDnk() + " " + test.getHby() + " " + test.getSmk());
+
         }
 
      

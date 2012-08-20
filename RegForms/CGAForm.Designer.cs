@@ -237,36 +237,36 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.nextBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox42 = new System.Windows.Forms.GroupBox();
+            this.BleedingGB = new System.Windows.Forms.GroupBox();
             this.radioButton93 = new System.Windows.Forms.RadioButton();
             this.radioButton94 = new System.Windows.Forms.RadioButton();
-            this.groupBox41 = new System.Windows.Forms.GroupBox();
+            this.TubercolosisGB = new System.Windows.Forms.GroupBox();
             this.radioButton91 = new System.Windows.Forms.RadioButton();
             this.radioButton92 = new System.Windows.Forms.RadioButton();
-            this.groupBox40 = new System.Windows.Forms.GroupBox();
+            this.CancerGB = new System.Windows.Forms.GroupBox();
             this.radioButton89 = new System.Windows.Forms.RadioButton();
             this.radioButton90 = new System.Windows.Forms.RadioButton();
-            this.groupBox39 = new System.Windows.Forms.GroupBox();
+            this.DiabetesGB = new System.Windows.Forms.GroupBox();
             this.radioButton88 = new System.Windows.Forms.RadioButton();
             this.radioButton87 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.hobbyTB = new System.Windows.Forms.TextBox();
+            this.drinkingTB = new System.Windows.Forms.TextBox();
+            this.smokingTB = new System.Windows.Forms.TextBox();
+            this.allergyTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ppcTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.apTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.hiTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.selPatient = new System.Windows.Forms.Button();
@@ -317,10 +317,10 @@
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox42.SuspendLayout();
-            this.groupBox41.SuspendLayout();
-            this.groupBox40.SuspendLayout();
-            this.groupBox39.SuspendLayout();
+            this.BleedingGB.SuspendLayout();
+            this.TubercolosisGB.SuspendLayout();
+            this.CancerGB.SuspendLayout();
+            this.DiabetesGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -2568,28 +2568,28 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.nextBtn);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.groupBox42);
-            this.panel1.Controls.Add(this.groupBox41);
-            this.panel1.Controls.Add(this.groupBox40);
-            this.panel1.Controls.Add(this.groupBox39);
+            this.panel1.Controls.Add(this.BleedingGB);
+            this.panel1.Controls.Add(this.TubercolosisGB);
+            this.panel1.Controls.Add(this.CancerGB);
+            this.panel1.Controls.Add(this.DiabetesGB);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.hobbyTB);
+            this.panel1.Controls.Add(this.drinkingTB);
+            this.panel1.Controls.Add(this.smokingTB);
+            this.panel1.Controls.Add(this.allergyTB);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.ppcTB);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.apTB);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.hiTB);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(0, 35);
@@ -2608,14 +2608,15 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button7
+            // nextBtn
             // 
-            this.button7.Location = new System.Drawing.Point(434, 472);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 43;
-            this.button7.Text = "Next";
-            this.button7.UseVisualStyleBackColor = true;
+            this.nextBtn.Location = new System.Drawing.Point(434, 472);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(75, 23);
+            this.nextBtn.TabIndex = 43;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.UseVisualStyleBackColor = true;
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
             // label8
             // 
@@ -2675,15 +2676,15 @@
             this.label7.Text = "Social and\r\nEnvironment\r\n\r\nPast Medical\r\nHistory\r\n\r\nMedication \r\nList\r\n\r\nImmuniza" +
                 "tion\r\nRecord\r\n\r\nFunctional\r\nStatus";
             // 
-            // groupBox42
+            // BleedingGB
             // 
-            this.groupBox42.Controls.Add(this.radioButton93);
-            this.groupBox42.Controls.Add(this.radioButton94);
-            this.groupBox42.Location = new System.Drawing.Point(132, 344);
-            this.groupBox42.Name = "groupBox42";
-            this.groupBox42.Size = new System.Drawing.Size(89, 26);
-            this.groupBox42.TabIndex = 36;
-            this.groupBox42.TabStop = false;
+            this.BleedingGB.Controls.Add(this.radioButton93);
+            this.BleedingGB.Controls.Add(this.radioButton94);
+            this.BleedingGB.Location = new System.Drawing.Point(132, 344);
+            this.BleedingGB.Name = "BleedingGB";
+            this.BleedingGB.Size = new System.Drawing.Size(89, 26);
+            this.BleedingGB.TabIndex = 36;
+            this.BleedingGB.TabStop = false;
             // 
             // radioButton93
             // 
@@ -2707,15 +2708,15 @@
             this.radioButton94.Text = "Yes";
             this.radioButton94.UseVisualStyleBackColor = true;
             // 
-            // groupBox41
+            // TubercolosisGB
             // 
-            this.groupBox41.Controls.Add(this.radioButton91);
-            this.groupBox41.Controls.Add(this.radioButton92);
-            this.groupBox41.Location = new System.Drawing.Point(132, 319);
-            this.groupBox41.Name = "groupBox41";
-            this.groupBox41.Size = new System.Drawing.Size(89, 26);
-            this.groupBox41.TabIndex = 35;
-            this.groupBox41.TabStop = false;
+            this.TubercolosisGB.Controls.Add(this.radioButton91);
+            this.TubercolosisGB.Controls.Add(this.radioButton92);
+            this.TubercolosisGB.Location = new System.Drawing.Point(132, 319);
+            this.TubercolosisGB.Name = "TubercolosisGB";
+            this.TubercolosisGB.Size = new System.Drawing.Size(89, 26);
+            this.TubercolosisGB.TabIndex = 35;
+            this.TubercolosisGB.TabStop = false;
             // 
             // radioButton91
             // 
@@ -2739,15 +2740,15 @@
             this.radioButton92.Text = "Yes";
             this.radioButton92.UseVisualStyleBackColor = true;
             // 
-            // groupBox40
+            // CancerGB
             // 
-            this.groupBox40.Controls.Add(this.radioButton89);
-            this.groupBox40.Controls.Add(this.radioButton90);
-            this.groupBox40.Location = new System.Drawing.Point(132, 293);
-            this.groupBox40.Name = "groupBox40";
-            this.groupBox40.Size = new System.Drawing.Size(89, 26);
-            this.groupBox40.TabIndex = 34;
-            this.groupBox40.TabStop = false;
+            this.CancerGB.Controls.Add(this.radioButton89);
+            this.CancerGB.Controls.Add(this.radioButton90);
+            this.CancerGB.Location = new System.Drawing.Point(132, 293);
+            this.CancerGB.Name = "CancerGB";
+            this.CancerGB.Size = new System.Drawing.Size(89, 26);
+            this.CancerGB.TabIndex = 34;
+            this.CancerGB.TabStop = false;
             // 
             // radioButton89
             // 
@@ -2771,15 +2772,15 @@
             this.radioButton90.Text = "Yes";
             this.radioButton90.UseVisualStyleBackColor = true;
             // 
-            // groupBox39
+            // DiabetesGB
             // 
-            this.groupBox39.Controls.Add(this.radioButton88);
-            this.groupBox39.Controls.Add(this.radioButton87);
-            this.groupBox39.Location = new System.Drawing.Point(132, 266);
-            this.groupBox39.Name = "groupBox39";
-            this.groupBox39.Size = new System.Drawing.Size(89, 26);
-            this.groupBox39.TabIndex = 33;
-            this.groupBox39.TabStop = false;
+            this.DiabetesGB.Controls.Add(this.radioButton88);
+            this.DiabetesGB.Controls.Add(this.radioButton87);
+            this.DiabetesGB.Location = new System.Drawing.Point(132, 266);
+            this.DiabetesGB.Name = "DiabetesGB";
+            this.DiabetesGB.Size = new System.Drawing.Size(89, 26);
+            this.DiabetesGB.TabIndex = 33;
+            this.DiabetesGB.TabStop = false;
             // 
             // radioButton88
             // 
@@ -2813,33 +2814,33 @@
             this.label5.Text = "Family History\r\n\r\n    Diabetes\r\n\r\n    Cancer\r\n\r\n    Tuberculosis\r\n\r\n    Bleeding " +
                 "Disorder";
             // 
-            // textBox9
+            // hobbyTB
             // 
-            this.textBox9.Location = new System.Drawing.Point(132, 212);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(244, 20);
-            this.textBox9.TabIndex = 31;
+            this.hobbyTB.Location = new System.Drawing.Point(132, 212);
+            this.hobbyTB.Name = "hobbyTB";
+            this.hobbyTB.Size = new System.Drawing.Size(244, 20);
+            this.hobbyTB.TabIndex = 31;
             // 
-            // textBox8
+            // drinkingTB
             // 
-            this.textBox8.Location = new System.Drawing.Point(132, 185);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(244, 20);
-            this.textBox8.TabIndex = 30;
+            this.drinkingTB.Location = new System.Drawing.Point(132, 185);
+            this.drinkingTB.Name = "drinkingTB";
+            this.drinkingTB.Size = new System.Drawing.Size(244, 20);
+            this.drinkingTB.TabIndex = 30;
             // 
-            // textBox7
+            // smokingTB
             // 
-            this.textBox7.Location = new System.Drawing.Point(132, 159);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(244, 20);
-            this.textBox7.TabIndex = 29;
+            this.smokingTB.Location = new System.Drawing.Point(132, 159);
+            this.smokingTB.Name = "smokingTB";
+            this.smokingTB.Size = new System.Drawing.Size(244, 20);
+            this.smokingTB.TabIndex = 29;
             // 
-            // textBox6
+            // allergyTB
             // 
-            this.textBox6.Location = new System.Drawing.Point(132, 133);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(244, 20);
-            this.textBox6.TabIndex = 28;
+            this.allergyTB.Location = new System.Drawing.Point(132, 133);
+            this.allergyTB.Name = "allergyTB";
+            this.allergyTB.Size = new System.Drawing.Size(244, 20);
+            this.allergyTB.TabIndex = 28;
             // 
             // label6
             // 
@@ -2851,12 +2852,12 @@
             this.label6.Text = "Personal History\r\n\r\n    Allergy:\r\n\r\n    Smoking History:\r\n\r\n    Drinking History:" +
                 "\r\n\r\n    Hobbies:";
             // 
-            // textBox4
+            // ppcTB
             // 
-            this.textBox4.Location = new System.Drawing.Point(132, 64);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(244, 20);
-            this.textBox4.TabIndex = 7;
+            this.ppcTB.Location = new System.Drawing.Point(132, 64);
+            this.ppcTB.Name = "ppcTB";
+            this.ppcTB.Size = new System.Drawing.Size(244, 20);
+            this.ppcTB.TabIndex = 7;
             // 
             // label4
             // 
@@ -2867,12 +2868,12 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Preferred Place of\r\nConfinement:";
             // 
-            // textBox3
+            // apTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(244, 20);
-            this.textBox3.TabIndex = 3;
+            this.apTB.Location = new System.Drawing.Point(132, 38);
+            this.apTB.Name = "apTB";
+            this.apTB.Size = new System.Drawing.Size(244, 20);
+            this.apTB.TabIndex = 3;
             // 
             // label3
             // 
@@ -2883,12 +2884,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Attending Physician:";
             // 
-            // textBox2
+            // hiTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
-            this.textBox2.TabIndex = 1;
+            this.hiTB.Location = new System.Drawing.Point(132, 12);
+            this.hiTB.Name = "hiTB";
+            this.hiTB.Size = new System.Drawing.Size(244, 20);
+            this.hiTB.TabIndex = 1;
             // 
             // label2
             // 
@@ -2907,7 +2908,6 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 2;
-    
             // 
             // selPatient
             // 
@@ -3042,14 +3042,14 @@
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox42.ResumeLayout(false);
-            this.groupBox42.PerformLayout();
-            this.groupBox41.ResumeLayout(false);
-            this.groupBox41.PerformLayout();
-            this.groupBox40.ResumeLayout(false);
-            this.groupBox40.PerformLayout();
-            this.groupBox39.ResumeLayout(false);
-            this.groupBox39.PerformLayout();
+            this.BleedingGB.ResumeLayout(false);
+            this.BleedingGB.PerformLayout();
+            this.TubercolosisGB.ResumeLayout(false);
+            this.TubercolosisGB.PerformLayout();
+            this.CancerGB.ResumeLayout(false);
+            this.CancerGB.PerformLayout();
+            this.DiabetesGB.ResumeLayout(false);
+            this.DiabetesGB.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -3102,11 +3102,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ppcTB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox apTB;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox hiTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button selPatient;
@@ -3273,20 +3273,20 @@
         private System.Windows.Forms.RadioButton radioButton51;
         private System.Windows.Forms.RadioButton radioButton86;
         private System.Windows.Forms.RadioButton radioButton85;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.GroupBox groupBox42;
+        private System.Windows.Forms.TextBox hobbyTB;
+        private System.Windows.Forms.TextBox drinkingTB;
+        private System.Windows.Forms.TextBox smokingTB;
+        private System.Windows.Forms.TextBox allergyTB;
+        private System.Windows.Forms.GroupBox BleedingGB;
         private System.Windows.Forms.RadioButton radioButton93;
         private System.Windows.Forms.RadioButton radioButton94;
-        private System.Windows.Forms.GroupBox groupBox41;
+        private System.Windows.Forms.GroupBox TubercolosisGB;
         private System.Windows.Forms.RadioButton radioButton91;
         private System.Windows.Forms.RadioButton radioButton92;
-        private System.Windows.Forms.GroupBox groupBox40;
+        private System.Windows.Forms.GroupBox CancerGB;
         private System.Windows.Forms.RadioButton radioButton89;
         private System.Windows.Forms.RadioButton radioButton90;
-        private System.Windows.Forms.GroupBox groupBox39;
+        private System.Windows.Forms.GroupBox DiabetesGB;
         private System.Windows.Forms.RadioButton radioButton88;
         private System.Windows.Forms.RadioButton radioButton87;
         private System.Windows.Forms.Label label5;
@@ -3295,7 +3295,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button nextBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button8;
