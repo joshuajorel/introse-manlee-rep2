@@ -998,9 +998,10 @@ namespace introseHHC.RegForms
                     Console.WriteLine("Inserting values into cost table.");
                     cmd.Parameters.Clear();
                     query = "INSERT INTO COST_TABLE(FACEID,MDNP,MDM,MDO,MDND,MDHP,MDT,MDS,"
-                        + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX)"
+                        + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX,MDSUBT,MDTOTAL,HCSUBT,HCTOTAL)"
                         + " VALUES (@fcID,@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
-                        +"@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax,@mdsub,@mdtotal,@hcsub,@hctotal) ;";
+                        + "@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax"
+                    +",@mdsub,@mdtotal,@hcsub,@hctotal) ;";
                    
                     cmd.CommandText = query;
                     cmd.Prepare();
@@ -1227,6 +1228,11 @@ namespace introseHHC.RegForms
                 fsheet.EndorseID = endorseID;
             else
                 Console.WriteLine("Gather and Endorse cannot be the same.");
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
