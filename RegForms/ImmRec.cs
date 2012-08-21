@@ -50,6 +50,11 @@ namespace introseHHC.RegForms
             cmd = new MySqlCommand(query, conn);
             cmd.Prepare();
 
+            cmd.Parameters.AddWithValue("@tet", rec.getTet());
+            cmd.Parameters.AddWithValue("@pne", rec.getPne());
+            cmd.Parameters.AddWithValue("@inf", rec.getInf());
+            cmd.Parameters.AddWithValue("@oth", rec.getOth());
+
             cmd.ExecuteNonQuery();
 
             try
