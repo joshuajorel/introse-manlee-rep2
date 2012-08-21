@@ -173,20 +173,24 @@ namespace introseHHC.RegForms
                 ct = read.GetString("City");
                 r = read.GetString("Region");
 
-                nameField.Text = sname+", "+fname+" "+mname;
-                birthField.Text = bday.ToShortDateString();
-                genderField.Text = read.GetString("Gender");
-                civField.Text = read.GetString("CivStat");
-                natField.Text = read.GetString("Nationality");
-                relField.Text = read.GetString("Religion");
-                educField.Text = read.GetString("EducAttain");
-                addField1.Text = num + " " + a;
-                addField2.Text = ct + ", " + r;
-                homeField.Text = read.GetString("HomeNum");
-                workField.Text = read.GetString("WorkNum");
-                mobField.Text = read.GetString("MobNum");
-                otherField.Text = read.GetString("OtherNum");
-                emailField.Text = read.GetString("Email");
+                nameField.Text      = sname+", "+fname+" "+mname;
+                birthField.Text     = bday.ToShortDateString();
+                datePicker.Value    = bday;
+                genderField.Text    =  read.GetString("Gender");
+                genderBox.Text      = genderField.Text;
+                civField.Text       = read.GetString("CivStat");
+                civStatBox.Text     = civField.Text;
+                natField.Text       = read.GetString("Nationality");
+                relField.Text       = read.GetString("Religion");
+                educField.Text      = read.GetString("EducAttain");
+                educBox.Text        = educField.Text;
+                addField1.Text      = num + " " + a;
+                addField2.Text      = ct + ", " + r;
+                homeField.Text      = read.GetString("HomeNum");
+                workField.Text      = read.GetString("WorkNum");
+                mobField.Text       = read.GetString("MobNum");
+                otherField.Text     = read.GetString("OtherNum");
+                emailField.Text     = read.GetString("Email");
 
                 //save a copy of the Name
                 tmp_Name = new Objects.Name(d, fname, mname, sname);
@@ -432,49 +436,44 @@ namespace introseHHC.RegForms
             if (!personalEdit) //enable editing of personal information
             {
                 personalEditButton.Text = "Done";
+                editNameButton.Visible = true;
                 personalCancelButton.Visible = true;
                 //set fields to Enabled and hide some.
                 //make editable fields reflect current entity values.
-               
-                editNameButton.Visible = true;
-                
-                genderField.Visible = false;
-                genderBox.Visible = true;
-                genderBox.SelectedText = genderField.Text;
-                
-                natField.Enabled = true;
-                relField.Enabled = true;
-                civField.Enabled = true;
 
                 birthField.Visible = false;
                 datePicker.Visible = true;
-                datePicker.Value = DateTime.Parse(birthField.Text);
-
-                educField.Visible = false;
-                educBox.Visible = true;
-                educBox.SelectedText = "";
-                educBox.SelectedText = educField.Text;
-
                 genderField.Visible = false;
                 genderBox.Visible = true;
-
+              
+                natField.Enabled = true;
+                relField.Enabled = true;
+                civField.Enabled = true;
+                educField.Visible = false;
+                educBox.Visible = true;
+                genderField.Visible = false;
+                genderBox.Visible = true;
                 civField.Visible = false;
                 civStatBox.Visible = true;
-                civStatBox.SelectedText = "";
-                civStatBox.SelectedText = civField.Text;
 
                 personalEdit = true;
             }
             else //finalizes updates. Edit button == Done
             {
-                patient.setGender(genderBox.Text);
-                patient.setEducAttainment(educBox.Text);
-                patient.setNationality(natField.Text);
-                patient.setReligion(relField.Text);
-                patient.setCivilStatus(civStatBox.Text);
-                patient.setBday(datePicker.Value);
+                personalEditButton.Text = "Edit";
+                editNameButton.Visible = false;
+                personalCancelButton.Visible = false;
 
-         
+                bool gen, ed, rel, civ, nat;
+
+                gen = genderBox.Items.Contains(genderBox.Text);
+                ed = educBox.Items.Contains(educBox.Text);
+                rel = introseHHC.Objects.Checker.check(relField.Text);
+                civ = civStatBox.Items.Contains(civStatBox.Text);
+                nat = introseHHC.Objects.Checker.check(natField.Text);
+
+                if (gen && ed && rel && civ && nat)
+                {
                     if (OpenConnection())
                     {
                         string query;
@@ -483,8 +482,8 @@ namespace introseHHC.RegForms
                         query = string.Format("UPDATE PERSON SET SNAME = '{0}',FNAME = '{1}', MNAME = '{2}', "
                             + "GENDER = '{3}', CIVSTAT = '{4}', NATIONALITY = '{5}', RELIGION = '{6}', "
                             + "EDUCATTAIN = '{7}',BDATE=@bday WHERE ID = @pid;", patient.getSurname(), patient.getFirstName(),
-                            patient.getMidName(), patient.getGender(), patient.getCivilStatus(), patient.getNationality(),
-                            patient.getReligion(), patient.getEducAttainment());
+                            patient.getMidName(), genderBox.Text, civStatBox.Text, natField.Text,
+                            relField.Text, educBox.Text);
 
                         cmd.CommandText = query;
                         cmd.Prepare();
@@ -493,43 +492,53 @@ namespace introseHHC.RegForms
                         cmd.Parameters.AddWithValue("@bday", patient.getBDay());
                         cmd.ExecuteNonQuery();
 
-                        personalEditButton.Text = "Edit";
 
-                        editNameButton.Visible = false;
+                        genderField.Text = genderBox.Text;
+                        civField.Text = civStatBox.Text;
+                        educField.Text = educBox.Text;
+                        birthField.Text = datePicker.Value.ToShortDateString();
 
-                        genderField.Visible = true;
-                        genderField.Text = patient.getGender();
                         genderBox.Visible = false;
-
-                        birthField.Visible = true;
-                        birthField.Text = patient.getBDay().ToShortDateString();
+                        civStatBox.Visible = false;
+                        educBox.Visible = false;
                         datePicker.Visible = false;
 
-                        educField.Visible = true;
-                        educField.Text = patient.getEducAttainment();
-                        educBox.Visible = false;
-
                         genderField.Visible = true;
-                        genderField.Text = patient.getGender();
-                        genderBox.Visible = false;
-
-                        natField.Enabled = false;
-                        natField.Text = patient.getNationality();
-
-                        relField.Enabled = false;
-                        relField.Text = patient.getReligion();
-
-                        civField.Enabled = false;
                         civField.Visible = true;
-                        civField.Text = patient.getCivilStatus();
-                        civStatBox.Visible = false;
+                        educField.Visible = true;
+                        birthField.Visible = true;
+                        relField.Enabled = false;
+                        natField.Enabled = false;
+                        civField.Enabled = false;
 
                         personalEdit = false;
-                        personalCancelButton.Visible = false;
 
                         CloseConnection();
                         MessageBox.Show("Personal Info: Update Successful!");
                     }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder("Errors:");
+
+                    if (!gen)
+                        sb.Append("Gender not in selection.\n");
+                    if(!ed)
+                        sb.Append("Educational Attainment not in selection.\n");
+                    if(!rel)
+                        sb.Append("Invalid format in Religion.\n");
+                    if (!civ)
+                        sb.AppendLine("Civil Status not in selection.");
+                    if(!nat)
+                        sb.Append("Invalid format in Nationality.\n");
+
+                    MessageBox.Show(sb.ToString());
+                    sb.Clear();
+                }
                 
 
             }
@@ -677,6 +686,14 @@ namespace introseHHC.RegForms
             l = tmp_Name.getLastName();
             patient.setName(d,f,m,l);
             nameField.Text = l + ", " + f + " " + m;
+
+            birthField.Text = "";
+            genderField.Text = "";
+            natField.Text = "";
+            relField.Text = "";
+            civField.Text = "";
+            educField.Text = "";
+
             birthField.Text = patient.getBDay().ToShortDateString();
             genderField.Text = patient.getGender();
             natField.Text = patient.getNationality();

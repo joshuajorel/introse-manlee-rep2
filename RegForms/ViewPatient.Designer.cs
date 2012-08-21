@@ -37,10 +37,8 @@
             this.educBox = new System.Windows.Forms.ComboBox();
             this.genderBox = new System.Windows.Forms.ComboBox();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.clientCancelButton = new System.Windows.Forms.Button();
             this.contactCancelButton = new System.Windows.Forms.Button();
             this.personalCancelButton = new System.Windows.Forms.Button();
-            this.clientEditButton = new System.Windows.Forms.Button();
             this.contactEditButton = new System.Windows.Forms.Button();
             this.personalEditButton = new System.Windows.Forms.Button();
             this.posRelIn = new System.Windows.Forms.TextBox();
@@ -176,10 +174,8 @@
             this.tabPage1.Controls.Add(this.educBox);
             this.tabPage1.Controls.Add(this.genderBox);
             this.tabPage1.Controls.Add(this.datePicker);
-            this.tabPage1.Controls.Add(this.clientCancelButton);
             this.tabPage1.Controls.Add(this.contactCancelButton);
             this.tabPage1.Controls.Add(this.personalCancelButton);
-            this.tabPage1.Controls.Add(this.clientEditButton);
             this.tabPage1.Controls.Add(this.contactEditButton);
             this.tabPage1.Controls.Add(this.personalEditButton);
             this.tabPage1.Controls.Add(this.posRelIn);
@@ -306,16 +302,6 @@
             this.datePicker.TabIndex = 99;
             this.datePicker.Visible = false;
             // 
-            // clientCancelButton
-            // 
-            this.clientCancelButton.Location = new System.Drawing.Point(484, 9);
-            this.clientCancelButton.Name = "clientCancelButton";
-            this.clientCancelButton.Size = new System.Drawing.Size(49, 20);
-            this.clientCancelButton.TabIndex = 98;
-            this.clientCancelButton.Text = "Cancel";
-            this.clientCancelButton.UseVisualStyleBackColor = true;
-            this.clientCancelButton.Visible = false;
-            // 
             // contactCancelButton
             // 
             this.contactCancelButton.Location = new System.Drawing.Point(207, 224);
@@ -337,15 +323,6 @@
             this.personalCancelButton.UseVisualStyleBackColor = true;
             this.personalCancelButton.Visible = false;
             this.personalCancelButton.Click += new System.EventHandler(this.personalCancelButton_Click);
-            // 
-            // clientEditButton
-            // 
-            this.clientEditButton.Location = new System.Drawing.Point(429, 9);
-            this.clientEditButton.Name = "clientEditButton";
-            this.clientEditButton.Size = new System.Drawing.Size(49, 20);
-            this.clientEditButton.TabIndex = 95;
-            this.clientEditButton.Text = "Edit";
-            this.clientEditButton.UseVisualStyleBackColor = true;
             // 
             // contactEditButton
             // 
@@ -1462,10 +1439,8 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label endorseLabel;
         private System.Windows.Forms.Label gatherLabel;
-        private System.Windows.Forms.Button clientEditButton;
         private System.Windows.Forms.Button contactEditButton;
         private System.Windows.Forms.Button personalEditButton;
-        private System.Windows.Forms.Button clientCancelButton;
         private System.Windows.Forms.Button contactCancelButton;
         private System.Windows.Forms.Button personalCancelButton;
         private System.Windows.Forms.DateTimePicker datePicker;

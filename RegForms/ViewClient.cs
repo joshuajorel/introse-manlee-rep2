@@ -390,7 +390,7 @@ namespace introseHHC.RegForms
                         sb.Append("Invalid format in Nationality.\n");
 
                     MessageBox.Show(sb.ToString());
-
+                    sb.Clear();
                     birthField.Visible = true;
                     datePicker.Visible = false;
                     genderField.Visible = true;
