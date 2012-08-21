@@ -233,6 +233,8 @@ namespace introseHHC.RegForms
                 cmd.ExecuteNonQuery();
 
                 CloseConnection();
+                MessageBox.Show("Registration Successful");
+                Close();
 
             }
         }
