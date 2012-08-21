@@ -31,6 +31,8 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.viewCGAButton = new System.Windows.Forms.Button();
             this.editAddButton = new System.Windows.Forms.Button();
             this.civStatBox = new System.Windows.Forms.ComboBox();
             this.editNameButton = new System.Windows.Forms.Button();
@@ -140,8 +142,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.viewCGAButton = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Requirements.SuspendLayout();
@@ -231,6 +231,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General Information";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(293, 226);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 15);
+            this.label23.TabIndex = 106;
+            this.label23.Text = "View Records -";
+            // 
+            // viewCGAButton
+            // 
+            this.viewCGAButton.Location = new System.Drawing.Point(402, 223);
+            this.viewCGAButton.Name = "viewCGAButton";
+            this.viewCGAButton.Size = new System.Drawing.Size(75, 23);
+            this.viewCGAButton.TabIndex = 105;
+            this.viewCGAButton.Text = "CGA";
+            this.viewCGAButton.UseVisualStyleBackColor = true;
+            this.viewCGAButton.Click += new System.EventHandler(this.viewCGAButton_Click);
             // 
             // editAddButton
             // 
@@ -1313,25 +1333,6 @@
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // viewCGAButton
-            // 
-            this.viewCGAButton.Location = new System.Drawing.Point(402, 223);
-            this.viewCGAButton.Name = "viewCGAButton";
-            this.viewCGAButton.Size = new System.Drawing.Size(75, 23);
-            this.viewCGAButton.TabIndex = 105;
-            this.viewCGAButton.Text = "CGA";
-            this.viewCGAButton.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(293, 226);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 15);
-            this.label23.TabIndex = 106;
-            this.label23.Text = "View Records -";
             // 
             // ViewPatient
             // 
