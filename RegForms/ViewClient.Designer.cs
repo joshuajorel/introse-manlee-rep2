@@ -214,6 +214,7 @@
             this.editAddButton.Text = "...";
             this.editAddButton.UseVisualStyleBackColor = true;
             this.editAddButton.Visible = false;
+            this.editAddButton.Click += new System.EventHandler(this.editAddButton_Click);
             // 
             // editNameButton
             // 
@@ -235,6 +236,7 @@
             this.contactCancelButton.Text = "Cancel";
             this.contactCancelButton.UseVisualStyleBackColor = true;
             this.contactCancelButton.Visible = false;
+            this.contactCancelButton.Click += new System.EventHandler(this.contactCancelButton_Click);
             // 
             // contactEditButton
             // 
@@ -244,6 +246,7 @@
             this.contactEditButton.TabIndex = 99;
             this.contactEditButton.Text = "Edit";
             this.contactEditButton.UseVisualStyleBackColor = true;
+            this.contactEditButton.Click += new System.EventHandler(this.contactEditButton_Click);
             // 
             // personalCancelButton
             // 

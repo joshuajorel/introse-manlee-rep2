@@ -91,7 +91,19 @@ namespace introseHHC.RegForms
             }
             else
             {
-                Console.WriteLine("Error.");
+                StringBuilder sb = new StringBuilder("Errors:");
+
+                if (!n)
+                    sb.AppendLine("-Invalid Street Number.");
+                if(!a)
+                    sb.AppendLine("-Invalid Address Line Format.");
+                if(!c)
+                    sb.AppendLine("-Invalid City Format.");
+                if(!r)
+                    sb.AppendLine("-Invalid Region Format.");
+
+                MessageBox.Show(sb.ToString());
+                sb.Clear();
             }
             
         }

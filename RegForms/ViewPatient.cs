@@ -528,6 +528,7 @@ namespace introseHHC.RegForms
                         personalCancelButton.Visible = false;
 
                         CloseConnection();
+                        MessageBox.Show("Personal Info: Update Successful!");
                     }
                 
 
@@ -650,6 +651,7 @@ namespace introseHHC.RegForms
 
                         contactEdit = false;
                         CloseConnection();
+                        MessageBox.Show("Contact Info: Update Successful!");
                     }
                     else
                     {
@@ -657,6 +659,8 @@ namespace introseHHC.RegForms
                 }
                 else
                 {
+                    StringBuilder sb = new StringBuilder("Errors:");
+
                     Console.WriteLine("Errors"); 
                 }
                 

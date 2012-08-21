@@ -88,7 +88,20 @@ namespace introseHHC.Objects
                 designation = desigBox.Text;
             }
             else
-            {   
+            {
+                StringBuilder sb = new StringBuilder("Errors:");
+
+                if (!f)
+                    sb.AppendLine("-Invalid First Name Format.");
+                if(!m)
+                    sb.AppendLine("-Invalid Middle Name Format.");
+                if(!l)
+                    sb.AppendLine("-Invalid Last Name Format.");
+                if(!d)
+                    sb.AppendLine("-Designation not in selection.");
+
+                MessageBox.Show(sb.ToString());
+                sb.Clear();
                 Console.WriteLine("Name not good.");
             }
         }

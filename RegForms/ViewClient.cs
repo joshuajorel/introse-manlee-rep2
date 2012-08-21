@@ -366,6 +366,8 @@ namespace introseHHC.RegForms
                         educBox.Visible = false;
 
                         personalEdit = false;
+
+                        MessageBox.Show("Personal Info: Update Successful!");
                     }
                     else
                     {
@@ -374,8 +376,20 @@ namespace introseHHC.RegForms
                 }
                 else
                 {
-                    
-                    Console.WriteLine("Incorrect Values");
+                    StringBuilder sb = new StringBuilder("Incorrect Values:\n");
+                    //rel civ nat
+                    if (!gen)
+                        sb.Append("Gender not in selection.\n");
+                    if(!ed)
+                        sb.Append("Educational Attainment not in selection.\n");
+                    if(!rel)
+                        sb.Append("Invalid format in Religion.\n");
+                    if (!civ)
+                        sb.AppendLine("Civil Status not in selection.");
+                    if(!nat)
+                        sb.Append("Invalid format in Nationality.\n");
+
+                    MessageBox.Show(sb.ToString());
 
                     birthField.Visible = true;
                     datePicker.Visible = false;
@@ -391,7 +405,7 @@ namespace introseHHC.RegForms
                     educField.Visible = true;
                     educBox.Visible = false;
 
-                    personalEdit = false;
+                     personalEdit = false;
                 }
             }
         }
@@ -432,6 +446,7 @@ namespace introseHHC.RegForms
 
             nameField.Enabled = false;
             relField.Enabled = false;
+            natField.Enabled = false;
 
             civField.Visible = true;
             civStatBox.Visible = false;
@@ -440,11 +455,15 @@ namespace introseHHC.RegForms
             educBox.Visible = false;
 
             //restore past values
-
+            nameField.Text = tmp_Name.getLastName() + ", " + tmp_Name.getFirstName() + " " + tmp_Name.getMiddleName();
+            birthField.Text = client.getBDay().ToShortDateString();
+            genderField.Text = client.getGender();
+            relField.Text = client.getReligion();
+            natField.Text = client.getNationality();
+            civField.Text = client.getCivilStatus();
+            educField.Text = client.getEducAttainment();
 
             personalEdit = false;
-
-
 
         }
 
@@ -452,6 +471,192 @@ namespace introseHHC.RegForms
         {
             closeStatus = true;
             this.Hide();
+        }
+
+        private void contactEditButton_Click(object sender, EventArgs e)
+        {
+            if (!contactEdit)
+            {
+                contactEditButton.Text = "Done";
+                contactCancelButton.Visible = true;
+                editAddButton.Visible = true;
+
+                //setup contact number fields + email field
+                if (homeField.Text.Equals("n/a"))
+                    homeField.Text = "0";
+                if (workField.Text.Equals("n/a"))
+                    workField.Text = "0";
+                if (mobField.Text.Equals("n/a"))
+                    mobField.Text = "0";
+                if (otherField.Text.Equals("n/a"))
+                    otherField.Text = "0";
+                if (emailField.Text.Equals("n/a"))
+                    emailField.Text = "";
+                //make contacts and email fields editable
+                homeField.Enabled = true;
+                workField.Enabled = true;
+                mobField.Enabled = true;
+                otherField.Enabled = true;
+                emailField.Enabled = true;
+
+                contactEdit = true;
+                
+            }
+            else //user has finished changes. Will now attempt to insert to database.
+            {
+                contactEditButton.Text = "Edit";
+                contactCancelButton.Visible = false;
+                editAddButton.Visible = false;
+
+                //error checking
+                bool a, b, c, d, em;
+                UInt16 h, w, m, o;
+                //check if contact numbers entered are correct
+                a = Checker.check2(homeField.Text);
+                b = Checker.check2(workField.Text);
+                c = Checker.check2(mobField.Text);
+                d = Checker.check2(otherField.Text);
+                if (string.IsNullOrEmpty(emailField.Text))
+                    em = true;
+                else
+                {
+                    em = Checker.email(emailField.Text);
+                }
+
+                if (a && b && c && d && em)
+                {
+
+                    if (OpenConnection())
+                    {
+                        h = UInt16.Parse(homeField.Text);
+                        w = UInt16.Parse(workField.Text);
+                        m = UInt16.Parse(mobField.Text);
+                        o = UInt16.Parse(otherField.Text);
+
+                        string query;
+
+                        query = string.Format("UPDATE PERSON SET STNUM = @stno, ADDLINE = '{0}', "
+                            + " CITY = '{1}', REGION = '{2}',"
+                            + "HOMENUM = '{3}',WORKNUM = '{4}',MOBNUM = '{5}',OTHERNUM = '{6}',EMAIL = '{7}'"
+                            + "WHERE ID = @cid;"
+                            , client.getAddLine(), client.getCity(), client.getRegion(),
+                             h, w, m, o
+                             , emailField.Text);
+                        cmd.Parameters.Clear();
+                        cmd.CommandText = query;
+                        cmd.Parameters.AddWithValue("@cid", clientID);
+                        cmd.Parameters.AddWithValue("@stno", client.getStNum());
+
+                        try
+                        {
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception merr)
+                        {
+                            Console.WriteLine(merr.Message);
+                        }
+
+                        contactEditButton.Text = "Edit";
+                        contactCancelButton.Visible = false;
+                        editAddButton.Visible = false;
+
+                        homeField.Enabled = false;
+                        workField.Enabled = false;
+                        mobField.Enabled = false;
+                        otherField.Enabled = false;
+                        emailField.Enabled = false;
+
+                        homeField.Text = h.ToString();
+                        workField.Text = w.ToString();
+                        mobField.Text = m.ToString();
+                        otherField.Text = o.ToString();
+
+                        MessageBox.Show("Contact Info: Update Successful!");
+
+                    }
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder("Errors:");
+
+                    if(!a)
+                        sb.AppendLine("-Invalid Home number.");
+                    if(!b)
+                        sb.AppendLine("-Invalud Work Number.");
+                    if(!c)
+                        sb.AppendLine("-Invalid Mobile Number.");
+                    if(!d)
+                        sb.AppendLine("-Invalid Other Number.");
+                    if(!em)
+                        sb.AppendLine("-Invalid Email Address.");
+                    MessageBox.Show(sb.ToString());
+                    sb.Clear();
+                }
+                //setup contact and email fields
+                if (homeField.Text.Equals("0"))
+                    homeField.Text = "n/a";
+                if (workField.Text.Equals("0"))
+                    workField.Text = "n/a";
+                if (mobField.Text.Equals("0"))
+                    mobField.Text = "n/a";
+                if (otherField.Text.Equals("0"))
+                    otherField.Text = "n/a";
+                if (String.IsNullOrEmpty(emailField.Text))
+                    emailField.Text = "n/a";
+                homeField.Enabled = false;
+                workField.Enabled = false;
+                mobField.Enabled = false;
+                otherField.Enabled = false;
+                emailField.Enabled = false;
+
+                contactEdit = false;
+            }
+        }
+
+        private void editAddButton_Click(object sender, EventArgs e)
+        {
+            EditAddress ed = new EditAddress(UInt16.Parse(client.getStNum().ToString()), client.getAddLine(), client.getCity(), client.getRegion());
+            ed.ShowDialog();
+            if (ed.Status)
+            {
+                UInt16 n;
+                string a, c, r;
+                n = ed.Num;
+                a = ed.Addline;
+                c = ed.City;
+                r = ed.RegionVar;
+                addField1.Text = n.ToString() + " " + a;
+                addField2.Text = c + ", " + r;
+                client.setAddress(n, a, c, r);
+                ed.Close();
+            }
+            else
+            {
+                ed.Close();
+            }
+        }
+
+        private void contactCancelButton_Click(object sender, EventArgs e)
+        {
+            //setup contact and email fields
+            if (homeField.Text.Equals("0"))
+                homeField.Text = "n/a";
+            if (workField.Text.Equals("0"))
+                workField.Text = "n/a";
+            if (mobField.Text.Equals("0"))
+                mobField.Text = "n/a";
+            if (otherField.Text.Equals("0"))
+                otherField.Text = "n/a";
+            if (String.IsNullOrEmpty(emailField.Text))
+                emailField.Text = "n/a";
+            homeField.Enabled = false;
+            workField.Enabled = false;
+            mobField.Enabled = false;
+            otherField.Enabled = false;
+            emailField.Enabled = false;
+
+            contactEdit = false;
         }
     }
 }
