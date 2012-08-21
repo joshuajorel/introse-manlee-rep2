@@ -510,8 +510,7 @@ namespace introseHHC.RegForms
             this.pgenCoB.FormattingEnabled = true;
             this.pgenCoB.Items.AddRange(new object[] {
             "M",
-            "F",
-            "O"});
+            "F"});
             this.pgenCoB.Location = new System.Drawing.Point(88, 131);
             this.pgenCoB.Name = "pgenCoB";
             this.pgenCoB.Size = new System.Drawing.Size(121, 21);

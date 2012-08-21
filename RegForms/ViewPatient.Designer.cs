@@ -31,6 +31,9 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.editAddButton = new System.Windows.Forms.Button();
+            this.civStatBox = new System.Windows.Forms.ComboBox();
+            this.editNameButton = new System.Windows.Forms.Button();
             this.educBox = new System.Windows.Forms.ComboBox();
             this.genderBox = new System.Windows.Forms.ComboBox();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
@@ -139,7 +142,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.editNameButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Requirements.SuspendLayout();
@@ -168,6 +170,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.editAddButton);
+            this.tabPage1.Controls.Add(this.civStatBox);
             this.tabPage1.Controls.Add(this.editNameButton);
             this.tabPage1.Controls.Add(this.educBox);
             this.tabPage1.Controls.Add(this.genderBox);
@@ -228,6 +232,44 @@
             this.tabPage1.Text = "General Information";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // editAddButton
+            // 
+            this.editAddButton.Location = new System.Drawing.Point(260, 253);
+            this.editAddButton.Name = "editAddButton";
+            this.editAddButton.Size = new System.Drawing.Size(25, 20);
+            this.editAddButton.TabIndex = 104;
+            this.editAddButton.Text = "...";
+            this.editAddButton.UseVisualStyleBackColor = true;
+            this.editAddButton.Visible = false;
+            this.editAddButton.Click += new System.EventHandler(this.editAddButton_Click);
+            // 
+            // civStatBox
+            // 
+            this.civStatBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.civStatBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.civStatBox.FormattingEnabled = true;
+            this.civStatBox.Items.AddRange(new object[] {
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"});
+            this.civStatBox.Location = new System.Drawing.Point(95, 159);
+            this.civStatBox.Name = "civStatBox";
+            this.civStatBox.Size = new System.Drawing.Size(108, 21);
+            this.civStatBox.TabIndex = 103;
+            this.civStatBox.Visible = false;
+            // 
+            // editNameButton
+            // 
+            this.editNameButton.Location = new System.Drawing.Point(260, 35);
+            this.editNameButton.Name = "editNameButton";
+            this.editNameButton.Size = new System.Drawing.Size(25, 20);
+            this.editNameButton.TabIndex = 102;
+            this.editNameButton.Text = "...";
+            this.editNameButton.UseVisualStyleBackColor = true;
+            this.editNameButton.Visible = false;
+            this.editNameButton.Click += new System.EventHandler(this.editNameButton_Click);
+            // 
             // educBox
             // 
             this.educBox.FormattingEnabled = true;
@@ -283,6 +325,7 @@
             this.contactCancelButton.Text = "Cancel";
             this.contactCancelButton.UseVisualStyleBackColor = true;
             this.contactCancelButton.Visible = false;
+            this.contactCancelButton.Click += new System.EventHandler(this.contactCancelButton_Click);
             // 
             // personalCancelButton
             // 
@@ -312,6 +355,7 @@
             this.contactEditButton.TabIndex = 94;
             this.contactEditButton.Text = "Edit";
             this.contactEditButton.UseVisualStyleBackColor = true;
+            this.contactEditButton.Click += new System.EventHandler(this.contactEditButton_Click);
             // 
             // personalEditButton
             // 
@@ -1289,17 +1333,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // editNameButton
-            // 
-            this.editNameButton.Location = new System.Drawing.Point(260, 35);
-            this.editNameButton.Name = "editNameButton";
-            this.editNameButton.Size = new System.Drawing.Size(25, 20);
-            this.editNameButton.TabIndex = 102;
-            this.editNameButton.Text = "...";
-            this.editNameButton.UseVisualStyleBackColor = true;
-            this.editNameButton.Visible = false;
-            this.editNameButton.Click += new System.EventHandler(this.editNameButton_Click);
-            // 
             // ViewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1439,5 +1472,7 @@
         private System.Windows.Forms.ComboBox educBox;
         private System.Windows.Forms.ComboBox genderBox;
         private System.Windows.Forms.Button editNameButton;
+        private System.Windows.Forms.ComboBox civStatBox;
+        private System.Windows.Forms.Button editAddButton;
     }
 }

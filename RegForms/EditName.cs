@@ -47,7 +47,6 @@ namespace introseHHC.Objects
             get { return designation; }
             set { designation = value; }
         }
-        
 
         public EditName()
         {
@@ -66,22 +65,27 @@ namespace introseHHC.Objects
             fNameField.Text  = firstName = f;
             mNameField.Text  = middleName = m;
             snameField.Text  = lastName = l;
-            designation = d;
+            desigBox.Text = designation = d;
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
             bool f, m, l, d;
-            d = desigBox.SelectedIndex != 0;
+            //d = desigBox.SelectedIndex != 0;
+            d = desigBox.Items.Contains(desigBox.Text);
             f = Checker.check(fNameField.Text);
             m = Checker.check(mNameField.Text);
             l = Checker.check(snameField.Text);
 
-            if (f && m && l && d)
+            if (f && m && l &&d)
             {
                 this.Hide();
                 status = true;
                 Console.WriteLine("Name is good.");
+                firstName = fNameField.Text;
+                middleName = mNameField.Text;
+                lastName = snameField.Text;
+                designation = desigBox.Text;
             }
             else
             {   
@@ -92,6 +96,8 @@ namespace introseHHC.Objects
         private void cancelButton_Click(object sender, EventArgs e)
         {
             status = false;
+            this.Hide();
+           
         }
     }
 }
