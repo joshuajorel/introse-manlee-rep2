@@ -8,52 +8,52 @@ namespace introseHHC.Objects
 {
     class MedicalHistory
     {
-        private ArrayList medH;
+        private string diag;
+        private string place;
+        private DateTime inc;
+        private UInt16 ID;
 
         public MedicalHistory()
         {
-            medH = new ArrayList();
+            diag = place = "";
+            ID = 0;
         }
 
         public void setMH(String d, String p, DateTime dt)
         {
-            bio b = new bio();
-            b.diag = d;
-            b.place = p;
-            b.date = dt;
-            medH.Add(b);
+            diag = d;
+            place = p;
+            inc = dt;
         }
 
-        public String getDiag(int n)
+        public String getDiag()
         {
-            bio temp = new bio();
-            temp = (bio)medH[n];
-
-            return temp.diag;
+            return diag;
         }
 
-        public String getPla(int n)
+        public String getPla()
         {
-            bio temp = new bio();
-            temp = (bio)medH[n];
-
-            return temp.place;
+            return place;
         }
 
-        public DateTime getDate(int n)
+        public DateTime getDate()
         {
-            bio temp = new bio();
-            temp = (bio)medH[n];
+            return inc;
+        }
 
-            return temp.date;
+        public void setDiag(string d)
+        {
+            diag = d;
+        }
+
+        public void setPla(string p)
+        {
+            place = p;
+        }
+
+        public void setDate(DateTime dt)
+        {
+            inc = dt;
         }
     }
-
-    class bio
-    {
-        public String diag;
-        public String place;
-        public DateTime date;
-    }
-
 }

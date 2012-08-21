@@ -89,6 +89,16 @@
       <DependentUpon>getPatientsDB.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="getPMed.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getPMed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="getSocial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getSocial.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Objects\CGA.cs" />
     <Compile Include="Objects\CGiverAssess.cs" />
     <Compile Include="Objects\Checker.cs" />
@@ -378,6 +388,28 @@
     </None>
     <None Include="getPatientDetailsDB.xss">
       <DependentUpon>getPatientDetailsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getPMed.xsc">
+      <DependentUpon>getPMed.xsd</DependentUpon>
+    </None>
+    <None Include="getPMed.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getPMed.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="getPMed.xss">
+      <DependentUpon>getPMed.xsd</DependentUpon>
+    </None>
+    <None Include="getSocial.xsc">
+      <DependentUpon>getSocial.xsd</DependentUpon>
+    </None>
+    <None Include="getSocial.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getSocial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="getSocial.xss">
+      <DependentUpon>getSocial.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
