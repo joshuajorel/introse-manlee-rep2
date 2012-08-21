@@ -88,30 +88,30 @@ namespace introseHHC.RegForms
         }
         private class Contact
         {
-            private UInt16 home;
+            private int home;
 
-            public UInt16 Home
+            public int Home
             {
                 get { return home; }
                 set { home = value; }
             }
-            private UInt16 work;
+            private int work;
 
-            public UInt16 Work
+            public int Work
             {
                 get { return work; }
                 set { work = value; }
             }
-            private UInt16 mobile;
+            private int mobile;
 
-            public UInt16 Mobile
+            public int Mobile
             {
                 get { return mobile; }
                 set { mobile = value; }
             }
-            private UInt16 other;
+            private int other;
 
-            public UInt16 Other
+            public int Other
             {
                 get { return other; }
                 set { other = value; }
@@ -128,7 +128,7 @@ namespace introseHHC.RegForms
             public Contact()
             {
             }
-            public Contact(UInt16 h,UInt16 w,UInt16 m, UInt16 o )
+            public Contact(int h, int w, int m, int o)
             {
                 home = h;
                 work = w;
@@ -209,8 +209,8 @@ namespace introseHHC.RegForms
                 patient.setGender(genderField.Text);
                 patient.setReligion(relField.Text);
                 patient.setEducAttainment(educField.Text);
-                patient.setNumbers(UInt16.Parse(homeField.Text), UInt16.Parse(workField.Text),
-                    UInt16.Parse(mobField.Text), UInt16.Parse(otherField.Text));
+                patient.setNumbers(int.Parse(homeField.Text), int.Parse(workField.Text),
+                    int.Parse(mobField.Text), int.Parse(otherField.Text));
                 patient.setEmail(emailField.Text);
                 patient.setAddress(UInt16.Parse(num), a, ct, r);
 
@@ -575,7 +575,7 @@ namespace introseHHC.RegForms
             else
             {
                 bool a, b, c, d,em;
-                UInt16 h, w, m, o;
+                int h, w, m, o;
                 //check if contact numbers entered are correct
                 a = Checker.check2(homeField.Text);
                 b = Checker.check2(workField.Text);
@@ -594,10 +594,10 @@ namespace introseHHC.RegForms
 
                     if (OpenConnection())
                     {
-                         h = UInt16.Parse(homeField.Text);
-                         w = UInt16.Parse(workField.Text);
-                         m = UInt16.Parse(mobField.Text);
-                         o = UInt16.Parse(otherField.Text);
+                         h = int.Parse(homeField.Text);
+                         w = int.Parse(workField.Text);
+                         m = int.Parse(mobField.Text);
+                         o = int.Parse(otherField.Text);
         
                          patient.setNumbers(h, w, m, o);
                          patient.setEmail(emailField.Text);

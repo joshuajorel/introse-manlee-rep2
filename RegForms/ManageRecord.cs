@@ -68,6 +68,12 @@ namespace introseHHC.RegForms
         {
             ViewEmployee ve = new ViewEmployee(UInt16.Parse(employeeView.SelectedCells[0].Value.ToString()),connString);
             ve.ShowDialog();
+
+            if (ve.CloseStatus)
+            {
+                this.getEmployeeDetailsTableAdapter.Fill(this.getEmployeeDetailsDB.getEmployeeDetails);
+                ve.Close();
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)

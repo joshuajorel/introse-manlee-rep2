@@ -140,6 +140,8 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.viewCGAButton = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Requirements.SuspendLayout();
@@ -168,6 +170,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.viewCGAButton);
             this.tabPage1.Controls.Add(this.editAddButton);
             this.tabPage1.Controls.Add(this.civStatBox);
             this.tabPage1.Controls.Add(this.editNameButton);
@@ -1310,6 +1314,25 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // viewCGAButton
+            // 
+            this.viewCGAButton.Location = new System.Drawing.Point(402, 223);
+            this.viewCGAButton.Name = "viewCGAButton";
+            this.viewCGAButton.Size = new System.Drawing.Size(75, 23);
+            this.viewCGAButton.TabIndex = 105;
+            this.viewCGAButton.Text = "CGA";
+            this.viewCGAButton.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(293, 226);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 15);
+            this.label23.TabIndex = 106;
+            this.label23.Text = "View Records -";
+            // 
             // ViewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1449,5 +1472,7 @@
         private System.Windows.Forms.Button editNameButton;
         private System.Windows.Forms.ComboBox civStatBox;
         private System.Windows.Forms.Button editAddButton;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button viewCGAButton;
     }
 }

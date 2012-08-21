@@ -28,10 +28,10 @@ namespace introseHHC.Objects
         protected string city;
         protected string region;
         //contact fields
-        protected UInt16 homeNum;
-        protected UInt16 workNum;
-        protected UInt16 mobNum;
-        protected UInt16 otherNum;
+        protected int homeNum;
+        protected int workNum;
+        protected int mobNum;
+        protected int otherNum;
 
         public Person()
         {
@@ -106,7 +106,7 @@ namespace introseHHC.Objects
             city = c;
             region = r;
         }
-        public void setNumbers(UInt16 home, UInt16 work, UInt16 mobile, UInt16 other)
+        public void setNumbers(int home, int work, int mobile, int other)
         {
             this.mobNum = mobile;
             this.homeNum = home;
@@ -182,19 +182,19 @@ namespace introseHHC.Objects
             {
                 return email;
             }
-        public UInt16 getWorkNum()
+        public int getWorkNum()
         {
             return workNum;
         }
-        public UInt16 getHomeNum()
+        public int getHomeNum()
         {
             return homeNum;
         }
-        public UInt16 getMobNum()
+        public int getMobNum()
         {
             return mobNum;
         }
-        public UInt16 getOtherNum()
+        public int getOtherNum()
         {
             return otherNum;
         }

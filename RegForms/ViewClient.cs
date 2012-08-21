@@ -80,30 +80,30 @@ namespace introseHHC.RegForms
         }
         private class Contact
         {
-            private UInt16 home;
+            private int home;
 
-            public UInt16 Home
+            public int Home
             {
                 get { return home; }
                 set { home = value; }
             }
-            private UInt16 work;
+            private int work;
 
-            public UInt16 Work
+            public int Work
             {
                 get { return work; }
                 set { work = value; }
             }
-            private UInt16 mobile;
+            private int mobile;
 
-            public UInt16 Mobile
+            public int Mobile
             {
                 get { return mobile; }
                 set { mobile = value; }
             }
-            private UInt16 other;
+            private int other;
 
-            public UInt16 Other
+            public int Other
             {
                 get { return other; }
                 set { other = value; }
@@ -120,7 +120,7 @@ namespace introseHHC.RegForms
             public Contact()
             {
             }
-            public Contact(UInt16 h, UInt16 w, UInt16 m, UInt16 o)
+            public Contact(int h, int w, int m, int o)
             {
                 home = h;
                 work = w;
@@ -148,7 +148,6 @@ namespace introseHHC.RegForms
                 query = "SELECT * FROM (SELECT * FROM PERSON RIGHT JOIN CLIENT ON PERSON.ID = CLIENTID) AS TAB WHERE ID = @id;";
                 cmd = new MySqlCommand(query, conn);
                 cmd.Prepare();
-
                 cmd.Parameters.AddWithValue("@id", id);
                 read = cmd.ExecuteReader();
                 read.Read();
@@ -583,7 +582,7 @@ namespace introseHHC.RegForms
                     if(!a)
                         sb.AppendLine("-Invalid Home number.");
                     if(!b)
-                        sb.AppendLine("-Invalud Work Number.");
+                        sb.AppendLine("-Invalid Work Number.");
                     if(!c)
                         sb.AppendLine("-Invalid Mobile Number.");
                     if(!d)
