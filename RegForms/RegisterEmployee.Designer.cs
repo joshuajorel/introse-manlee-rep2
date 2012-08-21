@@ -147,6 +147,7 @@
             this.eOtherIn.Name = "eOtherIn";
             this.eOtherIn.Size = new System.Drawing.Size(100, 20);
             this.eOtherIn.TabIndex = 116;
+            this.eOtherIn.Text = "0";
             // 
             // eMobileIn
             // 
@@ -154,6 +155,7 @@
             this.eMobileIn.Name = "eMobileIn";
             this.eMobileIn.Size = new System.Drawing.Size(100, 20);
             this.eMobileIn.TabIndex = 115;
+            this.eMobileIn.Text = "0";
             // 
             // eWorkIn
             // 
@@ -161,6 +163,7 @@
             this.eWorkIn.Name = "eWorkIn";
             this.eWorkIn.Size = new System.Drawing.Size(100, 20);
             this.eWorkIn.TabIndex = 114;
+            this.eWorkIn.Text = "0";
             // 
             // eHomeIn
             // 
@@ -168,6 +171,7 @@
             this.eHomeIn.Name = "eHomeIn";
             this.eHomeIn.Size = new System.Drawing.Size(100, 20);
             this.eHomeIn.TabIndex = 113;
+            this.eHomeIn.Text = "0";
             // 
             // label59
             // 
@@ -227,9 +231,10 @@
             // 
             // ebdayPick
             // 
+            this.ebdayPick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ebdayPick.Location = new System.Drawing.Point(90, 69);
             this.ebdayPick.Name = "ebdayPick";
-            this.ebdayPick.Size = new System.Drawing.Size(246, 20);
+            this.ebdayPick.Size = new System.Drawing.Size(122, 20);
             this.ebdayPick.TabIndex = 85;
             // 
             // eemailIn
