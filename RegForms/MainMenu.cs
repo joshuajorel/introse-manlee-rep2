@@ -88,20 +88,28 @@ namespace introseHHC.RegForms
 
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you wish to exit?", "Important Query", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                li.Show();
-                li.clearPass();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
+
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Are you sure you wish to exit?", "Important Query", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void logOffButton_Click(object sender, EventArgs e)
+        {
+          
+                li.Show();
+                li.clearPass();
+                this.Close();
+  
         }
 
       

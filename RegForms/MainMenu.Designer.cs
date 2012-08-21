@@ -33,13 +33,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.regEmpButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.logOffButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(12, 209);
+            this.exitBtn.Location = new System.Drawing.Point(158, 209);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(238, 43);
+            this.exitBtn.Size = new System.Drawing.Size(92, 43);
             this.exitBtn.TabIndex = 13;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -85,11 +86,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // logOffButton
+            // 
+            this.logOffButton.Location = new System.Drawing.Point(12, 208);
+            this.logOffButton.Name = "logOffButton";
+            this.logOffButton.Size = new System.Drawing.Size(92, 43);
+            this.logOffButton.TabIndex = 17;
+            this.logOffButton.Text = "Log-Off";
+            this.logOffButton.UseVisualStyleBackColor = true;
+            this.logOffButton.Click += new System.EventHandler(this.logOffButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(263, 263);
+            this.Controls.Add(this.logOffButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.regEmpButton);
             this.Controls.Add(this.exitBtn);
@@ -109,6 +121,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button regEmpButton;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button logOffButton;
 
     }
 }
