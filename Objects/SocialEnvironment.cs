@@ -8,54 +8,52 @@ namespace introseHHC.Objects
 {
     class SocialEnvironment
     {
-        private ArrayList segList;
+        private string name;
+        private string relation;
+        private string freq;
+        private UInt16 ID;
 
         public SocialEnvironment()
-        {        
-            segList = new ArrayList();
+        {
+            name = relation = freq = "";
+            ID = 0;
         }
 
-        public void setSEG(string nme, string rlp, string fv)
+        public SocialEnvironment(string nme, string rlp, string fv)
         {
-            SEGroup seg = new SEGroup();
-            seg.name = nme;
-            seg.rel = rlp;
-            seg.freVis = fv;
-
-            segList.Add(seg);
+            name = nme;
+            relation = rlp;
+            freq = fv;
         }
         
-        //int refers to which arraylist
-
-        public string getNme(int n)
+        public void setNme(string nme)
         {
-            SEGroup seg = new SEGroup();
-            seg = (SEGroup)segList[n];
-
-            return seg.name;
+            name = nme;
         }
 
-        public string getRlp(int n)
+        public void setRlp(string rlp)
         {
-            SEGroup seg = new SEGroup();
-            seg = (SEGroup)segList[n];
-
-            return seg.rel;
+            relation = rlp;
         }
 
-        public string getFv(int n)
+        public void setFv(string fv)
         {
-            SEGroup seg = new SEGroup();
-            seg = (SEGroup)segList[n];
-
-            return seg.freVis;
+            freq = fv;
         }
-    }
 
-    class SEGroup
-    {
-        public string name;
-        public string rel;
-        public string freVis;
+        public string getNme()
+        {
+            return name;
+        }
+
+        public string getRlp()
+        {
+            return relation;
+        }
+
+        public string getFv()
+        {
+            return freq;
+        }
     }
 }

@@ -6,51 +6,94 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using introseHHC.Objects;
 
 namespace introseHHC.RegForms
 {
     public partial class PMedHist : Form
-    {   
-        public string allout = "";
-        public PMedHist()
+    {
+        private MySqlConnection conn;
+        private MySqlCommand cmd;
+        private MySqlDataReader read;
+        private string server;
+        private string user;
+        private string password;
+        private string database;
+        private string query;
+        private MedicalHistory mhis;
+
+        private string diag;
+        private string place;
+        private DateTime date;
+        private UInt16 medID;
+
+        public PMedHist(UInt16 id, string c)
         {
             InitializeComponent();
+            server = "localhost";
+            user = "root";
+            database = "hhc-db";
+            password = "root";
+
+            conn = new MySqlConnection(c);
+            medID = id;
+            mhis = new MedicalHistory();
         }
 
         private void PMedHist_Load(object sender, EventArgs e)
         {
-            this.dataGridView1.Rows.Add("Describe Personal Medical History");
+            // TODO: This line of code loads data into the 'getPMed._getPMed' table. You can move, or remove it, as needed.
+            this.getPMedTableAdapter.Fill(this.getPMed._getPMed);
         }
 
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {   
-            string output = "";
-
-            output = dataGridView1.CurrentCell.Value.ToString();
-            this.Text = output;
-
-            int col = dataGridView1.CurrentCell.ColumnIndex;
-            int rows = dataGridView1.CurrentCell.RowIndex;
-            if (col == dataGridView1.Columns.Count-1)
-                dataGridView1.CurrentCell = dataGridView1[0, rows + 1];
-            else
-                dataGridView1.CurrentCell = dataGridView1[col + 1, rows];
-        }
-
-        private void doneButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
-            var input = this.dataGridView1.Rows;
-            foreach (DataGridViewRow row in input)
+            this.Hide();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void addmed(MedicalHistory mh)
+        {
+            conn.Open();
+            string query = "INSERT INTO PMED_HIS(DIAGNOSIS, PLACECON, INCDATE) VALUES" +
+                "(@diag, @pla, @inc)";
+
+            cmd = new MySqlCommand(query, conn);
+            cmd.Prepare();
+
+            //cmd.Parameters.AddWithValue("@id", medID);
+            cmd.Parameters.AddWithValue("@diag", mh.getDiag());
+            cmd.Parameters.AddWithValue("@pla", mh.getPla());
+            cmd.Parameters.AddWithValue("@inc", mh.getDate());
+
+            try
             {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (cell.Value != null)
-                    {
-                        allout += cell.Value.ToString() + " ";
-                    }
-                }
+                cmd.ExecuteNonQuery();
+                textBox1.Text = string.Empty;
+                textBox2.Text = string.Empty;
+                Console.WriteLine("Past Medical History Has Been Added.");
+
             }
-            Close();
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+            conn.Close();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            diag = textBox1.Text;
+            place = textBox2.Text;
+            date = DatePick.Value;
+
+            mhis.setMH(diag, place, date);
+            addmed(mhis);
         }
     }
 }

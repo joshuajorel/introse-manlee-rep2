@@ -12,7 +12,7 @@ namespace introseHHC.Objects
 
         public static bool check(string input)
         {
-            var pat = @"^[a-zA-Z'][a-zA-Z\s'-]*[a-zA-Z']?$";
+            var pat = @"^[a-zA-Z'][a-zA-Z\s']*[a-zA-Z']?$";
             Match match = Regex.Match(input, pat, RegexOptions.IgnoreCase);
 
             if (input != string.Empty && match.Success)
@@ -34,7 +34,7 @@ namespace introseHHC.Objects
 
         public static bool check3(string input3)
         {
-            var pat3 = @"^[a-zA-Z0-9][a-zA-Z0-9\s\-]*[a-zA-Z0-9']?$";
+            var pat3 = @"^[a-zA-Z0-9][a-zA-Z0-9\s\-.]*[a-zA-Z0-9']?$";
             Match match3 = Regex.Match(input3, pat3, RegexOptions.IgnoreCase);
 
             if (input3 != string.Empty && match3.Success)

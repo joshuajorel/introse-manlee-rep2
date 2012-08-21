@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tetDate = new System.Windows.Forms.DateTimePicker();
+            this.pneDate = new System.Windows.Forms.DateTimePicker();
+            this.infDate = new System.Windows.Forms.DateTimePicker();
+            this.othDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +45,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 117);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Vaccine\r\n\r\nTetanus\r\n\r\nPneumonia\r\n\r\nInfluenza\r\n\r\nOthers";
+            this.label1.Text = "Vaccine\r\n\r\nTetanus\r\n\r\nPneumonia\r\n\r\nInfluenza\r\n\r\nOther";
             // 
             // label2
             // 
@@ -56,28 +56,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Date";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(112, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(112, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(112, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            // 
             // okButton
             // 
             this.okButton.Location = new System.Drawing.Point(15, 159);
@@ -86,6 +64,7 @@
             this.okButton.TabIndex = 5;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
@@ -95,29 +74,56 @@
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // textBox4
+            // tetDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(112, 111);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.tetDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tetDate.Location = new System.Drawing.Point(78, 34);
+            this.tetDate.Name = "tetDate";
+            this.tetDate.Size = new System.Drawing.Size(110, 20);
+            this.tetDate.TabIndex = 45;
+            // 
+            // pneDate
+            // 
+            this.pneDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pneDate.Location = new System.Drawing.Point(78, 60);
+            this.pneDate.Name = "pneDate";
+            this.pneDate.Size = new System.Drawing.Size(110, 20);
+            this.pneDate.TabIndex = 46;
+            // 
+            // infDate
+            // 
+            this.infDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.infDate.Location = new System.Drawing.Point(78, 86);
+            this.infDate.Name = "infDate";
+            this.infDate.Size = new System.Drawing.Size(110, 20);
+            this.infDate.TabIndex = 47;
+            // 
+            // othDate
+            // 
+            this.othDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.othDate.Location = new System.Drawing.Point(78, 112);
+            this.othDate.Name = "othDate";
+            this.othDate.Size = new System.Drawing.Size(110, 20);
+            this.othDate.TabIndex = 48;
             // 
             // ImmRec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 197);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.othDate);
+            this.Controls.Add(this.infDate);
+            this.Controls.Add(this.pneDate);
+            this.Controls.Add(this.tetDate);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ImmRec";
             this.Text = "ImmRec";
+            this.Load += new System.EventHandler(this.ImmRec_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,12 +133,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker tetDate;
+        private System.Windows.Forms.DateTimePicker pneDate;
+        private System.Windows.Forms.DateTimePicker infDate;
+        private System.Windows.Forms.DateTimePicker othDate;
 
     }
 }

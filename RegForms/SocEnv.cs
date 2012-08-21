@@ -20,10 +20,9 @@ namespace introseHHC.RegForms
         private string database;
         private string user;
         private string password;
-        private DataSet ds;
+        private SocialEnvironment SE;
 
         private SocEnv Soc;
-        private DataTable dtb;
         private UInt16 socID;
         private string name;
         private string relation;
@@ -63,65 +62,74 @@ namespace introseHHC.RegForms
 
             conn = new MySqlConnection(c);
             SocID = id;
-            DataSet ds = new DataSet();
-            UInt16 cgaID;
-             
-                string query = "SELECT socenv.name AS 'Name', socenv.relationship AS 'Relationship'" +
-                    "socenv.frequency AS 'Frequency of Visit' " +
-                    "FROM socenv LEFT JOIN cga_form ON cga_form.cgaid = socenv.cgaid;";
-                cmd = new MySqlCommand(query, conn);
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@id", id);
+            SE = new SocialEnvironment();
+            
 
-                read = cmd.ExecuteReader();
-                read.Read();
                 //cgaID = UInt16.Parse(read.GetString("ID"));
 
                 //DataTable dtb = new DataTable();
 
                // dataGridView1.DataSource = dtb;
-                //sel = 
-     
-        /* public void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-         {
-             string output = "";
+        }
 
-             output = dataGridView1.CurrentCell.Value.ToString();
-             this.Text = output;
+        private void addsoc(SocialEnvironment se)
+        {
+            conn.Open();
+            string query = "INSERT INTO SOCIAL(NAME, RELATIONSHIP, FREQUENCY) VALUES" +
+                "(@name, @rel, @freq)";
 
-             int col = dataGridView1.CurrentCell.ColumnIndex;
-             int rows = dataGridView1.CurrentCell.RowIndex;
-             if (col == dataGridView1.Columns.Count - 1)
-                 dataGridView1.CurrentCell = dataGridView1[0, rows + 1];
-             else
-                 dataGridView1.CurrentCell = dataGridView1[col + 1, rows];
-            
-         }*/
-    }
+            cmd = new MySqlCommand(query, conn);
+            cmd.Prepare();
 
-        private void doneButton_Click(object sender, EventArgs e)
+            //cmd.Parameters.AddWithValue("@id", SocID);
+            cmd.Parameters.AddWithValue("@name", se.getNme());
+            cmd.Parameters.AddWithValue("@rel", se.getRlp());
+            cmd.Parameters.AddWithValue("@freq", se.getFv());
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                textBox1.Text = string.Empty;
+                textBox2.Text = string.Empty;
+                textBox3.Text = string.Empty;
+                Console.WriteLine("Social Registry Has Been Added.");
+
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+                conn.Close();
+
+        }
+
+        private void SocEnv_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'getSocial._getSocial' table. You can move, or remove it, as needed.
+            this.getSocialTableAdapter.Fill(this.getSocial._getSocial);
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-        //    AddSoc se = new AddSoc();
-        //    se.ShowDialog();
-           // dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text);
-           /* DataRow dr = dtb.NewRow();
-            dr[0] = textBox1.Text;
-            dr[1] = textBox2.Text;
-            dr[2] = textBox3.Text;
+            name = textBox1.Text;
+            relation = textBox2.Text;
+            freq = textBox3.Text;
 
-            dtb.Rows.Add(dr);
-            dataGridView1.DataSource = dtb;
-            //dapt.Update(dtb);*/
+            SE.setNme(name);
+            SE.setRlp(relation);
+            SE.setFv(freq);
+            addsoc(SE);
         }
 
-        private void SocEnv_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
