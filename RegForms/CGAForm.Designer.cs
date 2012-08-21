@@ -164,21 +164,21 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.gdNo10 = new System.Windows.Forms.RadioButton();
             this.gdScore10 = new System.Windows.Forms.RadioButton();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.gdLab15 = new System.Windows.Forms.Label();
+            this.gdLab14 = new System.Windows.Forms.Label();
+            this.gdLab13 = new System.Windows.Forms.Label();
+            this.gdLab12 = new System.Windows.Forms.Label();
+            this.gdLab11 = new System.Windows.Forms.Label();
+            this.gdLab10 = new System.Windows.Forms.Label();
+            this.gdLab9 = new System.Windows.Forms.Label();
+            this.gdLab8 = new System.Windows.Forms.Label();
+            this.gdLab7 = new System.Windows.Forms.Label();
+            this.gdLab6 = new System.Windows.Forms.Label();
+            this.gdLab5 = new System.Windows.Forms.Label();
+            this.gdLab4 = new System.Windows.Forms.Label();
+            this.gdLab3 = new System.Windows.Forms.Label();
+            this.gdLab2 = new System.Windows.Forms.Label();
+            this.gdLab1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.nextBtn2 = new System.Windows.Forms.Button();
@@ -1314,6 +1314,7 @@
             this.button14.TabIndex = 44;
             this.button14.Text = "Add";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Visible = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // nextBtn1
@@ -1342,6 +1343,7 @@
             this.button6.TabIndex = 41;
             this.button6.Text = "Add";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
@@ -1352,6 +1354,7 @@
             this.button5.TabIndex = 40;
             this.button5.Text = "Add";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
@@ -1362,6 +1365,7 @@
             this.button4.TabIndex = 39;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
@@ -1372,6 +1376,7 @@
             this.button3.TabIndex = 38;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label7
@@ -1383,6 +1388,7 @@
             this.label7.TabIndex = 37;
             this.label7.Text = "Social and\r\nEnvironment\r\n\r\nPast Medical\r\nHistory\r\n\r\nMedication \r\nList\r\n\r\nImmuniza" +
                 "tion\r\nRecord\r\n\r\nFunctional\r\nStatus";
+            this.label7.Visible = false;
             // 
             // BleedingGB
             // 
@@ -1680,21 +1686,21 @@
             this.panel2.Controls.Add(this.groupBox18);
             this.panel2.Controls.Add(this.groupBox19);
             this.panel2.Controls.Add(this.groupBox10);
-            this.panel2.Controls.Add(this.label35);
-            this.panel2.Controls.Add(this.label34);
-            this.panel2.Controls.Add(this.label33);
-            this.panel2.Controls.Add(this.label32);
-            this.panel2.Controls.Add(this.label31);
-            this.panel2.Controls.Add(this.label30);
-            this.panel2.Controls.Add(this.label29);
-            this.panel2.Controls.Add(this.label28);
-            this.panel2.Controls.Add(this.label27);
-            this.panel2.Controls.Add(this.label26);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.gdLab15);
+            this.panel2.Controls.Add(this.gdLab14);
+            this.panel2.Controls.Add(this.gdLab13);
+            this.panel2.Controls.Add(this.gdLab12);
+            this.panel2.Controls.Add(this.gdLab11);
+            this.panel2.Controls.Add(this.gdLab10);
+            this.panel2.Controls.Add(this.gdLab9);
+            this.panel2.Controls.Add(this.gdLab8);
+            this.panel2.Controls.Add(this.gdLab7);
+            this.panel2.Controls.Add(this.gdLab6);
+            this.panel2.Controls.Add(this.gdLab5);
+            this.panel2.Controls.Add(this.gdLab4);
+            this.panel2.Controls.Add(this.gdLab3);
+            this.panel2.Controls.Add(this.gdLab2);
+            this.panel2.Controls.Add(this.gdLab1);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label36);
             this.panel2.Controls.Add(this.nextBtn2);
@@ -1879,140 +1885,140 @@
             this.gdScore10.UseVisualStyleBackColor = true;
             this.gdScore10.CheckedChanged += new System.EventHandler(this.gdScore10_CheckedChanged_1);
             // 
-            // label35
+            // gdLab15
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(10, 445);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(252, 13);
-            this.label35.TabIndex = 53;
-            this.label35.Text = "Do you feel most people are better off than you are?";
+            this.gdLab15.AutoSize = true;
+            this.gdLab15.Location = new System.Drawing.Point(10, 445);
+            this.gdLab15.Name = "gdLab15";
+            this.gdLab15.Size = new System.Drawing.Size(252, 13);
+            this.gdLab15.TabIndex = 53;
+            this.gdLab15.Text = "Do you feel most people are better off than you are?";
             // 
-            // label34
+            // gdLab14
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(10, 416);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(187, 13);
-            this.label34.TabIndex = 52;
-            this.label34.Text = "Do you feel your situation is hopeless?";
+            this.gdLab14.AutoSize = true;
+            this.gdLab14.Location = new System.Drawing.Point(10, 416);
+            this.gdLab14.Name = "gdLab14";
+            this.gdLab14.Size = new System.Drawing.Size(187, 13);
+            this.gdLab14.TabIndex = 52;
+            this.gdLab14.Text = "Do you feel your situation is hopeless?";
             // 
-            // label33
+            // gdLab13
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(10, 387);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(130, 13);
-            this.label33.TabIndex = 51;
-            this.label33.Text = "Do you feel full of energy?";
+            this.gdLab13.AutoSize = true;
+            this.gdLab13.Location = new System.Drawing.Point(10, 387);
+            this.gdLab13.Name = "gdLab13";
+            this.gdLab13.Size = new System.Drawing.Size(130, 13);
+            this.gdLab13.TabIndex = 51;
+            this.gdLab13.Text = "Do you feel full of energy?";
             // 
-            // label32
+            // gdLab12
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(10, 358);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(244, 13);
-            this.label32.TabIndex = 50;
-            this.label32.Text = "Do you feel pretty worthless the way you are now?";
+            this.gdLab12.AutoSize = true;
+            this.gdLab12.Location = new System.Drawing.Point(10, 358);
+            this.gdLab12.Name = "gdLab12";
+            this.gdLab12.Size = new System.Drawing.Size(244, 13);
+            this.gdLab12.TabIndex = 50;
+            this.gdLab12.Text = "Do you feel pretty worthless the way you are now?";
             // 
-            // label31
+            // gdLab11
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(10, 329);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(215, 13);
-            this.label31.TabIndex = 49;
-            this.label31.Text = "Do you think it is wonderful to be alive now?";
+            this.gdLab11.AutoSize = true;
+            this.gdLab11.Location = new System.Drawing.Point(10, 329);
+            this.gdLab11.Name = "gdLab11";
+            this.gdLab11.Size = new System.Drawing.Size(215, 13);
+            this.gdLab11.TabIndex = 49;
+            this.gdLab11.Text = "Do you think it is wonderful to be alive now?";
             // 
-            // label30
+            // gdLab10
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(10, 300);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(295, 13);
-            this.label30.TabIndex = 48;
-            this.label30.Text = "Do you feel you have more problems with memory than most?";
+            this.gdLab10.AutoSize = true;
+            this.gdLab10.Location = new System.Drawing.Point(10, 300);
+            this.gdLab10.Name = "gdLab10";
+            this.gdLab10.Size = new System.Drawing.Size(295, 13);
+            this.gdLab10.TabIndex = 48;
+            this.gdLab10.Text = "Do you feel you have more problems with memory than most?";
             // 
-            // label29
+            // gdLab9
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(10, 271);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(336, 13);
-            this.label29.TabIndex = 47;
-            this.label29.Text = "Do you prefer to stay at home rather than going out doing new things?";
+            this.gdLab9.AutoSize = true;
+            this.gdLab9.Location = new System.Drawing.Point(10, 271);
+            this.gdLab9.Name = "gdLab9";
+            this.gdLab9.Size = new System.Drawing.Size(336, 13);
+            this.gdLab9.TabIndex = 47;
+            this.gdLab9.Text = "Do you prefer to stay at home rather than going out doing new things?";
             // 
-            // label28
+            // gdLab8
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(10, 242);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(135, 13);
-            this.label28.TabIndex = 46;
-            this.label28.Text = "Do you often feel helpless?";
+            this.gdLab8.AutoSize = true;
+            this.gdLab8.Location = new System.Drawing.Point(10, 242);
+            this.gdLab8.Name = "gdLab8";
+            this.gdLab8.Size = new System.Drawing.Size(135, 13);
+            this.gdLab8.TabIndex = 46;
+            this.gdLab8.Text = "Do you often feel helpless?";
             // 
-            // label27
+            // gdLab7
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(10, 213);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(176, 13);
-            this.label27.TabIndex = 45;
-            this.label27.Text = "Do you feel happy most of the time?";
+            this.gdLab7.AutoSize = true;
+            this.gdLab7.Location = new System.Drawing.Point(10, 213);
+            this.gdLab7.Name = "gdLab7";
+            this.gdLab7.Size = new System.Drawing.Size(176, 13);
+            this.gdLab7.TabIndex = 45;
+            this.gdLab7.Text = "Do you feel happy most of the time?";
             // 
-            // label26
+            // gdLab6
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(10, 184);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(293, 13);
-            this.label26.TabIndex = 43;
-            this.label26.Text = "Are you afraid that something bad is going to happen to you?";
+            this.gdLab6.AutoSize = true;
+            this.gdLab6.Location = new System.Drawing.Point(10, 184);
+            this.gdLab6.Name = "gdLab6";
+            this.gdLab6.Size = new System.Drawing.Size(293, 13);
+            this.gdLab6.TabIndex = 43;
+            this.gdLab6.Text = "Are you afraid that something bad is going to happen to you?";
             // 
-            // label20
+            // gdLab5
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(10, 155);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(182, 13);
-            this.label20.TabIndex = 42;
-            this.label20.Text = "Are you good spirits most of the time?";
+            this.gdLab5.AutoSize = true;
+            this.gdLab5.Location = new System.Drawing.Point(10, 155);
+            this.gdLab5.Name = "gdLab5";
+            this.gdLab5.Size = new System.Drawing.Size(182, 13);
+            this.gdLab5.TabIndex = 42;
+            this.gdLab5.Text = "Are you good spirits most of the time?";
             // 
-            // label19
+            // gdLab4
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(10, 126);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(122, 13);
-            this.label19.TabIndex = 41;
-            this.label19.Text = "Do you often get bored?";
+            this.gdLab4.AutoSize = true;
+            this.gdLab4.Location = new System.Drawing.Point(10, 126);
+            this.gdLab4.Name = "gdLab4";
+            this.gdLab4.Size = new System.Drawing.Size(122, 13);
+            this.gdLab4.TabIndex = 41;
+            this.gdLab4.Text = "Do you often get bored?";
             // 
-            // label18
+            // gdLab3
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(10, 97);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(168, 13);
-            this.label18.TabIndex = 40;
-            this.label18.Text = "Do you feel that your life is empty?";
+            this.gdLab3.AutoSize = true;
+            this.gdLab3.Location = new System.Drawing.Point(10, 97);
+            this.gdLab3.Name = "gdLab3";
+            this.gdLab3.Size = new System.Drawing.Size(168, 13);
+            this.gdLab3.TabIndex = 40;
+            this.gdLab3.Text = "Do you feel that your life is empty?";
             // 
-            // label17
+            // gdLab2
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(10, 68);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(257, 13);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "Have you dropped many of your activities or interest?";
+            this.gdLab2.AutoSize = true;
+            this.gdLab2.Location = new System.Drawing.Point(10, 68);
+            this.gdLab2.Name = "gdLab2";
+            this.gdLab2.Size = new System.Drawing.Size(257, 13);
+            this.gdLab2.TabIndex = 39;
+            this.gdLab2.Text = "Have you dropped many of your activities or interest?";
             // 
-            // label16
+            // gdLab1
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 39);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 13);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Are you basically satisfied with your life?";
+            this.gdLab1.AutoSize = true;
+            this.gdLab1.Location = new System.Drawing.Point(10, 39);
+            this.gdLab1.Name = "gdLab1";
+            this.gdLab1.Size = new System.Drawing.Size(194, 13);
+            this.gdLab1.TabIndex = 38;
+            this.gdLab1.Text = "Are you basically satisfied with your life?";
             // 
             // label14
             // 
@@ -3395,21 +3401,21 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.RadioButton gdNo10;
         private System.Windows.Forms.RadioButton gdScore10;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label gdLab15;
+        private System.Windows.Forms.Label gdLab14;
+        private System.Windows.Forms.Label gdLab13;
+        private System.Windows.Forms.Label gdLab12;
+        private System.Windows.Forms.Label gdLab11;
+        private System.Windows.Forms.Label gdLab10;
+        private System.Windows.Forms.Label gdLab9;
+        private System.Windows.Forms.Label gdLab8;
+        private System.Windows.Forms.Label gdLab7;
+        private System.Windows.Forms.Label gdLab6;
+        private System.Windows.Forms.Label gdLab5;
+        private System.Windows.Forms.Label gdLab4;
+        private System.Windows.Forms.Label gdLab3;
+        private System.Windows.Forms.Label gdLab2;
+        private System.Windows.Forms.Label gdLab1;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button nextBtn2;
         private System.Windows.Forms.GroupBox groupBox15;

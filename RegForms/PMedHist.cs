@@ -60,13 +60,13 @@ namespace introseHHC.RegForms
         private void addmed(MedicalHistory mh)
         {
             conn.Open();
-            string query = "INSERT INTO PMED_HIS(DIAGNOSIS, PLACECON, INCDATE) VALUES" +
-                "(@diag, @pla, @inc)";
+            string query = "INSERT INTO PMED_HIS(CGAID, DIAGNOSIS, PLACECON, INCDATE) VALUES" +
+                "(@id ,@diag, @pla, @inc)";
 
             cmd = new MySqlCommand(query, conn);
             cmd.Prepare();
 
-            //cmd.Parameters.AddWithValue("@id", medID);
+            cmd.Parameters.AddWithValue("@id", medID);
             cmd.Parameters.AddWithValue("@diag", mh.getDiag());
             cmd.Parameters.AddWithValue("@pla", mh.getPla());
             cmd.Parameters.AddWithValue("@inc", mh.getDate());

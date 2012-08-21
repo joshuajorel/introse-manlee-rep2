@@ -13,6 +13,7 @@ namespace introseHHC.RegForms
 {
     public partial class CGAForm : Form
     {
+        private bool isFinished = false;
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
@@ -48,15 +49,16 @@ namespace introseHHC.RegForms
             fhis = new FamilyHistory(false, false, false, false);
             gds = new GDScales(gdAns);
             ca = new CGiverAssess();
+            cga.CID = 0;
 
             countBool();
             me = new MentalExam(meAns);
 
             nut = new Nutrition();
 
-            conn = new MySqlConnection();
+            conn = new MySqlConnection(c);
             connString = c;
-
+            
         }
 
         private bool OpenConnection()
@@ -90,16 +92,6 @@ namespace introseHHC.RegForms
         }
 
         private void CGAForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -139,11 +131,6 @@ namespace introseHHC.RegForms
 
         }
 
-        private void groupBox22_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton50_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -161,7 +148,7 @@ namespace introseHHC.RegForms
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ImmRec IR = new ImmRec();
+            ImmRec IR = new ImmRec(cga.CID, connString);
             IR.ShowDialog();
         }
 
@@ -172,13 +159,13 @@ namespace introseHHC.RegForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SocEnv soc = new SocEnv(selID ,connString);
+            SocEnv soc = new SocEnv(cga.CID ,connString);
             soc.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PMedHist PMH = new PMedHist();
+            PMedHist PMH = new PMedHist(cga.CID, connString);
             PMH.ShowDialog();
         }
 
@@ -190,12 +177,20 @@ namespace introseHHC.RegForms
 
         private void button14_Click(object sender, EventArgs e)
         {
-            FuncStat FS = new FuncStat();
+            FuncStat FS = new FuncStat(cga.CID, connString);
             FS.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (!isFinished && cga.CID > 0)
+            {
+                if (OpenConnection())
+                {   //remove incomplete entry here.
+                    string query = "";
+                    CloseConnection();
+                }
+            }
             Close();
         }
 
@@ -219,6 +214,7 @@ namespace introseHHC.RegForms
                 panel4.Enabled = true;
                 panel5.Enabled = true;
             }
+
         }
 
         private void selPhysician_Click(object sender, EventArgs e)
@@ -277,6 +273,8 @@ namespace introseHHC.RegForms
 
         private void nextBtn1_Click(object sender, EventArgs e)
         {
+
+
             cga.setIns(hiTB.Text);          
             cga.setPpc(ppcTB.Text);
 
@@ -287,6 +285,8 @@ namespace introseHHC.RegForms
 
             cga.setPH(phis);
             cga.setFH(fhis);
+
+
             tabControl1.SelectedIndex++;
         }
 
@@ -1023,11 +1023,119 @@ namespace introseHHC.RegForms
             Console.WriteLine(ca.getAns(3));
         }
 
+///////// store to db ////////////
+        private void storeGDS()
+        {
+        }
+
+
         private void cgaSubmitBtn_Click(object sender, EventArgs e)
         {
 
             cga.setCAss(ca);
-            MessageBox.Show("CGA successfully added to the database");
+
+            if (OpenConnection())
+            {
+                //insert values from Patient tab.
+                //insert selected Patient to CGA_FORM
+                string query;
+
+                query = "INSERT INTO CGA_FORM (PATID) VALUES (@pid);";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@pid", selID);
+
+                cmd.ExecuteNonQuery();
+                //get generated CGA ID
+                query = "SELECT LAST_INSERT_ID() FROM CGA_FORM;";
+                cmd.CommandText = query;
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                cga.CID = UInt16.Parse(read.GetString(0));
+
+                Console.WriteLine("CGA ID: {0}", cga.CID);
+
+                read.Close();
+                //end
+                cmd.Parameters.Clear();
+                query = string.Format("UPDATE CGA_FORM SET HINS = '{0}',PCON = '{1}',APHYS = @phys WHERE CGAID = @cid",
+                    cga.getIns(),cga.getPpc());
+                cmd.CommandText = query;
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@phys",cga.PHYID);
+                cmd.Parameters.AddWithValue("@cid",cga.CID);
+
+                cmd.ExecuteNonQuery();
+
+                //insert personal history
+
+                //insert family history
+
+                //insert geriatric data
+
+                query = "INSERT INTO GER_DEP_SCALE (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                cmd.CommandText = query;
+
+                for (int ccnt = 0; ccnt < 15; ccnt++)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@cid",cga.CID);
+                    cmd.Parameters.AddWithValue("@ans",gds.getScale(ccnt));
+                    cmd.Parameters.AddWithValue("@num", ccnt+1);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+
+                //insert mental exam
+
+                query = "INSERT INTO MENSTAT (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                cmd.CommandText = query;
+
+                for (int ccnt = 0; ccnt < 29; ccnt++)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@cid", cga.CID);
+                    cmd.Parameters.AddWithValue("@ans", me.getAns(ccnt));
+                    cmd.Parameters.AddWithValue("@num", ccnt + 1);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+
+                //insert nutrional assessment
+                query = "INSERT INTO NUT_ASS (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                cmd.CommandText = query;
+
+                for (int ccnt = 0; ccnt < 17; ccnt++)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@cid", cga.CID);
+                    cmd.Parameters.AddWithValue("@ans", nut.getNut(ccnt));
+                    cmd.Parameters.AddWithValue("@num", ccnt + 1);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+
+                //insert caregiver assessment
+
+                query = "INSERT INTO CARE_ASS (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                cmd.CommandText = query;
+
+                for (int ccnt = 0; ccnt < 4; ccnt++)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@cid", cga.CID);
+                    cmd.Parameters.AddWithValue("@ans", ca.getAns(ccnt));
+                    cmd.Parameters.AddWithValue("@num", ccnt + 1);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+                CloseConnection();
+                MessageBox.Show("CGA successfully added to the database");
+                this.Close();
+            }
+            
         }
 
         

@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relationshipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frequencyOfVisitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getSocialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getSocial = new introseHHC.getSocial();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,16 +45,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.getSocial = new introseHHC.getSocial();
-            this.getSocialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getSocialTableAdapter = new introseHHC.getSocialTableAdapters.getSocialTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.relationshipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frequencyOfVisitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getSocial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getSocialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getSocial)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -65,6 +65,40 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(451, 172);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // relationshipDataGridViewTextBoxColumn
+            // 
+            this.relationshipDataGridViewTextBoxColumn.DataPropertyName = "Relationship";
+            this.relationshipDataGridViewTextBoxColumn.HeaderText = "Relationship";
+            this.relationshipDataGridViewTextBoxColumn.Name = "relationshipDataGridViewTextBoxColumn";
+            // 
+            // frequencyOfVisitDataGridViewTextBoxColumn
+            // 
+            this.frequencyOfVisitDataGridViewTextBoxColumn.DataPropertyName = "Frequency of Visit";
+            this.frequencyOfVisitDataGridViewTextBoxColumn.HeaderText = "Frequency of Visit";
+            this.frequencyOfVisitDataGridViewTextBoxColumn.Name = "frequencyOfVisitDataGridViewTextBoxColumn";
+            // 
+            // getSocialBindingSource
+            // 
+            this.getSocialBindingSource.DataMember = "getSocial";
+            this.getSocialBindingSource.DataSource = this.getSocial;
+            // 
+            // getSocial
+            // 
+            this.getSocial.DataSetName = "getSocial";
+            this.getSocial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -83,6 +117,7 @@
             this.okButton.TabIndex = 3;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click_1);
             // 
             // button1
             // 
@@ -92,6 +127,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox1
             // 
@@ -141,43 +177,9 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Frequency";
             // 
-            // getSocial
-            // 
-            this.getSocial.DataSetName = "getSocial";
-            this.getSocial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getSocialBindingSource
-            // 
-            this.getSocialBindingSource.DataMember = "getSocial";
-            this.getSocialBindingSource.DataSource = this.getSocial;
-            // 
             // getSocialTableAdapter
             // 
             this.getSocialTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // relationshipDataGridViewTextBoxColumn
-            // 
-            this.relationshipDataGridViewTextBoxColumn.DataPropertyName = "Relationship";
-            this.relationshipDataGridViewTextBoxColumn.HeaderText = "Relationship";
-            this.relationshipDataGridViewTextBoxColumn.Name = "relationshipDataGridViewTextBoxColumn";
-            // 
-            // frequencyOfVisitDataGridViewTextBoxColumn
-            // 
-            this.frequencyOfVisitDataGridViewTextBoxColumn.DataPropertyName = "Frequency of Visit";
-            this.frequencyOfVisitDataGridViewTextBoxColumn.HeaderText = "Frequency of Visit";
-            this.frequencyOfVisitDataGridViewTextBoxColumn.Name = "frequencyOfVisitDataGridViewTextBoxColumn";
             // 
             // SocEnv
             // 
@@ -198,8 +200,8 @@
             this.Text = "SocEnv";
             this.Load += new System.EventHandler(this.SocEnv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getSocial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getSocialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getSocial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

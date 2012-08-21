@@ -44,12 +44,13 @@ namespace introseHHC.RegForms
         private void setimmrec(Immunization rec)
         {
             conn.Open();
-            string query = "INSERT INTO IMM_REC(TETDATE, PNEDATE, INFDATE, OTHDATE)" +
-                "VALUES (@tet, @pne, @inf, @oth)";
+            string query = "INSERT INTO IMM_REC(CGAID, TETDATE, PNEDATE, INFDATE, OTHDATE)" +
+                "VALUES (@id, @tet, @pne, @inf, @oth)";
 
             cmd = new MySqlCommand(query, conn);
             cmd.Prepare();
 
+            cmd.Parameters.AddWithValue("@id", immID);
             cmd.Parameters.AddWithValue("@tet", rec.getTet());
             cmd.Parameters.AddWithValue("@pne", rec.getPne());
             cmd.Parameters.AddWithValue("@inf", rec.getInf());
