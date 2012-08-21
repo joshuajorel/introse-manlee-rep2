@@ -13,6 +13,13 @@ namespace introseHHC.RegForms
 {
     public partial class ViewClient : Form
     {
+        private bool closeStatus = false;
+
+        public bool CloseStatus
+        {
+            get { return closeStatus; }
+            set { closeStatus = value; }
+        }
         private UInt16 clientID;
         private MySqlConnection conn;
         private MySqlCommand cmd;
@@ -163,11 +170,15 @@ namespace introseHHC.RegForms
 
                 nameField.Text      = sname+ ", " + fname + " " + mname;
                 birthField.Text     = bday.ToShortDateString();
+                datePicker.Value    = bday;
                 genderField.Text    = read.GetString("Gender");
+                genderBox.Text      = genderField.Text;
                 civField.Text       = read.GetString("CivStat");
+                civStatBox.Text     = civField.Text;
                 natField.Text       = read.GetString("Nationality");
                 relField.Text       = read.GetString("Religion");
                 educField.Text      = read.GetString("EducAttain");
+                educBox.Text        = educField.Text;
                 addField1.Text      = num + " " + a;
                 addField2.Text      = ct + ", " + r;
                 homeField.Text      = hnum.ToString();
@@ -270,7 +281,8 @@ namespace introseHHC.RegForms
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            closeStatus = true;
+            this.Hide();
         }
 
         private void personalEditButton_Click(object sender, EventArgs e)
@@ -285,9 +297,9 @@ namespace introseHHC.RegForms
                 datePicker.Visible  = true;
                 genderField.Visible = false;
                 genderBox.Visible   = true;
-
-                nameField.Enabled = true;
+                                
                 relField.Enabled = true;
+                natField.Enabled = true;
 
                 civField.Visible = false;
                 civStatBox.Visible = true;
@@ -304,19 +316,74 @@ namespace introseHHC.RegForms
                 editNameButton.Visible = false;
                 personalCancelButton.Visible = false;
 
-                if (OpenConnection())
-                {
-                    //sql commands go here
+                bool gen, ed, rel, civ,nat;
 
-                    CloseConnection();
+                gen = genderBox.Items.Contains(genderBox.Text);
+                ed = educBox.Items.Contains(educBox.Text);
+                rel = introseHHC.Objects.Checker.check(relField.Text);
+                civ = civStatBox.Items.Contains(civStatBox.Text);
+                nat = introseHHC.Objects.Checker.check(natField.Text);
+
+                if (gen && ed && rel && civ && nat)
+                {
+                    if (OpenConnection())
+                    {
+                        Console.WriteLine("Correct Values");
+                        string query;
+                        //sql commands go here
+                        cmd.Parameters.Clear();
+                        query = string.Format("UPDATE PERSON SET SNAME = '{0}',FNAME = '{1}', MNAME = '{2}', "
+                        + "GENDER = '{3}', CIVSTAT = '{4}', NATIONALITY = '{5}', RELIGION = '{6}', "
+                        + "EDUCATTAIN = '{7}',BDATE=@bday WHERE ID = @cid;", client.getSurname(), client.getFirstName(),
+                        client.getMidName(), genderBox.Text, civStatBox.Text, natField.Text,
+                        relField.Text, educBox.Text);
+
+                        cmd.CommandText = query;
+                        cmd.Prepare();
+                        cmd.Parameters.AddWithValue("@cid", clientID);
+                        cmd.Parameters.AddWithValue("@bday", client.getBDay());
+                        cmd.ExecuteNonQuery();
+
+                        CloseConnection();
+
+                        birthField.Visible = true;
+                        birthField.Text = client.getBDay().ToShortDateString();
+                        datePicker.Visible = false;
+                        genderField.Visible = true;
+                        genderField.Text = genderBox.Text;
+                        genderBox.Visible = false;
+
+                        nameField.Enabled = false;
+                        relField.Enabled = false;
+                        natField.Enabled = false;
+
+                        civField.Visible = true;
+                        civField.Text = civStatBox.Text;
+                        civStatBox.Visible = false;
+
+                        educField.Visible = true;
+                        educField.Text = educBox.Text;
+                        educBox.Visible = false;
+
+                        personalEdit = false;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    
+                    Console.WriteLine("Incorrect Values");
 
                     birthField.Visible = true;
                     datePicker.Visible = false;
                     genderField.Visible = true;
                     genderBox.Visible = false;
 
-                    nameField.Enabled = false;
                     relField.Enabled = false;
+                    natField.Enabled = false;
 
                     civField.Visible = true;
                     civStatBox.Visible = false;
@@ -325,9 +392,6 @@ namespace introseHHC.RegForms
                     educBox.Visible = false;
 
                     personalEdit = false;
-                }
-                else
-                {
                 }
             }
         }
@@ -375,10 +439,19 @@ namespace introseHHC.RegForms
             educField.Visible = true;
             educBox.Visible = false;
 
+            //restore past values
+
+
             personalEdit = false;
 
 
 
+        }
+
+        private void ViewClient_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            closeStatus = true;
+            this.Hide();
         }
     }
 }

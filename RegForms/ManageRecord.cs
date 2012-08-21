@@ -43,6 +43,12 @@ namespace introseHHC.RegForms
             ViewPatient v = new ViewPatient(UInt16.Parse(patientView.SelectedCells[0].Value.ToString()),connString);
 
             v.ShowDialog();
+            if (v.CloseStatus)
+            {
+                this.getPatientDetailsTableAdapter.Fill(this.getPatientDetailsDB.getPatientDetails);
+                v.Close();
+
+            }
             
         }
 
@@ -51,6 +57,11 @@ namespace introseHHC.RegForms
             ViewClient vc = new ViewClient(UInt16.Parse(clientView.SelectedCells[0].Value.ToString()),connString);
 
             vc.ShowDialog();
+            if (vc.CloseStatus)
+            {
+                this.getClientDetailsTableAdapter.Fill(this.getClientDetailsDB.getClientDetails);
+                vc.Close();
+            }
         }
 
         private void employeeView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

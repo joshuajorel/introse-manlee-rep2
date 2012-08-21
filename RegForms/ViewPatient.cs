@@ -15,6 +15,13 @@ namespace introseHHC.RegForms
 
     public partial class ViewPatient : Form
     {
+        private bool closeStatus = false;
+
+        public bool CloseStatus
+        {
+            get { return closeStatus; }
+            set { closeStatus = value; }
+        }
         private UInt16 patID;
         private UInt16 clientID;
         private UInt16 faceID;
@@ -407,11 +414,13 @@ namespace introseHHC.RegForms
         }
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            closeStatus = true;
+            this.Hide();
         }
         private void ViewPatient_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            closeStatus = true;
+            this.Hide();
         }
         private void ViewPatient_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -465,60 +474,62 @@ namespace introseHHC.RegForms
                 patient.setCivilStatus(civStatBox.Text);
                 patient.setBday(datePicker.Value);
 
-                if (OpenConnection())
-                {
-                    string query;
-                    //sql operations go here.
+         
+                    if (OpenConnection())
+                    {
+                        string query;
+                        //sql operations go here.
 
-                    query = string.Format("UPDATE PERSON SET SNAME = '{0}',FNAME = '{1}', MNAME = '{2}', " 
-                        +"GENDER = '{3}', CIVSTAT = '{4}', NATIONALITY = '{5}', RELIGION = '{6}', "
-                        +"EDUCATTAIN = '{7}',BDATE=@bday WHERE ID = @pid;",patient.getSurname(),patient.getFirstName(),
-                        patient.getMidName(), patient.getGender(),patient.getCivilStatus(),patient.getNationality(),
-                        patient.getReligion(),patient.getEducAttainment());
+                        query = string.Format("UPDATE PERSON SET SNAME = '{0}',FNAME = '{1}', MNAME = '{2}', "
+                            + "GENDER = '{3}', CIVSTAT = '{4}', NATIONALITY = '{5}', RELIGION = '{6}', "
+                            + "EDUCATTAIN = '{7}',BDATE=@bday WHERE ID = @pid;", patient.getSurname(), patient.getFirstName(),
+                            patient.getMidName(), patient.getGender(), patient.getCivilStatus(), patient.getNationality(),
+                            patient.getReligion(), patient.getEducAttainment());
 
-                    cmd.CommandText = query;
-                    cmd.Prepare();
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@pid", patient.getID());
-                    cmd.Parameters.AddWithValue("@bday",patient.getBDay());
-                    cmd.ExecuteNonQuery();
+                        cmd.CommandText = query;
+                        cmd.Prepare();
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@pid", patient.getID());
+                        cmd.Parameters.AddWithValue("@bday", patient.getBDay());
+                        cmd.ExecuteNonQuery();
 
-                    personalEditButton.Text = "Edit";
-                                       
-                    editNameButton.Visible = false;
+                        personalEditButton.Text = "Edit";
 
-                    genderField.Visible = true;
-                    genderField.Text = patient.getGender();
-                    genderBox.Visible = false;
+                        editNameButton.Visible = false;
 
-                    birthField.Visible = true;
-                    birthField.Text = patient.getBDay().ToShortDateString();
-                    datePicker.Visible = false;
-     
-                    educField.Visible = true;
-                    educField.Text = patient.getEducAttainment();
-                    educBox.Visible = false;
+                        genderField.Visible = true;
+                        genderField.Text = patient.getGender();
+                        genderBox.Visible = false;
 
-                    genderField.Visible = true;
-                    genderField.Text = patient.getGender();
-                    genderBox.Visible = false;
+                        birthField.Visible = true;
+                        birthField.Text = patient.getBDay().ToShortDateString();
+                        datePicker.Visible = false;
 
-                    natField.Enabled = false;
-                    natField.Text = patient.getNationality();
-                    
-                    relField.Enabled = false;
-                    relField.Text = patient.getReligion();
-                    
-                    civField.Enabled = false;
-                    civField.Visible = true;
-                    civField.Text = patient.getCivilStatus();
-                    civStatBox.Visible = false;
-                    
-                    personalEdit = false;
-                    personalCancelButton.Visible = false;
+                        educField.Visible = true;
+                        educField.Text = patient.getEducAttainment();
+                        educBox.Visible = false;
 
-                    CloseConnection();
-                }
+                        genderField.Visible = true;
+                        genderField.Text = patient.getGender();
+                        genderBox.Visible = false;
+
+                        natField.Enabled = false;
+                        natField.Text = patient.getNationality();
+
+                        relField.Enabled = false;
+                        relField.Text = patient.getReligion();
+
+                        civField.Enabled = false;
+                        civField.Visible = true;
+                        civField.Text = patient.getCivilStatus();
+                        civStatBox.Visible = false;
+
+                        personalEdit = false;
+                        personalCancelButton.Visible = false;
+
+                        CloseConnection();
+                    }
+                
 
             }
         }
