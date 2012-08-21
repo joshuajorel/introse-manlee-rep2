@@ -31,6 +31,15 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.educBox = new System.Windows.Forms.ComboBox();
+            this.genderBox = new System.Windows.Forms.ComboBox();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.clientCancelButton = new System.Windows.Forms.Button();
+            this.contactCancelButton = new System.Windows.Forms.Button();
+            this.personalCancelButton = new System.Windows.Forms.Button();
+            this.clientEditButton = new System.Windows.Forms.Button();
+            this.contactEditButton = new System.Windows.Forms.Button();
+            this.personalEditButton = new System.Windows.Forms.Button();
             this.posRelIn = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -130,6 +139,7 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.editNameButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Requirements.SuspendLayout();
@@ -158,6 +168,16 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.editNameButton);
+            this.tabPage1.Controls.Add(this.educBox);
+            this.tabPage1.Controls.Add(this.genderBox);
+            this.tabPage1.Controls.Add(this.datePicker);
+            this.tabPage1.Controls.Add(this.clientCancelButton);
+            this.tabPage1.Controls.Add(this.contactCancelButton);
+            this.tabPage1.Controls.Add(this.personalCancelButton);
+            this.tabPage1.Controls.Add(this.clientEditButton);
+            this.tabPage1.Controls.Add(this.contactEditButton);
+            this.tabPage1.Controls.Add(this.personalEditButton);
             this.tabPage1.Controls.Add(this.posRelIn);
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.label22);
@@ -207,12 +227,106 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General Information";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // educBox
+            // 
+            this.educBox.FormattingEnabled = true;
+            this.educBox.Items.AddRange(new object[] {
+            "Primary",
+            "Secondary",
+            "Tertiary",
+            "Intermediate",
+            "None"});
+            this.educBox.Location = new System.Drawing.Point(95, 184);
+            this.educBox.Name = "educBox";
+            this.educBox.Size = new System.Drawing.Size(108, 21);
+            this.educBox.TabIndex = 101;
+            this.educBox.Visible = false;
+            // 
+            // genderBox
+            // 
+            this.genderBox.FormattingEnabled = true;
+            this.genderBox.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.genderBox.Location = new System.Drawing.Point(95, 84);
+            this.genderBox.Name = "genderBox";
+            this.genderBox.Size = new System.Drawing.Size(108, 21);
+            this.genderBox.TabIndex = 100;
+            this.genderBox.Visible = false;
+            // 
+            // datePicker
+            // 
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePicker.Location = new System.Drawing.Point(95, 59);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(108, 20);
+            this.datePicker.TabIndex = 99;
+            this.datePicker.Visible = false;
+            // 
+            // clientCancelButton
+            // 
+            this.clientCancelButton.Location = new System.Drawing.Point(484, 9);
+            this.clientCancelButton.Name = "clientCancelButton";
+            this.clientCancelButton.Size = new System.Drawing.Size(49, 20);
+            this.clientCancelButton.TabIndex = 98;
+            this.clientCancelButton.Text = "Cancel";
+            this.clientCancelButton.UseVisualStyleBackColor = true;
+            this.clientCancelButton.Visible = false;
+            // 
+            // contactCancelButton
+            // 
+            this.contactCancelButton.Location = new System.Drawing.Point(207, 224);
+            this.contactCancelButton.Name = "contactCancelButton";
+            this.contactCancelButton.Size = new System.Drawing.Size(49, 20);
+            this.contactCancelButton.TabIndex = 97;
+            this.contactCancelButton.Text = "Cancel";
+            this.contactCancelButton.UseVisualStyleBackColor = true;
+            this.contactCancelButton.Visible = false;
+            // 
+            // personalCancelButton
+            // 
+            this.personalCancelButton.Location = new System.Drawing.Point(207, 9);
+            this.personalCancelButton.Name = "personalCancelButton";
+            this.personalCancelButton.Size = new System.Drawing.Size(49, 20);
+            this.personalCancelButton.TabIndex = 96;
+            this.personalCancelButton.Text = "Cancel";
+            this.personalCancelButton.UseVisualStyleBackColor = true;
+            this.personalCancelButton.Visible = false;
+            this.personalCancelButton.Click += new System.EventHandler(this.personalCancelButton_Click);
+            // 
+            // clientEditButton
+            // 
+            this.clientEditButton.Location = new System.Drawing.Point(429, 9);
+            this.clientEditButton.Name = "clientEditButton";
+            this.clientEditButton.Size = new System.Drawing.Size(49, 20);
+            this.clientEditButton.TabIndex = 95;
+            this.clientEditButton.Text = "Edit";
+            this.clientEditButton.UseVisualStyleBackColor = true;
+            // 
+            // contactEditButton
+            // 
+            this.contactEditButton.Location = new System.Drawing.Point(152, 224);
+            this.contactEditButton.Name = "contactEditButton";
+            this.contactEditButton.Size = new System.Drawing.Size(49, 20);
+            this.contactEditButton.TabIndex = 94;
+            this.contactEditButton.Text = "Edit";
+            this.contactEditButton.UseVisualStyleBackColor = true;
+            // 
+            // personalEditButton
+            // 
+            this.personalEditButton.Location = new System.Drawing.Point(152, 9);
+            this.personalEditButton.Name = "personalEditButton";
+            this.personalEditButton.Size = new System.Drawing.Size(49, 20);
+            this.personalEditButton.TabIndex = 93;
+            this.personalEditButton.Text = "Edit";
+            this.personalEditButton.UseVisualStyleBackColor = true;
+            this.personalEditButton.Click += new System.EventHandler(this.personalEditButton_Click);
             // 
             // posRelIn
             // 
             this.posRelIn.Enabled = false;
-            this.posRelIn.Location = new System.Drawing.Point(360, 124);
+            this.posRelIn.Location = new System.Drawing.Point(379, 124);
             this.posRelIn.Name = "posRelIn";
             this.posRelIn.Size = new System.Drawing.Size(161, 20);
             this.posRelIn.TabIndex = 92;
@@ -221,7 +335,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(274, 140);
+            this.label21.Location = new System.Drawing.Point(293, 140);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(92, 15);
             this.label21.TabIndex = 91;
@@ -231,7 +345,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(274, 125);
+            this.label22.Location = new System.Drawing.Point(293, 125);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(59, 15);
             this.label22.TabIndex = 90;
@@ -241,7 +355,7 @@
             // 
             this.primaryLabel.AutoSize = true;
             this.primaryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryLabel.Location = new System.Drawing.Point(407, 93);
+            this.primaryLabel.Location = new System.Drawing.Point(426, 93);
             this.primaryLabel.Name = "primaryLabel";
             this.primaryLabel.Size = new System.Drawing.Size(30, 15);
             this.primaryLabel.TabIndex = 89;
@@ -251,7 +365,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(274, 100);
+            this.label19.Location = new System.Drawing.Point(293, 100);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(72, 15);
             this.label19.TabIndex = 88;
@@ -261,7 +375,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(274, 85);
+            this.label20.Location = new System.Drawing.Point(293, 85);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(56, 15);
             this.label20.TabIndex = 87;
@@ -270,7 +384,7 @@
             // clientIDIn
             // 
             this.clientIDIn.Enabled = false;
-            this.clientIDIn.Location = new System.Drawing.Point(360, 59);
+            this.clientIDIn.Location = new System.Drawing.Point(379, 59);
             this.clientIDIn.Name = "clientIDIn";
             this.clientIDIn.Size = new System.Drawing.Size(161, 20);
             this.clientIDIn.TabIndex = 86;
@@ -279,7 +393,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(274, 60);
+            this.label18.Location = new System.Drawing.Point(293, 60);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(66, 15);
             this.label18.TabIndex = 85;
@@ -288,7 +402,7 @@
             // clienNameIn
             // 
             this.clienNameIn.Enabled = false;
-            this.clienNameIn.Location = new System.Drawing.Point(360, 34);
+            this.clienNameIn.Location = new System.Drawing.Point(379, 34);
             this.clienNameIn.Name = "clienNameIn";
             this.clienNameIn.Size = new System.Drawing.Size(161, 20);
             this.clienNameIn.TabIndex = 84;
@@ -297,7 +411,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(274, 35);
+            this.label17.Location = new System.Drawing.Point(293, 35);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 15);
             this.label17.TabIndex = 83;
@@ -307,11 +421,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(295, 11);
+            this.label15.Location = new System.Drawing.Point(293, 11);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(170, 15);
+            this.label15.Size = new System.Drawing.Size(130, 15);
             this.label15.TabIndex = 82;
-            this.label15.Text = "Client Information ---------";
+            this.label15.Text = "Client Information -";
             // 
             // emailField
             // 
@@ -368,21 +482,21 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(10, 226);
+            this.label53.Location = new System.Drawing.Point(1, 226);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(181, 15);
+            this.label53.Size = new System.Drawing.Size(141, 15);
             this.label53.TabIndex = 75;
-            this.label53.Text = "Contact Information ---------";
+            this.label53.Text = "Contact Information -";
             // 
             // label52
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(10, 11);
+            this.label52.Location = new System.Drawing.Point(1, 11);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(190, 15);
+            this.label52.Size = new System.Drawing.Size(150, 15);
             this.label52.TabIndex = 74;
-            this.label52.Text = "Personal Information ---------";
+            this.label52.Text = "Personal Information -";
             // 
             // addField2
             // 
@@ -1175,6 +1289,17 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // editNameButton
+            // 
+            this.editNameButton.Location = new System.Drawing.Point(260, 35);
+            this.editNameButton.Name = "editNameButton";
+            this.editNameButton.Size = new System.Drawing.Size(25, 20);
+            this.editNameButton.TabIndex = 102;
+            this.editNameButton.Text = "...";
+            this.editNameButton.UseVisualStyleBackColor = true;
+            this.editNameButton.Visible = false;
+            this.editNameButton.Click += new System.EventHandler(this.editNameButton_Click);
+            // 
             // ViewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1304,5 +1429,15 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label endorseLabel;
         private System.Windows.Forms.Label gatherLabel;
+        private System.Windows.Forms.Button clientEditButton;
+        private System.Windows.Forms.Button contactEditButton;
+        private System.Windows.Forms.Button personalEditButton;
+        private System.Windows.Forms.Button clientCancelButton;
+        private System.Windows.Forms.Button contactCancelButton;
+        private System.Windows.Forms.Button personalCancelButton;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.ComboBox educBox;
+        private System.Windows.Forms.ComboBox genderBox;
+        private System.Windows.Forms.Button editNameButton;
     }
 }

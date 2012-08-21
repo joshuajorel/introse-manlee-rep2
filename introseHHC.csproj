@@ -90,6 +90,12 @@
     <Compile Include="Objects\Checker.cs" />
     <Compile Include="Objects\Client.cs" />
     <Compile Include="Objects\CostTable.cs" />
+    <Compile Include="RegForms\EditName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\EditName.Designer.cs">
+      <DependentUpon>EditName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Objects\FaceSheet.cs" />
     <Compile Include="Objects\FamilyHistory.cs" />
@@ -234,6 +240,9 @@
     </Compile>
     <EmbeddedResource Include="ErrorDiags\ErrorBox.resx">
       <DependentUpon>ErrorBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\EditName.resx">
+      <DependentUpon>EditName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\CGAForm.resx">
       <DependentUpon>CGAForm.cs</DependentUpon>

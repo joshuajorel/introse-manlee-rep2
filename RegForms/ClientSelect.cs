@@ -25,8 +25,6 @@ namespace introseHHC.RegForms
             sel = 0;
         }
 
-  
-
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -37,7 +35,6 @@ namespace introseHHC.RegForms
         {
             // TODO: This line of code loads data into the 'getClientsDB.getClients' table. You can move, or remove it, as needed.
             this.getClientsTableAdapter.Fill(this.getClientsDB.getClients);
-
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -46,7 +43,16 @@ namespace introseHHC.RegForms
             sel = 0;
         }
 
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            getClientsBindingSource.Filter = string.Format("Surname LIKE '{0}'", searchIn.Text);
+        }
 
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            getClientsBindingSource.Filter = "";
+            searchIn.Text = "";
+        }
 
     }
 }

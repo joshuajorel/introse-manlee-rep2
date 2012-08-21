@@ -350,9 +350,10 @@ namespace introseHHC.RegForms
             // 
             // pbdayPick
             // 
+            this.pbdayPick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.pbdayPick.Location = new System.Drawing.Point(87, 105);
             this.pbdayPick.Name = "pbdayPick";
-            this.pbdayPick.Size = new System.Drawing.Size(246, 20);
+            this.pbdayPick.Size = new System.Drawing.Size(122, 20);
             this.pbdayPick.TabIndex = 43;
             // 
             // pemailIn
@@ -826,14 +827,15 @@ namespace introseHHC.RegForms
             // 
             // cbdayPick
             // 
+            this.cbdayPick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.cbdayPick.Location = new System.Drawing.Point(87, 105);
             this.cbdayPick.Name = "cbdayPick";
-            this.cbdayPick.Size = new System.Drawing.Size(246, 20);
+            this.cbdayPick.Size = new System.Drawing.Size(122, 20);
             this.cbdayPick.TabIndex = 77;
             // 
             // posIn
             // 
-            this.posIn.Location = new System.Drawing.Point(274, 208);
+            this.posIn.Location = new System.Drawing.Point(251, 176);
             this.posIn.Name = "posIn";
             this.posIn.Size = new System.Drawing.Size(179, 20);
             this.posIn.TabIndex = 107;
@@ -841,7 +843,7 @@ namespace introseHHC.RegForms
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(271, 188);
+            this.label49.Location = new System.Drawing.Point(248, 160);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(107, 13);
             this.label49.TabIndex = 106;
