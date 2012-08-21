@@ -145,6 +145,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Dependent";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -156,6 +157,7 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Independent";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -177,6 +179,7 @@
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Dependent";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton6
             // 
@@ -188,6 +191,7 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Independent";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -209,6 +213,7 @@
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "Dependent";
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
             // 
             // radioButton8
             // 
@@ -220,6 +225,7 @@
             this.radioButton8.TabStop = true;
             this.radioButton8.Text = "Independent";
             this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
             // 
             // groupBox5
             // 
@@ -241,6 +247,7 @@
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "Dependent";
             this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
             // 
             // radioButton10
             // 
@@ -252,6 +259,7 @@
             this.radioButton10.TabStop = true;
             this.radioButton10.Text = "Independent";
             this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
             // 
             // groupBox6
             // 
@@ -273,6 +281,7 @@
             this.radioButton11.TabStop = true;
             this.radioButton11.Text = "Dependent";
             this.radioButton11.UseVisualStyleBackColor = true;
+            this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
             // 
             // radioButton12
             // 
@@ -284,6 +293,7 @@
             this.radioButton12.TabStop = true;
             this.radioButton12.Text = "Independent";
             this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
             // groupBox7
             // 
@@ -305,6 +315,7 @@
             this.radioButton13.TabStop = true;
             this.radioButton13.Text = "Dependent";
             this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
             // radioButton14
             // 
@@ -316,6 +327,7 @@
             this.radioButton14.TabStop = true;
             this.radioButton14.Text = "Independent";
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
             // 
             // groupBox8
             // 
@@ -337,6 +349,7 @@
             this.radioButton15.TabStop = true;
             this.radioButton15.Text = "Dependent";
             this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton15_CheckedChanged);
             // 
             // radioButton16
             // 
@@ -348,6 +361,7 @@
             this.radioButton16.TabStop = true;
             this.radioButton16.Text = "Independent";
             this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton16_CheckedChanged);
             // 
             // groupBox9
             // 
@@ -369,6 +383,7 @@
             this.radioButton17.TabStop = true;
             this.radioButton17.Text = "Dependent";
             this.radioButton17.UseVisualStyleBackColor = true;
+            this.radioButton17.CheckedChanged += new System.EventHandler(this.radioButton17_CheckedChanged);
             // 
             // radioButton18
             // 
@@ -380,6 +395,7 @@
             this.radioButton18.TabStop = true;
             this.radioButton18.Text = "Independent";
             this.radioButton18.UseVisualStyleBackColor = true;
+            this.radioButton18.CheckedChanged += new System.EventHandler(this.radioButton18_CheckedChanged);
             // 
             // groupBox10
             // 
@@ -401,6 +417,7 @@
             this.radioButton19.TabStop = true;
             this.radioButton19.Text = "Dependent";
             this.radioButton19.UseVisualStyleBackColor = true;
+            this.radioButton19.CheckedChanged += new System.EventHandler(this.radioButton19_CheckedChanged);
             // 
             // radioButton20
             // 
@@ -412,6 +429,7 @@
             this.radioButton20.TabStop = true;
             this.radioButton20.Text = "Independent";
             this.radioButton20.UseVisualStyleBackColor = true;
+            this.radioButton20.CheckedChanged += new System.EventHandler(this.radioButton20_CheckedChanged);
             // 
             // groupBox11
             // 
@@ -433,6 +451,7 @@
             this.radioButton21.TabStop = true;
             this.radioButton21.Text = "Dependent";
             this.radioButton21.UseVisualStyleBackColor = true;
+            this.radioButton21.CheckedChanged += new System.EventHandler(this.radioButton21_CheckedChanged);
             // 
             // radioButton22
             // 
@@ -444,6 +463,7 @@
             this.radioButton22.TabStop = true;
             this.radioButton22.Text = "Independent";
             this.radioButton22.UseVisualStyleBackColor = true;
+            this.radioButton22.CheckedChanged += new System.EventHandler(this.radioButton22_CheckedChanged);
             // 
             // groupBox12
             // 
@@ -465,6 +485,7 @@
             this.radioButton23.TabStop = true;
             this.radioButton23.Text = "Dependent";
             this.radioButton23.UseVisualStyleBackColor = true;
+            this.radioButton23.CheckedChanged += new System.EventHandler(this.radioButton23_CheckedChanged);
             // 
             // radioButton24
             // 
@@ -476,6 +497,7 @@
             this.radioButton24.TabStop = true;
             this.radioButton24.Text = "Independent";
             this.radioButton24.UseVisualStyleBackColor = true;
+            this.radioButton24.CheckedChanged += new System.EventHandler(this.radioButton24_CheckedChanged);
             // 
             // okButton
             // 

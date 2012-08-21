@@ -11,7 +11,12 @@ namespace introseHHC.Objects
 
         public FunctionalStatus()
         {
-            stat = new Boolean[15];
+            stat = new Boolean[13];
+        }
+
+        public FunctionalStatus(Boolean[] ans)
+        {
+            stat = ans;
         }
 
         //int n corresponds to the order of stats based on the cga (starting from 0)
