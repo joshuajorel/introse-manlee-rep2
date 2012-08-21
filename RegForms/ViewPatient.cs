@@ -38,6 +38,7 @@ namespace introseHHC.RegForms
         private bool clientEdit = false;
         private EditName ed;
         private Patient patient;
+        private string connString;
 
         private class Address
         {
@@ -144,7 +145,7 @@ namespace introseHHC.RegForms
 
             //initialize database connection
             conn = new MySqlConnection(c);
-
+            connString = c;
             patID = id;
 
             if (OpenConnection())
@@ -814,6 +815,33 @@ namespace introseHHC.RegForms
             else
             {
                 ed.Close();
+            }
+        }
+
+        private void viewCGAButton_Click(object sender, EventArgs e)
+        {
+            if (OpenConnection())
+            {
+                string query = "SELECT COUNT(*) FROM CGA_FORM WHERE PATID = @patID;";
+                cmd = new MySqlCommand(query,conn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@patID",patID);
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                if (int.Parse(read.GetString(0)) > 0)
+                {
+                    ViewCGA v = new ViewCGA(patID, connString);
+                    v.ShowDialog();
+                    v.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No CGA registered for this person.");
+                }
+                read.Close();
+
+                CloseConnection();
             }
         }
 

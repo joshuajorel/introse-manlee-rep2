@@ -1068,58 +1068,65 @@ namespace introseHHC.RegForms
                 cmd.Parameters.AddWithValue("@cid",cga.CID);
 
                 cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                //insert family history
+                query = string.Format("INSERT INTO FAMILY_HISTORY(CGAID,DIABETES,CANCER,TUBERCULOSIS,BLEED) VALUES"
+                    +" (@cgaID,'{0}','{1}','{2}','{3}')",fhis.getDbs(),fhis.getCnr(),fhis.getTub(),fhis.getBD());
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@cgaID",cga.CID);
+                cmd.ExecuteNonQuery();
 
                 //insert personal history
-
+                cmd.Parameters.Clear();
                 //insert family history
-
+                query = string.Format("INSERT INTO PERSONAL_HISTORY(CGAID,ALLERGY,SMOKING,DRINKING,HOBBY) VALUES"
+                    + " (@cgaID,'{0}','{1}','{2}','{3}')", phis.getAlg(),phis.getSmk(),phis.getDnk(), phis.getHby());
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@cgaID", cga.CID);
+                cmd.ExecuteNonQuery();
                 //insert geriatric data
 
-                query = "INSERT INTO GER_DEP_SCALE (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                query = "INSERT INTO GER_DEP_SCALE (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
-                for (int ccnt = 0; ccnt < 15; ccnt++)
-                {
+
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid",cga.CID);
-                    cmd.Parameters.AddWithValue("@ans",gds.getScale(ccnt));
-                    cmd.Parameters.AddWithValue("@num", ccnt+1);
+                    cmd.Parameters.AddWithValue("@ans",gds.computeScore() );
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                }
+
 
                 //insert mental exam
 
-                query = "INSERT INTO MENSTAT (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                query = "INSERT INTO MENSTAT (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
-                for (int ccnt = 0; ccnt < 29; ccnt++)
-                {
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid", cga.CID);
-                    cmd.Parameters.AddWithValue("@ans", me.getAns(ccnt));
-                    cmd.Parameters.AddWithValue("@num", ccnt + 1);
+                    cmd.Parameters.AddWithValue("@ans", me.getScore());
+         
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                }
+          
 
                 //insert nutrional assessment
-                query = "INSERT INTO NUT_ASS (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                query = "INSERT INTO NUT_ASS (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
-                for (int ccnt = 0; ccnt < 17; ccnt++)
-                {
+
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid", cga.CID);
-                    cmd.Parameters.AddWithValue("@ans", nut.getNut(ccnt));
-                    cmd.Parameters.AddWithValue("@num", ccnt + 1);
+                    cmd.Parameters.AddWithValue("@ans", nut.getScore());
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                }
+           
 
                 //insert caregiver assessment
 
-                query = "INSERT INTO CARE_ASS (CGAID,ANSWER,NUMBER) VALUES (@cid,@ans,@num);";
+                query = "INSERT INTO CARE_ASS (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
                 for (int ccnt = 0; ccnt < 4; ccnt++)
@@ -1127,7 +1134,7 @@ namespace introseHHC.RegForms
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid", cga.CID);
                     cmd.Parameters.AddWithValue("@ans", ca.getAns(ccnt));
-                    cmd.Parameters.AddWithValue("@num", ccnt + 1);
+                    
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
                 }

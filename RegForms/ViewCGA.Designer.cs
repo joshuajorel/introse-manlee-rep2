@@ -31,14 +31,14 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.exitBtn = new System.Windows.Forms.Button();
             this.delBtn = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.nutriField = new System.Windows.Forms.TextBox();
+            this.mentalField = new System.Windows.Forms.TextBox();
+            this.gdsField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bleedField = new System.Windows.Forms.TextBox();
+            this.tbField = new System.Windows.Forms.TextBox();
+            this.cancerField = new System.Windows.Forms.TextBox();
+            this.diabetesField = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.hobbyTB = new System.Windows.Forms.TextBox();
             this.drinkingTB = new System.Windows.Forms.TextBox();
@@ -69,6 +69,7 @@
             this.exitBtn.TabIndex = 15;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // delBtn
             // 
@@ -78,30 +79,31 @@
             this.delBtn.TabIndex = 13;
             this.delBtn.Text = "Delete";
             this.delBtn.UseVisualStyleBackColor = true;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
-            // textBox5
+            // nutriField
             // 
-            this.textBox5.Location = new System.Drawing.Point(285, 457);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(244, 20);
-            this.textBox5.TabIndex = 71;
+            this.nutriField.Location = new System.Drawing.Point(285, 457);
+            this.nutriField.Name = "nutriField";
+            this.nutriField.ReadOnly = true;
+            this.nutriField.Size = new System.Drawing.Size(244, 20);
+            this.nutriField.TabIndex = 71;
             // 
-            // textBox6
+            // mentalField
             // 
-            this.textBox6.Location = new System.Drawing.Point(285, 430);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(244, 20);
-            this.textBox6.TabIndex = 70;
+            this.mentalField.Location = new System.Drawing.Point(285, 430);
+            this.mentalField.Name = "mentalField";
+            this.mentalField.ReadOnly = true;
+            this.mentalField.Size = new System.Drawing.Size(244, 20);
+            this.mentalField.TabIndex = 70;
             // 
-            // textBox7
+            // gdsField
             // 
-            this.textBox7.Location = new System.Drawing.Point(285, 404);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(244, 20);
-            this.textBox7.TabIndex = 69;
+            this.gdsField.Location = new System.Drawing.Point(285, 404);
+            this.gdsField.Name = "gdsField";
+            this.gdsField.ReadOnly = true;
+            this.gdsField.Size = new System.Drawing.Size(244, 20);
+            this.gdsField.TabIndex = 69;
             // 
             // label1
             // 
@@ -113,37 +115,37 @@
             this.label1.Text = "Geriatric Depression Scale\r\n\r\nMini-mental Status Exam\r\n\r\nMini-nutrional Assessmen" +
                 "t\r\n";
             // 
-            // textBox1
+            // bleedField
             // 
-            this.textBox1.Location = new System.Drawing.Point(266, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(244, 20);
-            this.textBox1.TabIndex = 67;
+            this.bleedField.Location = new System.Drawing.Point(266, 359);
+            this.bleedField.Name = "bleedField";
+            this.bleedField.ReadOnly = true;
+            this.bleedField.Size = new System.Drawing.Size(244, 20);
+            this.bleedField.TabIndex = 67;
             // 
-            // textBox2
+            // tbField
             // 
-            this.textBox2.Location = new System.Drawing.Point(266, 332);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
-            this.textBox2.TabIndex = 66;
+            this.tbField.Location = new System.Drawing.Point(266, 332);
+            this.tbField.Name = "tbField";
+            this.tbField.ReadOnly = true;
+            this.tbField.Size = new System.Drawing.Size(244, 20);
+            this.tbField.TabIndex = 66;
             // 
-            // textBox3
+            // cancerField
             // 
-            this.textBox3.Location = new System.Drawing.Point(266, 306);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(244, 20);
-            this.textBox3.TabIndex = 65;
+            this.cancerField.Location = new System.Drawing.Point(266, 306);
+            this.cancerField.Name = "cancerField";
+            this.cancerField.ReadOnly = true;
+            this.cancerField.Size = new System.Drawing.Size(244, 20);
+            this.cancerField.TabIndex = 65;
             // 
-            // textBox4
+            // diabetesField
             // 
-            this.textBox4.Location = new System.Drawing.Point(266, 280);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(244, 20);
-            this.textBox4.TabIndex = 64;
+            this.diabetesField.Location = new System.Drawing.Point(266, 280);
+            this.diabetesField.Name = "diabetesField";
+            this.diabetesField.ReadOnly = true;
+            this.diabetesField.Size = new System.Drawing.Size(244, 20);
+            this.diabetesField.TabIndex = 64;
             // 
             // label5
             // 
@@ -253,14 +255,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 498);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.nutriField);
+            this.Controls.Add(this.mentalField);
+            this.Controls.Add(this.gdsField);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.bleedField);
+            this.Controls.Add(this.tbField);
+            this.Controls.Add(this.cancerField);
+            this.Controls.Add(this.diabetesField);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.hobbyTB);
             this.Controls.Add(this.drinkingTB);
@@ -288,14 +290,14 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button delBtn;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox nutriField;
+        private System.Windows.Forms.TextBox mentalField;
+        private System.Windows.Forms.TextBox gdsField;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox bleedField;
+        private System.Windows.Forms.TextBox tbField;
+        private System.Windows.Forms.TextBox cancerField;
+        private System.Windows.Forms.TextBox diabetesField;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox hobbyTB;
         private System.Windows.Forms.TextBox drinkingTB;
