@@ -11,7 +11,7 @@ namespace introseHHC.Objects
 
         public CGiverAssess()
         {
-            ans = new bool[4];
+            ans = new bool[] { false, false, false, false };
         }
 
         public void setAns(int n, bool x)

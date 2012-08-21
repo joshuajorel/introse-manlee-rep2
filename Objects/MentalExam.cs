@@ -8,27 +8,34 @@ namespace introseHHC.Objects
 {
     class MentalExam
     {
-        private Boolean[] ans;
+        private Boolean[] stat;
 
         public MentalExam()
         {
-            ans = new Boolean[30];
+            stat = new Boolean[30];
+        }
+
+        public MentalExam(Boolean[] ans)
+        {
+            stat = ans;
         }
 
         public void setAns(int n, bool a)
         {
-            ans[n] = a;
+            stat[n] = a;
         }
 
         public Boolean getAns(int n)
         {
-            return ans[n];
+            return stat[n];
         }
 
         public int getScore()
         {
             int score;
-            score = ans.Where(c => c == true).Count();
+            score = stat.Where(c => c == true).Count();
+            if (score == 29)
+                score = 30;
             return score;
         }
     }
