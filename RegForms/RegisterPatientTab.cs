@@ -1193,7 +1193,7 @@ namespace introseHHC.RegForms
                     cmd.ExecuteNonQuery();
 
                     CloseConnection();
-
+                    MessageBox.Show("Sign-up Complete!");
                     this.Close();
                 }
             }

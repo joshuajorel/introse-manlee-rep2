@@ -115,6 +115,21 @@ namespace introseHHC.RegForms
             getEmployeeDetailsBindingSource.Filter = "";
         }
 
+        private void patSearchIn_TextChanged(object sender, EventArgs e)
+        {
+            getPatientDetailsBindingSource.Filter = string.Format("Surname LIKE '*{0}*'", patSearchIn.Text);
+        }
+
+        private void clientSearchIn_TextChanged(object sender, EventArgs e)
+        {
+            getEmployeeDetailsBindingSource.Filter = string.Format("Surname LIKE '*{0}*'", empSearchIn.Text);
+        }
+
+        private void empSearchIn_TextChanged(object sender, EventArgs e)
+        {
+            getClientDetailsBindingSource.Filter = string.Format("Surname LIKE '*{0}*'", clientSearchIn.Text);
+        }
+
 
 
 

@@ -76,5 +76,10 @@ namespace introseHHC.RegForms
             searchIn.Text = "";
         }
 
+        private void searchIn_TextChanged(object sender, EventArgs e)
+        {
+            getPatientsBindingSource.Filter = string.Format("Surname LIKE '*{0}*'", searchIn.Text);
+        }
+
     }
 }

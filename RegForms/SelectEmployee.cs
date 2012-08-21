@@ -78,5 +78,10 @@ namespace introseHHC.RegForms
             searchIn.Text = "";
             getEmployeesBindingSource.Filter = "";
         }
+
+        private void searchIn_TextChanged(object sender, EventArgs e)
+        {
+            getEmployeesBindingSource.Filter = string.Format("Surname LIKE '*{0}*'", searchIn.Text);
+        }
     }
 }

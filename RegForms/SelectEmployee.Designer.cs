@@ -146,6 +146,7 @@
             this.searchIn.Name = "searchIn";
             this.searchIn.Size = new System.Drawing.Size(147, 20);
             this.searchIn.TabIndex = 13;
+            this.searchIn.TextChanged += new System.EventHandler(this.searchIn_TextChanged);
             // 
             // SelectEmployee
             // 

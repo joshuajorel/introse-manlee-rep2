@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -44,6 +44,7 @@
             this.getPatientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPatientDetailsDB = new introseHHC.getPatientDetailsDB();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.clientClearButton = new System.Windows.Forms.Button();
             this.clientSearch = new System.Windows.Forms.Button();
             this.clientSearchIn = new System.Windows.Forms.TextBox();
             this.clientView = new System.Windows.Forms.DataGridView();
@@ -54,6 +55,7 @@
             this.getClientDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getClientDetailsDB = new introseHHC.getClientDetailsDB();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.empClearButton = new System.Windows.Forms.Button();
             this.empSearch = new System.Windows.Forms.Button();
             this.empSearchIn = new System.Windows.Forms.TextBox();
             this.employeeView = new System.Windows.Forms.DataGridView();
@@ -68,8 +70,6 @@
             this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
             this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
             this.getEmployeeDetailsTableAdapter = new introseHHC.getEmployeeDetailsDBTableAdapters.getEmployeeDetailsTableAdapter();
-            this.clientClearButton = new System.Windows.Forms.Button();
-            this.empClearButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientView)).BeginInit();
@@ -144,13 +144,14 @@
             this.patSearchIn.Name = "patSearchIn";
             this.patSearchIn.Size = new System.Drawing.Size(365, 20);
             this.patSearchIn.TabIndex = 1;
+            this.patSearchIn.TextChanged += new System.EventHandler(this.patSearchIn_TextChanged);
             // 
             // patientView
             // 
             this.patientView.AllowUserToAddRows = false;
             this.patientView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.patientView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.patientView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.patientView.AutoGenerateColumns = false;
             this.patientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -220,6 +221,16 @@
             this.tabPage2.Text = "Client";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // clientClearButton
+            // 
+            this.clientClearButton.Location = new System.Drawing.Point(468, 11);
+            this.clientClearButton.Name = "clientClearButton";
+            this.clientClearButton.Size = new System.Drawing.Size(75, 23);
+            this.clientClearButton.TabIndex = 4;
+            this.clientClearButton.Text = "Clear";
+            this.clientClearButton.UseVisualStyleBackColor = true;
+            this.clientClearButton.Click += new System.EventHandler(this.clientClearButton_Click);
+            // 
             // clientSearch
             // 
             this.clientSearch.Location = new System.Drawing.Point(387, 11);
@@ -236,6 +247,7 @@
             this.clientSearchIn.Name = "clientSearchIn";
             this.clientSearchIn.Size = new System.Drawing.Size(365, 20);
             this.clientSearchIn.TabIndex = 2;
+            this.clientSearchIn.TextChanged += new System.EventHandler(this.clientSearchIn_TextChanged);
             // 
             // clientView
             // 
@@ -309,6 +321,16 @@
             this.tabPage3.Text = "Employee";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // empClearButton
+            // 
+            this.empClearButton.Location = new System.Drawing.Point(468, 11);
+            this.empClearButton.Name = "empClearButton";
+            this.empClearButton.Size = new System.Drawing.Size(75, 23);
+            this.empClearButton.TabIndex = 4;
+            this.empClearButton.Text = "Clear";
+            this.empClearButton.UseVisualStyleBackColor = true;
+            this.empClearButton.Click += new System.EventHandler(this.empClearButton_Click);
+            // 
             // empSearch
             // 
             this.empSearch.Location = new System.Drawing.Point(387, 11);
@@ -325,6 +347,7 @@
             this.empSearchIn.Name = "empSearchIn";
             this.empSearchIn.Size = new System.Drawing.Size(365, 20);
             this.empSearchIn.TabIndex = 2;
+            this.empSearchIn.TextChanged += new System.EventHandler(this.empSearchIn_TextChanged);
             // 
             // employeeView
             // 
@@ -415,26 +438,6 @@
             // getEmployeeDetailsTableAdapter
             // 
             this.getEmployeeDetailsTableAdapter.ClearBeforeFill = true;
-            // 
-            // clientClearButton
-            // 
-            this.clientClearButton.Location = new System.Drawing.Point(468, 11);
-            this.clientClearButton.Name = "clientClearButton";
-            this.clientClearButton.Size = new System.Drawing.Size(75, 23);
-            this.clientClearButton.TabIndex = 4;
-            this.clientClearButton.Text = "Clear";
-            this.clientClearButton.UseVisualStyleBackColor = true;
-            this.clientClearButton.Click += new System.EventHandler(this.clientClearButton_Click);
-            // 
-            // empClearButton
-            // 
-            this.empClearButton.Location = new System.Drawing.Point(468, 11);
-            this.empClearButton.Name = "empClearButton";
-            this.empClearButton.Size = new System.Drawing.Size(75, 23);
-            this.empClearButton.TabIndex = 4;
-            this.empClearButton.Text = "Clear";
-            this.empClearButton.UseVisualStyleBackColor = true;
-            this.empClearButton.Click += new System.EventHandler(this.empClearButton_Click);
             // 
             // ManageRecord
             // 
