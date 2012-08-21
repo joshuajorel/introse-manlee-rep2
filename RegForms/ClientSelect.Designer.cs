@@ -32,20 +32,23 @@
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.clientView = new System.Windows.Forms.DataGridView();
-            this.getClientsDB = new introseHHC.getClientsDB();
-            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getClientsTableAdapter = new introseHHC.getClientsDBTableAdapters.getClientsTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getClientsDB = new introseHHC.getClientsDB();
+            this.getClientsTableAdapter = new introseHHC.getClientsDBTableAdapters.getClientsTableAdapter();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.searchIn = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.clientView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientsDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsDB)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(22, 195);
+            this.okButton.Location = new System.Drawing.Point(12, 223);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 1;
@@ -55,7 +58,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(306, 194);
+            this.cancelButton.Location = new System.Drawing.Point(307, 223);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 2;
@@ -74,27 +77,13 @@
             this.firstNameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn});
             this.clientView.DataSource = this.getClientsBindingSource;
-            this.clientView.Location = new System.Drawing.Point(12, 12);
+            this.clientView.Location = new System.Drawing.Point(11, 57);
             this.clientView.MultiSelect = false;
             this.clientView.Name = "clientView";
             this.clientView.ReadOnly = true;
             this.clientView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientView.Size = new System.Drawing.Size(370, 150);
             this.clientView.TabIndex = 3;
-            // 
-            // getClientsDB
-            // 
-            this.getClientsDB.DataSetName = "getClientsDB";
-            this.getClientsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getClientsBindingSource
-            // 
-            this.getClientsBindingSource.DataMember = "getClients";
-            this.getClientsBindingSource.DataSource = this.getClientsDB;
-            // 
-            // getClientsTableAdapter
-            // 
-            this.getClientsTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -117,11 +106,55 @@
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // getClientsBindingSource
+            // 
+            this.getClientsBindingSource.DataMember = "getClients";
+            this.getClientsBindingSource.DataSource = this.getClientsDB;
+            // 
+            // getClientsDB
+            // 
+            this.getClientsDB.DataSetName = "getClientsDB";
+            this.getClientsDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getClientsTableAdapter
+            // 
+            this.getClientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(288, 13);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 12;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(207, 13);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 11;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // searchIn
+            // 
+            this.searchIn.Location = new System.Drawing.Point(54, 15);
+            this.searchIn.Name = "searchIn";
+            this.searchIn.Size = new System.Drawing.Size(147, 20);
+            this.searchIn.TabIndex = 10;
+            // 
             // ClientSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 258);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.searchIn);
             this.Controls.Add(this.clientView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
@@ -129,9 +162,10 @@
             this.Text = "ClientSelect";
             this.Load += new System.EventHandler(this.ClientSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientsDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsDB)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,5 +189,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox searchIn;
     }
 }

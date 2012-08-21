@@ -38,6 +38,9 @@
             this.getEmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getEmployeesDB1 = new introseHHC.getEmployeesDB();
             this.getEmployeesTableAdapter2 = new introseHHC.getEmployeesDBTableAdapters.getEmployeesTableAdapter();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.searchIn = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB1)).BeginInit();
@@ -45,7 +48,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(22, 213);
+            this.okButton.Location = new System.Drawing.Point(12, 223);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 1;
@@ -55,7 +58,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(307, 213);
+            this.cancelButton.Location = new System.Drawing.Point(307, 223);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 2;
@@ -74,12 +77,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.employeeView.DataSource = this.getEmployeesBindingSource;
-            this.employeeView.Location = new System.Drawing.Point(22, 23);
+            this.employeeView.Location = new System.Drawing.Point(11, 57);
             this.employeeView.MultiSelect = false;
             this.employeeView.Name = "employeeView";
             this.employeeView.ReadOnly = true;
             this.employeeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeView.Size = new System.Drawing.Size(360, 150);
+            this.employeeView.Size = new System.Drawing.Size(370, 150);
             this.employeeView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -117,11 +120,41 @@
             // 
             this.getEmployeesTableAdapter2.ClearBeforeFill = true;
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(288, 13);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 15;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(207, 13);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 14;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // searchIn
+            // 
+            this.searchIn.Location = new System.Drawing.Point(54, 15);
+            this.searchIn.Name = "searchIn";
+            this.searchIn.Size = new System.Drawing.Size(147, 20);
+            this.searchIn.TabIndex = 13;
+            // 
             // SelectEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 258);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.searchIn);
             this.Controls.Add(this.employeeView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
@@ -132,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesDB1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,5 +186,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox searchIn;
     }
 }
