@@ -245,17 +245,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.BleedingGB = new System.Windows.Forms.GroupBox();
-            this.radioButton93 = new System.Windows.Forms.RadioButton();
-            this.radioButton94 = new System.Windows.Forms.RadioButton();
+            this.bdNoRB = new System.Windows.Forms.RadioButton();
+            this.bdYesRB = new System.Windows.Forms.RadioButton();
             this.TubercolosisGB = new System.Windows.Forms.GroupBox();
-            this.radioButton91 = new System.Windows.Forms.RadioButton();
-            this.radioButton92 = new System.Windows.Forms.RadioButton();
+            this.tubNoRB = new System.Windows.Forms.RadioButton();
+            this.tubYesRB = new System.Windows.Forms.RadioButton();
             this.CancerGB = new System.Windows.Forms.GroupBox();
-            this.radioButton89 = new System.Windows.Forms.RadioButton();
-            this.radioButton90 = new System.Windows.Forms.RadioButton();
+            this.canNoRB = new System.Windows.Forms.RadioButton();
+            this.canYesRB = new System.Windows.Forms.RadioButton();
             this.DiabetesGB = new System.Windows.Forms.GroupBox();
-            this.radioButton88 = new System.Windows.Forms.RadioButton();
-            this.radioButton87 = new System.Windows.Forms.RadioButton();
+            this.diaNoRB = new System.Windows.Forms.RadioButton();
+            this.diaYesRB = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.hobbyTB = new System.Windows.Forms.TextBox();
             this.drinkingTB = new System.Windows.Forms.TextBox();
@@ -2678,131 +2678,131 @@
             // 
             // BleedingGB
             // 
-            this.BleedingGB.Controls.Add(this.radioButton93);
-            this.BleedingGB.Controls.Add(this.radioButton94);
+            this.BleedingGB.Controls.Add(this.bdNoRB);
+            this.BleedingGB.Controls.Add(this.bdYesRB);
             this.BleedingGB.Location = new System.Drawing.Point(132, 344);
             this.BleedingGB.Name = "BleedingGB";
             this.BleedingGB.Size = new System.Drawing.Size(89, 26);
             this.BleedingGB.TabIndex = 36;
             this.BleedingGB.TabStop = false;
             // 
-            // radioButton93
+            // bdNoRB
             // 
-            this.radioButton93.AutoSize = true;
-            this.radioButton93.Location = new System.Drawing.Point(48, 7);
-            this.radioButton93.Name = "radioButton93";
-            this.radioButton93.Size = new System.Drawing.Size(39, 17);
-            this.radioButton93.TabIndex = 1;
-            this.radioButton93.TabStop = true;
-            this.radioButton93.Text = "No";
-            this.radioButton93.UseVisualStyleBackColor = true;
+            this.bdNoRB.AutoSize = true;
+            this.bdNoRB.Location = new System.Drawing.Point(48, 7);
+            this.bdNoRB.Name = "bdNoRB";
+            this.bdNoRB.Size = new System.Drawing.Size(39, 17);
+            this.bdNoRB.TabIndex = 1;
+            this.bdNoRB.TabStop = true;
+            this.bdNoRB.Text = "No";
+            this.bdNoRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton94
+            // bdYesRB
             // 
-            this.radioButton94.AutoSize = true;
-            this.radioButton94.Location = new System.Drawing.Point(6, 7);
-            this.radioButton94.Name = "radioButton94";
-            this.radioButton94.Size = new System.Drawing.Size(43, 17);
-            this.radioButton94.TabIndex = 0;
-            this.radioButton94.TabStop = true;
-            this.radioButton94.Text = "Yes";
-            this.radioButton94.UseVisualStyleBackColor = true;
+            this.bdYesRB.AutoSize = true;
+            this.bdYesRB.Location = new System.Drawing.Point(6, 7);
+            this.bdYesRB.Name = "bdYesRB";
+            this.bdYesRB.Size = new System.Drawing.Size(43, 17);
+            this.bdYesRB.TabIndex = 0;
+            this.bdYesRB.TabStop = true;
+            this.bdYesRB.Text = "Yes";
+            this.bdYesRB.UseVisualStyleBackColor = true;
             // 
             // TubercolosisGB
             // 
-            this.TubercolosisGB.Controls.Add(this.radioButton91);
-            this.TubercolosisGB.Controls.Add(this.radioButton92);
+            this.TubercolosisGB.Controls.Add(this.tubNoRB);
+            this.TubercolosisGB.Controls.Add(this.tubYesRB);
             this.TubercolosisGB.Location = new System.Drawing.Point(132, 319);
             this.TubercolosisGB.Name = "TubercolosisGB";
             this.TubercolosisGB.Size = new System.Drawing.Size(89, 26);
             this.TubercolosisGB.TabIndex = 35;
             this.TubercolosisGB.TabStop = false;
             // 
-            // radioButton91
+            // tubNoRB
             // 
-            this.radioButton91.AutoSize = true;
-            this.radioButton91.Location = new System.Drawing.Point(48, 7);
-            this.radioButton91.Name = "radioButton91";
-            this.radioButton91.Size = new System.Drawing.Size(39, 17);
-            this.radioButton91.TabIndex = 1;
-            this.radioButton91.TabStop = true;
-            this.radioButton91.Text = "No";
-            this.radioButton91.UseVisualStyleBackColor = true;
+            this.tubNoRB.AutoSize = true;
+            this.tubNoRB.Location = new System.Drawing.Point(48, 7);
+            this.tubNoRB.Name = "tubNoRB";
+            this.tubNoRB.Size = new System.Drawing.Size(39, 17);
+            this.tubNoRB.TabIndex = 1;
+            this.tubNoRB.TabStop = true;
+            this.tubNoRB.Text = "No";
+            this.tubNoRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton92
+            // tubYesRB
             // 
-            this.radioButton92.AutoSize = true;
-            this.radioButton92.Location = new System.Drawing.Point(6, 7);
-            this.radioButton92.Name = "radioButton92";
-            this.radioButton92.Size = new System.Drawing.Size(43, 17);
-            this.radioButton92.TabIndex = 0;
-            this.radioButton92.TabStop = true;
-            this.radioButton92.Text = "Yes";
-            this.radioButton92.UseVisualStyleBackColor = true;
+            this.tubYesRB.AutoSize = true;
+            this.tubYesRB.Location = new System.Drawing.Point(6, 7);
+            this.tubYesRB.Name = "tubYesRB";
+            this.tubYesRB.Size = new System.Drawing.Size(43, 17);
+            this.tubYesRB.TabIndex = 0;
+            this.tubYesRB.TabStop = true;
+            this.tubYesRB.Text = "Yes";
+            this.tubYesRB.UseVisualStyleBackColor = true;
             // 
             // CancerGB
             // 
-            this.CancerGB.Controls.Add(this.radioButton89);
-            this.CancerGB.Controls.Add(this.radioButton90);
+            this.CancerGB.Controls.Add(this.canNoRB);
+            this.CancerGB.Controls.Add(this.canYesRB);
             this.CancerGB.Location = new System.Drawing.Point(132, 293);
             this.CancerGB.Name = "CancerGB";
             this.CancerGB.Size = new System.Drawing.Size(89, 26);
             this.CancerGB.TabIndex = 34;
             this.CancerGB.TabStop = false;
             // 
-            // radioButton89
+            // canNoRB
             // 
-            this.radioButton89.AutoSize = true;
-            this.radioButton89.Location = new System.Drawing.Point(48, 7);
-            this.radioButton89.Name = "radioButton89";
-            this.radioButton89.Size = new System.Drawing.Size(39, 17);
-            this.radioButton89.TabIndex = 1;
-            this.radioButton89.TabStop = true;
-            this.radioButton89.Text = "No";
-            this.radioButton89.UseVisualStyleBackColor = true;
+            this.canNoRB.AutoSize = true;
+            this.canNoRB.Location = new System.Drawing.Point(48, 7);
+            this.canNoRB.Name = "canNoRB";
+            this.canNoRB.Size = new System.Drawing.Size(39, 17);
+            this.canNoRB.TabIndex = 1;
+            this.canNoRB.TabStop = true;
+            this.canNoRB.Text = "No";
+            this.canNoRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton90
+            // canYesRB
             // 
-            this.radioButton90.AutoSize = true;
-            this.radioButton90.Location = new System.Drawing.Point(6, 7);
-            this.radioButton90.Name = "radioButton90";
-            this.radioButton90.Size = new System.Drawing.Size(43, 17);
-            this.radioButton90.TabIndex = 0;
-            this.radioButton90.TabStop = true;
-            this.radioButton90.Text = "Yes";
-            this.radioButton90.UseVisualStyleBackColor = true;
+            this.canYesRB.AutoSize = true;
+            this.canYesRB.Location = new System.Drawing.Point(6, 7);
+            this.canYesRB.Name = "canYesRB";
+            this.canYesRB.Size = new System.Drawing.Size(43, 17);
+            this.canYesRB.TabIndex = 0;
+            this.canYesRB.TabStop = true;
+            this.canYesRB.Text = "Yes";
+            this.canYesRB.UseVisualStyleBackColor = true;
             // 
             // DiabetesGB
             // 
-            this.DiabetesGB.Controls.Add(this.radioButton88);
-            this.DiabetesGB.Controls.Add(this.radioButton87);
+            this.DiabetesGB.Controls.Add(this.diaNoRB);
+            this.DiabetesGB.Controls.Add(this.diaYesRB);
             this.DiabetesGB.Location = new System.Drawing.Point(132, 266);
             this.DiabetesGB.Name = "DiabetesGB";
             this.DiabetesGB.Size = new System.Drawing.Size(89, 26);
             this.DiabetesGB.TabIndex = 33;
             this.DiabetesGB.TabStop = false;
             // 
-            // radioButton88
+            // diaNoRB
             // 
-            this.radioButton88.AutoSize = true;
-            this.radioButton88.Location = new System.Drawing.Point(48, 7);
-            this.radioButton88.Name = "radioButton88";
-            this.radioButton88.Size = new System.Drawing.Size(39, 17);
-            this.radioButton88.TabIndex = 1;
-            this.radioButton88.TabStop = true;
-            this.radioButton88.Text = "No";
-            this.radioButton88.UseVisualStyleBackColor = true;
+            this.diaNoRB.AutoSize = true;
+            this.diaNoRB.Location = new System.Drawing.Point(48, 7);
+            this.diaNoRB.Name = "diaNoRB";
+            this.diaNoRB.Size = new System.Drawing.Size(39, 17);
+            this.diaNoRB.TabIndex = 1;
+            this.diaNoRB.TabStop = true;
+            this.diaNoRB.Text = "No";
+            this.diaNoRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton87
+            // diaYesRB
             // 
-            this.radioButton87.AutoSize = true;
-            this.radioButton87.Location = new System.Drawing.Point(6, 7);
-            this.radioButton87.Name = "radioButton87";
-            this.radioButton87.Size = new System.Drawing.Size(43, 17);
-            this.radioButton87.TabIndex = 0;
-            this.radioButton87.TabStop = true;
-            this.radioButton87.Text = "Yes";
-            this.radioButton87.UseVisualStyleBackColor = true;
+            this.diaYesRB.AutoSize = true;
+            this.diaYesRB.Location = new System.Drawing.Point(6, 7);
+            this.diaYesRB.Name = "diaYesRB";
+            this.diaYesRB.Size = new System.Drawing.Size(43, 17);
+            this.diaYesRB.TabIndex = 0;
+            this.diaYesRB.TabStop = true;
+            this.diaYesRB.Text = "Yes";
+            this.diaYesRB.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -3278,17 +3278,17 @@
         private System.Windows.Forms.TextBox smokingTB;
         private System.Windows.Forms.TextBox allergyTB;
         private System.Windows.Forms.GroupBox BleedingGB;
-        private System.Windows.Forms.RadioButton radioButton93;
-        private System.Windows.Forms.RadioButton radioButton94;
+        private System.Windows.Forms.RadioButton bdNoRB;
+        private System.Windows.Forms.RadioButton bdYesRB;
         private System.Windows.Forms.GroupBox TubercolosisGB;
-        private System.Windows.Forms.RadioButton radioButton91;
-        private System.Windows.Forms.RadioButton radioButton92;
+        private System.Windows.Forms.RadioButton tubNoRB;
+        private System.Windows.Forms.RadioButton tubYesRB;
         private System.Windows.Forms.GroupBox CancerGB;
-        private System.Windows.Forms.RadioButton radioButton89;
-        private System.Windows.Forms.RadioButton radioButton90;
+        private System.Windows.Forms.RadioButton canNoRB;
+        private System.Windows.Forms.RadioButton canYesRB;
         private System.Windows.Forms.GroupBox DiabetesGB;
-        private System.Windows.Forms.RadioButton radioButton88;
-        private System.Windows.Forms.RadioButton radioButton87;
+        private System.Windows.Forms.RadioButton diaNoRB;
+        private System.Windows.Forms.RadioButton diaYesRB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;

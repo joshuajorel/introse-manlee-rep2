@@ -85,6 +85,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getPatientDetailsDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="getPatientsDB.cs">
+      <DependentUpon>getPatientsDB.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Objects\CGA.cs" />
     <Compile Include="Objects\CGiverAssess.cs" />
     <Compile Include="Objects\Checker.cs" />

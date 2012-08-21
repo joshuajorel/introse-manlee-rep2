@@ -147,7 +147,7 @@ namespace introseHHC.RegForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SocEnv soc = new SocEnv();
+            SocEnv soc = new SocEnv(selID ,connString);
             soc.ShowDialog();
         }
 
@@ -189,12 +189,13 @@ namespace introseHHC.RegForms
                 textBox1.Text = psel.Fname + " " + psel.Sname;
                 panel1.Enabled = true;
             }
-            else
-            {
-               
-            }
         }
 
+        private void setFHBoolean()
+        {
+            
+        }
+        
         private void nextBtn_Click(object sender, EventArgs e)
         {
             cga.setIns(hiTB.Text);
@@ -209,9 +210,12 @@ namespace introseHHC.RegForms
 
             cga.setPH(phis);
 
-            PersonalHistory test = new PersonalHistory();
-            test = cga.getPH();
-            Console.WriteLine(test.getAlg() + " " + test.getDnk() + " " + test.getHby() + " " + test.getSmk());
+            //for testing and it works
+            //PersonalHistory test = new PersonalHistory();
+            //test = cga.getPH();
+            //Console.WriteLine(test.getAlg() + " " + test.getDnk() + " " + test.getHby() + " " + test.getSmk());
+
+            setFHBoolean();
 
         }
 

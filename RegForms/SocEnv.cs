@@ -6,9 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.OleDb;
-using introseHHC.Objects;
 using MySql.Data.MySqlClient;
+using introseHHC.Objects;
 
 namespace introseHHC.RegForms
 {
@@ -21,20 +20,40 @@ namespace introseHHC.RegForms
         private string database;
         private string user;
         private string password;
-        private MySqlConnection conn2;
+        private DataSet ds;
 
         private SocEnv Soc;
         private DataTable dtb;
-        private OleDbDataAdapter dapt;
-        private UInt16 sel;
+        private UInt16 socID;
+        private string name;
+        private string relation;
+        private string freq;
 
-        public UInt16 Sel
+        public UInt16 SocID
         {
-            get { return sel; }
-            set { sel = value; }
+            get { return socID; }
+            set { socID = value; }
         }
 
-        public SocEnv()
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Relation
+        {
+            get { return relation; }
+            set { relation = value; }
+        }
+
+        public string Freq
+        {
+            get { return freq; }
+            set { freq = value; }
+        }
+
+        public SocEnv(UInt16 id, string c)
         {
             InitializeComponent();
             server = "localhost";
@@ -42,32 +61,27 @@ namespace introseHHC.RegForms
             database = "hhc-db";
             password = "root";
 
-            string connString = "SERVER=" + server + ";" + "DATABASE=" +
-                                database + ";" + "UID=" + user + ";" +
-                                "PASSWORD=" + password + ";";
-
-            conn = new MySqlConnection(connString);
-            //conn2 = OleDbConnection("@"+connString);
-            SocEnv Soc = new SocEnv();
+            conn = new MySqlConnection(c);
+            SocID = id;
+            DataSet ds = new DataSet();
+            UInt16 cgaID;
              
-
-           /* if (OpenConnection())
-            {
                 string query = "SELECT socenv.name AS 'Name', socenv.relationship AS 'Relationship'" +
-                    "socenv.frequency AS 'Frequency of Visit' cga_form.cgaid AS 'CGA Number'" +
+                    "socenv.frequency AS 'Frequency of Visit' " +
                     "FROM socenv LEFT JOIN cga_form ON cga_form.cgaid = socenv.cgaid;";
-                OleDbDataAdapter dapt = new OleDbDataAdapter(query, conn);
-                //this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                OleDbCommandBuilder comb = new OleDbCommandBuilder(dapt);
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", id);
 
-                DataTable dtb = new DataTable();
-                dapt.Fill(dtb, query);
-                dapt.Update(dtb);
-                dataGridView1.DataSource = dtb;
+                read = cmd.ExecuteReader();
+                read.Read();
+                //cgaID = UInt16.Parse(read.GetString("ID"));
+
+                //DataTable dtb = new DataTable();
+
+               // dataGridView1.DataSource = dtb;
                 //sel = 
-            }*/
-        }
-
+     
         /* public void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
          {
              string output = "";
@@ -81,27 +95,33 @@ namespace introseHHC.RegForms
                  dataGridView1.CurrentCell = dataGridView1[0, rows + 1];
              else
                  dataGridView1.CurrentCell = dataGridView1[col + 1, rows];
-
+            
          }*/
+    }
 
         private void doneButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
-       /* private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            AddSoc se = new AddSoc();
-            se.ShowDialog();
-            //dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text);
-            DataRow dr = dtb.NewRow();
+        //    AddSoc se = new AddSoc();
+        //    se.ShowDialog();
+           // dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text);
+           /* DataRow dr = dtb.NewRow();
             dr[0] = textBox1.Text;
             dr[1] = textBox2.Text;
             dr[2] = textBox3.Text;
 
             dtb.Rows.Add(dr);
             dataGridView1.DataSource = dtb;
-            dapt.Update(dtb);
-        }*/
+            //dapt.Update(dtb);*/
+        }
+
+        private void SocEnv_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

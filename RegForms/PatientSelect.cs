@@ -38,6 +38,7 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
             sel = 0;
+            Console.WriteLine("Initializing Test");
         }
 
         
