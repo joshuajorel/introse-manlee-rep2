@@ -3015,6 +3015,7 @@
             this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.cgaSubmitBtn);
             this.panel5.Controls.Add(this.label25);
+            this.panel5.Enabled = false;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(551, 450);

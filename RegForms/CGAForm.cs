@@ -217,6 +217,7 @@ namespace introseHHC.RegForms
                 panel2.Enabled = true;
                 panel3.Enabled = true;
                 panel4.Enabled = true;
+                panel5.Enabled = true;
             }
         }
 
@@ -1026,6 +1027,7 @@ namespace introseHHC.RegForms
         {
 
             cga.setCAss(ca);
+            MessageBox.Show("CGA successfully added to the database");
         }
 
         
