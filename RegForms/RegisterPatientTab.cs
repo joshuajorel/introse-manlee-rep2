@@ -1176,7 +1176,8 @@ namespace introseHHC.RegForms
             fsheet.EffectivityDate = effectPicker.Value;
             fsheet.Action = actionsTextBox.Text;
 
-            if (true) //error checking
+
+            if (fsheet.GatherID != fsheet.EndorseID) //error checking
             {
                 if (OpenConnection())
                 {
@@ -1199,6 +1200,7 @@ namespace introseHHC.RegForms
             }
             else
             {
+                MessageBox.Show("Gather and Endorse cannot be the same.");
             }
 
         }

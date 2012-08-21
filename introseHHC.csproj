@@ -99,10 +99,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getSocial.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Address.cs" />
     <Compile Include="Objects\CGA.cs" />
     <Compile Include="Objects\CGiverAssess.cs" />
     <Compile Include="Objects\Checker.cs" />
     <Compile Include="Objects\Client.cs" />
+    <Compile Include="Objects\Contact.cs" />
     <Compile Include="Objects\CostTable.cs" />
     <Compile Include="RegForms\EditAddress.cs">
       <SubType>Form</SubType>

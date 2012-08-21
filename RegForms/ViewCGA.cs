@@ -106,8 +106,8 @@ namespace introseHHC.RegForms
                         read.Read();
 
                         gdsField.Text = read.GetString(0);
+                        gdsField.Text = gdsField.Text+"-" + gds_assess(int.Parse(gdsField.Text));
                         read.Close();
-
                         query = "SELECT ANSWER FROM MENSTAT WHERE CGAID = @cgaID;";
                         cmd.CommandText = query;
                         cmd.Prepare();
@@ -124,6 +124,7 @@ namespace introseHHC.RegForms
                         read.Read();
 
                         nutriField.Text = read.GetString(0);
+                        nutriField.Text = nutriField.Text+"-" + nutri_assess(int.Parse(nutriField.Text));
                         read.Close();
 
 
@@ -189,6 +190,35 @@ namespace introseHHC.RegForms
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private String gds_assess(int y)
+        {
+            if (y < 5)
+            {
+                return "Normal";
+            }
+            else if (y < 11)
+            {
+                return "Mild to moderate depression";
+            }
+            else
+            {
+                return "Score suggests severe depression";
+            }
+        }
+        private String nutri_assess(int y)
+        {
+            if (y < 17)
+            {
+                return "Malnourished";
+            }
+            else if (y < 24)
+            {
+                return "Risk for malnutrition";
+            }
+            else
+                return "WELL NOURSIHED";
         }
     }
 }

@@ -40,104 +40,6 @@ namespace introseHHC.RegForms
         private Patient patient;
         private string connString;
 
-        private class Address
-        {
-            private UInt16 stno;
-
-            public UInt16 Stno
-            {
-                get { return stno; }
-                set { stno = value; }
-            }
-            private string addline;
-
-            public string Addline
-            {
-                get { return addline; }
-                set { addline = value; }
-            }
-            private string city;
-
-            public string City
-            {
-                get { return city; }
-                set { city = value; }
-            }
-            private string region;
-
-            public string Region
-            {
-                get { return region; }
-                set { region = value; }
-            }
-
-            public Address()
-            {
-                stno = 0;
-                addline = "";
-                city = "";
-                region = "";
-
-            }
-            public Address(UInt16 n, string a, string c, string r)
-            {
-                stno = n;
-                addline = a;
-                city = c;
-                region = r;
-            }
-        }
-        private class Contact
-        {
-            private int home;
-
-            public int Home
-            {
-                get { return home; }
-                set { home = value; }
-            }
-            private int work;
-
-            public int Work
-            {
-                get { return work; }
-                set { work = value; }
-            }
-            private int mobile;
-
-            public int Mobile
-            {
-                get { return mobile; }
-                set { mobile = value; }
-            }
-            private int other;
-
-            public int Other
-            {
-                get { return other; }
-                set { other = value; }
-            }
-
-            private string email;
-
-            public string Email
-            {
-                get { return email; }
-                set { email = value; }
-            }
-
-            public Contact()
-            {
-            }
-            public Contact(int h, int w, int m, int o)
-            {
-                home = h;
-                work = w;
-                mobile = m;
-                other = o;
-            }
-        }
-
         public ViewPatient(UInt16 id, string c)
         {   InitializeComponent();
 
@@ -173,7 +75,7 @@ namespace introseHHC.RegForms
                 a = read.GetString("AddLine");
                 ct = read.GetString("City");
                 r = read.GetString("Region");
-
+                
                 nameField.Text      = sname+", "+fname+" "+mname;
                 birthField.Text     = bday.ToShortDateString();
                 datePicker.Value    = bday;
@@ -200,7 +102,7 @@ namespace introseHHC.RegForms
                 //save a copy of contact details
                 tmp_Contact = new Contact(UInt16.Parse(homeField.Text), UInt16.Parse(workField.Text), UInt16.Parse(mobField.Text), UInt16.Parse(otherField.Text));
                 tmp_Contact.Email = emailField.Text;
-
+                
                 //place values into Patient Class.
                 patient.setID(ID);
                 patient.setName(d, fname, mname, sname);
