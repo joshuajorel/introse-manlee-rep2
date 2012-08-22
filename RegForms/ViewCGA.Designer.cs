@@ -278,6 +278,9 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.delBtn);
             this.Controls.Add(this.splitter1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(680, 525);
+            this.MinimumSize = new System.Drawing.Size(680, 525);
             this.Name = "ViewCGA";
             this.Text = "ViewCGA";
             this.ResumeLayout(false);

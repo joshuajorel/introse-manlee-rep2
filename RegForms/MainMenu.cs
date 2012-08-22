@@ -112,6 +112,11 @@ namespace introseHHC.RegForms
   
         }
 
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
       
     }
 }

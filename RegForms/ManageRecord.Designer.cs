@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -150,8 +150,8 @@
             // 
             this.patientView.AllowUserToAddRows = false;
             this.patientView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.patientView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.patientView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.patientView.AutoGenerateColumns = false;
             this.patientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -448,6 +448,9 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(670, 523);
+            this.MinimumSize = new System.Drawing.Size(670, 523);
             this.Name = "ManageRecord";
             this.Text = "Manage Records";
             this.Load += new System.EventHandler(this.ManageRecord_Load);

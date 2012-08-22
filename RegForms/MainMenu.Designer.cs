@@ -107,9 +107,14 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.manageRecButton);
             this.Controls.Add(this.button1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(271, 290);
+            this.MinimumSize = new System.Drawing.Size(271, 290);
             this.Name = "MainMenu";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Home Health Care";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
 
         }
