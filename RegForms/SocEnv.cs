@@ -16,10 +16,6 @@ namespace introseHHC.RegForms
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
         private SocialEnvironment SE;
 
         private SocEnv Soc;
@@ -86,10 +82,6 @@ namespace introseHHC.RegForms
         public SocEnv(UInt16 id, string c)
         {
             InitializeComponent();
-            server = "localhost";
-            user = "root";
-            database = "hhc-db";
-            password = "root";
 
             conn = new MySqlConnection(c);
             SocID = id;
@@ -106,7 +98,6 @@ namespace introseHHC.RegForms
             {
                 string query = "INSERT INTO SOCIAL(CGAID, NAME, RELATIONSHIP, FREQUENCY) VALUES (@id, @name, @rel, @freq)";
 
-
                 cmd = new MySqlCommand(query, conn);
                 cmd.Prepare();
 
@@ -121,9 +112,9 @@ namespace introseHHC.RegForms
                 {
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Social Registry Has Been Added.");
-                    textBox1.Text = string.Empty;
-                    textBox2.Text = string.Empty;
-                    textBox3.Text = string.Empty;
+                    nameField.Text = string.Empty;
+                    relField.Text = string.Empty;
+                    freqField.Text = string.Empty;
                     // check if the new one is _not_ the new row (this is the unexpected behavior mentioned in the questions comments)
                 }
                 catch (Exception err)
@@ -131,6 +122,8 @@ namespace introseHHC.RegForms
                     Console.WriteLine(err.Message);
                 }
                 CloseConnection();
+
+                this.getSocialTableAdapter.Fill(this.getSocial._getSocial);
             }
 
         }
@@ -148,9 +141,9 @@ namespace introseHHC.RegForms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            name = textBox1.Text;
-            relation = textBox2.Text;
-            freq = textBox3.Text;
+            name = nameField.Text;
+            relation = relField.Text;
+            freq = freqField.Text;
 
             SE.setNme(name);
             SE.setRlp(relation);
@@ -160,6 +153,11 @@ namespace introseHHC.RegForms
         }
 
         private void okButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void cancelButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
         }

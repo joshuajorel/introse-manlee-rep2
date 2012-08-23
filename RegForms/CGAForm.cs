@@ -29,6 +29,7 @@ namespace introseHHC.RegForms
         private UInt16 phyID;
         private int msScore;
 
+
         private Boolean[] gdAns = new Boolean[]{true, false, false, false, true, false, true, false, false, false, true, true, true, false, false};
         private Boolean[] meAns = new Boolean[30];
 
@@ -91,45 +92,7 @@ namespace introseHHC.RegForms
             }
         }
 
-        private void CGAForm_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton7_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label58_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void radioButton50_CheckedChanged(object sender, EventArgs e)
         {
@@ -141,15 +104,11 @@ namespace introseHHC.RegForms
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
-        {
+        {   //Immunization Record
             ImmRec IR = new ImmRec(cga.CID, connString);
             IR.ShowDialog();
+            IR.Close();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -158,27 +117,29 @@ namespace introseHHC.RegForms
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
+        {   //Society and Environment
             SocEnv soc = new SocEnv(cga.CID ,connString);
             soc.ShowDialog();
+            soc.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {   //Past Medical History
             PMedHist PMH = new PMedHist(cga.CID, connString);
             PMH.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            MedList ML = new MedList();
+        {   //Medication List
+            MedList ML = new MedList(connString);
             ML.ShowDialog();
         }
 
         private void button14_Click(object sender, EventArgs e)
-        {
+        {   //Functional Status
             FuncStat FS = new FuncStat(cga.CID, connString);
             FS.ShowDialog();
+            
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -206,13 +167,59 @@ namespace introseHHC.RegForms
 
             if (selID != 0)
             {
-                cga.PID = selID;
-                textBox1.Text = psel.Fname + " " + psel.Sname;
-                panel1.Enabled = true;
-                panel2.Enabled = true;
-                panel3.Enabled = true;
-                panel4.Enabled = true;
-                panel5.Enabled = true;
+
+
+                if (OpenConnection())
+                {
+                    string query;
+                    //check if patient alredy has a CGA record
+                    query = "SELECT COUNT(*) FROM CGA_FORM WHERE PATID = @pid;";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@pid", selID);
+                    read = cmd.ExecuteReader();
+                    read.Read();
+                    UInt16 tmp_id = UInt16.Parse(read.GetString(0));
+                    read.Close();
+
+                    //insert values from Patient tab.
+                    //insert selected Patient to CGA_FORM
+                    if (tmp_id == 0)
+                    {
+                        cga.PID = selID;
+                        textBox1.Text = psel.Fname + " " + psel.Sname;
+                        panel1.Enabled = true;
+                        panel2.Enabled = true;
+                        panel3.Enabled = true;
+                        panel4.Enabled = true;
+                        panel5.Enabled = true;
+
+                        cmd.Parameters.Clear();
+                        query = "INSERT INTO CGA_FORM (PATID) VALUES (@pid);";
+                        cmd = new MySqlCommand(query, conn);
+                        cmd.Prepare();
+                        cmd.Parameters.AddWithValue("@pid", selID);
+
+                        cmd.ExecuteNonQuery();
+                        //get generated CGA ID
+                        query = "SELECT LAST_INSERT_ID() FROM CGA_FORM;";
+                        cmd.CommandText = query;
+                        read = cmd.ExecuteReader();
+                        read.Read();
+
+                        cga.CID = UInt16.Parse(read.GetString(0));
+
+                        Console.WriteLine("CGA ID: {0}", cga.CID);
+
+                        read.Close();
+                        //end
+                    }
+                    else
+                    {
+                        MessageBox.Show("Patent already has an existing record.","Warning");
+                    }
+                    CloseConnection();
+                }
             }
 
         }
@@ -230,26 +237,6 @@ namespace introseHHC.RegForms
                 apTB.Text = sel.Fname + " " + sel.Sname;
             }
         }
-
-        //private void diaYesRB_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    fhis.setBD(true);
-        //}
-
-        //private void canYesRB_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    fhis.setCnr(true);
-        //}
-
-        //private void tubYesRB_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    fhis.setTub(true);
-        //}
-
-        //private void bdYesRB_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    fhis.setBD(true);
-        //}
 
         private void diaNoRB_CheckedChanged(object sender, EventArgs e)
         {
@@ -291,7 +278,6 @@ namespace introseHHC.RegForms
 
         private void nextBtn1_Click(object sender, EventArgs e)
         {
-
 
             cga.setIns(hiTB.Text);          
             cga.setPpc(ppcTB.Text);
@@ -435,81 +421,6 @@ namespace introseHHC.RegForms
             else
                 gds.setScale(14, false);
         }
-
-        //private void gdNo1_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(0, false);
-        //}
-
-        //private void gdNo2_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //        gds.setScale(1, false);
-        //}
-
-        //private void gdNo3_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(2, false);
-        //}
-
-        //private void gdNo4_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(3, false);
-        //}
-
-        //private void gdNo5_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(4, false);
-        //}
-
-        //private void gdNo6_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(5, false);
-        //}
-
-        //private void gdNo7_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(6, false);
-        //}
-
-        //private void gdNo8_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(7, false);
-        //}
-
-        //private void gdNo9_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(8, false);
-        //}
-
-        //private void gdNo10_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(9, false);
-        //}
-
-        //private void gdNo11_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(10, false);
-        //}
-
-        //private void gdNo12_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(11, false);
-        //}
-
-        //private void gdNo13_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(12, false);
-        //}
-
-        //private void gdNo14_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(13, false);
-        //}
-
-        //private void gdNo15_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    gds.setScale(14, false);
-        //}
 
         private void gdCompute_Click_1(object sender, EventArgs e)
         {
@@ -842,10 +753,6 @@ namespace introseHHC.RegForms
                 nut.setNut(4, 0);
         }
 
-        //private void na5Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    nut.setNut(4, 0);
-        //}
 
         private void na6Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -855,11 +762,6 @@ namespace introseHHC.RegForms
                 nut.setNut(5, 1);
         }
 
-        //private void na6Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    nut.setNut(5, 1);
-        //}
-
         private void na7Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na7Btn1.Checked)
@@ -867,11 +769,6 @@ namespace introseHHC.RegForms
             else
                 nut.setNut(6, 2);
         }
-
-        //private void na7Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    nut.setNut(6, 2);
-        //}
 
         private void na8Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -896,10 +793,6 @@ namespace introseHHC.RegForms
                 nut.setNut(8, 2);
         }
 
-        //private void na9Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    nut.setNut(8, 2);
-        //}
 
         private void na10Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -924,10 +817,6 @@ namespace introseHHC.RegForms
                 nut.setNut(10, 1);
         }
 
-        //private void na11Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    nut.setNut(10, 1);
-        //}
 
         private void na12Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -952,11 +841,6 @@ namespace introseHHC.RegForms
                 nut.proSet1(false);
         }
 
-        //private void na13Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (na13Btn2.Checked)
-        //    nut.proSub();
-        //}
 
         private void na14Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -983,10 +867,6 @@ namespace introseHHC.RegForms
                 nut.setNut(13, 0);
         }
 
-        //private void na16Btn2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    nut.setNut(13, 0);
-        //}
 
         private void na17Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1104,28 +984,7 @@ namespace introseHHC.RegForms
 
             if (OpenConnection())
             {
-                //insert values from Patient tab.
-                //insert selected Patient to CGA_FORM
-                string query;
-
-                query = "INSERT INTO CGA_FORM (PATID) VALUES (@pid);";
-                cmd = new MySqlCommand(query, conn);
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@pid", selID);
-
-                cmd.ExecuteNonQuery();
-                //get generated CGA ID
-                query = "SELECT LAST_INSERT_ID() FROM CGA_FORM;";
-                cmd.CommandText = query;
-                read = cmd.ExecuteReader();
-                read.Read();
-
-                cga.CID = UInt16.Parse(read.GetString(0));
-
-                Console.WriteLine("CGA ID: {0}", cga.CID);
-
-                read.Close();
-                //end
+                string query; 
                 cmd.Parameters.Clear();
                 query = string.Format("UPDATE CGA_FORM SET HINS = '{0}',PCON = '{1}',APHYS = @phys WHERE CGAID = @cid",
                     cga.getIns(),cga.getPpc());

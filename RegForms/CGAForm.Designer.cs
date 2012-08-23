@@ -110,13 +110,13 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.selPhysician = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.funcStatButton = new System.Windows.Forms.Button();
             this.nextBtn1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.immRecButton = new System.Windows.Forms.Button();
+            this.medListButton = new System.Windows.Forms.Button();
+            this.pastMedButton = new System.Windows.Forms.Button();
+            this.socEnvtAdd = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.BleedingGB = new System.Windows.Forms.GroupBox();
             this.bdNoRB = new System.Windows.Forms.RadioButton();
@@ -611,7 +611,6 @@
             this.na16Btn2.TabStop = true;
             this.na16Btn2.Text = "No";
             this.na16Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na16Btn1
             // 
@@ -645,7 +644,6 @@
             this.na15Btn2.TabStop = true;
             this.na15Btn2.Text = "No";
             this.na15Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na15Btn1
             // 
@@ -679,7 +677,6 @@
             this.na14Btn2.TabStop = true;
             this.na14Btn2.Text = "No";
             this.na14Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na14Btn1
             // 
@@ -713,7 +710,6 @@
             this.na13Btn2.TabStop = true;
             this.na13Btn2.Text = "No";
             this.na13Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na13Btn1
             // 
@@ -793,7 +789,6 @@
             this.na11Btn2.TabStop = true;
             this.na11Btn2.Text = "No";
             this.na11Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na11Btn1
             // 
@@ -873,7 +868,6 @@
             this.na9Btn2.TabStop = true;
             this.na9Btn2.Text = "No";
             this.na9Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na9Btn1
             // 
@@ -953,7 +947,6 @@
             this.na7Btn2.TabStop = true;
             this.na7Btn2.Text = "No";
             this.na7Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na7Btn1
             // 
@@ -988,7 +981,6 @@
             this.na6Btn2.TabStop = true;
             this.na6Btn2.Text = "No";
             this.na6Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na6Btn1
             // 
@@ -1022,7 +1014,6 @@
             this.na5Btn2.TabStop = true;
             this.na5Btn2.Text = "No";
             this.na5Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na5Btn1
             // 
@@ -1114,7 +1105,6 @@
             this.na3Btn2.TabStop = true;
             this.na3Btn2.Text = "CC>31";
             this.na3Btn2.UseVisualStyleBackColor = true;
-            
             // 
             // na3Btn1
             // 
@@ -1255,13 +1245,13 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.selPhysician);
-            this.panel1.Controls.Add(this.button14);
+            this.panel1.Controls.Add(this.funcStatButton);
             this.panel1.Controls.Add(this.nextBtn1);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.immRecButton);
+            this.panel1.Controls.Add(this.medListButton);
+            this.panel1.Controls.Add(this.pastMedButton);
+            this.panel1.Controls.Add(this.socEnvtAdd);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.BleedingGB);
             this.panel1.Controls.Add(this.TubercolosisGB);
@@ -1284,7 +1274,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(551, 419);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+        
             // 
             // selPhysician
             // 
@@ -1296,16 +1286,15 @@
             this.selPhysician.UseVisualStyleBackColor = true;
             this.selPhysician.Click += new System.EventHandler(this.selPhysician_Click);
             // 
-            // button14
+            // funcStatButton
             // 
-            this.button14.Location = new System.Drawing.Point(382, 409);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(82, 20);
-            this.button14.TabIndex = 44;
-            this.button14.Text = "Add";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Visible = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.funcStatButton.Location = new System.Drawing.Point(382, 409);
+            this.funcStatButton.Name = "funcStatButton";
+            this.funcStatButton.Size = new System.Drawing.Size(82, 20);
+            this.funcStatButton.TabIndex = 44;
+            this.funcStatButton.Text = "Add";
+            this.funcStatButton.UseVisualStyleBackColor = true;
+            this.funcStatButton.Click += new System.EventHandler(this.button14_Click);
             // 
             // nextBtn1
             // 
@@ -1325,49 +1314,45 @@
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 42;
             // 
-            // button6
+            // immRecButton
             // 
-            this.button6.Location = new System.Drawing.Point(382, 370);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(82, 20);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.immRecButton.Location = new System.Drawing.Point(382, 370);
+            this.immRecButton.Name = "immRecButton";
+            this.immRecButton.Size = new System.Drawing.Size(82, 20);
+            this.immRecButton.TabIndex = 41;
+            this.immRecButton.Text = "Add";
+            this.immRecButton.UseVisualStyleBackColor = true;
+            this.immRecButton.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // medListButton
             // 
-            this.button5.Location = new System.Drawing.Point(382, 331);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 20);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Add";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.medListButton.Location = new System.Drawing.Point(382, 331);
+            this.medListButton.Name = "medListButton";
+            this.medListButton.Size = new System.Drawing.Size(82, 20);
+            this.medListButton.TabIndex = 40;
+            this.medListButton.Text = "Add";
+            this.medListButton.UseVisualStyleBackColor = true;
+            this.medListButton.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // pastMedButton
             // 
-            this.button4.Location = new System.Drawing.Point(382, 293);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 20);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.pastMedButton.Location = new System.Drawing.Point(382, 293);
+            this.pastMedButton.Name = "pastMedButton";
+            this.pastMedButton.Size = new System.Drawing.Size(82, 20);
+            this.pastMedButton.TabIndex = 39;
+            this.pastMedButton.Text = "Add";
+            this.pastMedButton.UseVisualStyleBackColor = true;
+            this.pastMedButton.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // socEnvtAdd
             // 
-            this.button3.Location = new System.Drawing.Point(382, 254);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 20);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.socEnvtAdd.Location = new System.Drawing.Point(382, 254);
+            this.socEnvtAdd.Name = "socEnvtAdd";
+            this.socEnvtAdd.Size = new System.Drawing.Size(82, 20);
+            this.socEnvtAdd.TabIndex = 38;
+            this.socEnvtAdd.Text = "Add";
+            this.socEnvtAdd.UseVisualStyleBackColor = true;
+            this.socEnvtAdd.Click += new System.EventHandler(this.button3_Click);
             // 
             // label7
             // 
@@ -1378,7 +1363,6 @@
             this.label7.TabIndex = 37;
             this.label7.Text = "Social and\r\nEnvironment\r\n\r\nPast Medical\r\nHistory\r\n\r\nMedication \r\nList\r\n\r\nImmuniza" +
                 "tion\r\nRecord\r\n\r\nFunctional\r\nStatus";
-            this.label7.Visible = false;
             // 
             // BleedingGB
             // 
@@ -1445,7 +1429,6 @@
             this.tubYesRB.TabIndex = 0;
             this.tubYesRB.Text = "Yes";
             this.tubYesRB.UseVisualStyleBackColor = true;
-            
             // 
             // CancerGB
             // 
@@ -1479,7 +1462,6 @@
             this.canYesRB.TabIndex = 0;
             this.canYesRB.Text = "Yes";
             this.canYesRB.UseVisualStyleBackColor = true;
-            
             // 
             // DiabetesGB
             // 
@@ -1513,7 +1495,6 @@
             this.diaYesRB.TabIndex = 0;
             this.diaYesRB.Text = "Yes";
             this.diaYesRB.UseVisualStyleBackColor = true;
-            
             // 
             // label5
             // 
@@ -1663,7 +1644,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Geriatric Depression Scale";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+
             // 
             // panel2
             // 
@@ -1770,7 +1751,6 @@
             this.gdNo13.TabIndex = 2;
             this.gdNo13.Text = "Yes";
             this.gdNo13.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox18
             // 
@@ -1804,7 +1784,6 @@
             this.gdNo12.TabIndex = 2;
             this.gdNo12.Text = "Yes";
             this.gdNo12.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox19
             // 
@@ -1838,7 +1817,6 @@
             this.gdNo11.TabIndex = 2;
             this.gdNo11.Text = "Yes";
             this.gdNo11.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox10
             // 
@@ -1861,7 +1839,6 @@
             this.gdNo10.TabStop = true;
             this.gdNo10.Text = "No";
             this.gdNo10.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore10
             // 
@@ -2057,7 +2034,6 @@
             this.gdNo15.TabStop = true;
             this.gdNo15.Text = "No";
             this.gdNo15.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore15
             // 
@@ -2091,7 +2067,6 @@
             this.gdNo14.TabStop = true;
             this.gdNo14.Text = "No";
             this.gdNo14.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore14
             // 
@@ -2125,7 +2100,6 @@
             this.gdNo9.TabStop = true;
             this.gdNo9.Text = "No";
             this.gdNo9.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore9
             // 
@@ -2159,7 +2133,6 @@
             this.gdNo8.TabStop = true;
             this.gdNo8.Text = "No";
             this.gdNo8.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore8
             // 
@@ -2204,7 +2177,6 @@
             this.gdNo7.TabIndex = 2;
             this.gdNo7.Text = "Yes";
             this.gdNo7.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox14
             // 
@@ -2227,7 +2199,6 @@
             this.gdNo6.TabStop = true;
             this.gdNo6.Text = "No";
             this.gdNo6.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore6
             // 
@@ -2272,7 +2243,6 @@
             this.gdNo5.TabIndex = 2;
             this.gdNo5.Text = "Yes";
             this.gdNo5.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox4
             // 
@@ -2295,7 +2265,6 @@
             this.gdNo4.TabStop = true;
             this.gdNo4.Text = "No";
             this.gdNo4.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore4
             // 
@@ -2329,7 +2298,6 @@
             this.gdNo3.TabStop = true;
             this.gdNo3.Text = "No";
             this.gdNo3.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore3
             // 
@@ -2363,7 +2331,6 @@
             this.gdNo2.TabStop = true;
             this.gdNo2.Text = "No";
             this.gdNo2.UseVisualStyleBackColor = true;
-            
             // 
             // gdScore2
             // 
@@ -2408,7 +2375,6 @@
             this.gdNo1.TabIndex = 2;
             this.gdNo1.Text = "Yes";
             this.gdNo1.UseVisualStyleBackColor = true;
-            
             // 
             // tabPage3
             // 
@@ -2421,7 +2387,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mental Status";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+    
             // 
             // panel3
             // 
@@ -3048,7 +3014,6 @@
             this.radioButton10.TabIndex = 0;
             this.radioButton10.Text = "Yes";
             this.radioButton10.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox6
             // 
@@ -3082,7 +3047,6 @@
             this.radioButton12.TabIndex = 0;
             this.radioButton12.Text = "Yes";
             this.radioButton12.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox7
             // 
@@ -3116,7 +3080,6 @@
             this.radioButton14.TabIndex = 0;
             this.radioButton14.Text = "Yes";
             this.radioButton14.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox8
             // 
@@ -3150,7 +3113,6 @@
             this.cg.TabIndex = 0;
             this.cg.Text = "Yes";
             this.cg.UseVisualStyleBackColor = true;
-            
             // 
             // label21
             // 
@@ -3220,8 +3182,7 @@
             this.Controls.Add(this.splitter1);
             this.Name = "CGAForm";
             this.Text = "CGAForm";
-            this.Load += new System.EventHandler(this.CGAForm_Load);
-            this.tabPage4.ResumeLayout(false);
+           this.tabPage4.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox38.ResumeLayout(false);
@@ -3362,14 +3323,14 @@
         private System.Windows.Forms.RadioButton diaNoRB;
         private System.Windows.Forms.RadioButton diaYesRB;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button immRecButton;
+        private System.Windows.Forms.Button medListButton;
+        private System.Windows.Forms.Button pastMedButton;
+        private System.Windows.Forms.Button socEnvtAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button nextBtn1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button funcStatButton;
         private System.Windows.Forms.Button selPhysician;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;

@@ -120,7 +120,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ImmRec";
-            this.Text = "ImmRec";
+            this.Text = "Immunization Record";
             this.ResumeLayout(false);
             this.PerformLayout();
 

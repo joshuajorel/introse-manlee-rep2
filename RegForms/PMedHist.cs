@@ -74,8 +74,8 @@ namespace introseHHC.RegForms
             try
             {
                 cmd.ExecuteNonQuery();
-                textBox1.Text = string.Empty;
-                textBox2.Text = string.Empty;
+                diagField.Text = string.Empty;
+                placeField.Text = string.Empty;
                 Console.WriteLine("Past Medical History Has Been Added.");
 
             }
@@ -88,8 +88,8 @@ namespace introseHHC.RegForms
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            diag = textBox1.Text;
-            place = textBox2.Text;
+            diag = diagField.Text;
+            place = placeField.Text;
             date = DatePick.Value;
 
             mhis.setMH(diag, place, date);
