@@ -150,6 +150,9 @@
             this.Controls.Add(this.regionField);
             this.Controls.Add(this.cityField);
             this.Controls.Add(this.addLineField);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(404, 160);
+            this.MinimumSize = new System.Drawing.Size(404, 160);
             this.Name = "EditAddress";
             this.Text = "EditAddress";
             this.ResumeLayout(false);

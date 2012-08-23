@@ -159,6 +159,9 @@
             this.Controls.Add(this.clientView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(402, 285);
+            this.MinimumSize = new System.Drawing.Size(402, 285);
             this.Name = "ClientSelect";
             this.Text = "ClientSelect";
             this.Load += new System.EventHandler(this.ClientSelect_Load);

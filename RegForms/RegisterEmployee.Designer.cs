@@ -569,6 +569,9 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(678, 523);
+            this.MinimumSize = new System.Drawing.Size(678, 523);
             this.Name = "RegisterEmployee";
             this.Text = "Register Employee";
             this.Load += new System.EventHandler(this.RegisterEmployee_Load);

@@ -1764,6 +1764,9 @@ namespace introseHHC.RegForms
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(678, 523);
+            this.MinimumSize = new System.Drawing.Size(678, 523);
             this.Name = "RegisterPatientTab";
             this.Text = "Register Face Sheet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterPatientTab_FormClosed);

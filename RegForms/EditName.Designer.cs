@@ -144,6 +144,9 @@
             this.Controls.Add(this.desigBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(404, 160);
+            this.MinimumSize = new System.Drawing.Size(404, 160);
             this.Name = "EditName";
             this.Text = "EditName";
             this.ResumeLayout(false);

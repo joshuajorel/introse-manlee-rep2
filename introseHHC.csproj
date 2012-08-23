@@ -189,12 +189,6 @@
     <Compile Include="RegForms\PatientSelect.Designer.cs">
       <DependentUpon>PatientSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegForms\PatientView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegForms\PatientView.Designer.cs">
-      <DependentUpon>PatientView.cs</DependentUpon>
-    </Compile>
     <Compile Include="RegForms\ManageRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,9 +296,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\PatientSelect.resx">
       <DependentUpon>PatientSelect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegForms\PatientView.resx">
-      <DependentUpon>PatientView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ManageRecord.resx">
       <DependentUpon>ManageRecord.cs</DependentUpon>
