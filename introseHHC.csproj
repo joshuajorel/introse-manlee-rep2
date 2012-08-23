@@ -87,7 +87,6 @@
     </Compile>
     <Compile Include="getPatientsDB.cs">
       <DependentUpon>getPatientsDB.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="getPMed.Designer.cs">
       <AutoGen>True</AutoGen>

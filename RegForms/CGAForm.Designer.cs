@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CGAForm));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.button9 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nutTB = new System.Windows.Forms.TextBox();
@@ -360,15 +359,6 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(13, 40);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Reset";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
             // tabPage4
             // 
             this.tabPage4.AutoScroll = true;
@@ -621,7 +611,7 @@
             this.na16Btn2.TabStop = true;
             this.na16Btn2.Text = "No";
             this.na16Btn2.UseVisualStyleBackColor = true;
-            this.na16Btn2.CheckedChanged += new System.EventHandler(this.na16Btn2_CheckedChanged);
+            
             // 
             // na16Btn1
             // 
@@ -655,7 +645,7 @@
             this.na15Btn2.TabStop = true;
             this.na15Btn2.Text = "No";
             this.na15Btn2.UseVisualStyleBackColor = true;
-            this.na15Btn2.CheckedChanged += new System.EventHandler(this.na15Btn2_CheckedChanged);
+            
             // 
             // na15Btn1
             // 
@@ -689,7 +679,7 @@
             this.na14Btn2.TabStop = true;
             this.na14Btn2.Text = "No";
             this.na14Btn2.UseVisualStyleBackColor = true;
-            this.na14Btn2.CheckedChanged += new System.EventHandler(this.na14Btn2_CheckedChanged);
+            
             // 
             // na14Btn1
             // 
@@ -723,7 +713,7 @@
             this.na13Btn2.TabStop = true;
             this.na13Btn2.Text = "No";
             this.na13Btn2.UseVisualStyleBackColor = true;
-            this.na13Btn2.CheckedChanged += new System.EventHandler(this.na13Btn2_CheckedChanged);
+            
             // 
             // na13Btn1
             // 
@@ -803,7 +793,7 @@
             this.na11Btn2.TabStop = true;
             this.na11Btn2.Text = "No";
             this.na11Btn2.UseVisualStyleBackColor = true;
-            this.na11Btn2.CheckedChanged += new System.EventHandler(this.na11Btn2_CheckedChanged);
+            
             // 
             // na11Btn1
             // 
@@ -883,7 +873,7 @@
             this.na9Btn2.TabStop = true;
             this.na9Btn2.Text = "No";
             this.na9Btn2.UseVisualStyleBackColor = true;
-            this.na9Btn2.CheckedChanged += new System.EventHandler(this.na9Btn2_CheckedChanged);
+            
             // 
             // na9Btn1
             // 
@@ -963,7 +953,7 @@
             this.na7Btn2.TabStop = true;
             this.na7Btn2.Text = "No";
             this.na7Btn2.UseVisualStyleBackColor = true;
-            this.na7Btn2.CheckedChanged += new System.EventHandler(this.na7Btn2_CheckedChanged);
+            
             // 
             // na7Btn1
             // 
@@ -998,7 +988,7 @@
             this.na6Btn2.TabStop = true;
             this.na6Btn2.Text = "No";
             this.na6Btn2.UseVisualStyleBackColor = true;
-            this.na6Btn2.CheckedChanged += new System.EventHandler(this.na6Btn2_CheckedChanged);
+            
             // 
             // na6Btn1
             // 
@@ -1032,7 +1022,7 @@
             this.na5Btn2.TabStop = true;
             this.na5Btn2.Text = "No";
             this.na5Btn2.UseVisualStyleBackColor = true;
-            this.na5Btn2.CheckedChanged += new System.EventHandler(this.na5Btn2_CheckedChanged);
+            
             // 
             // na5Btn1
             // 
@@ -1124,7 +1114,7 @@
             this.na3Btn2.TabStop = true;
             this.na3Btn2.Text = "CC>31";
             this.na3Btn2.UseVisualStyleBackColor = true;
-            this.na3Btn2.CheckedChanged += new System.EventHandler(this.na3Btn2_CheckedChanged);
+            
             // 
             // na3Btn1
             // 
@@ -1422,7 +1412,6 @@
             this.bdYesRB.TabIndex = 0;
             this.bdYesRB.Text = "Yes";
             this.bdYesRB.UseVisualStyleBackColor = true;
-            this.bdYesRB.CheckedChanged += new System.EventHandler(this.bdYesRB_CheckedChanged);
             // 
             // TubercolosisGB
             // 
@@ -1456,7 +1445,7 @@
             this.tubYesRB.TabIndex = 0;
             this.tubYesRB.Text = "Yes";
             this.tubYesRB.UseVisualStyleBackColor = true;
-            this.tubYesRB.CheckedChanged += new System.EventHandler(this.tubYesRB_CheckedChanged);
+            
             // 
             // CancerGB
             // 
@@ -1490,7 +1479,7 @@
             this.canYesRB.TabIndex = 0;
             this.canYesRB.Text = "Yes";
             this.canYesRB.UseVisualStyleBackColor = true;
-            this.canYesRB.CheckedChanged += new System.EventHandler(this.canYesRB_CheckedChanged);
+            
             // 
             // DiabetesGB
             // 
@@ -1524,7 +1513,7 @@
             this.diaYesRB.TabIndex = 0;
             this.diaYesRB.Text = "Yes";
             this.diaYesRB.UseVisualStyleBackColor = true;
-            this.diaYesRB.CheckedChanged += new System.EventHandler(this.diaYesRB_CheckedChanged);
+            
             // 
             // label5
             // 
@@ -1781,7 +1770,7 @@
             this.gdNo13.TabIndex = 2;
             this.gdNo13.Text = "Yes";
             this.gdNo13.UseVisualStyleBackColor = true;
-            this.gdNo13.CheckedChanged += new System.EventHandler(this.gdNo13_CheckedChanged_1);
+            
             // 
             // groupBox18
             // 
@@ -1815,7 +1804,7 @@
             this.gdNo12.TabIndex = 2;
             this.gdNo12.Text = "Yes";
             this.gdNo12.UseVisualStyleBackColor = true;
-            this.gdNo12.CheckedChanged += new System.EventHandler(this.gdNo12_CheckedChanged_1);
+            
             // 
             // groupBox19
             // 
@@ -1849,7 +1838,7 @@
             this.gdNo11.TabIndex = 2;
             this.gdNo11.Text = "Yes";
             this.gdNo11.UseVisualStyleBackColor = true;
-            this.gdNo11.CheckedChanged += new System.EventHandler(this.gdNo11_CheckedChanged_1);
+            
             // 
             // groupBox10
             // 
@@ -1872,7 +1861,7 @@
             this.gdNo10.TabStop = true;
             this.gdNo10.Text = "No";
             this.gdNo10.UseVisualStyleBackColor = true;
-            this.gdNo10.CheckedChanged += new System.EventHandler(this.gdNo10_CheckedChanged_1);
+            
             // 
             // gdScore10
             // 
@@ -2068,7 +2057,7 @@
             this.gdNo15.TabStop = true;
             this.gdNo15.Text = "No";
             this.gdNo15.UseVisualStyleBackColor = true;
-            this.gdNo15.CheckedChanged += new System.EventHandler(this.gdNo15_CheckedChanged_1);
+            
             // 
             // gdScore15
             // 
@@ -2102,7 +2091,7 @@
             this.gdNo14.TabStop = true;
             this.gdNo14.Text = "No";
             this.gdNo14.UseVisualStyleBackColor = true;
-            this.gdNo14.CheckedChanged += new System.EventHandler(this.gdNo14_CheckedChanged_1);
+            
             // 
             // gdScore14
             // 
@@ -2136,7 +2125,7 @@
             this.gdNo9.TabStop = true;
             this.gdNo9.Text = "No";
             this.gdNo9.UseVisualStyleBackColor = true;
-            this.gdNo9.CheckedChanged += new System.EventHandler(this.gdNo9_CheckedChanged_1);
+            
             // 
             // gdScore9
             // 
@@ -2170,7 +2159,7 @@
             this.gdNo8.TabStop = true;
             this.gdNo8.Text = "No";
             this.gdNo8.UseVisualStyleBackColor = true;
-            this.gdNo8.CheckedChanged += new System.EventHandler(this.gdNo8_CheckedChanged_1);
+            
             // 
             // gdScore8
             // 
@@ -2215,7 +2204,7 @@
             this.gdNo7.TabIndex = 2;
             this.gdNo7.Text = "Yes";
             this.gdNo7.UseVisualStyleBackColor = true;
-            this.gdNo7.CheckedChanged += new System.EventHandler(this.gdNo7_CheckedChanged_1);
+            
             // 
             // groupBox14
             // 
@@ -2238,7 +2227,7 @@
             this.gdNo6.TabStop = true;
             this.gdNo6.Text = "No";
             this.gdNo6.UseVisualStyleBackColor = true;
-            this.gdNo6.CheckedChanged += new System.EventHandler(this.gdNo6_CheckedChanged_1);
+            
             // 
             // gdScore6
             // 
@@ -2283,7 +2272,7 @@
             this.gdNo5.TabIndex = 2;
             this.gdNo5.Text = "Yes";
             this.gdNo5.UseVisualStyleBackColor = true;
-            this.gdNo5.CheckedChanged += new System.EventHandler(this.gdNo5_CheckedChanged_1);
+            
             // 
             // groupBox4
             // 
@@ -2306,7 +2295,7 @@
             this.gdNo4.TabStop = true;
             this.gdNo4.Text = "No";
             this.gdNo4.UseVisualStyleBackColor = true;
-            this.gdNo4.CheckedChanged += new System.EventHandler(this.gdNo4_CheckedChanged_1);
+            
             // 
             // gdScore4
             // 
@@ -2340,7 +2329,7 @@
             this.gdNo3.TabStop = true;
             this.gdNo3.Text = "No";
             this.gdNo3.UseVisualStyleBackColor = true;
-            this.gdNo3.CheckedChanged += new System.EventHandler(this.gdNo3_CheckedChanged_1);
+            
             // 
             // gdScore3
             // 
@@ -2374,7 +2363,7 @@
             this.gdNo2.TabStop = true;
             this.gdNo2.Text = "No";
             this.gdNo2.UseVisualStyleBackColor = true;
-            this.gdNo2.CheckedChanged += new System.EventHandler(this.gdNo2_CheckedChanged_1);
+            
             // 
             // gdScore2
             // 
@@ -2419,7 +2408,7 @@
             this.gdNo1.TabIndex = 2;
             this.gdNo1.Text = "Yes";
             this.gdNo1.UseVisualStyleBackColor = true;
-            this.gdNo1.CheckedChanged += new System.EventHandler(this.gdNo1_CheckedChanged_1);
+            
             // 
             // tabPage3
             // 
@@ -3059,7 +3048,7 @@
             this.radioButton10.TabIndex = 0;
             this.radioButton10.Text = "Yes";
             this.radioButton10.UseVisualStyleBackColor = true;
-            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
+            
             // 
             // groupBox6
             // 
@@ -3093,7 +3082,7 @@
             this.radioButton12.TabIndex = 0;
             this.radioButton12.Text = "Yes";
             this.radioButton12.UseVisualStyleBackColor = true;
-            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
+            
             // 
             // groupBox7
             // 
@@ -3127,7 +3116,7 @@
             this.radioButton14.TabIndex = 0;
             this.radioButton14.Text = "Yes";
             this.radioButton14.UseVisualStyleBackColor = true;
-            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
+            
             // 
             // groupBox8
             // 
@@ -3161,7 +3150,7 @@
             this.cg.TabIndex = 0;
             this.cg.Text = "Yes";
             this.cg.UseVisualStyleBackColor = true;
-            this.cg.CheckedChanged += new System.EventHandler(this.cg_CheckedChanged);
+            
             // 
             // label21
             // 
@@ -3227,7 +3216,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 490);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
             this.Name = "CGAForm";
@@ -3343,7 +3331,6 @@
 
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;

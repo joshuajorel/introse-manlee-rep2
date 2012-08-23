@@ -231,44 +231,62 @@ namespace introseHHC.RegForms
             }
         }
 
-        private void diaYesRB_CheckedChanged(object sender, EventArgs e)
-        {
-            fhis.setBD(true);
-        }
+        //private void diaYesRB_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    fhis.setBD(true);
+        //}
 
-        private void canYesRB_CheckedChanged(object sender, EventArgs e)
-        {
-            fhis.setCnr(true);
-        }
+        //private void canYesRB_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    fhis.setCnr(true);
+        //}
 
-        private void tubYesRB_CheckedChanged(object sender, EventArgs e)
-        {
-            fhis.setTub(true);
-        }
+        //private void tubYesRB_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    fhis.setTub(true);
+        //}
 
-        private void bdYesRB_CheckedChanged(object sender, EventArgs e)
-        {
-            fhis.setBD(true);
-        }
+        //private void bdYesRB_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    fhis.setBD(true);
+        //}
 
         private void diaNoRB_CheckedChanged(object sender, EventArgs e)
         {
-            fhis.setDbs(false);
+            if (diaNoRB.Checked)
+            {
+                fhis.setDbs(false);
+                Console.WriteLine(fhis.getDbs());
+            }
+            else
+            {
+                fhis.setDbs(true);
+                Console.WriteLine(fhis.getDbs());
+            }
         }
 
         private void canNoRB_CheckedChanged(object sender, EventArgs e)
         {
-            fhis.setCnr(false);
+            if (canNoRB.Checked)
+                fhis.setCnr(false);
+            else
+                fhis.setCnr(true);
         }
 
         private void tubNoRB_CheckedChanged(object sender, EventArgs e)
         {
-            fhis.setTub(false);
+            if (tubNoRB.Checked)
+                fhis.setTub(false);
+            else
+                fhis.setTub(true);
         }
 
         private void bdNoRB_CheckedChanged(object sender, EventArgs e)
         {
-            fhis.setBD(false);
+            if (bdNoRB.Checked)
+                fhis.setBD(false);
+            else
+                fhis.setBD(true);
         }
 
         private void nextBtn1_Click(object sender, EventArgs e)
@@ -296,153 +314,202 @@ namespace introseHHC.RegForms
 
         private void gdScore1_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(0, true);
+            if (gdScore1.Checked)
+                gds.setScale(0, true);
+            else
+            {
+                gds.setScale(0, false);
+            }
+                
         }
 
         private void gdScore2_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(1, true);
+            if (gdScore2.Checked)
+                gds.setScale(1, true);
+            else
+                gds.setScale(1, false);
         }
 
         private void gdScore3_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(2, true);
+            if (gdScore3.Checked)
+                gds.setScale(2, true);
+            else
+                gds.setScale(2, false);
         }
 
         private void gdScore4_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(3, true);
+            if (gdScore4.Checked)
+                gds.setScale(3, true);
+            else
+                gds.setScale(3, false);
+            
         }
 
         private void gdScore5_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(4, true);
+            if (gdScore5.Checked)
+                gds.setScale(4, true);
+            else
+                gds.setScale(4, false);
         }
 
         private void gdScore6_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(5, true);
+            if (gdScore6.Checked)
+                gds.setScale(5, true);
+            else
+                gds.setScale(5, false);
         }
 
         private void gdScore7_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(6, true);
+            if (gdScore7.Checked)
+                gds.setScale(6, true);
+            else
+                gds.setScale(6, false);
         }
 
         private void gdScore8_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(7, true);
+            if (gdScore8.Checked)
+                gds.setScale(7, true);
+            else
+                gds.setScale(7, false);
         }
 
         private void gdScore9_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(8, true);
+            if (gdScore9.Checked)
+                gds.setScale(8, true);
+            else
+                gds.setScale(8, false);
         }
 
         private void gdScore10_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(9, true);
+            if (gdScore10.Checked)
+                gds.setScale(9, true);
+            else
+                gds.setScale(9, false);
         }
 
         private void gdScore11_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(10, true);
+            if (gdScore11.Checked)
+                gds.setScale(10, true);
+            else
+                gds.setScale(10, false);
         }
 
         private void gdScore12_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(11, true);
+            if (gdScore12.Checked)
+                gds.setScale(11, true);
+            else
+                gds.setScale(11, false);
         }
 
         private void gdScore13_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(12, true);
+            if (gdScore13.Checked)
+                gds.setScale(12, true);
+            else
+                gds.setScale(12, false);
         }
 
         private void gdScore14_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(13, true);
+            if (gdScore14.Checked)
+                gds.setScale(13, true);
+            else
+                gds.setScale(13, false);
         }
 
         private void gdScore15_CheckedChanged_1(object sender, EventArgs e)
         {
-            gds.setScale(14, true);
+            if (gdScore15.Checked)
+                gds.setScale(14, true);
+            else
+                gds.setScale(14, false);
         }
 
-        private void gdNo1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(0, false);
-        }
+        //private void gdNo1_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(0, false);
+        //}
 
-        private void gdNo2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(1, false);
-        }
+        //private void gdNo2_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //        gds.setScale(1, false);
+        //}
 
-        private void gdNo3_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(2, false);
-        }
+        //private void gdNo3_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(2, false);
+        //}
 
-        private void gdNo4_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(3, false);
-        }
+        //private void gdNo4_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(3, false);
+        //}
 
-        private void gdNo5_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(4, false);
-        }
+        //private void gdNo5_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(4, false);
+        //}
 
-        private void gdNo6_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(5, false);
-        }
+        //private void gdNo6_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(5, false);
+        //}
 
-        private void gdNo7_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(6, false);
-        }
+        //private void gdNo7_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(6, false);
+        //}
 
-        private void gdNo8_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(7, false);
-        }
+        //private void gdNo8_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(7, false);
+        //}
 
-        private void gdNo9_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(8, false);
-        }
+        //private void gdNo9_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(8, false);
+        //}
 
-        private void gdNo10_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(9, false);
-        }
+        //private void gdNo10_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(9, false);
+        //}
 
-        private void gdNo11_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(10, false);
-        }
+        //private void gdNo11_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(10, false);
+        //}
 
-        private void gdNo12_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(11, false);
-        }
+        //private void gdNo12_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(11, false);
+        //}
 
-        private void gdNo13_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(12, false);
-        }
+        //private void gdNo13_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(12, false);
+        //}
 
-        private void gdNo14_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(13, false);
-        }
+        //private void gdNo14_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(13, false);
+        //}
 
-        private void gdNo15_CheckedChanged_1(object sender, EventArgs e)
-        {
-            gds.setScale(14, false);
-        }
+        //private void gdNo15_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    gds.setScale(14, false);
+        //}
 
         private void gdCompute_Click_1(object sender, EventArgs e)
         {
@@ -705,14 +772,13 @@ namespace introseHHC.RegForms
 
 
         private void na1Btn1_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(0, 0);
+        {           
+                nut.setNut(0, 0);            
         }
 
         private void na1Btn2_CheckedChanged(object sender, EventArgs e)
         {
             nut.setNut(0, 1);
-
         }
 
         private void na1Btn3_CheckedChanged(object sender, EventArgs e)
@@ -737,13 +803,16 @@ namespace introseHHC.RegForms
 
         private void na3Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(2, 0);
+            if (na3Btn1.Checked)
+                nut.setNut(2, 0);
+            else
+                nut.setNut(2, 1);
         }
 
-        private void na3Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(2, 1);
-        }
+        //private void na3Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(2, 1);
+        //}
 
         private void na4Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -767,33 +836,42 @@ namespace introseHHC.RegForms
 
         private void na5Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(4, 1);
+            if (na5Btn1.Checked)
+                nut.setNut(4, 1);
+            else
+                nut.setNut(4, 0);
         }
 
-        private void na5Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(4, 0);
-        }
+        //private void na5Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(4, 0);
+        //}
 
         private void na6Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(5, 0);
+            if (na6Btn1.Checked)
+                nut.setNut(5, 0);
+            else
+                nut.setNut(5, 1);
         }
 
-        private void na6Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(5, 1);
-        }
+        //private void na6Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(5, 1);
+        //}
 
         private void na7Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(6, 1);
+            if (na7Btn1.Checked)
+                nut.setNut(6, 1);
+            else
+                nut.setNut(6, 2);
         }
 
-        private void na7Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(6, 2);
-        }
+        //private void na7Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(6, 2);
+        //}
 
         private void na8Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -812,13 +890,16 @@ namespace introseHHC.RegForms
 
         private void na9Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(8, 0);
+            if (na9Btn1.Checked)
+                nut.setNut(8, 0);
+            else
+                nut.setNut(8, 2);
         }
 
-        private void na9Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(8, 2);
-        }
+        //private void na9Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(8, 2);
+        //}
 
         private void na10Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -837,13 +918,16 @@ namespace introseHHC.RegForms
 
         private void na11Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(10, 0);
+            if (na11Btn1.Checked)
+                nut.setNut(10, 0);
+            else
+                nut.setNut(10, 1);
         }
 
-        private void na11Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(10, 1);
-        }
+        //private void na11Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(10, 1);
+        //}
 
         private void na12Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -863,48 +947,46 @@ namespace introseHHC.RegForms
         private void na13Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na13Btn1.Checked)
-            nut.proAdd();
+                nut.proSet1(true);
+            else
+                nut.proSet1(false);
         }
 
-        private void na13Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (na13Btn2.Checked)
-            nut.proSub();
-        }
+        //private void na13Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (na13Btn2.Checked)
+        //    nut.proSub();
+        //}
 
         private void na14Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na14Btn1.Checked)
-            nut.proAdd();
-        }
-
-        private void na14Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (na14Btn2.Checked)
-            nut.proSub();
+                nut.proSet2(true);
+            else
+                nut.proSet2(false);
         }
 
         private void na15Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na15Btn1.Checked)
-            nut.proAdd();
+                nut.proSet3(true);
+            else
+                nut.proSet3(false);
         }
 
-        private void na15Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (na15Btn2.Checked)
-            nut.proSub();
-        }
 
         private void na16Btn1_CheckedChanged(object sender, EventArgs e)
         {
-            nut.setNut(13, 1);
+            if (na16Btn1.Checked)
+                nut.setNut(13, 1);
+            else
+                nut.setNut(13, 0);
         }
 
-        private void na16Btn2_CheckedChanged(object sender, EventArgs e)
-        {
-            nut.setNut(13, 0);
-        }
+        //private void na16Btn2_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    nut.setNut(13, 0);
+        //}
 
         private void na17Btn1_CheckedChanged(object sender, EventArgs e)
         {
@@ -971,6 +1053,8 @@ namespace introseHHC.RegForms
             {
                 ca.setAns(0, false);
             }
+            else
+                ca.setAns(0, true);
             
         }
 
@@ -980,6 +1064,8 @@ namespace introseHHC.RegForms
             {
                 ca.setAns(1, false);
             }
+            else
+                ca.setAns(1, true);
             
         }
 
@@ -989,6 +1075,8 @@ namespace introseHHC.RegForms
             {
                 ca.setAns(2, false);
             }
+            else
+                ca.setAns(2, true);
             
         }
 
@@ -998,29 +1086,9 @@ namespace introseHHC.RegForms
             {
                 ca.setAns(3, false);
             }
+            else
+                ca.setAns(3, true);
             
-        }
-
-     
-        private void cg_CheckedChanged(object sender, EventArgs e)
-        {
-            ca.setAns(0, true);
-        }
-
-        private void radioButton14_CheckedChanged(object sender, EventArgs e)
-        {
-            ca.setAns(1, true);
-        }
-
-        private void radioButton12_CheckedChanged(object sender, EventArgs e)
-        {
-            ca.setAns(2, true);
-        }
-
-        private void radioButton10_CheckedChanged(object sender, EventArgs e)
-        {
-            ca.setAns(3, true);
-            Console.WriteLine(ca.getAns(3));
         }
 
 ///////// store to db ////////////
