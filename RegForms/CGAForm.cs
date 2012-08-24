@@ -93,17 +93,6 @@ namespace introseHHC.RegForms
         }
 
 
-
-        private void radioButton50_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton67_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {   //Immunization Record
             ImmRec IR = new ImmRec(cga.CID, connString);
@@ -131,8 +120,9 @@ namespace introseHHC.RegForms
 
         private void button5_Click(object sender, EventArgs e)
         {   //Medication List
-            MedList ML = new MedList(connString);
+            MedList ML = new MedList(selID ,connString);
             ML.ShowDialog();
+            ML.Close();
         }
 
         private void button14_Click(object sender, EventArgs e)

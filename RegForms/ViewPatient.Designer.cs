@@ -1184,6 +1184,8 @@
             // hvacCB
             // 
             this.hvacCB.AutoSize = true;
+            this.hvacCB.Enabled = false;
+            this.hvacCB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.hvacCB.Location = new System.Drawing.Point(1, 183);
             this.hvacCB.Name = "hvacCB";
             this.hvacCB.Size = new System.Drawing.Size(155, 17);
@@ -1194,6 +1196,8 @@
             // senresCB
             // 
             this.senresCB.AutoSize = true;
+            this.senresCB.Enabled = false;
+            this.senresCB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.senresCB.Location = new System.Drawing.Point(1, 160);
             this.senresCB.Name = "senresCB";
             this.senresCB.Size = new System.Drawing.Size(146, 17);
@@ -1204,6 +1208,8 @@
             // ambCB
             // 
             this.ambCB.AutoSize = true;
+            this.ambCB.Enabled = false;
+            this.ambCB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ambCB.Location = new System.Drawing.Point(1, 136);
             this.ambCB.Name = "ambCB";
             this.ambCB.Size = new System.Drawing.Size(147, 17);
@@ -1214,6 +1220,8 @@
             // ctCB
             // 
             this.ctCB.AutoSize = true;
+            this.ctCB.Enabled = false;
+            this.ctCB.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ctCB.Location = new System.Drawing.Point(1, 112);
             this.ctCB.Name = "ctCB";
             this.ctCB.Size = new System.Drawing.Size(127, 17);
@@ -1345,6 +1353,7 @@
             this.Name = "ViewPatient";
             this.Text = "ViewPatient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewPatient_FormClosed);
+            this.Load += new System.EventHandler(this.ViewPatient_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ViewPatient_KeyPress);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

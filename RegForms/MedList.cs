@@ -17,16 +17,45 @@ namespace introseHHC.RegForms
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
+        private bool connEstablished = false;
+        private UInt16 patID;
 
-        public MedList(string c)
+        public MedList(UInt16 id, string c)
         {
             InitializeComponent();
             conn = new MySqlConnection(c);
+            connString = c;
+            patID = id;
         }
 
-        private void PMedHist_Load(object sender, EventArgs e)
+        private bool OpenConnection()
         {
-            this.medListView.Rows.Add("Add Medication");
+            try
+            {
+                conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        private bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
         }
 
    
@@ -44,6 +73,22 @@ namespace introseHHC.RegForms
 
         private void okButton_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void MedList_Load(object sender, EventArgs e)
+        {
+            if (OpenConnection())
+            {   //load data into the table
+                string query;
+
+
+                connEstablished = true;
+            }
+            else
+            {
+                connEstablished = false;
+            }
 
         }
     }

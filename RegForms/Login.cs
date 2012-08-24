@@ -96,5 +96,12 @@ namespace introseHHC.RegForms
                 button1_Click(sender, e);
             }
         }
+
+        private void connectionSetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConnSetup cs = new ConnSetup();
+            cs.ShowDialog();
+            cs.Close();
+        }
     }
 }

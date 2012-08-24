@@ -67,7 +67,7 @@
             this.medListView.ReadOnly = true;
             this.medListView.Size = new System.Drawing.Size(451, 172);
             this.medListView.TabIndex = 6;
-                // 
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Medicine";
@@ -92,7 +92,6 @@
             this.freqField.Name = "freqField";
             this.freqField.Size = new System.Drawing.Size(100, 20);
             this.freqField.TabIndex = 13;
-           
             // 
             // doseField
             // 
@@ -100,7 +99,6 @@
             this.doseField.Name = "doseField";
             this.doseField.Size = new System.Drawing.Size(100, 20);
             this.doseField.TabIndex = 12;
-           
             // 
             // medField
             // 
@@ -108,7 +106,6 @@
             this.medField.Name = "medField";
             this.medField.Size = new System.Drawing.Size(100, 20);
             this.medField.TabIndex = 11;
-            
             // 
             // addButton
             // 
@@ -163,6 +160,7 @@
             this.Controls.Add(this.medListView);
             this.Name = "MedList";
             this.Text = "Medication List";
+            this.Load += new System.EventHandler(this.MedList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.medListView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
