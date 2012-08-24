@@ -19,6 +19,7 @@ namespace introseHHC.RegForms
         private MySqlDataReader read;
         private bool connEstablished = false;
         private UInt16 patID;
+        private UInt16 medID;
 
         public MedList(UInt16 id, string c)
         {
@@ -68,7 +69,30 @@ namespace introseHHC.RegForms
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            bool m, d, f;
+            m = string.IsNullOrEmpty(medField.Text) || string.IsNullOrWhiteSpace(medField.Text);
+            d = string.IsNullOrEmpty(doseField.Text) || string.IsNullOrWhiteSpace(doseField.Text);
+            f = string.IsNullOrEmpty(freqField.Text) || string.IsNullOrWhiteSpace(freqField.Text);
 
+            if (!m && !d && !f)
+            {
+                if (OpenConnection())
+                {
+                    
+                    
+                    
+
+                    CloseConnection();
+                }
+                else
+                {
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Kindly fill-up all fields.","Message");
+            }
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -81,6 +105,24 @@ namespace introseHHC.RegForms
             if (OpenConnection())
             {   //load data into the table
                 string query;
+                query = "SELECT * FROM" 
+        +"(SELECT PATID ,MEDNAME,DOSAGE,FREQUENCY FROM MEDICATION_LIST AS ML " 
+        +"RIGHT JOIN MEDICATION_MAP AS MP ON ML.MEDID = MP.MEDID) AS MED "
+        +"WHERE PATID = @pid";
+                cmd = new MySqlCommand(query,conn);
+                cmd.Parameters.AddWithValue("@pid", patID);
+                read = cmd.ExecuteReader();
+
+                int x;
+                while (read.Read())
+                {
+                    x = medListView.Rows.Add();
+                    medListView.Rows[x].Cells[0].Value = read.GetString("MEDNAME");
+                    medListView.Rows[x].Cells[1].Value = read.GetString("DOSAGE");
+                    medListView.Rows[x].Cells[2].Value = read.GetString("FREQUENCY");
+
+                }
+                read.Close();
 
 
                 connEstablished = true;
@@ -90,6 +132,23 @@ namespace introseHHC.RegForms
                 connEstablished = false;
             }
 
+        }
+
+        private void selectMed_Click(object sender, EventArgs e)
+        {
+            introseHHC.RegForms.SelectMed sm = new introseHHC.RegForms.SelectMed();
+            sm.ShowDialog();
+            if (sm.Status)
+            {
+                medField.Text = sm.MedName;
+                medID = sm.MedID;
+            }
+            sm.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

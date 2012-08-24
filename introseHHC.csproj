@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getEmployeesDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="getMedicationsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getMedicationsDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="getPatientDetailsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +229,12 @@
     <Compile Include="RegForms\SelectEmployee.Designer.cs">
       <DependentUpon>SelectEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\SelectMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\SelectMed.Designer.cs">
+      <DependentUpon>SelectMed.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\SocEnv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +331,9 @@
     <EmbeddedResource Include="RegForms\SelectEmployee.resx">
       <DependentUpon>SelectEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\SelectMed.resx">
+      <DependentUpon>SelectMed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\SocEnv.resx">
       <DependentUpon>SocEnv.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +392,17 @@
     </None>
     <None Include="getEmployeesDB.xss">
       <DependentUpon>getEmployeesDB.xsd</DependentUpon>
+    </None>
+    <None Include="getMedicationsDB.xsc">
+      <DependentUpon>getMedicationsDB.xsd</DependentUpon>
+    </None>
+    <None Include="getMedicationsDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getMedicationsDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="getMedicationsDB.xss">
+      <DependentUpon>getMedicationsDB.xsd</DependentUpon>
     </None>
     <None Include="getPatientDetailsDB.xsc">
       <DependentUpon>getPatientDetailsDB.xsd</DependentUpon>

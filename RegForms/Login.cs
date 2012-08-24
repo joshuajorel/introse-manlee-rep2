@@ -99,9 +99,24 @@ namespace introseHHC.RegForms
 
         private void connectionSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConnSetup cs = new ConnSetup();
+            ConnSetup cs = new ConnSetup(server,database,user);
             cs.ShowDialog();
+
+            if (cs.Status)
+            {
+                server = cs.Serv;
+                user = cs.Uname;
+            }
+            else
+            {
+            }
+
             cs.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

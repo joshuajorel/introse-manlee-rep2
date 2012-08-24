@@ -141,6 +141,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -151,9 +152,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 41);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(238, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(259, 80);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 

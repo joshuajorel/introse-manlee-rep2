@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.selectMed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.medListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // medListView
             // 
@@ -88,23 +90,23 @@
             // 
             // freqField
             // 
-            this.freqField.Location = new System.Drawing.Point(255, 215);
+            this.freqField.Location = new System.Drawing.Point(256, 215);
             this.freqField.Name = "freqField";
-            this.freqField.Size = new System.Drawing.Size(100, 20);
+            this.freqField.Size = new System.Drawing.Size(118, 20);
             this.freqField.TabIndex = 13;
             // 
             // doseField
             // 
-            this.doseField.Location = new System.Drawing.Point(149, 215);
+            this.doseField.Location = new System.Drawing.Point(177, 215);
             this.doseField.Name = "doseField";
-            this.doseField.Size = new System.Drawing.Size(100, 20);
+            this.doseField.Size = new System.Drawing.Size(73, 20);
             this.doseField.TabIndex = 12;
             // 
             // medField
             // 
-            this.medField.Location = new System.Drawing.Point(43, 215);
+            this.medField.Location = new System.Drawing.Point(64, 216);
             this.medField.Name = "medField";
-            this.medField.Size = new System.Drawing.Size(100, 20);
+            this.medField.Size = new System.Drawing.Size(107, 20);
             this.medField.TabIndex = 11;
             // 
             // addButton
@@ -120,7 +122,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 199);
+            this.label1.Location = new System.Drawing.Point(84, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 14;
@@ -129,7 +131,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(173, 199);
+            this.label2.Location = new System.Drawing.Point(197, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 15;
@@ -138,17 +140,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(278, 199);
+            this.label3.Location = new System.Drawing.Point(284, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Frequency";
+            // 
+            // selectMed
+            // 
+            this.selectMed.Location = new System.Drawing.Point(12, 216);
+            this.selectMed.Name = "selectMed";
+            this.selectMed.Size = new System.Drawing.Size(46, 20);
+            this.selectMed.TabIndex = 17;
+            this.selectMed.Text = "Select";
+            this.selectMed.UseVisualStyleBackColor = true;
+            this.selectMed.Click += new System.EventHandler(this.selectMed_Click);
             // 
             // MedList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 265);
+            this.Controls.Add(this.selectMed);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -181,5 +194,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button selectMed;
     }
 }

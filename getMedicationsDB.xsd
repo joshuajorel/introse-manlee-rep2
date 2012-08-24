@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="getMedicationsDB" targetNamespace="http://tempuri.org/getMedicationsDB.xsd" xmlns:mstns="http://tempuri.org/getMedicationsDB.xsd" xmlns="http://tempuri.org/getMedicationsDB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hhc_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hhc_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.introseHHC.Properties.Settings.GlobalReference.Default.hhc_dbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getMedicationsTableAdapter" GeneratorDataComponentClassName="getMedicationsTableAdapter" Name="getMedications" UserDataComponentName="getMedicationsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hhc_dbConnectionString (Settings)" DbObjectName="``.`hhc-db`.`getMedications`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`hhc-db`.`getMedications`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="medID" DataSetColumn="medID" />
+              <Mapping SourceColumn="medName" DataSetColumn="medName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="getMedicationsDB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="getMedicationsDB" msprop:Generator_UserDSName="getMedicationsDB">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="getMedications" msprop:Generator_TableClassName="getMedicationsDataTable" msprop:Generator_TableVarName="tablegetMedications" msprop:Generator_TablePropName="getMedications" msprop:Generator_RowDeletingName="getMedicationsRowDeleting" msprop:Generator_UserTableName="getMedications" msprop:Generator_RowChangingName="getMedicationsRowChanging" msprop:Generator_RowEvHandlerName="getMedicationsRowChangeEventHandler" msprop:Generator_RowDeletedName="getMedicationsRowDeleted" msprop:Generator_RowEvArgName="getMedicationsRowChangeEvent" msprop:Generator_RowChangedName="getMedicationsRowChanged" msprop:Generator_RowClassName="getMedicationsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="medID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnmedID" msprop:Generator_ColumnPropNameInRow="medID" msprop:Generator_ColumnPropNameInTable="medIDColumn" msprop:Generator_UserColumnName="medID" type="xs:int" />
+              <xs:element name="medName" msprop:Generator_ColumnVarNameInTable="columnmedName" msprop:Generator_ColumnPropNameInRow="medName" msprop:Generator_ColumnPropNameInTable="medNameColumn" msprop:Generator_UserColumnName="medName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="85" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getMedications" />
+      <xs:field xpath="mstns:medID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

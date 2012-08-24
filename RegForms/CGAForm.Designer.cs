@@ -1274,7 +1274,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(551, 419);
             this.panel1.TabIndex = 3;
-        
             // 
             // selPhysician
             // 
@@ -1644,7 +1643,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Geriatric Depression Scale";
             this.tabPage2.UseVisualStyleBackColor = true;
-
             // 
             // panel2
             // 
@@ -2387,7 +2385,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mental Status";
             this.tabPage3.UseVisualStyleBackColor = true;
-    
             // 
             // panel3
             // 
@@ -3182,7 +3179,8 @@
             this.Controls.Add(this.splitter1);
             this.Name = "CGAForm";
             this.Text = "CGAForm";
-           this.tabPage4.ResumeLayout(false);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CGAForm_FormClosing);
+            this.tabPage4.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox38.ResumeLayout(false);

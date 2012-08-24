@@ -134,14 +134,7 @@ namespace introseHHC.RegForms
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (!isFinished && cga.CID > 0)
-            {
-                if (OpenConnection())
-                {   //remove incomplete entry here.
-                    string query = "";
-                    CloseConnection();
-                }
-            }
+
             Close();
         }
 
@@ -1060,6 +1053,24 @@ namespace introseHHC.RegForms
                 this.Close();
             }
             
+        }
+
+        private void CGAForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isFinished && cga.CID > 0)
+            {
+                if (OpenConnection())
+                {   //remove incomplete entry here.
+                    string query = "DELETE FROM CGA_FORM WHERE CGAID = @cgaID;";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.Clear();
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@cgaID", cga.CID);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Entry with CGAID: {0} has been removed.", cga.CID);
+                    CloseConnection();
+                }
+            }
         }
 
         
