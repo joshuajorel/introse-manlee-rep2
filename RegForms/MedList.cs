@@ -84,21 +84,30 @@ namespace introseHHC.RegForms
                     cmd.Parameters.AddWithValue("@freq",freqField.Text);
 
                     cmd.ExecuteNonQuery();
+
+                    if (!selectStatus)
+                    {
+                        query = "INSERT INTO MEDICATION_LIST(MEDNAME) VALUES(@mdname)";
+                        cmd.Parameters.AddWithValue("@mdname",medField.Text);
+                        cmd.CommandText = query;
+                        cmd.ExecuteNonQuery();
+                    
+                    }
+                    //reset fields
                     medField.Text = "";
+                    medField.Enabled = true;
                     medID = 0;
                     doseField.Text = "";
                     freqField.Text = "";
                     selectStatus = false;
 
-                    medListView.Rows.Clear();
-
- 
+                    
                     CloseConnection();
                 }
                 else
                 {
                 }
-
+                medListView.Rows.Clear();
                 fillTable();
             }
             else
@@ -166,12 +175,11 @@ namespace introseHHC.RegForms
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            if (selectStatus)
-            {
+
                 medField.Enabled = true;
                 medField.Text = "";
                 medID = 0;
-            }
+          
         }
     }
 }

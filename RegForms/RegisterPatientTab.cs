@@ -1200,7 +1200,7 @@ namespace introseHHC.RegForms
             }
             else
             {
-                MessageBox.Show("Gather and Endorse cannot be the same.");
+                MessageBox.Show("Gather and Endorse cannot be the same.","Alert");
             }
 
         }
@@ -1208,28 +1208,23 @@ namespace introseHHC.RegForms
         {
             SelectEmployee sel = new SelectEmployee();
             sel.ShowDialog();
-            gatherID = sel.Sel;
+            fsheet.GatherID = sel.Sel;
             gatherTextBox.Text = sel.Fname + " " + sel.Sname;
             Console.WriteLine("Gathered by: {0}", gatherID);
+            
             sel.Close();
-            if (endorseID != gatherID)
-                fsheet.GatherID = gatherID;
-            else
-                Console.WriteLine("Gather and Endorse cannot be the same.");
+
             
         }
         private void endorseButton_Click(object sender, EventArgs e)
         {
             SelectEmployee sel = new SelectEmployee();
             sel.ShowDialog();
-            endorseID = sel.Sel;
+            fsheet.EndorseID = sel.Sel;
             endorseTextBox.Text = sel.Fname + " " + sel.Sname;
             Console.WriteLine("Endorsed by: {0}", endorseID);
             sel.Close();
-            if (endorseID != gatherID)
-                fsheet.EndorseID = endorseID;
-            else
-                Console.WriteLine("Gather and Endorse cannot be the same.");
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)

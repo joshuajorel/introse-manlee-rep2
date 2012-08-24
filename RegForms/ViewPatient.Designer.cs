@@ -624,6 +624,7 @@
             this.educField.Enabled = false;
             this.educField.Location = new System.Drawing.Point(95, 184);
             this.educField.Name = "educField";
+            this.educField.ReadOnly = true;
             this.educField.Size = new System.Drawing.Size(161, 20);
             this.educField.TabIndex = 14;
             // 
@@ -632,6 +633,7 @@
             this.civField.Enabled = false;
             this.civField.Location = new System.Drawing.Point(95, 159);
             this.civField.Name = "civField";
+            this.civField.ReadOnly = true;
             this.civField.Size = new System.Drawing.Size(161, 20);
             this.civField.TabIndex = 13;
             // 
@@ -640,6 +642,7 @@
             this.relField.Enabled = false;
             this.relField.Location = new System.Drawing.Point(95, 134);
             this.relField.Name = "relField";
+            this.relField.ReadOnly = true;
             this.relField.Size = new System.Drawing.Size(161, 20);
             this.relField.TabIndex = 12;
             // 
@@ -648,6 +651,7 @@
             this.natField.Enabled = false;
             this.natField.Location = new System.Drawing.Point(95, 109);
             this.natField.Name = "natField";
+            this.natField.ReadOnly = true;
             this.natField.Size = new System.Drawing.Size(161, 20);
             this.natField.TabIndex = 11;
             // 
@@ -656,6 +660,7 @@
             this.genderField.Enabled = false;
             this.genderField.Location = new System.Drawing.Point(95, 84);
             this.genderField.Name = "genderField";
+            this.genderField.ReadOnly = true;
             this.genderField.Size = new System.Drawing.Size(161, 20);
             this.genderField.TabIndex = 10;
             // 
@@ -664,6 +669,7 @@
             this.birthField.Enabled = false;
             this.birthField.Location = new System.Drawing.Point(95, 59);
             this.birthField.Name = "birthField";
+            this.birthField.ReadOnly = true;
             this.birthField.Size = new System.Drawing.Size(161, 20);
             this.birthField.TabIndex = 9;
             // 
@@ -672,6 +678,7 @@
             this.nameField.Enabled = false;
             this.nameField.Location = new System.Drawing.Point(95, 35);
             this.nameField.Name = "nameField";
+            this.nameField.ReadOnly = true;
             this.nameField.Size = new System.Drawing.Size(161, 20);
             this.nameField.TabIndex = 8;
             // 
