@@ -3183,6 +3183,7 @@
             this.Name = "CGAForm";
             this.Text = "CGAForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CGAForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CGAForm_FormClosed);
             this.tabPage4.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

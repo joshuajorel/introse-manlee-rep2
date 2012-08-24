@@ -61,14 +61,6 @@ namespace introseHHC.RegForms
             }
         }
 
-   
-        private void doneButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void addButton_Click(object sender, EventArgs e)
         {
             bool m, d, f;
@@ -100,24 +92,6 @@ namespace introseHHC.RegForms
 
                     medListView.Rows.Clear();
 
-                    query = "SELECT * FROM"
-       + "(SELECT PATID ,MEDNAME,DOSAGE,FREQUENCY FROM MEDICATION_LIST AS ML "
-       + "RIGHT JOIN MEDICATION_MAP AS MP ON ML.MEDID = MP.MEDID) AS MED "
-       + "WHERE PATID = @pid";
-                    cmd.CommandText = query;
-                    
-                    read = cmd.ExecuteReader();
-
-                    int x;
-                    while (read.Read())
-                    {
-                        x = medListView.Rows.Add();
-                        medListView.Rows[x].Cells[0].Value = read.GetString("MEDNAME");
-                        medListView.Rows[x].Cells[1].Value = read.GetString("DOSAGE");
-                        medListView.Rows[x].Cells[2].Value = read.GetString("FREQUENCY");
-
-                    }
-                    read.Close();
  
                     CloseConnection();
                 }
@@ -125,6 +99,7 @@ namespace introseHHC.RegForms
                 {
                 }
 
+                fillTable();
             }
             else
             {
@@ -132,21 +107,21 @@ namespace introseHHC.RegForms
             }
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        private void MedList_Load(object sender, EventArgs e)
         {
-
+            fillTable();
         }
 
-        private void MedList_Load(object sender, EventArgs e)
+        private void fillTable()
         {
             if (OpenConnection())
             {   //load data into the table
                 string query;
-                query = "SELECT * FROM" 
-        +"(SELECT PATID ,MEDNAME,DOSAGE,FREQUENCY FROM MEDICATION_LIST AS ML " 
-        +"RIGHT JOIN MEDICATION_MAP AS MP ON ML.MEDID = MP.MEDID) AS MED "
-        +"WHERE PATID = @pid";
-                cmd = new MySqlCommand(query,conn);
+                query = "SELECT * FROM"
+        + "(SELECT PATID ,MEDNAME,DOSAGE,FREQUENCY FROM MEDICATION_LIST AS ML "
+        + "RIGHT JOIN MEDICATION_MAP AS MP ON ML.MEDID = MP.MEDID) AS MED "
+        + "WHERE PATID = @pid";
+                cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@pid", patID);
                 read = cmd.ExecuteReader();
 
@@ -168,7 +143,6 @@ namespace introseHHC.RegForms
             {
                 connEstablished = false;
             }
-
         }
 
         private void selectMed_Click(object sender, EventArgs e)

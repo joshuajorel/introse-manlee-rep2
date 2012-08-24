@@ -20,6 +20,7 @@ namespace introseHHC.RegForms
 
         private SocEnv Soc;
         private UInt16 socID;
+        private UInt16 patID;
         private string name;
         private string relation;
         private string freq;
@@ -79,16 +80,16 @@ namespace introseHHC.RegForms
             }
         }
 
-        public SocEnv(UInt16 id, string c)
+        public SocEnv(UInt16 pid, UInt16 id, string c)
         {
             InitializeComponent();
 
             conn = new MySqlConnection(c);
-            SocID = id;
+            socID = id;
+            patID = pid;
             SE = new SocialEnvironment();
+            fillTable();
 
-
-            //cgaID = UInt16.Parse(read.GetString("ID"));
         }
 
         private void addsoc(SocialEnvironment se)
@@ -96,11 +97,12 @@ namespace introseHHC.RegForms
             //conn.Open();
             if (OpenConnection())
             {
-                string query = "INSERT INTO SOCIAL(CGAID, NAME, RELATIONSHIP, FREQUENCY) VALUES (@id, @name, @rel, @freq)";
+                string query = "INSERT INTO SOCIAL(PATID,CGAID, NAME, RELATIONSHIP, FREQUENCY) VALUES (@pid,@id, @name, @rel, @freq)";
 
                 cmd = new MySqlCommand(query, conn);
                 cmd.Prepare();
-
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@pid",patID);
                 cmd.Parameters.AddWithValue("@id", SocID);
                 cmd.Parameters.AddWithValue("@name", se.getNme());
                 cmd.Parameters.AddWithValue("@rel", se.getRlp());
@@ -122,17 +124,40 @@ namespace introseHHC.RegForms
                     Console.WriteLine(err.Message);
                 }
                 CloseConnection();
-
-                this.getSocialTableAdapter.Fill(this.getSocial._getSocial);
+                socEnvView.Rows.Clear();
+                fillTable();
+               
             }
-
+            
         }
 
-        private void SocEnv_Load(object sender, EventArgs e)
+        private void fillTable()
         {
-            // TODO: This line of code loads data into the 'getSocial._getSocial' table. You can move, or remove it, as needed.
-            this.getSocialTableAdapter.Fill(this.getSocial._getSocial);
+
+            if (OpenConnection())
+            {
+                string query;
+                query = "SELECT * FROM SOCIAL WHERE PATID = @pid AND CGAID = @cgaID;";
+                cmd = new MySqlCommand(query,conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@pid",patID);
+                cmd.Parameters.AddWithValue("@cgaID",socID);
+                read = cmd.ExecuteReader();
+
+                int x;
+                while (read.Read())
+                {
+                    x = socEnvView.Rows.Add();
+                    socEnvView.Rows[x].Cells[0].Value = read.GetString("NAME");
+                    socEnvView.Rows[x].Cells[1].Value = read.GetString("RELATIONSHIP");
+                    socEnvView.Rows[x].Cells[2].Value = read.GetString("FREQUENCY");
+                }
+                read.Close();
+                CloseConnection();
+
+            }
         }
+
 
         private void cancelButton_Click(object sender, EventArgs e)
         {

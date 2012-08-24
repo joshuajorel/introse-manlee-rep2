@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.socEnvView = new System.Windows.Forms.DataGridView();
-            this.getSocialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getSocial = new introseHHC.getSocial();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -41,43 +38,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.getSocialTableAdapter = new introseHHC.getSocialTableAdapters.getSocialTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.relationshipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frequencyOfVisitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freqCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.socEnvView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getSocialBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getSocial)).BeginInit();
             this.SuspendLayout();
             // 
             // socEnvView
             // 
             this.socEnvView.AllowUserToAddRows = false;
             this.socEnvView.AllowUserToDeleteRows = false;
-            this.socEnvView.AutoGenerateColumns = false;
             this.socEnvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.socEnvView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.relationshipDataGridViewTextBoxColumn,
-            this.frequencyOfVisitDataGridViewTextBoxColumn});
-            this.socEnvView.DataSource = this.getSocialBindingSource;
+            this.nameCol,
+            this.relCol,
+            this.freqCol});
             this.socEnvView.Location = new System.Drawing.Point(12, 12);
             this.socEnvView.Name = "socEnvView";
             this.socEnvView.ReadOnly = true;
             this.socEnvView.Size = new System.Drawing.Size(451, 172);
             this.socEnvView.TabIndex = 0;
-            // 
-            // getSocialBindingSource
-            // 
-            this.getSocialBindingSource.DataMember = "getSocial";
-            this.getSocialBindingSource.DataSource = this.getSocial;
-            // 
-            // getSocial
-            // 
-            this.getSocial.DataSetName = "getSocial";
-            this.getSocial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -157,39 +137,23 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Frequency";
             // 
-            // getSocialTableAdapter
+            // nameCol
             // 
-            this.getSocialTableAdapter.ClearBeforeFill = true;
+            this.nameCol.HeaderText = "Name";
+            this.nameCol.Name = "nameCol";
+            this.nameCol.ReadOnly = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // relCol
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.relCol.HeaderText = "Relationship";
+            this.relCol.Name = "relCol";
+            this.relCol.ReadOnly = true;
             // 
-            // nameDataGridViewTextBoxColumn
+            // freqCol
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // relationshipDataGridViewTextBoxColumn
-            // 
-            this.relationshipDataGridViewTextBoxColumn.DataPropertyName = "Relationship";
-            this.relationshipDataGridViewTextBoxColumn.HeaderText = "Relationship";
-            this.relationshipDataGridViewTextBoxColumn.Name = "relationshipDataGridViewTextBoxColumn";
-            this.relationshipDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // frequencyOfVisitDataGridViewTextBoxColumn
-            // 
-            this.frequencyOfVisitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.frequencyOfVisitDataGridViewTextBoxColumn.DataPropertyName = "Frequency of Visit";
-            this.frequencyOfVisitDataGridViewTextBoxColumn.HeaderText = "Frequency of Visit";
-            this.frequencyOfVisitDataGridViewTextBoxColumn.Name = "frequencyOfVisitDataGridViewTextBoxColumn";
-            this.frequencyOfVisitDataGridViewTextBoxColumn.ReadOnly = true;
+            this.freqCol.HeaderText = "Frequency";
+            this.freqCol.Name = "freqCol";
+            this.freqCol.ReadOnly = true;
             // 
             // SocEnv
             // 
@@ -211,10 +175,7 @@
             this.MinimumSize = new System.Drawing.Size(564, 292);
             this.Name = "SocEnv";
             this.Text = "Society and Environment";
-            this.Load += new System.EventHandler(this.SocEnv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.socEnvView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getSocialBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getSocial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,12 +193,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private getSocial getSocial;
-        private System.Windows.Forms.BindingSource getSocialBindingSource;
-        private getSocialTableAdapters.getSocialTableAdapter getSocialTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn relationshipDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn frequencyOfVisitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn relCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freqCol;
     }
 }

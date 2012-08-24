@@ -107,7 +107,7 @@ namespace introseHHC.RegForms
 
         private void button3_Click(object sender, EventArgs e)
         {   //Society and Environment
-            SocEnv soc = new SocEnv(cga.CID ,connString);
+            SocEnv soc = new SocEnv(selID, cga.CID ,connString);
             soc.ShowDialog();
             soc.Close();
         }
@@ -1051,15 +1051,23 @@ namespace introseHHC.RegForms
                 }
                 CloseConnection();
                 MessageBox.Show("CGA successfully added to the database");
+                isFinished = true;
                 this.Close();
+                
             }
             
         }
 
         private void CGAForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!isFinished && cga.CID > 0)
+
+        }
+
+        private void CGAForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!isFinished)
             {
+                Console.WriteLine("isFinished is " + isFinished.ToString());
                 if (OpenConnection())
                 {   //remove incomplete entry here.
                     string query = "DELETE FROM CGA_FORM WHERE CGAID = @cgaID;";
