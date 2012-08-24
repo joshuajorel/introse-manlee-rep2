@@ -7,62 +7,40 @@ namespace introseHHC.Objects
 {
     class Immunization
     {
-        private DateTime tet, pne, inf, oth;
+        private DateTime Date;
+        private string Desc;
+        private UInt16 ID;
 
         public Immunization()
         {
-            tet = new DateTime();
-            pne = new DateTime();
-            inf = new DateTime();
-            oth = new DateTime();
+            Date = new DateTime();
+            ID = 0;
+        }
+        
+        public Immunization(string dsc, DateTime dte)
+        {
+            Desc = dsc;
+            Date = dte;
         }
 
-        public Immunization(DateTime t, DateTime p, DateTime i, DateTime o)
+        public void setDesc(string dsc)
         {
-            tet = t;
-            pne = p;
-            inf = i;
-            oth = o;
+            Desc = dsc;
         }
 
-        public void setTet(DateTime t)
+        public void setDate(DateTime dte)
         {
-            tet = t;
+            Date = dte;
         }
 
-        public void setPne(DateTime p)
+        public string getDesc()
         {
-            pne = p;
+            return Desc;
         }
 
-        public void setInf(DateTime i)
+        public DateTime getDate()
         {
-            inf = i;
-        }
-
-        public void setOth(DateTime o)
-        {
-            oth = o;
-        }
-
-        public DateTime getTet()
-        {
-            return tet;
-        }
-
-        public DateTime getPne()
-        {
-            return pne;
-        }        
-
-        public DateTime getInf()
-        {
-            return inf;
-        }
-
-        public DateTime getOth()
-        {
-            return oth;
+            return Date;
         }
     }
 }

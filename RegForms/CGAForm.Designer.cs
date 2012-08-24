@@ -345,7 +345,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(100, 490);
+            this.splitter1.Size = new System.Drawing.Size(100, 479);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -1321,7 +1321,7 @@
             this.immRecButton.TabIndex = 41;
             this.immRecButton.Text = "Add";
             this.immRecButton.UseVisualStyleBackColor = true;
-            this.immRecButton.Click += new System.EventHandler(this.button6_Click);
+            this.immRecButton.Click += new System.EventHandler(this.immRecButton_Click);
             // 
             // medListButton
             // 
@@ -3173,7 +3173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 490);
+            this.ClientSize = new System.Drawing.Size(654, 479);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);

@@ -20,7 +20,7 @@ namespace introseHHC.RegForms
 
         private SocEnv Soc;
         private UInt16 socID;
-        private UInt16 patID;
+        //private UInt16 patID;
         private string name;
         private string relation;
         private string freq;
@@ -30,25 +30,6 @@ namespace introseHHC.RegForms
             get { return socID; }
             set { socID = value; }
         }
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public string Relation
-        {
-            get { return relation; }
-            set { relation = value; }
-        }
-
-        public string Freq
-        {
-            get { return freq; }
-            set { freq = value; }
-        }
-
 
         private bool OpenConnection()
         {
@@ -86,7 +67,7 @@ namespace introseHHC.RegForms
 
             conn = new MySqlConnection(c);
             socID = id;
-            patID = pid;
+            //patID = pid;
             SE = new SocialEnvironment();
             fillTable();
 
@@ -97,12 +78,12 @@ namespace introseHHC.RegForms
             //conn.Open();
             if (OpenConnection())
             {
-                string query = "INSERT INTO SOCIAL(PATID,CGAID, NAME, RELATIONSHIP, FREQUENCY) VALUES (@pid,@id, @name, @rel, @freq)";
+                string query = "INSERT INTO SOCIAL(CGAID, NAME, RELATIONSHIP, FREQUENCY) VALUES (@id, @name, @rel, @freq)";
 
                 cmd = new MySqlCommand(query, conn);
                 cmd.Prepare();
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@pid",patID);
+                //cmd.Parameters.AddWithValue("@pid",patID);
                 cmd.Parameters.AddWithValue("@id", SocID);
                 cmd.Parameters.AddWithValue("@name", se.getNme());
                 cmd.Parameters.AddWithValue("@rel", se.getRlp());
@@ -125,8 +106,7 @@ namespace introseHHC.RegForms
                 }
                 CloseConnection();
                 socEnvView.Rows.Clear();
-                fillTable();
-               
+                fillTable();           
             }
             
         }
@@ -137,11 +117,10 @@ namespace introseHHC.RegForms
             if (OpenConnection())
             {
                 string query;
-                query = "SELECT * FROM SOCIAL WHERE PATID = @pid AND CGAID = @cgaID;";
+                query = "SELECT * FROM SOCIAL WHERE CGAID = @cgaID;";
                 cmd = new MySqlCommand(query,conn);
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@pid",patID);
-                cmd.Parameters.AddWithValue("@cgaID",socID);
+                cmd.Parameters.AddWithValue("@cgaID", socID);
                 read = cmd.ExecuteReader();
 
                 int x;
@@ -154,14 +133,7 @@ namespace introseHHC.RegForms
                 }
                 read.Close();
                 CloseConnection();
-
             }
-        }
-
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)

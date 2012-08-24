@@ -66,10 +66,10 @@
             this.getEmployeeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getEmployeeDetailsDB = new introseHHC.getEmployeeDetailsDB();
             this.exitButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.getPatientDetailsTableAdapter = new introseHHC.getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter();
             this.getClientDetailsTableAdapter = new introseHHC.getClientDetailsDBTableAdapters.getClientDetailsTableAdapter();
             this.getEmployeeDetailsTableAdapter = new introseHHC.getEmployeeDetailsDBTableAdapters.getEmployeeDetailsTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientView)).BeginInit();
@@ -89,7 +89,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(100, 496);
+            this.splitter1.Size = new System.Drawing.Size(100, 485);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -410,22 +410,13 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(12, 88);
+            this.exitButton.Location = new System.Drawing.Point(12, 46);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 5;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(13, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Open";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // getPatientDetailsTableAdapter
             // 
@@ -439,12 +430,21 @@
             // 
             this.getEmployeeDetailsTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 450);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 26);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Double-click to\r\nView Patient";
+            // 
             // ManageRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 496);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(654, 485);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
@@ -471,6 +471,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeeDetailsDB)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -491,7 +492,6 @@
         private System.Windows.Forms.TextBox empSearchIn;
         private System.Windows.Forms.DataGridView employeeView;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button button2;
         private getPatientDetailsDB getPatientDetailsDB;
         private System.Windows.Forms.BindingSource getPatientDetailsBindingSource;
         private getPatientDetailsDBTableAdapters.getPatientDetailsTableAdapter getPatientDetailsTableAdapter;
@@ -516,6 +516,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button clientClearButton;
         private System.Windows.Forms.Button empClearButton;
+        private System.Windows.Forms.Label label1;
 
     }
 }

@@ -92,14 +92,6 @@ namespace introseHHC.RegForms
             }
         }
 
-
-        private void button6_Click(object sender, EventArgs e)
-        {   //Immunization Record
-            ImmRec IR = new ImmRec(cga.CID, connString);
-            IR.ShowDialog();
-            IR.Close();
-        }
-
         private void button8_Click(object sender, EventArgs e)
         {
 
@@ -123,6 +115,13 @@ namespace introseHHC.RegForms
             MedList ML = new MedList(selID ,connString);
             ML.ShowDialog();
             ML.Close();
+        }
+
+        private void immRecButton_Click(object sender, EventArgs e)
+        {
+            ImmRec IR = new ImmRec(cga.CID, connString);
+            IR.ShowDialog();
+            IR.Close();
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -1080,8 +1079,6 @@ namespace introseHHC.RegForms
                     CloseConnection();
                 }
             }
-        }
-
-        
+        }       
     }
 }

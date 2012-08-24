@@ -19,10 +19,6 @@ namespace introseHHC.RegForms
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
-        private string user;
-        private string password;
-        private string server;
-        private string database;
         private string query;
 
         private UInt16 fncID;
@@ -32,14 +28,39 @@ namespace introseHHC.RegForms
             InitializeComponent();
             FunctionalStatus func = new FunctionalStatus(ans);
 
-            server = "localhost";
-            user = "root";
-            database = "hhc-db";
-            password = "root";
-
             conn = new MySqlConnection(c);
             fncID = id;
             func = new FunctionalStatus();
+        }
+
+        private bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        private bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
         }
 
         private void FuncStat_Load(object sender, EventArgs e)
@@ -281,7 +302,12 @@ namespace introseHHC.RegForms
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+        }
 
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
 
     }
