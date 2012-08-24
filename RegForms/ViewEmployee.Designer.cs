@@ -31,6 +31,16 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.editAddButton = new System.Windows.Forms.Button();
+            this.editNameButton = new System.Windows.Forms.Button();
+            this.educBox = new System.Windows.Forms.ComboBox();
+            this.civStatBox = new System.Windows.Forms.ComboBox();
+            this.genderBox = new System.Windows.Forms.ComboBox();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.contactCancelButton = new System.Windows.Forms.Button();
+            this.contactEditButton = new System.Windows.Forms.Button();
+            this.personalCancelButton = new System.Windows.Forms.Button();
+            this.personalEditButton = new System.Windows.Forms.Button();
             this.emailField = new System.Windows.Forms.TextBox();
             this.otherField = new System.Windows.Forms.TextBox();
             this.mobField = new System.Windows.Forms.TextBox();
@@ -63,16 +73,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.personalCancelButton = new System.Windows.Forms.Button();
-            this.personalEditButton = new System.Windows.Forms.Button();
-            this.contactCancelButton = new System.Windows.Forms.Button();
-            this.contactEditButton = new System.Windows.Forms.Button();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.genderBox = new System.Windows.Forms.ComboBox();
-            this.civStatBox = new System.Windows.Forms.ComboBox();
-            this.educBox = new System.Windows.Forms.ComboBox();
-            this.editNameButton = new System.Windows.Forms.Button();
-            this.editAddButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -144,6 +144,122 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General Information";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // editAddButton
+            // 
+            this.editAddButton.Location = new System.Drawing.Point(261, 253);
+            this.editAddButton.Name = "editAddButton";
+            this.editAddButton.Size = new System.Drawing.Size(25, 20);
+            this.editAddButton.TabIndex = 114;
+            this.editAddButton.Text = "...";
+            this.editAddButton.UseVisualStyleBackColor = true;
+            this.editAddButton.Visible = false;
+            this.editAddButton.Click += new System.EventHandler(this.editAddButton_Click);
+            // 
+            // editNameButton
+            // 
+            this.editNameButton.Location = new System.Drawing.Point(261, 34);
+            this.editNameButton.Name = "editNameButton";
+            this.editNameButton.Size = new System.Drawing.Size(25, 20);
+            this.editNameButton.TabIndex = 113;
+            this.editNameButton.Text = "...";
+            this.editNameButton.UseVisualStyleBackColor = true;
+            this.editNameButton.Visible = false;
+            this.editNameButton.Click += new System.EventHandler(this.editNameButton_Click);
+            // 
+            // educBox
+            // 
+            this.educBox.FormattingEnabled = true;
+            this.educBox.Items.AddRange(new object[] {
+            "Primary",
+            "Secondary",
+            "Tertiary",
+            "Intermediate",
+            "None"});
+            this.educBox.Location = new System.Drawing.Point(95, 184);
+            this.educBox.Name = "educBox";
+            this.educBox.Size = new System.Drawing.Size(108, 21);
+            this.educBox.TabIndex = 112;
+            this.educBox.Visible = false;
+            // 
+            // civStatBox
+            // 
+            this.civStatBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.civStatBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.civStatBox.FormattingEnabled = true;
+            this.civStatBox.Items.AddRange(new object[] {
+            "Single",
+            "Married",
+            "Divorced",
+            "Widowed"});
+            this.civStatBox.Location = new System.Drawing.Point(95, 159);
+            this.civStatBox.Name = "civStatBox";
+            this.civStatBox.Size = new System.Drawing.Size(108, 21);
+            this.civStatBox.TabIndex = 111;
+            this.civStatBox.Visible = false;
+            // 
+            // genderBox
+            // 
+            this.genderBox.FormattingEnabled = true;
+            this.genderBox.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.genderBox.Location = new System.Drawing.Point(95, 84);
+            this.genderBox.Name = "genderBox";
+            this.genderBox.Size = new System.Drawing.Size(108, 21);
+            this.genderBox.TabIndex = 110;
+            this.genderBox.Visible = false;
+            // 
+            // datePicker
+            // 
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePicker.Location = new System.Drawing.Point(95, 58);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(108, 20);
+            this.datePicker.TabIndex = 107;
+            this.datePicker.Visible = false;
+            // 
+            // contactCancelButton
+            // 
+            this.contactCancelButton.Location = new System.Drawing.Point(207, 223);
+            this.contactCancelButton.Name = "contactCancelButton";
+            this.contactCancelButton.Size = new System.Drawing.Size(49, 20);
+            this.contactCancelButton.TabIndex = 102;
+            this.contactCancelButton.Text = "Cancel";
+            this.contactCancelButton.UseVisualStyleBackColor = true;
+            this.contactCancelButton.Visible = false;
+            this.contactCancelButton.Click += new System.EventHandler(this.contactCancelButton_Click);
+            // 
+            // contactEditButton
+            // 
+            this.contactEditButton.Location = new System.Drawing.Point(152, 223);
+            this.contactEditButton.Name = "contactEditButton";
+            this.contactEditButton.Size = new System.Drawing.Size(49, 20);
+            this.contactEditButton.TabIndex = 101;
+            this.contactEditButton.Text = "Edit";
+            this.contactEditButton.UseVisualStyleBackColor = true;
+            this.contactEditButton.Click += new System.EventHandler(this.contactEditButton_Click);
+            // 
+            // personalCancelButton
+            // 
+            this.personalCancelButton.Location = new System.Drawing.Point(207, 9);
+            this.personalCancelButton.Name = "personalCancelButton";
+            this.personalCancelButton.Size = new System.Drawing.Size(49, 20);
+            this.personalCancelButton.TabIndex = 100;
+            this.personalCancelButton.Text = "Cancel";
+            this.personalCancelButton.UseVisualStyleBackColor = true;
+            this.personalCancelButton.Visible = false;
+            this.personalCancelButton.Click += new System.EventHandler(this.personalCancelButton_Click);
+            // 
+            // personalEditButton
+            // 
+            this.personalEditButton.Location = new System.Drawing.Point(152, 9);
+            this.personalEditButton.Name = "personalEditButton";
+            this.personalEditButton.Size = new System.Drawing.Size(49, 20);
+            this.personalEditButton.TabIndex = 99;
+            this.personalEditButton.Text = "Edit";
+            this.personalEditButton.UseVisualStyleBackColor = true;
+            this.personalEditButton.Click += new System.EventHandler(this.personalEditButton_Click);
             // 
             // emailField
             // 
@@ -438,122 +554,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // personalCancelButton
-            // 
-            this.personalCancelButton.Location = new System.Drawing.Point(207, 9);
-            this.personalCancelButton.Name = "personalCancelButton";
-            this.personalCancelButton.Size = new System.Drawing.Size(49, 20);
-            this.personalCancelButton.TabIndex = 100;
-            this.personalCancelButton.Text = "Cancel";
-            this.personalCancelButton.UseVisualStyleBackColor = true;
-            this.personalCancelButton.Visible = false;
-            this.personalCancelButton.Click += new System.EventHandler(this.personalCancelButton_Click);
-            // 
-            // personalEditButton
-            // 
-            this.personalEditButton.Location = new System.Drawing.Point(152, 9);
-            this.personalEditButton.Name = "personalEditButton";
-            this.personalEditButton.Size = new System.Drawing.Size(49, 20);
-            this.personalEditButton.TabIndex = 99;
-            this.personalEditButton.Text = "Edit";
-            this.personalEditButton.UseVisualStyleBackColor = true;
-            this.personalEditButton.Click += new System.EventHandler(this.personalEditButton_Click);
-            // 
-            // contactCancelButton
-            // 
-            this.contactCancelButton.Location = new System.Drawing.Point(207, 223);
-            this.contactCancelButton.Name = "contactCancelButton";
-            this.contactCancelButton.Size = new System.Drawing.Size(49, 20);
-            this.contactCancelButton.TabIndex = 102;
-            this.contactCancelButton.Text = "Cancel";
-            this.contactCancelButton.UseVisualStyleBackColor = true;
-            this.contactCancelButton.Visible = false;
-            this.contactCancelButton.Click += new System.EventHandler(this.contactCancelButton_Click);
-            // 
-            // contactEditButton
-            // 
-            this.contactEditButton.Location = new System.Drawing.Point(152, 223);
-            this.contactEditButton.Name = "contactEditButton";
-            this.contactEditButton.Size = new System.Drawing.Size(49, 20);
-            this.contactEditButton.TabIndex = 101;
-            this.contactEditButton.Text = "Edit";
-            this.contactEditButton.UseVisualStyleBackColor = true;
-            this.contactEditButton.Click += new System.EventHandler(this.contactEditButton_Click);
-            // 
-            // datePicker
-            // 
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(95, 58);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(108, 20);
-            this.datePicker.TabIndex = 107;
-            this.datePicker.Visible = false;
-            // 
-            // genderBox
-            // 
-            this.genderBox.FormattingEnabled = true;
-            this.genderBox.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.genderBox.Location = new System.Drawing.Point(95, 84);
-            this.genderBox.Name = "genderBox";
-            this.genderBox.Size = new System.Drawing.Size(108, 21);
-            this.genderBox.TabIndex = 110;
-            this.genderBox.Visible = false;
-            // 
-            // civStatBox
-            // 
-            this.civStatBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.civStatBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.civStatBox.FormattingEnabled = true;
-            this.civStatBox.Items.AddRange(new object[] {
-            "Single",
-            "Married",
-            "Divorced",
-            "Widowed"});
-            this.civStatBox.Location = new System.Drawing.Point(95, 159);
-            this.civStatBox.Name = "civStatBox";
-            this.civStatBox.Size = new System.Drawing.Size(108, 21);
-            this.civStatBox.TabIndex = 111;
-            this.civStatBox.Visible = false;
-            // 
-            // educBox
-            // 
-            this.educBox.FormattingEnabled = true;
-            this.educBox.Items.AddRange(new object[] {
-            "Primary",
-            "Secondary",
-            "Tertiary",
-            "Intermediate",
-            "None"});
-            this.educBox.Location = new System.Drawing.Point(95, 184);
-            this.educBox.Name = "educBox";
-            this.educBox.Size = new System.Drawing.Size(108, 21);
-            this.educBox.TabIndex = 112;
-            this.educBox.Visible = false;
-            // 
-            // editNameButton
-            // 
-            this.editNameButton.Location = new System.Drawing.Point(261, 34);
-            this.editNameButton.Name = "editNameButton";
-            this.editNameButton.Size = new System.Drawing.Size(25, 20);
-            this.editNameButton.TabIndex = 113;
-            this.editNameButton.Text = "...";
-            this.editNameButton.UseVisualStyleBackColor = true;
-            this.editNameButton.Visible = false;
-            this.editNameButton.Click += new System.EventHandler(this.editNameButton_Click);
-            // 
-            // editAddButton
-            // 
-            this.editAddButton.Location = new System.Drawing.Point(261, 253);
-            this.editAddButton.Name = "editAddButton";
-            this.editAddButton.Size = new System.Drawing.Size(25, 20);
-            this.editAddButton.TabIndex = 114;
-            this.editAddButton.Text = "...";
-            this.editAddButton.UseVisualStyleBackColor = true;
-            this.editAddButton.Visible = false;
-            this.editAddButton.Click += new System.EventHandler(this.editAddButton_Click);
-            // 
             // ViewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,6 +562,9 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(670, 523);
+            this.MinimumSize = new System.Drawing.Size(670, 523);
             this.Name = "ViewEmployee";
             this.Text = "ViewEmployee";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewEmployee_FormClosed);

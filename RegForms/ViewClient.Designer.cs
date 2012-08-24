@@ -615,6 +615,9 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(670, 523);
+            this.MinimumSize = new System.Drawing.Size(670, 523);
             this.Name = "ViewClient";
             this.Text = "ViewClient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewClient_FormClosed);

@@ -183,6 +183,9 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.medListView);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 292);
+            this.MinimumSize = new System.Drawing.Size(564, 292);
             this.Name = "MedList";
             this.Text = "Medication List";
             this.Load += new System.EventHandler(this.MedList_Load);

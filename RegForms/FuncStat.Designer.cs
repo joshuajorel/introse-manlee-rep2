@@ -538,8 +538,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(339, 421);
+            this.MinimumSize = new System.Drawing.Size(339, 421);
             this.Name = "FuncStat";
-            this.Text = "FuncStat";
+            this.Text = "Functional Status";
             this.Load += new System.EventHandler(this.FuncStat_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

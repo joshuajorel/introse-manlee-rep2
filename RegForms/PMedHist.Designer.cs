@@ -33,6 +33,10 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diagnosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeOfConfinementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inclusiveDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getPMedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPMed = new introseHHC.getPMed();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,10 +46,6 @@
             this.diagField = new System.Windows.Forms.TextBox();
             this.getPMedTableAdapter = new introseHHC.getPMedTableAdapters.getPMedTableAdapter();
             this.DatePick = new System.Windows.Forms.DateTimePicker();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diagnosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeOfConfinementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inclusiveDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPMedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPMed)).BeginInit();
@@ -97,6 +97,35 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(451, 172);
             this.dataGridView1.TabIndex = 6;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // diagnosisDataGridViewTextBoxColumn
+            // 
+            this.diagnosisDataGridViewTextBoxColumn.DataPropertyName = "Diagnosis";
+            this.diagnosisDataGridViewTextBoxColumn.HeaderText = "Diagnosis";
+            this.diagnosisDataGridViewTextBoxColumn.Name = "diagnosisDataGridViewTextBoxColumn";
+            this.diagnosisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // placeOfConfinementDataGridViewTextBoxColumn
+            // 
+            this.placeOfConfinementDataGridViewTextBoxColumn.DataPropertyName = "Place Of Confinement";
+            this.placeOfConfinementDataGridViewTextBoxColumn.HeaderText = "Place Of Confinement";
+            this.placeOfConfinementDataGridViewTextBoxColumn.Name = "placeOfConfinementDataGridViewTextBoxColumn";
+            this.placeOfConfinementDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // inclusiveDateDataGridViewTextBoxColumn
+            // 
+            this.inclusiveDateDataGridViewTextBoxColumn.DataPropertyName = "Inclusive Date";
+            this.inclusiveDateDataGridViewTextBoxColumn.HeaderText = "Inclusive Date";
+            this.inclusiveDateDataGridViewTextBoxColumn.Name = "inclusiveDateDataGridViewTextBoxColumn";
+            this.inclusiveDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // getPMedBindingSource
             // 
@@ -161,35 +190,6 @@
             this.DatePick.Size = new System.Drawing.Size(122, 20);
             this.DatePick.TabIndex = 44;
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // diagnosisDataGridViewTextBoxColumn
-            // 
-            this.diagnosisDataGridViewTextBoxColumn.DataPropertyName = "Diagnosis";
-            this.diagnosisDataGridViewTextBoxColumn.HeaderText = "Diagnosis";
-            this.diagnosisDataGridViewTextBoxColumn.Name = "diagnosisDataGridViewTextBoxColumn";
-            this.diagnosisDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // placeOfConfinementDataGridViewTextBoxColumn
-            // 
-            this.placeOfConfinementDataGridViewTextBoxColumn.DataPropertyName = "Place Of Confinement";
-            this.placeOfConfinementDataGridViewTextBoxColumn.HeaderText = "Place Of Confinement";
-            this.placeOfConfinementDataGridViewTextBoxColumn.Name = "placeOfConfinementDataGridViewTextBoxColumn";
-            this.placeOfConfinementDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // inclusiveDateDataGridViewTextBoxColumn
-            // 
-            this.inclusiveDateDataGridViewTextBoxColumn.DataPropertyName = "Inclusive Date";
-            this.inclusiveDateDataGridViewTextBoxColumn.HeaderText = "Inclusive Date";
-            this.inclusiveDateDataGridViewTextBoxColumn.Name = "inclusiveDateDataGridViewTextBoxColumn";
-            this.inclusiveDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // PMedHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +205,9 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 290);
+            this.MinimumSize = new System.Drawing.Size(564, 290);
             this.Name = "PMedHist";
             this.Text = "Past Medical History";
             this.Load += new System.EventHandler(this.PMedHist_Load);

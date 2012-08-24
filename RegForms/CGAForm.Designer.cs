@@ -3177,6 +3177,9 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(670, 517);
+            this.MinimumSize = new System.Drawing.Size(670, 517);
             this.Name = "CGAForm";
             this.Text = "CGAForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CGAForm_FormClosing);
