@@ -493,7 +493,7 @@ namespace introseHHC.RegForms
                 read = cmd.ExecuteReader();
                 read.Read();
 
-                if (int.Parse(read.GetString(0)) > 0)
+                if (int.Parse(read.GetString(0)) == 1)
                 {
                     ViewCGA v = new ViewCGA(patID, connString);
                     v.ShowDialog();

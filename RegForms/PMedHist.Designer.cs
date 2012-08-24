@@ -32,7 +32,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pmedView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diagnosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeOfConfinementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.diagField = new System.Windows.Forms.TextBox();
             this.getPMedTableAdapter = new introseHHC.getPMedTableAdapters.getPMedTableAdapter();
             this.DatePick = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pmedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPMedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPMed)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,7 @@
             this.addButton.TabIndex = 9;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click_1);
             // 
             // cancelButton
             // 
@@ -78,25 +79,25 @@
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // pmedView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pmedView.AllowUserToAddRows = false;
+            this.pmedView.AllowUserToDeleteRows = false;
+            this.pmedView.AutoGenerateColumns = false;
+            this.pmedView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.pmedView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pmedView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.diagnosisDataGridViewTextBoxColumn,
             this.placeOfConfinementDataGridViewTextBoxColumn,
             this.inclusiveDateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.getPMedBindingSource;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 15);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(451, 172);
-            this.dataGridView1.TabIndex = 6;
+            this.pmedView.DataSource = this.getPMedBindingSource;
+            this.pmedView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.pmedView.Location = new System.Drawing.Point(12, 15);
+            this.pmedView.Name = "pmedView";
+            this.pmedView.ReadOnly = true;
+            this.pmedView.Size = new System.Drawing.Size(451, 172);
+            this.pmedView.TabIndex = 6;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -204,14 +205,14 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pmedView);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(564, 290);
             this.MinimumSize = new System.Drawing.Size(564, 290);
             this.Name = "PMedHist";
             this.Text = "Past Medical History";
             this.Load += new System.EventHandler(this.PMedHist_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pmedView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPMedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPMed)).EndInit();
             this.ResumeLayout(false);
@@ -224,7 +225,7 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView pmedView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

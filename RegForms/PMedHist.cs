@@ -16,29 +16,24 @@ namespace introseHHC.RegForms
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
-        private string server;
-        private string user;
-        private string password;
-        private string database;
         private string query;
+        private string connString;
         private MedicalHistory mhis;
 
         private string diag;
         private string place;
         private DateTime date;
-        private UInt16 medID;
+        private UInt16 patID;
 
         public PMedHist(UInt16 id, string c)
         {
             InitializeComponent();
-            server = "localhost";
-            user = "root";
-            database = "hhc-db";
-            password = "root";
+
 
             conn = new MySqlConnection(c);
-            medID = id;
+            patID = id;
             mhis = new MedicalHistory();
+            connString = c;
         }
 
         private void PMedHist_Load(object sender, EventArgs e)
@@ -60,13 +55,13 @@ namespace introseHHC.RegForms
         private void addmed(MedicalHistory mh)
         {
             conn.Open();
-            string query = "INSERT INTO PMED_HIS(CGAID, DIAGNOSIS, PLACECON, INCDATE) VALUES" +
+            string query = "INSERT INTO PMED_HIS(PATID, DIAGNOSIS, PLACECON, INCDATE) VALUES" +
                 "(@id ,@diag, @pla, @inc)";
 
             cmd = new MySqlCommand(query, conn);
             cmd.Prepare();
 
-            cmd.Parameters.AddWithValue("@id", medID);
+            cmd.Parameters.AddWithValue("@id", patID);
             cmd.Parameters.AddWithValue("@diag", mh.getDiag());
             cmd.Parameters.AddWithValue("@pla", mh.getPla());
             cmd.Parameters.AddWithValue("@inc", mh.getDate());
@@ -86,7 +81,8 @@ namespace introseHHC.RegForms
             conn.Close();
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+
+        private void addButton_Click_1(object sender, EventArgs e)
         {
             diag = diagField.Text;
             place = placeField.Text;
@@ -94,6 +90,7 @@ namespace introseHHC.RegForms
 
             mhis.setMH(diag, place, date);
             addmed(mhis);
+            this.getPMedTableAdapter.Fill(this.getPMed._getPMed);
         }
     }
 }

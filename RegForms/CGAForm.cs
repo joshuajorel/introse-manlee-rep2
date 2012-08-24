@@ -114,7 +114,7 @@ namespace introseHHC.RegForms
 
         private void button4_Click(object sender, EventArgs e)
         {   //Past Medical History
-            PMedHist PMH = new PMedHist(cga.CID, connString);
+            PMedHist PMH = new PMedHist(selID, connString);
             PMH.ShowDialog();
         }
 
@@ -145,6 +145,7 @@ namespace introseHHC.RegForms
             psel.ShowDialog();
 
             selID = psel.Sel;
+            cga.PID = selID;
            
             psel.Close();
 
