@@ -131,7 +131,7 @@ namespace introseHHC.RegForms
                             gds.setScale(ctr, read.GetBoolean(0));
                             read.Close();
                         }
-                        gdTotalTB.Text = gds.computeScore().ToString() + " " + gds.assess();
+                        gdTotalTB.Text = gds.computeScore().ToString() + " - " + gds.assess();
 
                         setGDRadioButtons();
                         
@@ -190,7 +190,7 @@ namespace introseHHC.RegForms
                             read.Close();
                         }
                         
-                        nutTB.Text = nut.getScore().ToString()+" "+nut.assess();
+                        nutTB.Text = nut.getScore().ToString()+" - "+nut.assess();
                         
                         setNutRadioButtons();
 
@@ -487,7 +487,140 @@ namespace introseHHC.RegForms
 
         private void setNutRadioButtons()
         {
+            if(nut.getNut(0)==0)
+            {
+                na1Btn1.Checked = true;
+            }
+            else if (nut.getNut(0) == 1)
+            {
+                na1Btn2.Checked = true;
+            }
 
+            if (nut.getNut(1) == 0)
+            {
+                na2Btn1.Checked = true;
+            }
+            else if (nut.getNut(1) == 0.5f)
+            {
+                na2Btn2.Checked = true;
+            }
+
+            if (nut.getNut(2) == 0)
+            {
+                na3Btn1.Checked = true;
+            }
+
+            if (nut.getNut(3) == 0)
+            {
+                na4Btn1.Checked = true;
+            }
+            else if (nut.getNut(3) == 1)
+            {
+                na4Btn2.Checked = true;
+            }
+            else if (nut.getNut(3) == 2)
+            {
+                na4Btn3.Checked = true;
+            }
+
+            if (nut.getNut(4) == 1)
+            {
+                na5Btn1.Checked = true;
+            }
+
+            if (nut.getNut(5) == 0)
+            {
+                na6Btn1.Checked = true;
+            }
+
+            if (nut.getNut(6) == 1)
+            {
+                na7Btn1.Checked = true;
+            }
+
+            if (nut.getNut(7) == 0)
+            {
+                na8Btn1.Checked = true;
+            }
+            else if (nut.getNut(7) == 1)
+            {
+                na8Btn2.Checked = true;
+            }
+
+            if (nut.getNut(8) == 0)
+            {
+                na9Btn1.Checked = true;
+            }
+
+            if (nut.getNut(9) == 0)
+            {
+                na10Btn1.Checked = true;
+            }
+            else if (nut.getNut(9) == 1)
+            {
+                na10Btn2.Checked = true;
+            }
+
+            if (nut.getNut(10) == 0)
+            {
+                na11Btn1.Checked = true;
+            }
+
+            if (nut.getNut(11) == 0)
+            {
+                na12Btn1.Checked = true;
+            }
+            else if (nut.getNut(11) == 1)
+            {
+                na12Btn2.Checked = true;
+            }
+
+            if (nut.getProteinIntake(0))
+            {
+                na13Btn1.Checked = true;
+            }
+
+            if (nut.getProteinIntake(1))
+            {
+                na14Btn1.Checked = true;
+            }
+
+            if (nut.getProteinIntake(2))
+            {
+                na15Btn1.Checked = true;
+            }
+
+            if (nut.getNut(13) == 1)
+            {
+                na16Btn1.Checked = true;
+            }
+
+            if (nut.getNut(14) == 0)
+            {
+                na17Btn1.Checked = true;
+            }
+            else if (nut.getNut(14) == 1)
+            {
+                na17Btn2.Checked = true;
+            }
+
+            if (nut.getNut(15) == 0)
+            {
+                na18Btn1.Checked = true;
+            }
+            else if (nut.getNut(15) == 0.5f)
+            {
+                na18Btn2.Checked = true;
+            }
+
+            if (nut.getNut(16) == 0)
+            {
+                na19Btn1.Checked = true;
+            }
+            else if (nut.getNut(16) == 1)
+            {
+                na19Btn2.Checked = true;
+            }
         }
 }
 }
