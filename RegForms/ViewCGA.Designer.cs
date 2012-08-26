@@ -57,7 +57,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(100, 498);
+            this.splitter1.Size = new System.Drawing.Size(100, 489);
             this.splitter1.TabIndex = 10;
             this.splitter1.TabStop = false;
             // 
@@ -254,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 498);
+            this.ClientSize = new System.Drawing.Size(664, 489);
             this.Controls.Add(this.nutriField);
             this.Controls.Add(this.mentalField);
             this.Controls.Add(this.gdsField);

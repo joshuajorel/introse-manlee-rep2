@@ -252,6 +252,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getCaseMgmtDB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\ViewCGA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\ViewCGA2.Designer.cs">
+      <DependentUpon>ViewCGA2.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\ViewClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewCGA.resx">
       <DependentUpon>ViewCGA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\ViewCGA2.resx">
+      <DependentUpon>ViewCGA2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewClient.resx">
       <DependentUpon>ViewClient.cs</DependentUpon>

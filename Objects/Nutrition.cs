@@ -32,19 +32,14 @@ namespace introseHHC.Objects
             return nut[n];
         }
 
-        public void proSet1(Boolean b)
+        public void setProteinIntake(int n, Boolean b)
         {
-            proteinIntake[0] = b;
+            proteinIntake[n] = b;
         }
 
-        public void proSet2(Boolean b)
+        public Boolean getProteinIntake(int n)
         {
-            proteinIntake[1] = b;
-        }
-
-        public void proSet3(Boolean b)
-        {
-            proteinIntake[2] = b;
+            return proteinIntake[n];
         }
 
         public float getScore()

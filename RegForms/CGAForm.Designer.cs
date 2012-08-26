@@ -264,7 +264,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -285,6 +284,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.cgaSubmitBtn = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox38.SuspendLayout();
@@ -332,20 +332,20 @@
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(100, 479);
+            this.splitter1.Size = new System.Drawing.Size(100, 481);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -403,7 +403,7 @@
             this.panel4.Enabled = false;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(551, 450);
+            this.panel4.Size = new System.Drawing.Size(548, 447);
             this.panel4.TabIndex = 0;
             // 
             // nutTB
@@ -1272,7 +1272,7 @@
             this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 419);
+            this.panel1.Size = new System.Drawing.Size(545, 412);
             this.panel1.TabIndex = 3;
             // 
             // selPhysician
@@ -1686,7 +1686,7 @@
             this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(551, 444);
+            this.panel2.Size = new System.Drawing.Size(545, 447);
             this.panel2.TabIndex = 0;
             // 
             // gdCompute
@@ -2441,7 +2441,7 @@
             this.panel3.Enabled = false;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(551, 450);
+            this.panel3.Size = new System.Drawing.Size(545, 447);
             this.panel3.TabIndex = 0;
             // 
             // msComputeBtn
@@ -2941,22 +2941,13 @@
             this.label37.TabIndex = 75;
             this.label37.Text = "Mini-mental Status Examination";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::introseHHC.Properties.Resources.shape;
-            this.pictureBox1.Location = new System.Drawing.Point(268, 464);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 79);
-            this.pictureBox1.TabIndex = 117;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.panel5);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(551, 450);
+            this.tabPage6.Size = new System.Drawing.Size(542, 450);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Caregiver Assessment";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -3169,11 +3160,20 @@
             this.label25.TabIndex = 38;
             this.label25.Text = "Caregiver Assessment";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::introseHHC.Properties.Resources.shape;
+            this.pictureBox1.Location = new System.Drawing.Point(268, 464);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 79);
+            this.pictureBox1.TabIndex = 117;
+            this.pictureBox1.TabStop = false;
+            // 
             // CGAForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 479);
+            this.ClientSize = new System.Drawing.Size(654, 481);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
@@ -3274,7 +3274,6 @@
             this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -3286,6 +3285,7 @@
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

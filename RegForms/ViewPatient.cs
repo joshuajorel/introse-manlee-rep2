@@ -495,7 +495,7 @@ namespace introseHHC.RegForms
 
                 if (int.Parse(read.GetString(0)) == 1)
                 {
-                    ViewCGA v = new ViewCGA(patID, connString);
+                    ViewCGA2 v = new ViewCGA2(patID, connString);
                     v.ShowDialog();
                     v.Close();
                 }
