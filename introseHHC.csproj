@@ -156,6 +156,12 @@
     <Compile Include="RegForms\ClientSelect.Designer.cs">
       <DependentUpon>ClientSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\FStatView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\FStatView.Designer.cs">
+      <DependentUpon>FStatView.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\FuncStat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     </Compile>
     <Compile Include="RegForms\ImmRec.Designer.cs">
       <DependentUpon>ImmRec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\IRView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\IRView.Designer.cs">
+      <DependentUpon>IRView.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\Login.cs">
       <SubType>Form</SubType>
@@ -193,6 +205,12 @@
     <Compile Include="RegForms\MedList.Designer.cs">
       <DependentUpon>MedList.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegForms\MedListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\MedListView.Designer.cs">
+      <DependentUpon>MedListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForms\PatientSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +228,12 @@
     </Compile>
     <Compile Include="RegForms\PMedHist.Designer.cs">
       <DependentUpon>PMedHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\PMedView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\PMedView.Designer.cs">
+      <DependentUpon>PMedView.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\RegisterEmployee.cs">
       <SubType>Form</SubType>
@@ -240,6 +264,12 @@
     </Compile>
     <Compile Include="RegForms\SocEnv.Designer.cs">
       <DependentUpon>SocEnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegForms\SocView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegForms\SocView.Designer.cs">
+      <DependentUpon>SocView.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\ViewCGA.cs">
       <SubType>Form</SubType>
@@ -294,11 +324,17 @@
     <EmbeddedResource Include="RegForms\ClientSelect.resx">
       <DependentUpon>ClientSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\FStatView.resx">
+      <DependentUpon>FStatView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\FuncStat.resx">
       <DependentUpon>FuncStat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ImmRec.resx">
       <DependentUpon>ImmRec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\IRView.resx">
+      <DependentUpon>IRView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -319,6 +355,9 @@
     <EmbeddedResource Include="RegForms\MedList.resx">
       <DependentUpon>MedList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\MedListView.resx">
+      <DependentUpon>MedListView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForms\PatientSelect.resx">
       <DependentUpon>PatientSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\PMedHist.resx">
       <DependentUpon>PMedHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\PMedView.resx">
+      <DependentUpon>PMedView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\RegisterEmployee.resx">
       <DependentUpon>RegisterEmployee.cs</DependentUpon>
@@ -342,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\SocEnv.resx">
       <DependentUpon>SocEnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegForms\SocView.resx">
+      <DependentUpon>SocView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForms\ViewCGA.resx">
       <DependentUpon>ViewCGA.cs</DependentUpon>

@@ -28,27 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.addButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.pmedView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diagnosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeOfConfinementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inclusiveDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getPMedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getPMed = new introseHHC.getPMed();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.placeField = new System.Windows.Forms.TextBox();
             this.diagField = new System.Windows.Forms.TextBox();
-            this.getPMedTableAdapter = new introseHHC.getPMedTableAdapters.getPMedTableAdapter();
             this.DatePick = new System.Windows.Forms.DateTimePicker();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pmedView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPMedBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPMed)).BeginInit();
             this.SuspendLayout();
             // 
             // addButton
@@ -63,80 +56,40 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(469, 80);
+            this.cancelButton.Location = new System.Drawing.Point(469, 70);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click_1);
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(469, 51);
+            this.okButton.Location = new System.Drawing.Point(469, 41);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 7;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click_1);
             // 
             // pmedView
             // 
             this.pmedView.AllowUserToAddRows = false;
             this.pmedView.AllowUserToDeleteRows = false;
-            this.pmedView.AutoGenerateColumns = false;
             this.pmedView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pmedView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pmedView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.diagnosisDataGridViewTextBoxColumn,
-            this.placeOfConfinementDataGridViewTextBoxColumn,
-            this.inclusiveDateDataGridViewTextBoxColumn});
-            this.pmedView.DataSource = this.getPMedBindingSource;
+            this.Column1,
+            this.Column2,
+            this.Column3});
             this.pmedView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.pmedView.Location = new System.Drawing.Point(12, 15);
             this.pmedView.Name = "pmedView";
             this.pmedView.ReadOnly = true;
             this.pmedView.Size = new System.Drawing.Size(451, 172);
             this.pmedView.TabIndex = 6;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // diagnosisDataGridViewTextBoxColumn
-            // 
-            this.diagnosisDataGridViewTextBoxColumn.DataPropertyName = "Diagnosis";
-            this.diagnosisDataGridViewTextBoxColumn.HeaderText = "Diagnosis";
-            this.diagnosisDataGridViewTextBoxColumn.Name = "diagnosisDataGridViewTextBoxColumn";
-            this.diagnosisDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // placeOfConfinementDataGridViewTextBoxColumn
-            // 
-            this.placeOfConfinementDataGridViewTextBoxColumn.DataPropertyName = "Place Of Confinement";
-            this.placeOfConfinementDataGridViewTextBoxColumn.HeaderText = "Place Of Confinement";
-            this.placeOfConfinementDataGridViewTextBoxColumn.Name = "placeOfConfinementDataGridViewTextBoxColumn";
-            this.placeOfConfinementDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // inclusiveDateDataGridViewTextBoxColumn
-            // 
-            this.inclusiveDateDataGridViewTextBoxColumn.DataPropertyName = "Inclusive Date";
-            this.inclusiveDateDataGridViewTextBoxColumn.HeaderText = "Inclusive Date";
-            this.inclusiveDateDataGridViewTextBoxColumn.Name = "inclusiveDateDataGridViewTextBoxColumn";
-            this.inclusiveDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // getPMedBindingSource
-            // 
-            this.getPMedBindingSource.DataMember = "getPMed";
-            this.getPMedBindingSource.DataSource = this.getPMed;
-            // 
-            // getPMed
-            // 
-            this.getPMed.DataSetName = "getPMed";
-            this.getPMed.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -179,10 +132,6 @@
             this.diagField.Size = new System.Drawing.Size(100, 20);
             this.diagField.TabIndex = 12;
             // 
-            // getPMedTableAdapter
-            // 
-            this.getPMedTableAdapter.ClearBeforeFill = true;
-            // 
             // DatePick
             // 
             this.DatePick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -191,11 +140,29 @@
             this.DatePick.Size = new System.Drawing.Size(122, 20);
             this.DatePick.TabIndex = 44;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Diagnosis";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Place of Confinement";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Date";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // PMedHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 263);
+            this.ClientSize = new System.Drawing.Size(548, 252);
             this.Controls.Add(this.DatePick);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -211,10 +178,8 @@
             this.MinimumSize = new System.Drawing.Size(564, 290);
             this.Name = "PMedHist";
             this.Text = "Past Medical History";
-            this.Load += new System.EventHandler(this.PMedHist_Load);
+            //this.Load += new System.EventHandler(this.PMedHist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pmedView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPMedBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getPMed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,13 +196,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox placeField;
         private System.Windows.Forms.TextBox diagField;
-        private getPMed getPMed;
-        private System.Windows.Forms.BindingSource getPMedBindingSource;
-        private getPMedTableAdapters.getPMedTableAdapter getPMedTableAdapter;
         private System.Windows.Forms.DateTimePicker DatePick;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diagnosisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeOfConfinementDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inclusiveDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

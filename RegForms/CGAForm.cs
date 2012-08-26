@@ -108,6 +108,7 @@ namespace introseHHC.RegForms
         {   //Past Medical History
             PMedHist PMH = new PMedHist(selID, connString);
             PMH.ShowDialog();
+            PMH.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -133,7 +134,6 @@ namespace introseHHC.RegForms
 
         private void button9_Click(object sender, EventArgs e)
         {
-
             Close();
         }
 
@@ -819,26 +819,26 @@ namespace introseHHC.RegForms
         private void na13Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na13Btn1.Checked)
-                nut.setProteinIntake(0, true);
+                nut.proSet1(true);
             else
-                nut.setProteinIntake(0, false);
+                nut.proSet1(false);
         }
 
 
         private void na14Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na14Btn1.Checked)
-                nut.setProteinIntake(1, true);
+                nut.proSet2(true);
             else
-                nut.setProteinIntake(1, false);
+                nut.proSet2(false);
         }
 
         private void na15Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na15Btn1.Checked)
-                nut.setProteinIntake(2, true);
+                nut.proSet3(true);
             else
-                nut.setProteinIntake(2, false);
+                nut.proSet3(false);
         }
 
 
@@ -954,7 +954,7 @@ namespace introseHHC.RegForms
             
         }
 
-///////// DID I SAY LAST KANINA? WELL ETO UNG LAST TALAGA - store to db ////////////
+///////// store to db ////////////
         private void storeGDS()
         {
         }
@@ -998,85 +998,56 @@ namespace introseHHC.RegForms
                 cmd.ExecuteNonQuery();
                 //insert geriatric data
 
-                query = "INSERT INTO GER_DEP_SCALE (CGAID,NUMBER,ANSWER) VALUES (@cid,@num,@ans);";
+                query = "INSERT INTO GER_DEP_SCALE (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
 
-                for (int ctr = 0; ctr < 15; ctr++)
-                {
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@cid", cga.CID);
-                    cmd.Parameters.AddWithValue("@num", ctr);
-                    cmd.Parameters.AddWithValue("@ans", gds.getScale(ctr));
+                    cmd.Parameters.AddWithValue("@cid",cga.CID);
+                    cmd.Parameters.AddWithValue("@ans",gds.computeScore() );
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                }
 
 
                 //insert mental exam
 
-                query = "INSERT INTO MENSTAT (CGAID,NUMBER,ANSWER) VALUES (@cid,@num,@ans);";
+                query = "INSERT INTO MENSTAT (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
-                for (int ctr = 0; ctr < 29; ctr++)
-                {
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid", cga.CID);
-                    cmd.Parameters.AddWithValue("@num", ctr);
-                    cmd.Parameters.AddWithValue("@ans", me.getAns(ctr));
+                    cmd.Parameters.AddWithValue("@ans", me.getScore());
+         
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                }
+          
 
                 //insert nutrional assessment
-                //first seventeen will get score, the last three are the specific answers for the protein intake question
-                query = "INSERT INTO NUT_ASS (CGAID,NUMBER,ANSWER) VALUES (@cid,@num,@ans);";
+                query = "INSERT INTO NUT_ASS (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
-                for (int ctr = 0; ctr < 17; ctr++)
-                {
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@cid", cga.CID);
-                    cmd.Parameters.AddWithValue("@num", ctr);
-                    cmd.Parameters.AddWithValue("@ans", nut.getNut(ctr));
-                    cmd.Prepare();
-                    cmd.ExecuteNonQuery();
-                }
 
-                for (int ctr = 0; ctr < 3; ctr++)
-                {
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid", cga.CID);
-                    cmd.Parameters.AddWithValue("@num", ctr+17);
-                    if (nut.getProteinIntake(ctr))
-                    {
-                        cmd.Parameters.AddWithValue("@ans", 1);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@ans", 0);
-                    }
+                    cmd.Parameters.AddWithValue("@ans", nut.getScore());
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                }
            
 
                 //insert caregiver assessment
 
-                query = "INSERT INTO CARE_ASS (CGAID,NUM1,NUM2,NUM3,NUM4) VALUES (@cid,@num1,@num2,@num3,@num4);";
+                query = "INSERT INTO CARE_ASS (CGAID,ANSWER) VALUES (@cid,@ans);";
                 cmd.CommandText = query;
 
-                cmd.Parameters.Clear();
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@cid", cga.CID);                
-                cmd.Parameters.AddWithValue("@num1", ca.getAns(0));                
-                cmd.Parameters.AddWithValue("@num2", ca.getAns(1));                
-                cmd.Parameters.AddWithValue("@num3", ca.getAns(2));                
-                cmd.Parameters.AddWithValue("@num4", ca.getAns(3));                
-                
-                
-                cmd.ExecuteNonQuery();
-                
+                for (int ccnt = 0; ccnt < 4; ccnt++)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@cid", cga.CID);
+                    cmd.Parameters.AddWithValue("@ans", ca.getAns(ccnt));
+                    
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
                 CloseConnection();
                 MessageBox.Show("CGA successfully added to the database");
                 isFinished = true;

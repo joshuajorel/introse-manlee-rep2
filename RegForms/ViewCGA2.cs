@@ -17,6 +17,7 @@ namespace introseHHC.RegForms
         private UInt16 cgaID;
         private UInt16 phyID;
         private bool cont = false;
+        private string connString;
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
@@ -26,6 +27,7 @@ namespace introseHHC.RegForms
         private Nutrition nut;
         private Boolean[] meAns = new Boolean[30];
         private CGiverAssess ca;
+        private SocView sv;
         //for initializing the boolean array into false
         private void countBool()
         {
@@ -44,6 +46,7 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
             patID = id;
+            connString = c;
             conn = new MySqlConnection(c);
             gds = new GDScales(gdAns);
             countBool();
@@ -212,10 +215,6 @@ namespace introseHHC.RegForms
                         read.Close();
                         setCGiverRadioButtons();
                   }
-
-                      
-
-
 
                 CloseConnection();
             }
@@ -662,5 +661,40 @@ namespace introseHHC.RegForms
                 cgYes4.Checked = true;
             }
         }
-}
+
+        private void socEnvtView_Click(object sender, EventArgs e)
+        {
+            SocView sv = new SocView(cgaID, connString);
+            sv.ShowDialog();
+            sv.Close();
+        }
+
+        private void pastMedButton_Click(object sender, EventArgs e)
+        {
+            PMedView pmv = new PMedView(patID, connString);
+            pmv.ShowDialog();
+            pmv.Close();
+        }
+
+        private void immRecButton_Click(object sender, EventArgs e)
+        {
+            IRView irv = new IRView(cgaID, connString);
+            irv.ShowDialog();
+            irv.Close();
+        }
+
+        private void funcStatButton_Click(object sender, EventArgs e)
+        {
+            FStatView fsv = new FStatView(cgaID, connString);
+            fsv.ShowDialog();
+            fsv.Close();
+        }
+
+        private void medListButton_Click(object sender, EventArgs e)
+        {
+            MedListView mlv = new MedListView(patID, connString);
+            mlv.ShowDialog();
+            mlv.Close();
+        }
+    }
 }

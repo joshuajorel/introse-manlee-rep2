@@ -421,6 +421,7 @@
             this.funcStatButton.TabIndex = 44;
             this.funcStatButton.Text = "View";
             this.funcStatButton.UseVisualStyleBackColor = true;
+            this.funcStatButton.Click += new System.EventHandler(this.funcStatButton_Click);
             // 
             // label8
             // 
@@ -438,6 +439,7 @@
             this.immRecButton.TabIndex = 41;
             this.immRecButton.Text = "View";
             this.immRecButton.UseVisualStyleBackColor = true;
+            this.immRecButton.Click += new System.EventHandler(this.immRecButton_Click);
             // 
             // medListButton
             // 
@@ -447,6 +449,7 @@
             this.medListButton.TabIndex = 40;
             this.medListButton.Text = "View";
             this.medListButton.UseVisualStyleBackColor = true;
+            this.medListButton.Click += new System.EventHandler(this.medListButton_Click);
             // 
             // pastMedButton
             // 
@@ -456,6 +459,7 @@
             this.pastMedButton.TabIndex = 39;
             this.pastMedButton.Text = "View";
             this.pastMedButton.UseVisualStyleBackColor = true;
+            this.pastMedButton.Click += new System.EventHandler(this.pastMedButton_Click);
             // 
             // socEnvtView
             // 
@@ -465,6 +469,7 @@
             this.socEnvtView.TabIndex = 38;
             this.socEnvtView.Text = "View";
             this.socEnvtView.UseVisualStyleBackColor = true;
+            this.socEnvtView.Click += new System.EventHandler(this.socEnvtView_Click);
             // 
             // label7
             // 

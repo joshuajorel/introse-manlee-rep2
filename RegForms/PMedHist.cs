@@ -23,7 +23,7 @@ namespace introseHHC.RegForms
         private string diag;
         private string place;
         private DateTime date;
-        private UInt16 patID;
+        private UInt16 pmedID;
 
         public PMedHist(UInt16 id, string c)
         {
@@ -31,56 +31,105 @@ namespace introseHHC.RegForms
 
 
             conn = new MySqlConnection(c);
-            patID = id;
+            pmedID = id;
             mhis = new MedicalHistory();
             connString = c;
+            fillTable();
         }
 
-        private void PMedHist_Load(object sender, EventArgs e)
+        public UInt16 PMedID
         {
-            // TODO: This line of code loads data into the 'getPMed._getPMed' table. You can move, or remove it, as needed.
-            this.getPMedTableAdapter.Fill(this.getPMed._getPMed);
+            get { return pmedID; }
+            set { pmedID = value; }
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        private bool OpenConnection()
         {
-            this.Hide();
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void addmed(MedicalHistory mh)
-        {
-            conn.Open();
-            string query = "INSERT INTO PMED_HIS(PATID, DIAGNOSIS, PLACECON, INCDATE) VALUES" +
-                "(@id ,@diag, @pla, @inc)";
-
-            cmd = new MySqlCommand(query, conn);
-            cmd.Prepare();
-
-            cmd.Parameters.AddWithValue("@id", patID);
-            cmd.Parameters.AddWithValue("@diag", mh.getDiag());
-            cmd.Parameters.AddWithValue("@pla", mh.getPla());
-            cmd.Parameters.AddWithValue("@inc", mh.getDate());
-
             try
             {
-                cmd.ExecuteNonQuery();
-                diagField.Text = string.Empty;
-                placeField.Text = string.Empty;
-                Console.WriteLine("Past Medical History Has Been Added.");
-
+                conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
+                return true;
             }
             catch (Exception err)
             {
                 Console.WriteLine(err.Message);
+                return false;
             }
-            conn.Close();
         }
 
+        private bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        private void addmed(MedicalHistory mh)
+        {
+            if (OpenConnection())
+            {
+                string query = "INSERT INTO PMED_HIS(PATID, DIAGNOSIS, PLACECON, INCDATE) VALUES" +
+                    "(@id ,@diag, @pla, @inc)";
+
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@id", pmedID);
+                cmd.Parameters.AddWithValue("@diag", mh.getDiag());
+                cmd.Parameters.AddWithValue("@pla", mh.getPla());
+                cmd.Parameters.AddWithValue("@inc", mh.getDate());
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    diagField.Text = string.Empty;
+                    placeField.Text = string.Empty;
+                    Console.WriteLine("Medical History Has Been Added.");
+
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                }
+            }
+            CloseConnection();
+            pmedView.Rows.Clear();
+            fillTable();
+        }
+
+        private void fillTable()
+        {
+
+            if (OpenConnection())
+            {
+                string query;
+                query = "SELECT * FROM PMED_HIS WHERE PATID = @patID;";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@patID", pmedID);
+                read = cmd.ExecuteReader();
+
+                int x;
+                while (read.Read())
+                {
+                    x = pmedView.Rows.Add();
+                    pmedView.Rows[x].Cells[0].Value = read.GetString("DIAGNOSIS");
+                    pmedView.Rows[x].Cells[1].Value = read.GetString("PLACECON");
+                    pmedView.Rows[x].Cells[2].Value = read.GetString("INCDATE");
+                }
+                read.Close();
+                CloseConnection();
+            }
+        }
 
         private void addButton_Click_1(object sender, EventArgs e)
         {
@@ -90,7 +139,16 @@ namespace introseHHC.RegForms
 
             mhis.setMH(diag, place, date);
             addmed(mhis);
-            this.getPMedTableAdapter.Fill(this.getPMed._getPMed);
+        }
+
+        private void okButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void cancelButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

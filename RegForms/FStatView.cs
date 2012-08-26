@@ -6,32 +6,29 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using introseHHC.Objects;
+using MySql.Data.MySqlClient;
 
 namespace introseHHC.RegForms
 {
-    public partial class FuncStat : Form
+    public partial class FStatView : Form
     {
-        private FunctionalStatus func;
-
         private MySqlConnection conn;
-        private MySqlCommand cmd;
         private MySqlDataReader read;
-        private string query;
-
-        private UInt16 fncID;
-        private bool ans = new bool();
+        private MySqlCommand cmd;
+        private bool ans;
         private int num;
+        private string query;
+        private FunctionalStatus func;
+        private UInt16 ID;
+        private int ct;
 
-        public FuncStat(UInt16 id, string c)
+        public FStatView(UInt16 id, string c)
         {
             InitializeComponent();
-            num = 0;
-            FunctionalStatus func = new FunctionalStatus(ans, num);
-
+            ID = id;
             conn = new MySqlConnection(c);
-            fncID = id;
+            ct = 0;
         }
 
         private bool OpenConnection()
@@ -187,164 +184,9 @@ namespace introseHHC.RegForms
             }
         }
 
-        private void addfunc(FunctionalStatus fs)
-        {
-            if (OpenConnection())
-            {
-                string query = "INSERT INTO FUNCSTAT(CGAID, ANSWER, NUMBER) VALUES" +
-                    "(@id, @ans, @num)";
-                cmd.CommandText = query;
-                cmd.Parameters.Clear();
-
-                for(num = 0; num < 12; num++)
-                {
-                    try
-                    {
-                        cmd.Parameters.AddWithValue("@id", fncID);
-                        cmd.Parameters.AddWithValue("@ans", fs.getStat(num));
-                        cmd.Parameters.AddWithValue("@num", num);
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception err)
-                    {
-                        Console.WriteLine(err.Message);
-                    }
-                }
-            }
-            CloseConnection();
-            Console.WriteLine("Functional Status Recorded.");
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 0);
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 0);
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 1);
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 1);
-        }
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 2);
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 2);
-        }
-
-        private void radioButton8_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 3);
-        }
-
-        private void radioButton7_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 3);
-        }
-
-        private void radioButton10_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 4);
-        }
-
-        private void radioButton9_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 4);
-        }
-
-        private void radioButton12_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 5);
-        }
-
-        private void radioButton11_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 5);
-        }
-
-        private void radioButton14_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 6);
-        }
-
-        private void radioButton13_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 6);
-        }
-
-        private void radioButton16_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 7);
-        }
-
-        private void radioButton15_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 7);
-        }
-
-        private void radioButton18_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 8);
-        }
-
-        private void radioButton17_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 8);
-        }
-
-        private void radioButton20_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 9);
-        }
-
-        private void radioButton19_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 9);
-        }
-
-        private void radioButton22_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 10);
-        }
-
-        private void radioButton21_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 10);
-        }
-
-        private void radioButton24_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(true, 11);
-        }
-
-        private void radioButton23_CheckedChanged(object sender, EventArgs e)
-        {
-            func.setStat(false, 11);
-        }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            addfunc(func);
-            this.Hide();
-        }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
-
     }
 }

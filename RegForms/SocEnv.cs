@@ -18,7 +18,6 @@ namespace introseHHC.RegForms
         private MySqlDataReader read;
         private SocialEnvironment SE;
 
-        private SocEnv Soc;
         private UInt16 socID;
         //private UInt16 patID;
         private string name;
