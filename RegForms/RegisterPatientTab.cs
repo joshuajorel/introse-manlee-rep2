@@ -58,11 +58,16 @@ namespace introseHHC.RegForms
         private System.Text.StringBuilder patSb;
         private bool patFlag;
         private bool clientFlag;
+        bool mdFlag = true;
+        bool hcFlag = true;
 
         //constants for cost table
         private const bool MD = true;
         private const bool HC = false;
         float np, m, o, nd, h, t, s, lwt, pax, total, subtotal;
+
+        System.Text.StringBuilder cmgmt = new StringBuilder();
+        System.Text.StringBuilder hv = new StringBuilder();
         
 
         public RegisterPatientTab(string c)
@@ -451,39 +456,6 @@ namespace introseHHC.RegForms
 
                 patSb.Clear();
 
-                RegisterPerson(patient);
-
-                //insert into patient table
-
-                OpenConnection();
-
-                string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
-                cmd.CommandText = query;
-
-                read = cmd.ExecuteReader();
-
-                read.Read();
-
-                Console.WriteLine(read.GetDecimal(0).ToString());
-
-                UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
-
-                patient.setID(lastID);
-
-                read.Close();
-
-                query = "INSERT INTO PATIENT(PatID) VALUES(@pid);";
-
-                cmd.CommandText = query;
-
-                cmd.Prepare();
-
-                cmd.Parameters.AddWithValue("@pid", lastID);
-
-                cmd.ExecuteNonQuery();
-
-                CloseConnection();
-
                 tabControl1.SelectedIndex++;
 
             }
@@ -495,7 +467,7 @@ namespace introseHHC.RegForms
 
             }
 
-            //move to next tab
+           
 
         }
         private void cNextButton_Click(object sender, EventArgs e)
@@ -730,48 +702,9 @@ namespace introseHHC.RegForms
 
                 patSb.Clear();
 
-                string query;
-                UInt16 lastID;
+    
 
-                if (selID == 0)
-                    RegisterPerson(client);
-
-                OpenConnection();
-
-                if (selID == 0)
-                {
-                    query = "SELECT LAST_INSERT_ID() FROM PERSON;";
-                    cmd = new MySqlCommand(query, conn);
-                    read = cmd.ExecuteReader();
-                    read.Read();
-                    Console.WriteLine(read.GetDecimal(0).ToString());
-                    lastID = UInt16.Parse(read.GetDecimal(0).ToString());
-                    client.setID(lastID);
-                    read.Close();
-
-                    query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
-                    cmd.CommandText = query;
-                    cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@cid", lastID);
-                    cmd.ExecuteNonQuery();
-                    tabControl1.SelectedIndex++;
-                }
-                else
-                {
-                    client.setID(selID);
-                    tabControl1.SelectedIndex++;
-                }
-
-                query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
-                cmd.CommandText = query;
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@pd", patient.getID());
-                cmd.Parameters.AddWithValue("@cd", client.getID());
-                cmd.Parameters.AddWithValue("@ip", isPrimary);
-                cmd.Parameters.AddWithValue("@rel", posrel);
-                cmd.ExecuteNonQuery();
-
-                CloseConnection();
+                tabControl1.SelectedIndex++;
                
             }
             else
@@ -783,13 +716,11 @@ namespace introseHHC.RegForms
             }
 
 }
+       
         private void rNextButton_Click(object sender, EventArgs e)
         {
-            bool mdFlag = true;
-            bool hcFlag = true;
-            System.Text.StringBuilder cmgmt = new StringBuilder();
-            System.Text.StringBuilder hv = new StringBuilder();
 
+            
             fsheet.registerClient(client.getID());
             fsheet.registerPatient(patient.getID());
             fsheet.setAmbWellness(ambCB.Checked);
@@ -898,143 +829,11 @@ namespace introseHHC.RegForms
             if (hcFlag && mdFlag)
             {
                 Console.WriteLine("hcFlag and mdFlags are good.");
-                string query;
+                
                 cost.setHCParams(np, m, o, nd, h, t, s, lwt, pax);
                 cost.setMDParams(np, m, o, nd, h, t, s, lwt, pax);
 
-                if (OpenConnection())
-                {
-                    query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES,REQDETAILS) " +
-                    "VALUES (@ptid,@ctid,@cty,@amb,@sen,@rqdet)";
-                    cmd = new MySqlCommand(query, conn);
-                    cmd.Prepare();
-                    cmd.Parameters.AddWithValue("@ptid", fsheet.PatientID);
-                    cmd.Parameters.AddWithValue("@ctid", fsheet.ClientID);
-                    cmd.Parameters.AddWithValue("@cty", fsheet.CarTra);
-                    cmd.Parameters.AddWithValue("@amb", fsheet.AmbWel);
-                    cmd.Parameters.AddWithValue("@sen", fsheet.SenRes);
-                    cmd.Parameters.AddWithValue("@rqdet", fsheet.ReqDetails);
-
-                    cmd.ExecuteNonQuery();
-
-                    query = "SELECT LAST_INSERT_ID() FROM FACESHEET;";
-                    cmd.CommandText = query;
-                    read = cmd.ExecuteReader();
-                    read.Read();
-                    fsheet.FID = UInt16.Parse(read.GetDecimal(0).ToString());
-
-                    read.Close();
-
-                    //insert values to case mgmt map
-
-                    if (caseMgmtBox.CheckedItems.Count > 0)
-                    {
-
-                        string caseQuery = "SELECT CASEID FROM CASE_MGMT_REF WHERE DESCRIPTION IN (" + cmgmt + ");";
-                        cmd = new MySqlCommand(caseQuery, conn);
-                        UInt16[] ctmp = new UInt16[caseMgmtBox.CheckedItems.Count];
-
-                        read = cmd.ExecuteReader();
-                        int x = 0;
-                        while (read.Read())
-                        {
-
-                            Console.WriteLine(read.GetDecimal(0).ToString());
-                            ctmp[x] = UInt16.Parse(read.GetDecimal(0).ToString());
-                            x++;
-                        }
-                        fsheet.addCaseMgmtIndex(ctmp);
-                        read.Close();
-
-                        query = "INSERT INTO CASE_MGMT_MAP VALUES (@fcID,@cmgmtID);";
-                        cmd.CommandText = query;
-
-                        for (int ccnt = 0; ccnt < ctmp.Length; ccnt++)
-                        {
-                            cmd.Parameters.Clear();
-                            cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
-                            cmd.Parameters.AddWithValue("@cmgmtID", ctmp[ccnt]);
-                            cmd.Prepare();
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                    //insert home vaccination selections into database
-                    if (hvacCoB.CheckedItems.Count > 0)
-                    {
-                        string HVacquery = "SELECT HVACID FROM HVAC_REF WHERE DESCRIPTION IN (" + hv + ");";
-                        cmd = new MySqlCommand(HVacquery, conn);
-                        UInt16[] htmp = new UInt16[hvacCoB.CheckedItems.Count];
-
-                        read = cmd.ExecuteReader();
-                        int x = 0;
-                        while (read.Read())
-                        {
-
-                            Console.WriteLine(read.GetDecimal(0).ToString());
-                            htmp[x] = UInt16.Parse(read.GetDecimal(0).ToString());
-                            x++;
-                        }
-                        fsheet.addHomeVacIndex(htmp);
-                        read.Close();
-
-                        query = "INSERT INTO HVAC_MAP VALUES (@fcID,@hvacID);";
-                        cmd.CommandText = query;
-
-                        for (int hcnt = 0; hcnt < htmp.Length; hcnt++)
-                        {
-                            cmd.Parameters.Clear();
-                            cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
-                            cmd.Parameters.AddWithValue("@hvacID", htmp[hcnt]);
-                            cmd.Prepare();
-                            cmd.ExecuteNonQuery();
-
-                        }
-
-                    }
-                    ////end of hvac
-
-                    //insert cost table values into database
-                       //clear parameters
-                    Console.WriteLine("Inserting values into cost table.");
-                    cmd.Parameters.Clear();
-                    query = "INSERT INTO COST_TABLE(FACEID,MDNP,MDM,MDO,MDND,MDHP,MDT,MDS,"
-                        + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX,MDSUBT,MDTOTAL,HCSUBT,HCTOTAL)"
-                        + " VALUES (@fcID,@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
-                        + "@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax"
-                    +",@mdsub,@mdtotal,@hcsub,@hctotal) ;";
-                   
-                    cmd.CommandText = query;
-                    cmd.Prepare();
-                   cmd.Parameters.AddWithValue("@mdnp",cost.getNightPay(MD));
-                   cmd.Parameters.AddWithValue("@mdm",cost.getMeals(MD));
-                   cmd.Parameters.AddWithValue("@mdo",cost.getMeals(MD));
-                   cmd.Parameters.AddWithValue("@mdnd",cost.getNightDifferential(MD));
-                   cmd.Parameters.AddWithValue("@mdhp",cost.getHolidayPay(MD));
-                   cmd.Parameters.AddWithValue("@mdt",cost.getTransportation(MD));
-                   cmd.Parameters.AddWithValue("@mds",cost.getSomething(MD));
-                   cmd.Parameters.AddWithValue("@mdlwt",cost.getSomething(MD));
-                   cmd.Parameters.AddWithValue("@mdpax",cost.getNoPax(MD));
-                   cmd.Parameters.AddWithValue("@mdsub", cost.getSubTotal(MD));
-                   cmd.Parameters.AddWithValue("@mdtotal", cost.getTotal(MD));
-
-
-                   cmd.Parameters.AddWithValue("@hcnp", cost.getNightPay(HC));
-                   cmd.Parameters.AddWithValue("@hcm", cost.getMeals(HC));
-                   cmd.Parameters.AddWithValue("@hco", cost.getMeals(HC));
-                   cmd.Parameters.AddWithValue("@hcnd", cost.getNightDifferential(HC));
-                   cmd.Parameters.AddWithValue("@hchp", cost.getHolidayPay(HC));
-                   cmd.Parameters.AddWithValue("@hct", cost.getTransportation(HC));
-                   cmd.Parameters.AddWithValue("@hcs", cost.getSomething(HC));
-                   cmd.Parameters.AddWithValue("@hclwt", cost.getSomething(HC));
-                   cmd.Parameters.AddWithValue("@hcpax", cost.getNoPax(HC));
-                   cmd.Parameters.AddWithValue("@hcsub", cost.getSubTotal(HC));
-                   cmd.Parameters.AddWithValue("@hctotal", cost.getTotal(HC));
-                   cmd.Parameters.AddWithValue("@fcID",fsheet.FID);
-                   cmd.ExecuteNonQuery();
-
-                    CloseConnection();
-                    tabControl1.SelectedIndex++;
-                }
+                tabControl1.SelectedIndex++;
             }
             else
             {
@@ -1173,12 +972,18 @@ namespace introseHHC.RegForms
         }
         private void fsheetFinishButton_Click(object sender, EventArgs e)
         {
+                        
             fsheet.EffectivityDate = effectPicker.Value;
             fsheet.Action = actionsTextBox.Text;
 
-
-            if (fsheet.GatherID != fsheet.EndorseID) //error checking
+             
+            if (patFlag && clientFlag && hcFlag && mdFlag && fsheet.GatherID != fsheet.EndorseID) //error checking
             {
+                //register patient
+                registerPatient(patient);
+                registerCient(client);
+                registerFaceSheet();
+
                 if (OpenConnection())
                 {
                     string query = "UPDATE FACESHEET SET GID =@gid,EID =@eid,ACTION =@act,EFFECTDATE=@edate WHERE FACEID=@fid;";
@@ -1232,5 +1037,229 @@ namespace introseHHC.RegForms
             this.Close();
         }
 
+
+        private void registerPatient(Patient p)
+        {
+            RegisterPerson(p);
+
+            //insert into patient table
+
+            OpenConnection();
+
+            string query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+            cmd.CommandText = query;
+
+            read = cmd.ExecuteReader();
+
+            read.Read();
+
+            Console.WriteLine(read.GetDecimal(0).ToString());
+
+            UInt16 lastID = UInt16.Parse(read.GetDecimal(0).ToString());
+
+            patient.setID(lastID);
+
+            read.Close();
+
+            query = "INSERT INTO PATIENT(PatID) VALUES(@pid);";
+
+            cmd.CommandText = query;
+
+            cmd.Prepare();
+
+            cmd.Parameters.AddWithValue("@pid", lastID);
+
+            cmd.ExecuteNonQuery();
+
+            CloseConnection();
+
+            fsheet.PatientID = lastID;
+        }
+        private void registerCient(Client c)
+        {   string query;
+            UInt16 lastID;
+
+            if (selID == 0)
+                RegisterPerson(client);
+
+            OpenConnection();
+
+            if (selID == 0)
+            {
+                query = "SELECT LAST_INSERT_ID() FROM PERSON;";
+                cmd = new MySqlCommand(query, conn);
+                read = cmd.ExecuteReader();
+                read.Read();
+                Console.WriteLine(read.GetDecimal(0).ToString());
+                lastID = UInt16.Parse(read.GetDecimal(0).ToString());
+                client.setID(lastID);
+                read.Close();
+
+                query = "INSERT INTO CLIENT (ClientID) VALUES(@cid);";
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@cid", lastID);
+                cmd.ExecuteNonQuery();
+
+                fsheet.ClientID = lastID;
+
+            }
+            else
+            {
+                client.setID(selID);
+                fsheet.ClientID = selID;
+
+            }
+            
+
+            query = "INSERT INTO RELATIONSHIP VALUES (@pd,@cd,@ip,@rel);";
+            cmd.CommandText = query;
+            cmd.Parameters.Clear();
+            cmd.Prepare();
+            cmd.Parameters.AddWithValue("@pd", patient.getID());
+            cmd.Parameters.AddWithValue("@cd", client.getID());
+            cmd.Parameters.AddWithValue("@ip", isPrimary);
+            cmd.Parameters.AddWithValue("@rel", posrel);
+            cmd.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+        private void registerFaceSheet()
+        {
+            if (OpenConnection())
+            {
+                string query;
+                query = "INSERT INTO FACESHEET(PATID,CLIENTID,CTRAINING,AMBWELLNESS,SENIORRES,REQDETAILS) " +
+                "VALUES (@ptid,@ctid,@cty,@amb,@sen,@rqdet)";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@ptid", fsheet.PatientID);
+                cmd.Parameters.AddWithValue("@ctid", fsheet.ClientID);
+                cmd.Parameters.AddWithValue("@cty", fsheet.CarTra);
+                cmd.Parameters.AddWithValue("@amb", fsheet.AmbWel);
+                cmd.Parameters.AddWithValue("@sen", fsheet.SenRes);
+                cmd.Parameters.AddWithValue("@rqdet", fsheet.ReqDetails);
+
+                cmd.ExecuteNonQuery();
+
+                query = "SELECT LAST_INSERT_ID() FROM FACESHEET;";
+                cmd.CommandText = query;
+                read = cmd.ExecuteReader();
+                read.Read();
+                fsheet.FID = UInt16.Parse(read.GetDecimal(0).ToString());
+
+                read.Close();
+
+                //insert values to case mgmt map
+
+                if (caseMgmtBox.CheckedItems.Count > 0)
+                {
+
+                    string caseQuery = "SELECT CASEID FROM CASE_MGMT_REF WHERE DESCRIPTION IN (" + cmgmt + ");";
+                    cmd = new MySqlCommand(caseQuery, conn);
+                    UInt16[] ctmp = new UInt16[caseMgmtBox.CheckedItems.Count];
+
+                    read = cmd.ExecuteReader();
+                    int x = 0;
+                    while (read.Read())
+                    {
+
+                        Console.WriteLine(read.GetDecimal(0).ToString());
+                        ctmp[x] = UInt16.Parse(read.GetDecimal(0).ToString());
+                        x++;
+                    }
+                    fsheet.addCaseMgmtIndex(ctmp);
+                    read.Close();
+
+                    query = "INSERT INTO CASE_MGMT_MAP VALUES (@fcID,@cmgmtID);";
+                    cmd.CommandText = query;
+
+                    for (int ccnt = 0; ccnt < ctmp.Length; ccnt++)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
+                        cmd.Parameters.AddWithValue("@cmgmtID", ctmp[ccnt]);
+                        cmd.Prepare();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                //insert home vaccination selections into database
+                if (hvacCoB.CheckedItems.Count > 0)
+                {
+                    string HVacquery = "SELECT HVACID FROM HVAC_REF WHERE DESCRIPTION IN (" + hv + ");";
+                    cmd = new MySqlCommand(HVacquery, conn);
+                    UInt16[] htmp = new UInt16[hvacCoB.CheckedItems.Count];
+
+                    read = cmd.ExecuteReader();
+                    int x = 0;
+                    while (read.Read())
+                    {
+
+                        Console.WriteLine(read.GetDecimal(0).ToString());
+                        htmp[x] = UInt16.Parse(read.GetDecimal(0).ToString());
+                        x++;
+                    }
+                    fsheet.addHomeVacIndex(htmp);
+                    read.Close();
+
+                    query = "INSERT INTO HVAC_MAP VALUES (@fcID,@hvacID);";
+                    cmd.CommandText = query;
+
+                    for (int hcnt = 0; hcnt < htmp.Length; hcnt++)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
+                        cmd.Parameters.AddWithValue("@hvacID", htmp[hcnt]);
+                        cmd.Prepare();
+                        cmd.ExecuteNonQuery();
+
+                    }
+
+                }
+                ////end of hvac
+
+                //insert cost table values into database
+                //clear parameters
+                Console.WriteLine("Inserting values into cost table.");
+                cmd.Parameters.Clear();
+                query = "INSERT INTO COST_TABLE(FACEID,MDNP,MDM,MDO,MDND,MDHP,MDT,MDS,"
+                    + "MDLWT,MDPAX,HCNP,HCM,HCO,HCND,HCHP,HCT,HCS,HCLWT,HCPAX,MDSUBT,MDTOTAL,HCSUBT,HCTOTAL)"
+                    + " VALUES (@fcID,@mdnp,@mdm,@mdo,@mdnd,@mdhp,@mdt,@mds,@mdlwt,@mdpax,"
+                    + "@hcnp,@hcm,@hco,@hcnd,@hchp,@hct,@hcs,@hclwt,@hcpax"
+                + ",@mdsub,@mdtotal,@hcsub,@hctotal) ;";
+
+                cmd.CommandText = query;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@mdnp", cost.getNightPay(MD));
+                cmd.Parameters.AddWithValue("@mdm", cost.getMeals(MD));
+                cmd.Parameters.AddWithValue("@mdo", cost.getMeals(MD));
+                cmd.Parameters.AddWithValue("@mdnd", cost.getNightDifferential(MD));
+                cmd.Parameters.AddWithValue("@mdhp", cost.getHolidayPay(MD));
+                cmd.Parameters.AddWithValue("@mdt", cost.getTransportation(MD));
+                cmd.Parameters.AddWithValue("@mds", cost.getSomething(MD));
+                cmd.Parameters.AddWithValue("@mdlwt", cost.getSomething(MD));
+                cmd.Parameters.AddWithValue("@mdpax", cost.getNoPax(MD));
+                cmd.Parameters.AddWithValue("@mdsub", cost.getSubTotal(MD));
+                cmd.Parameters.AddWithValue("@mdtotal", cost.getTotal(MD));
+
+
+                cmd.Parameters.AddWithValue("@hcnp", cost.getNightPay(HC));
+                cmd.Parameters.AddWithValue("@hcm", cost.getMeals(HC));
+                cmd.Parameters.AddWithValue("@hco", cost.getMeals(HC));
+                cmd.Parameters.AddWithValue("@hcnd", cost.getNightDifferential(HC));
+                cmd.Parameters.AddWithValue("@hchp", cost.getHolidayPay(HC));
+                cmd.Parameters.AddWithValue("@hct", cost.getTransportation(HC));
+                cmd.Parameters.AddWithValue("@hcs", cost.getSomething(HC));
+                cmd.Parameters.AddWithValue("@hclwt", cost.getSomething(HC));
+                cmd.Parameters.AddWithValue("@hcpax", cost.getNoPax(HC));
+                cmd.Parameters.AddWithValue("@hcsub", cost.getSubTotal(HC));
+                cmd.Parameters.AddWithValue("@hctotal", cost.getTotal(HC));
+                cmd.Parameters.AddWithValue("@fcID", fsheet.FID);
+                cmd.ExecuteNonQuery();
+
+                CloseConnection();
+
+            }
+        }
     }
 }
