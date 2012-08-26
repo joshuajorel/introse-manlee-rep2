@@ -49,7 +49,7 @@ namespace introseHHC.RegForms
             countBool();
             me = new MentalExam(meAns);
             nut = new Nutrition();
-
+            ca = new CGiverAssess();
 
             if (OpenConnection())
             {
@@ -194,6 +194,23 @@ namespace introseHHC.RegForms
                         
                         setNutRadioButtons();
 
+                        //care giver assessment
+                        query = "SELECT NUM1,NUM2,NUM3,NUM4 FROM CARE_ASS WHERE CGAID = @cgaID;";
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@cgaID", cgaID);
+                        cmd.Prepare();
+                        read = cmd.ExecuteReader();
+                        read.Read();
+                        
+                        for(int ctr = 0; ctr<4; ctr++)
+                            ca.setAns(ctr, read.GetBoolean(ctr));
+                        //ca.setAns(1, read.GetBoolean(1));
+                        //ca.setAns(2, read.GetBoolean(2));
+                        //ca.setAns(3, read.GetBoolean(3));
+                        read.Close();
+                        setCGiverRadioButtons();
                   }
 
                       
@@ -620,6 +637,29 @@ namespace introseHHC.RegForms
             else if (nut.getNut(16) == 1)
             {
                 na19Btn2.Checked = true;
+            }
+        }
+
+        private void setCGiverRadioButtons()
+        {
+            if (ca.getAns(0))
+            {
+                cgYes1.Checked = true;
+            }
+
+            if (ca.getAns(1))
+            {
+                cgYes2.Checked = true;
+            }
+
+            if (ca.getAns(2))
+            {
+                cgYes3.Checked = true;
+            }
+
+            if (ca.getAns(3))
+            {
+                cgYes4.Checked = true;
             }
         }
 }

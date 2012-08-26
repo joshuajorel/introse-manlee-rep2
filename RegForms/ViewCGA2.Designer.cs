@@ -259,16 +259,16 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.caNoRB4 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.cgYes4 = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.caNoRB3 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.cgYes3 = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.caNoRB2 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.cgYes2 = new System.Windows.Forms.RadioButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.caNoRB1 = new System.Windows.Forms.RadioButton();
-            this.cg = new System.Windows.Forms.RadioButton();
+            this.cgYes1 = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -2837,7 +2837,8 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.caNoRB4);
-            this.groupBox5.Controls.Add(this.radioButton10);
+            this.groupBox5.Controls.Add(this.cgYes4);
+            this.groupBox5.Enabled = false;
             this.groupBox5.Location = new System.Drawing.Point(259, 253);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(94, 37);
@@ -2856,20 +2857,21 @@
             this.caNoRB4.Text = "No";
             this.caNoRB4.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // cgYes4
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(6, 12);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(43, 17);
-            this.radioButton10.TabIndex = 0;
-            this.radioButton10.Text = "Yes";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.cgYes4.AutoSize = true;
+            this.cgYes4.Location = new System.Drawing.Point(6, 12);
+            this.cgYes4.Name = "cgYes4";
+            this.cgYes4.Size = new System.Drawing.Size(43, 17);
+            this.cgYes4.TabIndex = 0;
+            this.cgYes4.Text = "Yes";
+            this.cgYes4.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.caNoRB3);
-            this.groupBox6.Controls.Add(this.radioButton12);
+            this.groupBox6.Controls.Add(this.cgYes3);
+            this.groupBox6.Enabled = false;
             this.groupBox6.Location = new System.Drawing.Point(259, 188);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(94, 37);
@@ -2888,20 +2890,21 @@
             this.caNoRB3.Text = "No";
             this.caNoRB3.UseVisualStyleBackColor = true;
             // 
-            // radioButton12
+            // cgYes3
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(6, 12);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(43, 17);
-            this.radioButton12.TabIndex = 0;
-            this.radioButton12.Text = "Yes";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.cgYes3.AutoSize = true;
+            this.cgYes3.Location = new System.Drawing.Point(6, 12);
+            this.cgYes3.Name = "cgYes3";
+            this.cgYes3.Size = new System.Drawing.Size(43, 17);
+            this.cgYes3.TabIndex = 0;
+            this.cgYes3.Text = "Yes";
+            this.cgYes3.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.caNoRB2);
-            this.groupBox7.Controls.Add(this.radioButton14);
+            this.groupBox7.Controls.Add(this.cgYes2);
+            this.groupBox7.Enabled = false;
             this.groupBox7.Location = new System.Drawing.Point(259, 123);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(94, 37);
@@ -2920,20 +2923,21 @@
             this.caNoRB2.Text = "No";
             this.caNoRB2.UseVisualStyleBackColor = true;
             // 
-            // radioButton14
+            // cgYes2
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(6, 12);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(43, 17);
-            this.radioButton14.TabIndex = 0;
-            this.radioButton14.Text = "Yes";
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.cgYes2.AutoSize = true;
+            this.cgYes2.Location = new System.Drawing.Point(6, 12);
+            this.cgYes2.Name = "cgYes2";
+            this.cgYes2.Size = new System.Drawing.Size(43, 17);
+            this.cgYes2.TabIndex = 0;
+            this.cgYes2.Text = "Yes";
+            this.cgYes2.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.caNoRB1);
-            this.groupBox8.Controls.Add(this.cg);
+            this.groupBox8.Controls.Add(this.cgYes1);
+            this.groupBox8.Enabled = false;
             this.groupBox8.Location = new System.Drawing.Point(259, 58);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(94, 37);
@@ -2952,15 +2956,15 @@
             this.caNoRB1.Text = "No";
             this.caNoRB1.UseVisualStyleBackColor = true;
             // 
-            // cg
+            // cgYes1
             // 
-            this.cg.AutoSize = true;
-            this.cg.Location = new System.Drawing.Point(6, 12);
-            this.cg.Name = "cg";
-            this.cg.Size = new System.Drawing.Size(43, 17);
-            this.cg.TabIndex = 0;
-            this.cg.Text = "Yes";
-            this.cg.UseVisualStyleBackColor = true;
+            this.cgYes1.AutoSize = true;
+            this.cgYes1.Location = new System.Drawing.Point(6, 12);
+            this.cgYes1.Name = "cgYes1";
+            this.cgYes1.Size = new System.Drawing.Size(43, 17);
+            this.cgYes1.TabIndex = 0;
+            this.cgYes1.Text = "Yes";
+            this.cgYes1.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -3359,16 +3363,16 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton caNoRB4;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton cgYes4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RadioButton caNoRB3;
-        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton cgYes3;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.RadioButton caNoRB2;
-        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.RadioButton cgYes2;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.RadioButton caNoRB1;
-        private System.Windows.Forms.RadioButton cg;
+        private System.Windows.Forms.RadioButton cgYes1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
