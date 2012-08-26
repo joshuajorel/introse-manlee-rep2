@@ -139,7 +139,7 @@ namespace introseHHC.RegForms
                         query = "SELECT ANSWER FROM MENSTAT WHERE CGAID = @cgaID AND NUMBER = @num;";
                         cmd.CommandText = query;
                         
-                        for (int ctr = 0; ctr < 30; ctr++)
+                        for (int ctr = 0; ctr < 29; ctr++)
                         {
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@cgaID", cgaID);
@@ -151,7 +151,7 @@ namespace introseHHC.RegForms
                             read.Close();
                         }
 
-                        setMERadioButtons();
+                        setMECheckboxes();
                         msTB.Text = me.getScore().ToString();
 
                         //nutrition
@@ -337,12 +337,157 @@ namespace introseHHC.RegForms
             }
         }
 
-        private void setMERadioButtons()
+        private void setMECheckboxes()
         {
+            if (me.getAns(0))
+            {
+                checkBox1.Checked = true;
+            }
+
+            if (me.getAns(1))
+            {
+                checkBox2.Checked = true;
+            }
+
+            if (me.getAns(2))
+            {
+                checkBox3.Checked = true;
+            }
+
+            if (me.getAns(3))
+            {
+                checkBox4.Checked = true;
+            }
+
+            if (me.getAns(4))
+            {
+                checkBox5.Checked = true;
+            }
+
+            if (me.getAns(5))
+            {
+                checkBox6.Checked = true;
+            }
+            
+            if (me.getAns(6))
+            {
+                checkBox7.Checked = true;
+            }
+
+            if (me.getAns(7))
+            {
+                checkBox8.Checked = true;
+            }
+
+            if (me.getAns(8))
+            {
+                checkBox9.Checked = true;
+            }
+
+            if (me.getAns(9))
+            {
+                checkBox10.Checked = true;
+            }
+
+            if (me.getAns(10))
+            {
+                checkBox11.Checked = true;
+            }
+
+            if (me.getAns(11))
+            {
+                checkBox12.Checked = true;
+            }
+
+            if (me.getAns(12))
+            {
+                checkBox13.Checked = true;
+            }
+
+            if (me.getAns(13))
+            {
+                checkBox14.Checked = true;
+            }
+
+            if (me.getAns(14))
+            {
+                checkBox15.Checked = true;
+            }
+
+            if (me.getAns(15))
+            {
+                checkBox16.Checked = true;
+            }
+
+            if (me.getAns(16))
+            {
+                checkBox17.Checked = true;
+            }
+
+            if (me.getAns(17))
+            {
+                checkBox18.Checked = true;
+            }
+
+            if (me.getAns(18))
+            {
+                checkBox19.Checked = true;
+            }
+
+            if (me.getAns(19))
+            {
+                checkBox20.Checked = true;
+            }
+
+            if (me.getAns(20))
+            {
+                checkBox21.Checked = true;
+            }
+
+            if (me.getAns(21))
+            {
+                checkBox22.Checked = true;
+            }
+
+            if (me.getAns(22))
+            {
+                checkBox23.Checked = true;
+            }
+
+            if (me.getAns(23))
+            {
+                checkBox24.Checked = true;
+            }
+
+            if (me.getAns(24))
+            {
+                checkBox25.Checked = true;
+            }
+
+            if (me.getAns(25))
+            {
+                checkBox26.Checked = true;
+            }
+
+            if (me.getAns(26))
+            {
+                checkBox27.Checked = true;
+            }
+
+            if (me.getAns(27))
+            {
+                checkBox28.Checked = true;
+            }
+
+            if (me.getAns(28))
+            {
+                checkBox29.Checked = true;
+            }
         }
 
         private void setNutRadioButtons()
         {
+
         }
 }
 }

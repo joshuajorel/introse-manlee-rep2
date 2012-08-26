@@ -1018,7 +1018,7 @@ namespace introseHHC.RegForms
                 query = "INSERT INTO MENSTAT (CGAID,NUMBER,ANSWER) VALUES (@cid,@num,@ans);";
                 cmd.CommandText = query;
 
-                for (int ctr = 0; ctr < 30; ctr++)
+                for (int ctr = 0; ctr < 29; ctr++)
                 {
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@cid", cga.CID);

@@ -1491,7 +1491,6 @@
             this.panel3.Controls.Add(this.label38);
             this.panel3.Controls.Add(this.label37);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Enabled = false;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(558, 450);
@@ -1540,6 +1539,7 @@
             // checkBox28
             // 
             this.checkBox28.AutoSize = true;
+            this.checkBox28.Enabled = false;
             this.checkBox28.Location = new System.Drawing.Point(268, 366);
             this.checkBox28.Name = "checkBox28";
             this.checkBox28.Size = new System.Drawing.Size(60, 17);
@@ -1560,6 +1560,7 @@
             // 
             // checkBox27
             // 
+            this.checkBox27.Enabled = false;
             this.checkBox27.Location = new System.Drawing.Point(268, 268);
             this.checkBox27.Name = "checkBox27";
             this.checkBox27.Size = new System.Drawing.Size(142, 17);
@@ -1579,6 +1580,7 @@
             // checkBox26
             // 
             this.checkBox26.AutoSize = true;
+            this.checkBox26.Enabled = false;
             this.checkBox26.Location = new System.Drawing.Point(268, 224);
             this.checkBox26.Name = "checkBox26";
             this.checkBox26.Size = new System.Drawing.Size(94, 17);
@@ -1589,6 +1591,7 @@
             // checkBox25
             // 
             this.checkBox25.AutoSize = true;
+            this.checkBox25.Enabled = false;
             this.checkBox25.Location = new System.Drawing.Point(268, 206);
             this.checkBox25.Name = "checkBox25";
             this.checkBox25.Size = new System.Drawing.Size(125, 17);
@@ -1599,6 +1602,7 @@
             // checkBox24
             // 
             this.checkBox24.AutoSize = true;
+            this.checkBox24.Enabled = false;
             this.checkBox24.Location = new System.Drawing.Point(268, 188);
             this.checkBox24.Name = "checkBox24";
             this.checkBox24.Size = new System.Drawing.Size(183, 17);
@@ -1619,6 +1623,7 @@
             // checkBox23
             // 
             this.checkBox23.AutoSize = true;
+            this.checkBox23.Enabled = false;
             this.checkBox23.Location = new System.Drawing.Point(268, 110);
             this.checkBox23.Name = "checkBox23";
             this.checkBox23.Size = new System.Drawing.Size(58, 17);
@@ -1629,6 +1634,7 @@
             // checkBox22
             // 
             this.checkBox22.AutoSize = true;
+            this.checkBox22.Enabled = false;
             this.checkBox22.Location = new System.Drawing.Point(268, 92);
             this.checkBox22.Name = "checkBox22";
             this.checkBox22.Size = new System.Drawing.Size(55, 17);
@@ -1665,6 +1671,7 @@
             // checkBox21
             // 
             this.checkBox21.AutoSize = true;
+            this.checkBox21.Enabled = false;
             this.checkBox21.Location = new System.Drawing.Point(10, 737);
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(50, 17);
@@ -1675,6 +1682,7 @@
             // checkBox20
             // 
             this.checkBox20.AutoSize = true;
+            this.checkBox20.Enabled = false;
             this.checkBox20.Location = new System.Drawing.Point(10, 719);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(53, 17);
@@ -1685,6 +1693,7 @@
             // checkBox19
             // 
             this.checkBox19.AutoSize = true;
+            this.checkBox19.Enabled = false;
             this.checkBox19.Location = new System.Drawing.Point(10, 701);
             this.checkBox19.Name = "checkBox19";
             this.checkBox19.Size = new System.Drawing.Size(59, 17);
@@ -1714,6 +1723,7 @@
             // checkBox18
             // 
             this.checkBox18.AutoSize = true;
+            this.checkBox18.Enabled = false;
             this.checkBox18.Location = new System.Drawing.Point(10, 593);
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(54, 17);
@@ -1724,6 +1734,7 @@
             // checkBox17
             // 
             this.checkBox17.AutoSize = true;
+            this.checkBox17.Enabled = false;
             this.checkBox17.Location = new System.Drawing.Point(10, 574);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(51, 17);
@@ -1734,6 +1745,7 @@
             // checkBox16
             // 
             this.checkBox16.AutoSize = true;
+            this.checkBox16.Enabled = false;
             this.checkBox16.Location = new System.Drawing.Point(10, 555);
             this.checkBox16.Name = "checkBox16";
             this.checkBox16.Size = new System.Drawing.Size(51, 17);
@@ -1744,6 +1756,7 @@
             // checkBox15
             // 
             this.checkBox15.AutoSize = true;
+            this.checkBox15.Enabled = false;
             this.checkBox15.Location = new System.Drawing.Point(10, 536);
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(49, 17);
@@ -1754,6 +1767,7 @@
             // checkBox14
             // 
             this.checkBox14.AutoSize = true;
+            this.checkBox14.Enabled = false;
             this.checkBox14.Location = new System.Drawing.Point(10, 517);
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(51, 17);
@@ -1783,6 +1797,7 @@
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
+            this.checkBox13.Enabled = false;
             this.checkBox13.Location = new System.Drawing.Point(13, 394);
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(54, 17);
@@ -1793,6 +1808,7 @@
             // checkBox12
             // 
             this.checkBox12.AutoSize = true;
+            this.checkBox12.Enabled = false;
             this.checkBox12.Location = new System.Drawing.Point(13, 376);
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(53, 17);
@@ -1803,6 +1819,7 @@
             // checkBox11
             // 
             this.checkBox11.AutoSize = true;
+            this.checkBox11.Enabled = false;
             this.checkBox11.Location = new System.Drawing.Point(13, 358);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(59, 17);
@@ -1831,6 +1848,7 @@
             // checkBox10
             // 
             this.checkBox10.AutoSize = true;
+            this.checkBox10.Enabled = false;
             this.checkBox10.Location = new System.Drawing.Point(13, 224);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(55, 17);
@@ -1841,6 +1859,7 @@
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
+            this.checkBox9.Enabled = false;
             this.checkBox9.Location = new System.Drawing.Point(13, 205);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(70, 17);
@@ -1851,6 +1870,7 @@
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
+            this.checkBox8.Enabled = false;
             this.checkBox8.Location = new System.Drawing.Point(13, 186);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(91, 17);
@@ -1861,6 +1881,7 @@
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
+            this.checkBox7.Enabled = false;
             this.checkBox7.Location = new System.Drawing.Point(13, 167);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(68, 17);
@@ -1871,6 +1892,7 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
+            this.checkBox6.Enabled = false;
             this.checkBox6.Location = new System.Drawing.Point(13, 148);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(99, 17);
@@ -1881,6 +1903,7 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
+            this.checkBox5.Enabled = false;
             this.checkBox5.Location = new System.Drawing.Point(13, 129);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(118, 17);
@@ -1891,6 +1914,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
+            this.checkBox4.Enabled = false;
             this.checkBox4.Location = new System.Drawing.Point(13, 110);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(106, 17);
@@ -1901,6 +1925,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
+            this.checkBox3.Enabled = false;
             this.checkBox3.Location = new System.Drawing.Point(13, 91);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(110, 17);
@@ -1911,6 +1936,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
             this.checkBox2.Location = new System.Drawing.Point(13, 73);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(123, 17);
@@ -1921,6 +1947,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(13, 55);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(109, 17);
@@ -2029,6 +2056,7 @@
             this.groupBox38.Controls.Add(this.na19Btn3);
             this.groupBox38.Controls.Add(this.na19Btn2);
             this.groupBox38.Controls.Add(this.na19Btn1);
+            this.groupBox38.Enabled = false;
             this.groupBox38.Location = new System.Drawing.Point(13, 1024);
             this.groupBox38.Name = "groupBox38";
             this.groupBox38.Size = new System.Drawing.Size(516, 25);
@@ -2072,6 +2100,7 @@
             this.groupBox37.Controls.Add(this.na18Btn3);
             this.groupBox37.Controls.Add(this.na18Btn2);
             this.groupBox37.Controls.Add(this.na18Btn1);
+            this.groupBox37.Enabled = false;
             this.groupBox37.Location = new System.Drawing.Point(13, 969);
             this.groupBox37.Name = "groupBox37";
             this.groupBox37.Size = new System.Drawing.Size(298, 25);
@@ -2115,6 +2144,7 @@
             this.groupBox36.Controls.Add(this.na17Btn3);
             this.groupBox36.Controls.Add(this.na17Btn2);
             this.groupBox36.Controls.Add(this.na17Btn1);
+            this.groupBox36.Enabled = false;
             this.groupBox36.Location = new System.Drawing.Point(13, 916);
             this.groupBox36.Name = "groupBox36";
             this.groupBox36.Size = new System.Drawing.Size(415, 25);
@@ -2157,6 +2187,7 @@
             // 
             this.groupBox35.Controls.Add(this.na16Btn2);
             this.groupBox35.Controls.Add(this.na16Btn1);
+            this.groupBox35.Enabled = false;
             this.groupBox35.Location = new System.Drawing.Point(13, 854);
             this.groupBox35.Name = "groupBox35";
             this.groupBox35.Size = new System.Drawing.Size(115, 25);
@@ -2189,6 +2220,7 @@
             // 
             this.groupBox34.Controls.Add(this.na15Btn2);
             this.groupBox34.Controls.Add(this.na15Btn1);
+            this.groupBox34.Enabled = false;
             this.groupBox34.Location = new System.Drawing.Point(13, 800);
             this.groupBox34.Name = "groupBox34";
             this.groupBox34.Size = new System.Drawing.Size(115, 25);
@@ -2221,6 +2253,7 @@
             // 
             this.groupBox33.Controls.Add(this.na14Btn2);
             this.groupBox33.Controls.Add(this.na14Btn1);
+            this.groupBox33.Enabled = false;
             this.groupBox33.Location = new System.Drawing.Point(13, 748);
             this.groupBox33.Name = "groupBox33";
             this.groupBox33.Size = new System.Drawing.Size(115, 25);
@@ -2253,6 +2286,7 @@
             // 
             this.groupBox32.Controls.Add(this.na13Btn2);
             this.groupBox32.Controls.Add(this.na13Btn1);
+            this.groupBox32.Enabled = false;
             this.groupBox32.Location = new System.Drawing.Point(13, 695);
             this.groupBox32.Name = "groupBox32";
             this.groupBox32.Size = new System.Drawing.Size(115, 25);
@@ -2286,6 +2320,7 @@
             this.groupBox31.Controls.Add(this.na12Btn3);
             this.groupBox31.Controls.Add(this.na12Btn2);
             this.groupBox31.Controls.Add(this.na12Btn1);
+            this.groupBox31.Enabled = false;
             this.groupBox31.Location = new System.Drawing.Point(13, 631);
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.Size = new System.Drawing.Size(204, 25);
@@ -2328,6 +2363,7 @@
             // 
             this.groupBox30.Controls.Add(this.na11Btn2);
             this.groupBox30.Controls.Add(this.na11Btn1);
+            this.groupBox30.Enabled = false;
             this.groupBox30.Location = new System.Drawing.Point(13, 579);
             this.groupBox30.Name = "groupBox30";
             this.groupBox30.Size = new System.Drawing.Size(115, 25);
@@ -2361,6 +2397,7 @@
             this.groupBox29.Controls.Add(this.na10Btn3);
             this.groupBox29.Controls.Add(this.na10Btn2);
             this.groupBox29.Controls.Add(this.na10Btn1);
+            this.groupBox29.Enabled = false;
             this.groupBox29.Location = new System.Drawing.Point(13, 526);
             this.groupBox29.Name = "groupBox29";
             this.groupBox29.Size = new System.Drawing.Size(417, 25);
@@ -2403,6 +2440,7 @@
             // 
             this.groupBox28.Controls.Add(this.na9Btn2);
             this.groupBox28.Controls.Add(this.na9Btn1);
+            this.groupBox28.Enabled = false;
             this.groupBox28.Location = new System.Drawing.Point(13, 475);
             this.groupBox28.Name = "groupBox28";
             this.groupBox28.Size = new System.Drawing.Size(115, 25);
@@ -2436,6 +2474,7 @@
             this.groupBox27.Controls.Add(this.na8Btn3);
             this.groupBox27.Controls.Add(this.na8Btn2);
             this.groupBox27.Controls.Add(this.na8Btn1);
+            this.groupBox27.Enabled = false;
             this.groupBox27.Location = new System.Drawing.Point(13, 419);
             this.groupBox27.Name = "groupBox27";
             this.groupBox27.Size = new System.Drawing.Size(429, 25);
@@ -2478,6 +2517,7 @@
             // 
             this.groupBox26.Controls.Add(this.na7Btn2);
             this.groupBox26.Controls.Add(this.na7Btn1);
+            this.groupBox26.Enabled = false;
             this.groupBox26.Location = new System.Drawing.Point(13, 371);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Size = new System.Drawing.Size(115, 25);
@@ -2510,6 +2550,7 @@
             // 
             this.groupBox25.Controls.Add(this.na6Btn2);
             this.groupBox25.Controls.Add(this.na6Btn1);
+            this.groupBox25.Enabled = false;
             this.groupBox25.Location = new System.Drawing.Point(13, 320);
             this.groupBox25.Name = "groupBox25";
             this.groupBox25.Size = new System.Drawing.Size(115, 25);
@@ -2543,6 +2584,7 @@
             // 
             this.groupBox24.Controls.Add(this.na5Btn2);
             this.groupBox24.Controls.Add(this.na5Btn1);
+            this.groupBox24.Enabled = false;
             this.groupBox24.Location = new System.Drawing.Point(13, 268);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.Size = new System.Drawing.Size(115, 25);
@@ -2577,6 +2619,7 @@
             this.groupBox23.Controls.Add(this.na4Btn3);
             this.groupBox23.Controls.Add(this.na4Btn2);
             this.groupBox23.Controls.Add(this.na4Btn1);
+            this.groupBox23.Enabled = false;
             this.groupBox23.Location = new System.Drawing.Point(13, 216);
             this.groupBox23.Name = "groupBox23";
             this.groupBox23.Size = new System.Drawing.Size(490, 25);
@@ -2629,6 +2672,7 @@
             // 
             this.groupBox22.Controls.Add(this.na3Btn2);
             this.groupBox22.Controls.Add(this.na3Btn1);
+            this.groupBox22.Enabled = false;
             this.groupBox22.Location = new System.Drawing.Point(13, 163);
             this.groupBox22.Name = "groupBox22";
             this.groupBox22.Size = new System.Drawing.Size(136, 25);
@@ -2662,6 +2706,7 @@
             this.groupBox21.Controls.Add(this.na2Btn3);
             this.groupBox21.Controls.Add(this.na2Btn2);
             this.groupBox21.Controls.Add(this.na2Btn1);
+            this.groupBox21.Enabled = false;
             this.groupBox21.Location = new System.Drawing.Point(13, 112);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Size = new System.Drawing.Size(231, 25);
@@ -2705,6 +2750,7 @@
             this.groupBox20.Controls.Add(this.na1Btn3);
             this.groupBox20.Controls.Add(this.na1Btn2);
             this.groupBox20.Controls.Add(this.na1Btn1);
+            this.groupBox20.Enabled = false;
             this.groupBox20.Location = new System.Drawing.Point(13, 54);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(209, 25);
