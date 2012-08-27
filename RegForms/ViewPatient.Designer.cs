@@ -142,6 +142,7 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Requirements.SuspendLayout();
@@ -153,7 +154,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(100, 487);
+            this.splitter1.Size = new System.Drawing.Size(100, 485);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -1341,7 +1342,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(12, 34);
+            this.exitButton.Location = new System.Drawing.Point(12, 450);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 2;
@@ -1349,11 +1350,22 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(12, 34);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 3;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // ViewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 487);
+            this.ClientSize = new System.Drawing.Size(654, 485);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
@@ -1494,5 +1506,6 @@
         private System.Windows.Forms.Button editAddButton;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button viewCGAButton;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }

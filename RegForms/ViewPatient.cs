@@ -756,6 +756,26 @@ namespace introseHHC.RegForms
             }
         }
 
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (patID > 0)
+            {
+                if (OpenConnection())
+                {
+                    string query = "DELETE FROM PERSON WHERE ID = @pid; ";
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.Clear();
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@pid", patID);
+                    cmd.ExecuteNonQuery();
+
+                    CloseConnection();
+                    MessageBox.Show("Delete Successful");
+                    this.Close();
+                }
+            }
+        }
+
 
 
 

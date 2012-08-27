@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 263);
+            this.ClientSize = new System.Drawing.Size(255, 264);
             this.Controls.Add(this.logOffButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.regEmpButton);
@@ -108,8 +108,8 @@
             this.Controls.Add(this.manageRecButton);
             this.Controls.Add(this.button1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(271, 290);
-            this.MinimumSize = new System.Drawing.Size(271, 290);
+            this.MaximumSize = new System.Drawing.Size(271, 302);
+            this.MinimumSize = new System.Drawing.Size(271, 302);
             this.Name = "MainMenu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Home Health Care";

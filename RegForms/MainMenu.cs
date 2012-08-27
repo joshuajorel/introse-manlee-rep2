@@ -22,7 +22,7 @@ namespace introseHHC.RegForms
         private string db_user;
         private string db_password;
         private string connString;
-
+        private Boolean logOff, close;
 
         public MainMenu(Login l)
         {
@@ -89,26 +89,41 @@ namespace introseHHC.RegForms
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+            if (logOff == true)
+            {
+                if (MessageBox.Show("Are you sure you wish to log out?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    li.Show();
+                    li.clearPass();
+                }
+                else
+                {
+                    e.Cancel = true;
+                    logOff = false;
+                }
+            }else
+            {
+                if (MessageBox.Show("Are you sure you wish to exit?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you wish to exit?", "Important Query", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                
-            }
+            Application.Exit();
         }
 
         private void logOffButton_Click(object sender, EventArgs e)
         {
-          
-                li.Show();
-                li.clearPass();
-                this.Close();
+
+            logOff = true;
+            this.Close();
   
         }
 

@@ -819,26 +819,26 @@ namespace introseHHC.RegForms
         private void na13Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na13Btn1.Checked)
-                nut.proSet1(true);
+                nut.setProteinIntake(0, true);
             else
-                nut.proSet1(false);
+                nut.setProteinIntake(0, false);
         }
 
 
         private void na14Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na14Btn1.Checked)
-                nut.proSet2(true);
+                nut.setProteinIntake(1, true);
             else
-                nut.proSet2(false);
+                nut.setProteinIntake(1, false);
         }
 
         private void na15Btn1_CheckedChanged(object sender, EventArgs e)
         {
             if (na15Btn1.Checked)
-                nut.proSet3(true);
+                nut.setProteinIntake(2, true);
             else
-                nut.proSet3(false);
+                nut.setProteinIntake(2, false);
         }
 
 

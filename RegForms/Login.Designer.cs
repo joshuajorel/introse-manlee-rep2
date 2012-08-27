@@ -116,7 +116,7 @@
             this.aboutToolStripMenuItem});
             this.loginMenu.Location = new System.Drawing.Point(0, 0);
             this.loginMenu.Name = "loginMenu";
-            this.loginMenu.Size = new System.Drawing.Size(292, 24);
+            this.loginMenu.Size = new System.Drawing.Size(284, 24);
             this.loginMenu.TabIndex = 7;
             this.loginMenu.Text = "menuStrip1";
             // 
@@ -126,27 +126,27 @@
             this.connectionSetupToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // connectionSetupToolStripMenuItem
             // 
             this.connectionSetupToolStripMenuItem.Name = "connectionSetupToolStripMenuItem";
-            this.connectionSetupToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.connectionSetupToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.connectionSetupToolStripMenuItem.Text = "Connection Setup";
             this.connectionSetupToolStripMenuItem.Click += new System.EventHandler(this.connectionSetupToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // pictureBox1
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(284, 275);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -174,8 +174,8 @@
             this.Controls.Add(this.loginMenu);
             this.MainMenuStrip = this.loginMenu;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(300, 300);
-            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.MaximumSize = new System.Drawing.Size(300, 313);
+            this.MinimumSize = new System.Drawing.Size(300, 313);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
