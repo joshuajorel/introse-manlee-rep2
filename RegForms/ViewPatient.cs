@@ -492,8 +492,9 @@ namespace introseHHC.RegForms
                 cmd.Parameters.AddWithValue("@patID",patID);
                 read = cmd.ExecuteReader();
                 read.Read();
+                int temp = int.Parse(read.GetString(0));
 
-                if (int.Parse(read.GetString(0)) == 1)
+                if (temp == 1)
                 {
                     ViewCGA2 v = new ViewCGA2(patID, connString);
                     v.ShowDialog();

@@ -45,10 +45,6 @@ namespace introseHHC.RegForms
         {
             // TODO: This line of code loads data into the 'getEmployeesDB1.getEmployees' table. You can move, or remove it, as needed.
             this.getEmployeesTableAdapter2.Fill(this.getEmployeesDB1.getEmployees);
-            // TODO: This line of code loads data into the 'getEmployeeDB.getEmployees' table. You can move, or remove it, as needed.
-           
-            // TODO: This line of code loads data into the 'getEmployeesDB.getEmployees' table. You can move, or remove it, as needed.
-
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -65,7 +61,6 @@ namespace introseHHC.RegForms
             sel = 0;
             fname = "";
             sname = "";
-
         }
 
         private void searchButton_Click(object sender, EventArgs e)

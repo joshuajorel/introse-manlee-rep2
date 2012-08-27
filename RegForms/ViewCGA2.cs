@@ -17,7 +17,6 @@ namespace introseHHC.RegForms
         private UInt16 cgaID;
         private UInt16 phyID;
         private bool cont = false;
-        private string connString;
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader read;
@@ -27,7 +26,7 @@ namespace introseHHC.RegForms
         private Nutrition nut;
         private Boolean[] meAns = new Boolean[30];
         private CGiverAssess ca;
-        private SocView sv;
+        private string connString;
         //for initializing the boolean array into false
         private void countBool()
         {
@@ -46,13 +45,13 @@ namespace introseHHC.RegForms
         {
             InitializeComponent();
             patID = id;
-            connString = c;
             conn = new MySqlConnection(c);
             gds = new GDScales(gdAns);
             countBool();
             me = new MentalExam(meAns);
             nut = new Nutrition();
             ca = new CGiverAssess();
+            connString = c;
 
             if (OpenConnection())
             {
@@ -121,7 +120,7 @@ namespace introseHHC.RegForms
 
                         //geriatric depression scale
                         query = "SELECT ANSWER FROM GER_DEP_SCALE WHERE CGAID = @cgaID AND NUMBER = @num;";
-                        cmd.CommandText = query;
+                        cmd = new MySqlCommand(query,conn);
 
                         for (int ctr = 0; ctr < 15; ctr++)
                         {
@@ -215,6 +214,10 @@ namespace introseHHC.RegForms
                         read.Close();
                         setCGiverRadioButtons();
                   }
+
+                      
+
+
 
                 CloseConnection();
             }
@@ -683,18 +686,18 @@ namespace introseHHC.RegForms
             irv.Close();
         }
 
-        private void funcStatButton_Click(object sender, EventArgs e)
-        {
-            FStatView fsv = new FStatView(cgaID, connString);
-            fsv.ShowDialog();
-            fsv.Close();
-        }
-
         private void medListButton_Click(object sender, EventArgs e)
         {
             MedListView mlv = new MedListView(patID, connString);
             mlv.ShowDialog();
             mlv.Close();
+        }
+
+        private void funcStatButton_Click(object sender, EventArgs e)
+        {
+            FStatView fsv = new FStatView(cgaID, connString);
+            fsv.ShowDialog();
+            fsv.Close();
         }
     }
 }

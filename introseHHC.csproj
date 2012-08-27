@@ -285,7 +285,7 @@
     <Compile Include="RegForms\ViewCGA2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegForms\ViewCGA2.Designer.cs">
+    <Compile Include="RegForms\ViewCGA2.designer.cs">
       <DependentUpon>ViewCGA2.cs</DependentUpon>
     </Compile>
     <Compile Include="RegForms\ViewClient.cs">

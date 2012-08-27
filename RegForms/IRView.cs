@@ -63,13 +63,13 @@ namespace introseHHC.RegForms
 
         private void IRView_Load(object sender, EventArgs e)
         {
-            if (OpenConnection()) ;
+            if (OpenConnection())
             {
                 query = "SELECT * FROM IM_REC WHERE CGAID = @cgaid;";
                 cmd = new MySqlCommand(query, conn);
                 cmd.Prepare();
 
-                cmd.Parameters.Add("@cgaid", ID);
+                cmd.Parameters.AddWithValue("@cgaid", ID);
                 cmd.ExecuteReader();
 
                 while (read.Read())
