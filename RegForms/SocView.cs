@@ -64,15 +64,16 @@ namespace introseHHC.RegForms
 
         private void SocView_Load(object sender, EventArgs e)
         {
-            if (OpenConnection()) ;
+            if (OpenConnection())
             {
                 query = "SELECT * FROM SOCIAL WHERE CGAID = @cgaid;";
                 cmd = new MySqlCommand(query, conn);
                 cmd.Prepare();
 
-                cmd.Parameters.Add("@cgaid", ID);
-                cmd.ExecuteReader();
+                cmd.Parameters.AddWithValue("@cgaid", ID);
+                read = cmd.ExecuteReader();
 
+                int ct;
                 while (read.Read())
                 {
                     ct = socEnvView.Rows.Add();

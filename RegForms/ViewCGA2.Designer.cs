@@ -3031,6 +3031,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewCGA2";
             this.Text = "ViewCGA2";
+            this.Load += new System.EventHandler(this.ViewCGA2_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

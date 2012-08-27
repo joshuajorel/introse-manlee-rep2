@@ -70,8 +70,9 @@ namespace introseHHC.RegForms
                 cmd.Prepare();
 
                 cmd.Parameters.AddWithValue("@cgaid", ID);
-                cmd.ExecuteReader();
+                read = cmd.ExecuteReader();
 
+                int ct;
                 while (read.Read())
                 {
                     ct = immrecView.Rows.Add();

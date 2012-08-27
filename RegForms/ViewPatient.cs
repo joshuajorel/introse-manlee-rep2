@@ -51,7 +51,6 @@ namespace introseHHC.RegForms
             connString = c;
             patID = id;
 
-
         }
         private bool OpenConnection()
         {
@@ -754,7 +753,7 @@ namespace introseHHC.RegForms
             else
             {
                 connEstablished = false;
-            }
+            }         
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -776,10 +775,5 @@ namespace introseHHC.RegForms
                 }
             }
         }
-
-
-
-
-
     }
 }

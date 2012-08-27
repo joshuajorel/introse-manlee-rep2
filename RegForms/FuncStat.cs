@@ -68,6 +68,18 @@ namespace introseHHC.RegForms
 
         private void FuncStat_Load(object sender, EventArgs e)
         {
+            func.setStat(true, 0);
+            func.setStat(true, 1);
+            func.setStat(true, 2);
+            func.setStat(true, 3);
+            func.setStat(true, 4);
+            func.setStat(true, 5);
+            func.setStat(true, 6);
+            func.setStat(true, 7);
+            func.setStat(true, 8);
+            func.setStat(true, 9);
+            func.setStat(true, 10);
+            func.setStat(true, 11);
         }
 
         private void addfunc(FunctionalStatus fs)

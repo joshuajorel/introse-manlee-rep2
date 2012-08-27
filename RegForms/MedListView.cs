@@ -87,5 +87,10 @@ namespace introseHHC.RegForms
                 CloseConnection();
             }
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

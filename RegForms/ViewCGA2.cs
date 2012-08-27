@@ -27,6 +27,7 @@ namespace introseHHC.RegForms
         private Boolean[] meAns = new Boolean[30];
         private CGiverAssess ca;
         private string connString;
+        private string query;
         //for initializing the boolean array into false
         private void countBool()
         {
@@ -214,11 +215,6 @@ namespace introseHHC.RegForms
                         read.Close();
                         setCGiverRadioButtons();
                   }
-
-                      
-
-
-
                 CloseConnection();
             }
 
@@ -699,5 +695,20 @@ namespace introseHHC.RegForms
             fsv.ShowDialog();
             fsv.Close();
         }
+
+        private void ViewCGA2_Load(object sender, EventArgs e)
+        {
+            // get cgaID
+            cmd.Parameters.Clear();
+            query = "SELECT CGAID FROM CGA_FORM WHERE PATID = @pid;";
+
+            cmd.Parameters.AddWithValue("@pid", patID);
+
+            read = cmd.ExecuteReader();
+            read.Read();
+
+            cgaID = UInt16.Parse(read.GetString("cgaID"));
+        }
+
     }
 }

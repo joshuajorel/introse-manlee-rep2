@@ -44,6 +44,7 @@
             this.CloseButton.TabIndex = 10;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // mlView
             // 

@@ -33,26 +33,58 @@ namespace introseHHC.RegForms
             ct = 0;
         }
 
+        private bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                Console.WriteLine("SQL Connection Opened.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        private bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                Console.WriteLine("SQL Connection Closed.");
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
 
         private void PMedView_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            query = "SELECT * FROM PMED_HIS WHERE PATID = @pid;";
-            cmd = new MySqlCommand(query, conn);
-            cmd.Prepare();
-
-            cmd.Parameters.Add("@pid", ID);
-            cmd.ExecuteReader();
-
-            while (read.Read())
+            if (OpenConnection())
             {
-                ct = medhisView.Rows.Add();
-                medhisView.Rows[ct].Cells[0].Value = read.GetString("DIAGNOSIS");
-                medhisView.Rows[ct].Cells[1].Value = read.GetString("PLACECON");
-                medhisView.Rows[ct].Cells[2].Value = read.GetString("INCDATE");
+                query = "SELECT * FROM PMED_HIS WHERE PATID = @pid;";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@pid", ID);
+
+                read = cmd.ExecuteReader();
+
+                int ct;
+                while (read.Read())
+                {
+                    ct = medhisView.Rows.Add();
+                    medhisView.Rows[ct].Cells[0].Value = read.GetString("DIAGNOSIS");
+                    medhisView.Rows[ct].Cells[1].Value = read.GetString("PLACECON");
+                    medhisView.Rows[ct].Cells[2].Value = read.GetString("INCDATE");
+                }
+                read.Close();
+                CloseConnection();
             }
-            read.Close();
-            conn.Close();
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
